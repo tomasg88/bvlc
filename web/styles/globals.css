@@ -14,3 +14,27 @@ a {
 * {
   box-sizing: border-box;
 }
+
+
+/* Para mover luego al lugar correspondiente */
+
+header h1 {
+ font-size: 1rem;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2rem;
+}
+
+header nav {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+header nav a  {
+  font-size: 1rem;
+  padding: 0 1rem;
+}
