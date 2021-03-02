@@ -4,6 +4,9 @@
 /dist
 /tmp
 /out-tsc
+studio/dist
+studio/tmp
+studio/out-tsc
 
 # Runtime data
 pids
