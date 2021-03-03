@@ -1,17 +1,46 @@
 export default {
   name: 'post',
-  title: 'Post',
+  title: 'Noticia',
   type: 'document',
   fields: [
     {
+      name: 'mainImage',
+      title: 'Imagen destacada',
+      type: 'image',
+      validation: Rule => Rule.required(),
+      options: {
+        hotspot: true,
+      },
+    },
+    {
       name: 'title',
-      title: 'Title',
+      title: 'Titulo de la nota',
       type: 'string',
+      validation: Rule => Rule.required(),
+    },
+    {
+      name: "excerpt",
+      title: "Descripción breve",
+      type: "text",
+    },
+    {
+      name: 'body',
+      title: 'Articulo',
+      type: 'blockContent',
+      validation: Rule => Rule.required(),
+    },
+    {
+      name: 'publishedAt',
+      title: 'Dia de la publicación',
+      type: 'datetime',
+      validation: Rule => Rule.required(),
     },
     {
       name: 'slug',
-      title: 'Slug',
+      title: 'URL',
       type: 'slug',
+      description: 'Click en el botón GENERATE para generar la ruta (URL)',
+      validation: Rule => Rule.required(),
       options: {
         source: 'title',
         maxLength: 96,
@@ -19,34 +48,20 @@ export default {
     },
     {
       name: 'author',
-      title: 'Author',
+      title: 'Autor',
       type: 'reference',
       to: {type: 'author'},
-    },
-    {
-      name: 'mainImage',
-      title: 'Main image',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
+      validation: Rule => Rule.required(),
     },
     {
       name: 'categories',
-      title: 'Categories',
+      title: 'Categorias',
       type: 'array',
       of: [{type: 'reference', to: {type: 'category'}}],
+      validation: Rule => Rule.required(),
     },
-    {
-      name: 'publishedAt',
-      title: 'Published at',
-      type: 'datetime',
-    },
-    {
-      name: 'body',
-      title: 'Body',
-      type: 'blockContent',
-    },
+   
+    
   ],
 
   preview: {
@@ -58,7 +73,7 @@ export default {
     prepare(selection) {
       const {author} = selection
       return Object.assign({}, selection, {
-        subtitle: author && `by ${author}`,
+        subtitle: author && `Creado por ${author}`,
       })
     },
   },

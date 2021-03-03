@@ -1,6 +1,6 @@
 export default {
   name: 'author',
-  title: 'Author',
+  title: 'Autor/a',
   type: 'document',
   fields: [
     {
