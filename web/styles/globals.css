@@ -10,15 +10,35 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
-
 * {
   box-sizing: border-box;
 }
 
 /* Para mover luego al lugar correspondiente */
+.headroom {
+  top: 0;
+  left: 0;
+  right: 0;
+  zIndex: 1;
+}
+.headroom--unfixed {
+  position: relative;
+  transform: translateY(0);
+}
+.headroom--scrolled {
+  transition: transform 200ms ease-in-out;
+}
+.headroom--unpinned {
+  position: fixed;
+  transform: translateY(-100%);
+}
+.headroom--pinned {
+  position: fixed;
+  transform: translateY(0%);
+}
 
 header h1 {
- font-size: 1rem;
+  font-size: 1rem;
 }
 
 header {
@@ -33,12 +53,12 @@ header nav {
   display: flex;
 }
 
-header nav a  {
+header nav a {
   font-size: 1rem;
   padding: 0 1rem;
 }
 
-header nav a:hover  {
+header nav a:hover {
   @apply underline;
 }
 
