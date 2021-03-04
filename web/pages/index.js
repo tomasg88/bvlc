@@ -19,7 +19,7 @@ export default function Home(props) {
                 Luján de Cuyo
               </span>
             </div>
-            <Link href="/comision">
+            <Link href="/comision-directiva">
               <a className="relative z-10 max-w-xs mx-auto mt-6 btn">Conocé más sobre nosotros</a>
             </Link>
             <div className="absolute inset-0 z-0 opacity-30">
