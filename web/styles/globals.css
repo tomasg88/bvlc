@@ -37,3 +37,11 @@ header nav a  {
   font-size: 1rem;
   padding: 0 1rem;
 }
+
+header nav a:hover  {
+  @apply underline;
+}
+
+.btn {
+  @apply px-4 py-2 font-bold text-white bg-red-500 border-b-4 border-red-700 rounded hover:bg-red-600 hover:border-red-700;
+}
