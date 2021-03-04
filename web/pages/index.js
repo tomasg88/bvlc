@@ -32,7 +32,7 @@ export default function Home({news, lastMembers, leadership}) {
           </div>
           <div className="pt-12 bg-white">
             <Link href="/noticias">
-              <a className="block max-w-6xl pt-12 pb-6 mx-auto font-sans text-6xl text-red-500">
+              <a className="block max-w-6xl pt-12 pb-6 mx-auto font-sans text-6xl font-bold text-red-500">
                 Últimas Noticias
               </a>
             </Link>
@@ -40,7 +40,7 @@ export default function Home({news, lastMembers, leadership}) {
               {news &&
                 news.map((n) => (
                   <div className="p-3 text-4xl bg-gray-100 shadow-md ">
-                    <h3 className="font-mono text-3xl font-bold">{n.title}</h3>
+                    <h3 className="font-sans text-3xl font-bold">{n.title}</h3>
                     <p className="mt-2 text-xl">{n.text}</p>
                   </div>
                 ))}
@@ -48,7 +48,7 @@ export default function Home({news, lastMembers, leadership}) {
           </div>
           <div className="pt-12 bg-white">
             <Link href="/cuerpo-activo">
-              <a className="block max-w-6xl pt-12 pb-6 mx-auto font-mono text-6xl text-red-500">
+              <a className="block max-w-6xl pt-12 pb-6 mx-auto font-sans text-6xl font-bold text-red-500 hover:text-red-600">
                 Nuevos miembros
               </a>
             </Link>
@@ -56,7 +56,7 @@ export default function Home({news, lastMembers, leadership}) {
               {lastMembers &&
                 lastMembers.map((n) => (
                   <div className="p-3 text-4xl bg-gray-100 shadow-md ">
-                    <h3 className="font-mono text-3xl font-bold">{n.title}</h3>
+                    <h3 className="font-sans text-3xl font-bold">{n.title}</h3>
                     <p className="mt-2 text-xl">{n.text}</p>
                   </div>
                 ))}
@@ -64,7 +64,7 @@ export default function Home({news, lastMembers, leadership}) {
           </div>
           <div className="pt-12 bg-white">
             <Link href="/comision-directiva">
-              <a className="block max-w-6xl pt-12 pb-6 mx-auto font-mono text-6xl text-red-500">
+              <a className="block max-w-6xl pt-12 pb-6 mx-auto font-sans text-6xl font-bold text-red-500 hover:text-red-600">
                 Comisión directiva
               </a>
             </Link>
