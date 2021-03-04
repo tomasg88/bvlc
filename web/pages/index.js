@@ -47,7 +47,7 @@ export default function Home({news, lastMembers, leadership}) {
             </div>
           </div>
           <div className="pt-12 bg-white">
-            <Link href="/cuerpo">
+            <Link href="/cuerpo-activo">
               <a className="block max-w-6xl pt-12 pb-6 mx-auto font-mono text-6xl text-red-500">
                 Nuevos miembros
               </a>
@@ -63,7 +63,7 @@ export default function Home({news, lastMembers, leadership}) {
             </div>
           </div>
           <div className="pt-12 bg-white">
-            <Link href="/comision">
+            <Link href="/comision-directiva">
               <a className="block max-w-6xl pt-12 pb-6 mx-auto font-mono text-6xl text-red-500">
                 Comisión directiva
               </a>
