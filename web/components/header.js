@@ -17,6 +17,12 @@ export default function Header() {
         <Link href="/news">
           <a>Noticias</a>
         </Link>
+        <Link href="/cuerpo">
+          <a>Cuerpo activo</a>
+        </Link>
+        <Link href="/comision">
+          <a>Comisión directiva</a>
+        </Link>
       </nav>
     </header>
   );

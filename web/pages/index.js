@@ -8,7 +8,7 @@ export default function Home(props) {
     <Layout>
       <div className={styles.container}>
         <Head>
-          <title>Create Next App</title>
+          <title>Bomberos Voluntarios de Luján de Cuyo</title>
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <main className="w-full ">

@@ -4,7 +4,7 @@ import client from "../lib/client";
 
 
 export default function News(props) {
-  console.log("🚀 ~ file: news.js ~ line 4 ~ news ~ props", props);
+  
   return (
     <Layout>
       <div className="">
@@ -12,8 +12,8 @@ export default function News(props) {
           <h1 className="font-mono text-6xl font-bold">Noticias</h1>
         </div>
         <div className="grid max-w-6xl grid-cols-3 gap-3 p-2 mx-auto mt-6">
-          {props.news &&
-            props.news.map((n) => (
+          {props.list &&
+            props.list.map((n) => (
               <div className="p-3 text-4xl bg-white shadow-2xl">
                 <h3 className="font-mono text-3xl font-bold">{n.title}</h3>
                 <p className="mt-2 text-xl">{n.text}</p>
@@ -26,11 +26,11 @@ export default function News(props) {
 }
 
 export async function getStaticProps(ctx) { 
-    const res = await client.fetch(` *[_type == "post"] `)
+    const res = await client.fetch(` *[_type == "activeForce"] `)
 
     return {
         props: {
-            news: res
+            list: res
         },
     };
 }
