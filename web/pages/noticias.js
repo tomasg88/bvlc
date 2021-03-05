@@ -1,11 +1,12 @@
 import React from "react";
 import Layout from "../components/layout";
-import client from "../lib/client";
 import BackgroundImage from "../components/backgroundImage";
 import Link from "next/link";
 import { useRouter } from 'next/router'
+import { getClient } from "../lib/sanity.server";
+import { allPostQuery } from "../lib/queries";
 
-export default function News({news}) {
+export default function News({list}) {
   const router = useRouter()
   return (
     <Layout>
@@ -18,15 +19,14 @@ export default function News({news}) {
         </div>
 
         <div className="grid max-w-6xl grid-cols-3 gap-3 p-2 mx-auto mt-6">
-          {news &&
-            news.map((n) => (
+          {list &&
+            list.map((n) => (
               <div key={n._id} className="p-3 text-4xl bg-white shadow-2xl">
                 <Link href={router.pathname +'/'+ n.slug.current}>
                   <a>
                     <h3 className="font-sans text-3xl font-bold">{n.title}</h3>
                   </a>
                 </Link>
-                {/* <p className="mt-2 text-xl">{n.text}</p> */}
               </div>
             ))}
         </div>
@@ -36,8 +36,8 @@ export default function News({news}) {
 }
 
 export async function getStaticProps() {
-  const news = await client.fetch(` *[_type == "post"] `);
+  const list = await getClient(false).fetch(allPostQuery);
   return {
-    props: { news }
+    props: { list }
   };
 }

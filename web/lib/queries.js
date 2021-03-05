@@ -10,10 +10,15 @@ const postFields = `
 `
 
 export const indexQuery = `
-*[_type == "post"] | order(date desc, _updatedAt desc) {
-  ${postFields}
+{
+  "news": *[_type == "post"] | order(date desc, _updatedAt desc) {
+    ${postFields}
+  },
+  "lastMembers": *[_type == "activeForce"],
+  "lastLeaders": *[_type == "leadership"]
 }`
 
+export const allPostQuery = ` *[_type == "post"] `
 export const postQuery = `
 {
   "post": *[_type == "post" && slug.current == $slug] | order(_updatedAt desc) | [0] {
@@ -35,3 +40,5 @@ export const postBySlugQuery = `
   ${postFields}
 }
 `
+export const activeForceQuery = ` *[_type == "activeForce"] `
+export const leadershipQuery = ` *[_type == "leadership"] `

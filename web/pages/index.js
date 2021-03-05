@@ -2,7 +2,8 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import Layout from "../components/layout";
 import Link from "next/link";
-import client from "../lib/client";
+import { getClient } from "../lib/sanity.server";
+import { indexQuery } from "../lib/queries";
 
 export default function Home({news, lastMembers, leadership}) {
   return (
@@ -39,9 +40,12 @@ export default function Home({news, lastMembers, leadership}) {
             <div className="grid max-w-6xl grid-cols-3 gap-3 px-2 py-6 mx-auto mt-6">
               {news &&
                 news.map((n) => (
-                  <div className="p-3 text-4xl bg-gray-100 shadow-md ">
-                    <h3 className="font-sans text-3xl font-bold">{n.title}</h3>
-                    <p className="mt-2 text-xl">{n.text}</p>
+                  <div key={n._id} className="p-3 text-4xl bg-gray-100 shadow-md ">
+                    <Link href={`/noticias/${n.slug}`}>
+                      <a>
+                        <h3 className="font-sans text-3xl font-bold">{n.title}</h3>
+                      </a>
+                    </Link>
                   </div>
                 ))}
             </div>
@@ -55,7 +59,7 @@ export default function Home({news, lastMembers, leadership}) {
             <div className="grid max-w-6xl grid-cols-3 gap-3 px-2 py-6 mx-auto mt-6">
               {lastMembers &&
                 lastMembers.map((n) => (
-                  <div className="p-3 text-4xl bg-gray-100 shadow-md ">
+                  <div key={n._id} className="p-3 text-4xl bg-gray-100 shadow-md ">
                     <h3 className="font-sans text-3xl font-bold">{n.title}</h3>
                     <p className="mt-2 text-xl">{n.text}</p>
                   </div>
@@ -71,7 +75,7 @@ export default function Home({news, lastMembers, leadership}) {
             <div className="grid max-w-6xl grid-cols-3 gap-3 px-2 py-6 mx-auto mt-6">
               {leadership &&
                 leadership.map((n) => (
-                  <div className="p-3 text-4xl bg-gray-100 shadow-md ">
+                  <div key={n._id} className="p-3 text-4xl bg-gray-100 shadow-md ">
                     <h3 className="font-sans text-3xl font-bold">{n.title}</h3>
                     <p className="mt-2 text-xl">{n.text}</p>
                   </div>
@@ -85,15 +89,12 @@ export default function Home({news, lastMembers, leadership}) {
 }
 
 export async function getStaticProps(ctx) {
-  const news = await client.fetch(` *[_type == "post"] `)
-  const lastMembers = await client.fetch(` *[_type == "activeForce"] `)
-  const leadership = await client.fetch(` *[_type == "leadership"] `)
-
+  const {news, lastMembers, lastLeaders} = await getClient(false).fetch(indexQuery);
   return {
       props: {
           news,
           lastMembers,
-          leadership
+          leadership: lastLeaders
       },
   };
 }
