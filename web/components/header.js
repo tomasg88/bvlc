@@ -33,7 +33,6 @@ export default function Header() {
       </div>
       <nav className="flex items-center justify-center bg-gray-100 border-t border-gray-500">
         <HeaderLink url="/" title="Inicio" />
-        <HeaderLink url="/servicios" title="Servicios" />
         <HeaderLink url="/noticias" title="Noticias" />
         <HeaderLink url="/cuerpo-activo" title="Cuerpo Activo" />
         <HeaderLink url="/comision-directiva" title="Comisión Directiva" />
