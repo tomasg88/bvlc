@@ -5,7 +5,7 @@ export default function Meta() {
     <Head>
       <meta
         name="description"
-        content={`A statically generated blog example using Next.js and Sanity.io.`}
+        content={`Sitio web para los Bomberos Voluntarios de Luján de Cuyo, Mendoza`}
       />
     </Head>
   );
