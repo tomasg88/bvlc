@@ -7,6 +7,7 @@ export default {
       name: "title",
       type: "string",
       title: "Nombre y apellido",
+      validation: Rule => Rule.required(),
     },
 
     // Para rango (rank)
@@ -19,6 +20,12 @@ export default {
       options: {
         hotspot: true,
       },
+    },
+    {
+      name: "position",
+      title: "Cargo",
+      type: "string",
+      validation: Rule => Rule.required()
     },
   ],
   preview: {

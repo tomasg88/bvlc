@@ -17,7 +17,7 @@ export default function News({ list }) {
             list.map((n) => (
               <div key={n._id} className="p-3 text-2xl text-center">
                 <h3 className="font-sans font-bold">{n.title}</h3>
-                <p className="mt-2">{n.text}</p>
+                <p className="mt-2">{n.position}</p>
               </div>
             ))}
         </div>
