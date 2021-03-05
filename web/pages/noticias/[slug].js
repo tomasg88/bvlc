@@ -4,7 +4,7 @@ import { postQuery, postSlugsQuery } from '../../lib/queries'
 
 export default function Article(props) {
   console.log("🚀 ~ file: [slug].js ~ line 7 ~ Article ~ props", props)
-  const {article, moreArticles} = props.data;
+  const {article = {}, moreArticles} = props.data;
 
   return (
     <Layout>
