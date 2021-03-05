@@ -8,13 +8,13 @@ export default function HeaderLink({ url, title }) {
   const router = useRouter();
   const isActive = useCallback(
     () => {
-      return router.route === url;
+      return router.route === url? activeClassStyle : '';
     },
     [url],
   )
   return (
     <Link href={url}>
-      <a className={(isActive(url) && activeClassStyle) || ''}>
+      <a className={isActive(url)}>
         {title}
       </a>
     </Link>
