@@ -8,7 +8,9 @@
         "start": "next start"
     },
     "dependencies": {
+        "@sanity/block-content-to-react": "^2.0.7",
         "@sanity/client": "^2.2.6",
+        "date-fns": "^2.19.0",
         "next": "10.0.7",
         "next-sanity": "^0.1.10",
         "react": "next",
