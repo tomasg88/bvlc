@@ -1,0 +1,22 @@
+import Link from 'next/link'
+import { useRouter } from 'next/router';
+import { useCallback } from 'react';
+
+const activeClassStyle = "text-white bg-red-500";
+
+export default function HeaderLink({ url, title }) {
+  const router = useRouter();
+  const isActive = useCallback(
+    () => {
+      return router.route === url;
+    },
+    [url],
+  )
+  return (
+    <Link href={url}>
+      <a className={(isActive(url) && activeClassStyle) || ''}>
+        {title}
+      </a>
+    </Link>
+  )
+}

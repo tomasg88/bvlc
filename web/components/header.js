@@ -1,20 +1,9 @@
 import Image from "next/image";
-import Link from "next/link";
-import { useRouter } from "next/router";
-import { useCallback } from "react";
 import { AiOutlineFacebook, AiOutlineInstagram } from "react-icons/ai";
-
-const activeClassStyle = "text-white bg-red-500";
+import HeaderLink from "./headerLink";
 
 export default function Header() {
-  const router = useRouter();
-  // Functions returns true for active page
-  const isActive = useCallback(
-    (url) => {
-      return router.pathname.indexOf(url) > -1;
-    },
-    [router.pathname],
-  )
+
   return (
     <header className="flex flex-col w-full mx-auto bg-gray-100 border-b-2 border-red-400 shadow-2xl">
       <div className="w-full py-2 text-white bg-red-700 shadow-xl">
@@ -43,36 +32,12 @@ export default function Header() {
         </a>
       </div>
       <nav className="flex items-center justify-center bg-gray-100 border-t border-gray-500">
-        <Link href="/">
-          <a>
-            Inicio
-          </a>
-        </Link>
-        <Link href="/servicios">
-          <a className={(isActive("/servicios") && activeClassStyle) || ''}>
-            Servicios
-          </a>
-        </Link>
-        <Link href="/noticias">
-          <a className={(isActive("/noticias") && activeClassStyle) || ''}>
-            Noticias
-          </a>
-        </Link>
-        <Link href="/cuerpo-activo">
-          <a className={(isActive("/cuerpo-activo") && activeClassStyle) || ''}>
-            Cuerpo activo
-          </a>
-        </Link>
-        <Link href="/comision-directiva">
-          <a className={(isActive("/comision-directiva") && activeClassStyle) || ''}>
-            Comisión directiva
-          </a>
-        </Link>
-        <Link href="/contacto">
-          <a className={(isActive("/contacto") && activeClassStyle) || ''}>
-            Contacto
-          </a>
-        </Link>
+        <HeaderLink url="/" title="Inicio" />
+        <HeaderLink url="/servicios" title="Servicios" />
+        <HeaderLink url="/noticias" title="Noticias" />
+        <HeaderLink url="/cuerpo-activo" title="Cuerpo Activo" />
+        <HeaderLink url="/comision-directiva" title="Comisión Directiva" />
+        <HeaderLink url="/contacto" title="Contacto" />
       </nav>
     </header>
   );
