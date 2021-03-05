@@ -4,7 +4,7 @@ import BackgroundImage from "../components/backgroundImage";
 import { getClient } from "../lib/sanity.server";
 import { leadershipQuery } from "../lib/queries";
 
-export default function News({ list }) {
+export default function ComisionDirectiva({ list }) {
   return (
     <Layout>
       <div>

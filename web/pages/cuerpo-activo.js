@@ -5,7 +5,7 @@ import { activeForceQuery } from "../lib/queries";
 import { getClient } from "../lib/sanity.server";
 
 
-export default function News({ list }) {
+export default function CuerpoActivo({ list }) {
   return (
     <Layout>
       <div>
