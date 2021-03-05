@@ -25,6 +25,7 @@ export default function News({list}) {
                 <Link href={router.pathname +'/'+ n.slug.current}>
                   <a>
                     <h3 className="font-sans text-3xl font-bold">{n.title}</h3>
+                    <p className="mt-2 text-sm">{n.excerpt}</p>
                   </a>
                 </Link>
               </div>
