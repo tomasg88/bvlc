@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import { slide as Menu } from "react-burger-menu"
-import Navigation from "../components/Navigation"
+import Navigation from "../components/navigation"
 
 class Offcanvas extends Component {
   constructor() {
