@@ -52,7 +52,13 @@ body {
 }
 
 header nav a {
-  @apply px-3 py-2 pb-1 font-sans text-lg font-bold uppercase border-b-2 border-transparent;
+  @apply px-3 py-2 pb-1 font-sans text-sm font-bold uppercase border-b-2 border-transparent;
+}
+
+@screen lg {
+  header nav a {
+    @apply text-lg;
+  }
 }
 
 header nav a:hover {
