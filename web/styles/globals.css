@@ -27,14 +27,15 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1;
+  z-index: 500;
+  @apply bg-white border-b-2 border-red-400;
 }
 .headroom--unfixed {
   position: relative;
   transform: translateY(0);
 }
 .headroom--scrolled {
-  transition: transform 200ms ease-in-out;
+  transition: transform 700ms ease-in-out;
 }
 .headroom--unpinned {
   position: fixed;
