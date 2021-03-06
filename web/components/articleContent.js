@@ -12,7 +12,7 @@ export default function ArticleContent({ title, mainImage, dateString, body }) {
         <div className="relative z-10 flex flex-col items-center justify-center w-full max-w-3xl font-sans text-6xl font-light">
           <h1>{title}</h1>
           <div className="mt-6 text-lg">
-            <time dateTime={dateString}>{format(date, "LLLL	d, yyyy")}</time>
+            <time dateTime={dateString}>{format(date, "LLLL	d, yyyy" )}</time>
           </div>
         </div>
         <div className="absolute inset-0 z-0 opacity-40">

@@ -1,7 +1,7 @@
 import Image from "next/image"
 import { AiOutlineFacebook, AiOutlineInstagram } from "react-icons/ai"
 import HeaderLink from "./headerLink"
-import Link from "next/link"
+import Link from "next/link"  
 import Headroom from "react-headroom"
 export default function Header() {
   return (
@@ -16,12 +16,12 @@ export default function Header() {
                 width={80}
                 height={100}
               />
-              <span className="ml-3 text-2xl text-gray-900 uppercase">
+              <span className="ml-3 text-base text-gray-900 uppercase md:text-2xl">
                 Bomberos Voluntarios <br /> de Luján de Cuyo
               </span>
             </a>
           </Link>
-          <div className="flex items-end justify-center pb-3">
+          <div className="items-end justify-center hidden pb-3 md:flex">
             <nav className="flex items-center justify-end">
               <HeaderLink url="/noticias" title="Noticias" />
               <HeaderLink url="/cuerpo-activo" title="Cuerpo Activo" />

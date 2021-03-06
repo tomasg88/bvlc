@@ -9,11 +9,11 @@ import Link from "next/link"
 
 export default function InfoRows() {
   return (
-    <div className="relative py-40 overflow-hidden transition-all duration-1000 transform bg-gray-900 border-t-4 border-red-600 hover:bg-gray-800">
+    <div className="relative px-6 py-40 overflow-hidden transition-all duration-1000 transform bg-gray-900 border-t-4 border-red-600 hover:bg-gray-800">
       <div className="relative z-10 flex flex-col items-center justify-center max-w-6xl py-12 mx-auto font-sans text-center ">
         <h3 className="text-6xl font-light text-white">Categorias</h3>
       </div>
-      <div className="relative z-10 grid max-w-6xl grid-cols-3 mx-auto gap-9">
+      <div className="relative z-10 grid max-w-6xl mx-auto md:grid-cols-3 gap-9">
         <div className="flex flex-col items-center justify-center p-6 text-center bg-white border-2 border-red-600 shadow-2xl">
           <FaFireExtinguisher className="mb-6 text-6xl opacity-50" />
           <h3 className="mb-3 text-2xl font-bold text-gray-800">
@@ -51,7 +51,7 @@ export default function InfoRows() {
           </Link>
         </div>
       </div>
-      <div className="fixed inset-0 z-0 bg-fixed bg-no-repeat bg-cover opacity-50" style={{backgroundImage: "url(https://scontent.faep8-1.fna.fbcdn.net/v/t1.0-9/38462453_2117591731822746_8157056370223349760_n.jpg?_nc_cat=106&ccb=1-3&_nc_sid=8bfeb9&_nc_ohc=7AV-Wmrbrz8AX9UJzqE&_nc_oc=AQlrgUcY2c1lvt75N_lui9PpapK8AhSsnXvbnOqiJob2l1TvDXBBHU6WVfRf2p-N8cU&_nc_ht=scontent.faep8-1.fna&oh=c13755abaab5904142fe79d83f85d3e4&oe=606945C9)"}}>
+      <div className="fixed inset-0 z-0 hidden bg-fixed bg-no-repeat bg-cover opacity-50 md:block" style={{backgroundImage: "url(https://scontent.faep8-1.fna.fbcdn.net/v/t1.0-9/38462453_2117591731822746_8157056370223349760_n.jpg?_nc_cat=106&ccb=1-3&_nc_sid=8bfeb9&_nc_ohc=7AV-Wmrbrz8AX9UJzqE&_nc_oc=AQlrgUcY2c1lvt75N_lui9PpapK8AhSsnXvbnOqiJob2l1TvDXBBHU6WVfRf2p-N8cU&_nc_ht=scontent.faep8-1.fna&oh=c13755abaab5904142fe79d83f85d3e4&oe=606945C9)"}}>
        
       </div>
     </div>

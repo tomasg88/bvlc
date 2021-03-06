@@ -33,9 +33,9 @@ export default function Article(props) {
             />
           </article>
         )}
-        <div className="flex flex-col w-full max-w-xl py-6 mx-auto bg-white">
+        <div className="flex flex-col w-full max-w-xl px-4 py-6 mx-auto bg-white">
           <h3 className="font-sans text-2xl">Últimas noticias</h3>
-          <div className="grid grid-cols-3 gap-2">
+          <div className="grid gap-2 md:grid-cols-3">
             {moreArticles &&
               moreArticles.length > 0 &&
               moreArticles.map((ma) => (

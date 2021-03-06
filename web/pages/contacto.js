@@ -13,8 +13,8 @@ export default function Contact(props) {
         </Head>
         <div className="relative flex items-start justify-center w-full min-h-screen overflow-hidden text-left text-gray-800 bg-gray-900 ">
           <div className="relative z-50 max-w-4xl px-12 py-12 mx-auto mt-12 bg-white shadow-2xl">
-            <h1 className="relative z-10 mb-6 font-sans text-6xl font-light ">
-              Contacto <small className="text-lg font-bold">24hs. / 365 días</small>
+            <h1 className="relative z-10 flex flex-col mb-6 font-sans text-6xl font-light md:flex-row ">
+              Contacto <small className="text-lg font-bold opacity-80">24hs. / 365 días</small>
             </h1>
             <p className="my-3 text-2xl font-light">
               Institución bomberil abocada desde 1968 a salvar vidas y bienes de la

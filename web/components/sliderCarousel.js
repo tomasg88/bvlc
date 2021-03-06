@@ -1,4 +1,4 @@
-import Fade from "react-reveal/Fade"
+import Slide from "react-reveal/Slide"
 import makeCarousel from "react-reveal/makeCarousel"
 import Link from "next/link"
 
@@ -11,15 +11,15 @@ export default function SliderCarousel() {
   const CarouselUI = ({ position, total, handleClick, children }) => (
     <div className="relative w-full h-full mb-0 overflow-hidden border-b border-red-400">
       <div
-        className="absolute left-0 z-50 items-center justify-center hidden w-12 h-12 text-5xl text-center text-white cursor-pointer hover:opacity-90 md:flex top-48"
+        className="absolute left-0 z-50 items-center justify-center hidden w-12 h-12 text-5xl text-center text-white cursor-pointer hover:opacity-90 md:flex top-60"
         onClick={handleClick}
         data-position={position - 1}
       >
         <AiOutlineArrowLeft />
       </div>
       <div
-        className="absolute right-0 z-50 items-center justify-center hidden w-12 h-12 text-5xl text-center text-white cursor-pointer hover:opacity-90 md:flex top-48"
-        right
+        className="absolute right-0 z-50 items-center justify-center hidden w-12 h-12 text-5xl text-center text-white cursor-pointer hover:opacity-90 md:flex top-60"
+        right="true"
         onClick={handleClick}
         data-position={position + 1}
       >
@@ -42,8 +42,8 @@ export default function SliderCarousel() {
   )
   const Carousel = makeCarousel(CarouselUI)
   return (
-    <div className="relative flex flex-col items-center justify-center py-40 overflow-hidden text-center text-white bg-gray-700">
-      <div className="relative z-10 max-w-2xl mx-auto text-5xl font-extrabold ">
+    <div className="relative flex flex-col items-center justify-center py-48 overflow-hidden text-center text-white bg-gray-700">
+      <div className="relative z-10 max-w-xl mx-auto text-6xl font-light ">
         Al servicio de la comunidad de Luján de Cuyo
       </div>
       <Link href="/comision-directiva">
@@ -53,7 +53,7 @@ export default function SliderCarousel() {
       </Link>
       <div className="absolute inset-0 z-0">
         <Carousel defaultWait={4000} maxTurns={99} /*wait for 1000 milliseconds*/>
-          <Fade>
+          <Slide right>
             <div>
               <p className="absolute top-0 w-full mt-6 font-bold text-center uppercase">Equipamiento</p>
               <img
@@ -61,8 +61,8 @@ export default function SliderCarousel() {
                 src="https://scontent.faep8-1.fna.fbcdn.net/v/t1.0-9/149283800_2826697110912201_6199177887266118548_o.jpg?_nc_cat=101&ccb=1-3&_nc_sid=730e14&_nc_ohc=D5mUIWXF_2oAX_7ZVM8&_nc_ht=scontent.faep8-1.fna&oh=76a7f5c1da87f3bc8c14caaae7504058&oe=606864F7"
               />
             </div>
-          </Fade>
-          <Fade>
+          </Slide>
+          <Slide right>
             <div>
               <p className="absolute top-0 w-full mt-6 font-bold text-center uppercase">cuerpo activo</p>
               <img
@@ -70,8 +70,8 @@ export default function SliderCarousel() {
                 src="https://scontent.faep8-2.fna.fbcdn.net/v/t1.0-9/145919140_2818111668437412_458251714749266980_o.jpg?_nc_cat=100&ccb=1-3&_nc_sid=e3f864&_nc_ohc=_Uh04GCrRwIAX9lA8eJ&_nc_ht=scontent.faep8-2.fna&oh=61058e52c7a6fb69343074be16bcb93f&oe=606826B9"
               />
             </div>
-          </Fade>
-          <Fade>
+          </Slide>
+          <Slide right>
             <div>
               <p className="absolute top-0 w-full mt-6 font-bold text-center uppercase">comunidad</p>
               <img
@@ -79,7 +79,7 @@ export default function SliderCarousel() {
                 src="https://scontent.faep8-1.fna.fbcdn.net/v/t1.0-9/139424359_2807504019498177_8774613192109568254_o.jpg?_nc_cat=106&ccb=1-3&_nc_sid=730e14&_nc_ohc=aqeakTz2-RYAX8AFIL5&_nc_ht=scontent.faep8-1.fna&oh=8391f0bae1e4cf33d831323765dcc9d8&oe=60675283"
               />
             </div>
-          </Fade>
+          </Slide>
         </Carousel>
       </div>
     </div>

@@ -17,7 +17,7 @@ export default function News({ list }) {
           <BackgroundImage image="https://images.unsplash.com/photo-1522578755536-1e6830124399?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=750&q=80" />
         </div>
 
-        <div className="grid max-w-6xl grid-cols-3 gap-3 p-2 mx-auto mt-12 ">
+        <div className="grid max-w-6xl gap-3 p-2 mx-auto mt-12 md:grid-cols-3 ">
           {list &&
             list.map((n) => (
               <div
