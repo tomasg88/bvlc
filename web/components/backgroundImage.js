@@ -4,6 +4,7 @@ export default function BackgroundImage(props) {
       <img
         className="object-cover w-full h-screen"
         src={props.image}
+        title={props.title}
       />
     </div>
   );

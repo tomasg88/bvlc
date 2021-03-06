@@ -1,43 +1,48 @@
-import Image from "next/image";
-import { AiOutlineFacebook, AiOutlineInstagram } from "react-icons/ai";
-import HeaderLink from "./headerLink";
+import Image from "next/image"
+import { AiOutlineFacebook, AiOutlineInstagram } from "react-icons/ai"
+import HeaderLink from "./headerLink"
+import Link from "next/link"
 
 export default function Header() {
-
   return (
-    <header className="flex flex-col w-full mx-auto bg-gray-100 border-b-2 border-red-400 shadow-2xl">
-      <div className="w-full py-2 text-white bg-red-700 shadow-xl">
-        <div className="flex items-center justify-between max-w-6xl mx-auto">
-          <b>
-            info@bomberoslujanmza.com.ar
-          </b>
-          <div className="flex items-center text-2xl">
-            <div className="mr-3 text-base">0261-498-0999</div>
-            <AiOutlineFacebook className="mr-3" />
-            <AiOutlineInstagram />
-          </div>
+    <header className="relative z-50 flex flex-col w-full px-3 mx-auto bg-gray-100 border-b-2 border-red-400 shadow-2xl">
+      <div className="flex justify-between">
+        <Link href="/">
+          <a className="flex items-center justify-center transform translate-y-4">
+            <Image
+              src="/logo-bomberos-cuyo.png"
+              alt="Bomberos Voluntarios de Luján de Cuyo"
+              width={80}
+              height={100}
+            />
+            <span className="ml-3 text-2xl text-gray-900 uppercase">
+              Bomberos Voluntarios <br /> de Luján de Cuyo
+            </span>
+          </a>
+        </Link>
+        <div className="flex items-end justify-center pb-3">
+          <nav className="flex items-center justify-end">
+            <HeaderLink url="/noticias" title="Noticias" />
+            <HeaderLink url="/cuerpo-activo" title="Cuerpo Activo" />
+            <HeaderLink url="/comision-directiva" title="Comisión Directiva" />
+            <HeaderLink url="/contacto" title="Contacto" />
+            <a
+              target="_blank"
+              className="ml-6 text-3xl"
+              href="https://www.facebook.com/Bomberos-Voluntarios-Luj%C3%A1n-De-Cuyo-Oficial-1530083307240261/about/?ref=page_internal"
+            >
+              <AiOutlineFacebook />
+            </a>
+            <a
+              target="_blank"
+              className="text-3xl"
+              href="https://www.instagram.com/bomberoslujandecuyooficial/"
+            >
+              <AiOutlineInstagram />
+            </a>
+          </nav>
         </div>
       </div>
-      <div>
-        <a className="flex flex-col items-center justify-center font-sans text-xl font-bold transform -translate-y-7">
-          <Image
-            src="/logo-bomberos-cuyo.png"
-            alt="Picture of the author"
-            width={100}
-            height={126}
-          />
-          <span className="text-lg font-bold text-red-500 uppercase">
-            Bomberos Voluntarios de Luján de Cuyo
-          </span>
-        </a>
-      </div>
-      <nav className="flex items-center justify-center bg-gray-100 border-t border-gray-500">
-        <HeaderLink url="/" title="Inicio" />
-        <HeaderLink url="/noticias" title="Noticias" />
-        <HeaderLink url="/cuerpo-activo" title="Cuerpo Activo" />
-        <HeaderLink url="/comision-directiva" title="Comisión Directiva" />
-        <HeaderLink url="/contacto" title="Contacto" />
-      </nav>
     </header>
-  );
+  )
 }

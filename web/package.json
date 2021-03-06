@@ -14,9 +14,11 @@
         "next": "10.0.7",
         "next-sanity": "^0.1.10",
         "react": "next",
+        "react-anchor-link-smooth-scroll": "^1.0.12",
         "react-dom": "next",
         "react-headroom": "^3.1.0",
-        "react-icons": "^4.2.0"
+        "react-icons": "^4.2.0",
+        "react-reveal": "^1.2.2"
     },
     "devDependencies": {
         "autoprefixer": "^10.2.4",

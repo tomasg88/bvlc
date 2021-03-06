@@ -51,11 +51,11 @@ body {
 }
 
 header nav a {
-  @apply px-3 py-2 pb-1 font-sans text-lg font-bold uppercase;
+  @apply px-3 py-2 pb-1 font-sans text-lg font-bold uppercase border-b-2 border-transparent;
 }
 
 header nav a:hover {
-  @apply underline;
+  @apply border-gray-800;
 }
 
 .btn {

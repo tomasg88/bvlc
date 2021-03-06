@@ -2,13 +2,13 @@ import Link from 'next/link'
 import { useRouter } from 'next/router';
 import { useCallback } from 'react';
 
-const activeClassStyle = "text-white bg-red-500";
+const activeClassStyle = "text-red-500 border-b-4  border-red-500";
 
 export default function HeaderLink({ url, title }) {
   const router = useRouter();
   const isActive = useCallback(
     () => {
-      return router.route === url? activeClassStyle : '';
+      return router.route === url? activeClassStyle : ' border-b-4 border-transparent';
     },
     [url],
   )

@@ -1,38 +1,52 @@
-import React from "react";
-import BackgroundImage from "../components/backgroundImage";
-import Layout from "../components/layout";
-import { activeForceQuery } from "../lib/queries";
-import { getClient } from "../lib/sanity.server";
-
+import React from "react"
+import BackgroundImage from "../components/backgroundImage"
+import Layout from "../components/layout"
+import { activeForceQuery } from "../lib/queries"
+import { getClient } from "../lib/sanity.server"
+import AnchorLink from "react-anchor-link-smooth-scroll"
 
 export default function CuerpoActivo({ list }) {
   return (
     <Layout>
-      <div>
+      <div className="min-h-screen bg-white">
         <div className="relative py-64 overflow-hidden text-center text-white bg-gray-800 ">
-          <h1 className="relative z-10 font-sans text-6xl font-bold">Cuerpo Activo</h1>
-          <BackgroundImage image="https://images.unsplash.com/photo-1596644820103-8be239a56110?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"/>
+          <h1 className="relative z-10 mb-6 font-sans text-2xl uppercase font-bolder">
+            Cuerpo Activo
+          </h1>
+          <h1 className="relative z-10 font-sans text-6xl font-light">
+            "Saber para servir"
+          </h1>
+          <AnchorLink
+            href="#integrantes"
+            className="relative z-10 inline-block px-6 mx-auto mt-6 cursor-pointer btn"
+          >
+            Ver integrantes
+          </AnchorLink>
+          <BackgroundImage image="https://scontent.faep8-2.fna.fbcdn.net/v/t1.0-9/145919140_2818111668437412_458251714749266980_o.jpg?_nc_cat=100&ccb=1-3&_nc_sid=e3f864&_nc_ohc=_Uh04GCrRwIAX9lA8eJ&_nc_ht=scontent.faep8-2.fna&oh=61058e52c7a6fb69343074be16bcb93f&oe=606826B9" />
         </div>
-        <div className="grid max-w-6xl grid-cols-3 gap-3 p-2 mx-auto mt-6">
-          {list &&
-            list.map((n) => (
-              <div key={n._id} className="p-3 text-4xl bg-white shadow-2xl">
-                <h3 className="font-sans text-3xl font-bold">{n.title}</h3>
-                <p className="mt-2 text-xl">{n.rank}</p>
-              </div>
-            ))}
+        <div id="integrantes" className="bg-white">
+          <h2 className="max-w-2xl px-5 pt-12 mx-auto text-6xl font-light text-left text-gray-400">Integrantes</h2>
+          <div className="grid max-w-2xl min-h-screen grid-cols-1 gap-3 p-2 mx-auto mt-6 bg-white ">
+            {list &&
+              list.map((n) => (
+                <div key={n._id} className="p-3 text-4xl border-b border-gray-200">
+                  <p className="my-2 text-sm font-bold uppercase">{n.rank}</p>
+                  <h3 className="font-sans text-3xl font-bold">{n.title}</h3>
+                </div>
+              ))}
+          </div>
         </div>
       </div>
     </Layout>
-  );
+  )
 }
 
-export async function getStaticProps(ctx) { 
-  const list = await getClient(false).fetch(activeForceQuery);
+export async function getStaticProps(ctx) {
+  const list = await getClient(false).fetch(activeForceQuery)
 
   return {
     props: {
-      list
+      list,
     },
-  };
+  }
 }

@@ -5,10 +5,10 @@ export default function CoverImage({ title, slug, image: source }) {
   const image = source ? (
     <img
       width={2000}
-      height={1000}
+      height={100}
       alt={`Cover Image for ${title}`}
       className={'shadow-small hover:shadow-medium transition-shadow duration-200'}
-      src={urlForImage(source).height(1000).width(2000).url()}
+      src={urlForImage(source).height(1300).width(2000).url()}
     />
   ) : (
     <div style={{ paddingTop: '50%', backgroundColor: '#ddd' }} />
