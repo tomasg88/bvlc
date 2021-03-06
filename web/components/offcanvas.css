@@ -1,154 +1,187 @@
 /* purgecss start ignore */
 .bm-burger-button {
-    position: fixed;
-    width: 26px;
-    height: 20px;
-    right: 15px;
-    display: block;
-    top: 26px;
-    opacity: 1;
-    transform: scale(1);
+  position: fixed;
+  width: 26px;
+  height: 20px;
+  right: 15px;
+  display: block;
+  top: 26px;
+  opacity: 1;
+  transform: scale(1);
+  transition: all 0.5s;
+}
+
+.bm-burger-button button {
+  width: 90px!important;
+  right: 0!important;
+  left: auto!important;
+}
+
+
+.logo {
+  left: -5px !important;
+  top: -12px !important;
+  -webkit-animation: spin 11s linear infinite;
+  -moz-animation: spin 11s linear infinite;
+  animation: spin 11s linear infinite;
+}
+
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@screen md {
+  .bm-burger-button {
+    position: absolute;
+    width: 36px;
+    height: 30px;
+    display: none;
+    left: 15px;
+    top: 15px;
+    opacity: 0.5;
     transition: all 0.5s;
   }
-  
+
   .logo {
-    left: -5px !important;
-    top: -12px !important;
-    -webkit-animation: spin 11s linear infinite;
-    -moz-animation: spin 11s linear infinite;
-    animation: spin 11s linear infinite;
+    display: block;
+    position: relative;
+    top: -8px !important;
+    left: 10px !important;
   }
-  
-  @-moz-keyframes spin {
-    100% {
-      -moz-transform: rotate(360deg);
-    }
-  }
-  @-webkit-keyframes spin {
-    100% {
-      -webkit-transform: rotate(360deg);
-    }
-  }
-  @keyframes spin {
-    100% {
-      -webkit-transform: rotate(360deg);
-      transform: rotate(360deg);
-    }
-  }
-  
-  @screen md {
-    .bm-burger-button {
-      position: absolute;
-      width: 36px;
-      height: 30px;
-      display: none;
-      left: 15px;
-      top: 15px;
-      opacity: 0.5;
-      transition: all 0.5s;
-    }
-  
-    .logo {
-      display: block;
-      position: relative;
-      top: -8px !important;
-      left: 10px !important;
-    }
-  }
-  
-  .bm-burger-button:hover {
-    opacity: 1;
-  }
-  
-  /* Color/shape of burger icon bars */
-  .bm-burger-bars {
-    @apply bg-red-500;
-    height: 3px !important;
-  }
-  
-  /* Color/shape of burger icon bars on hover*/
-  .bm-burger-bars-hover {
-    @apply bg-red-200;
-    opacity: 1 !important;
-  }
-  
-  /* Position and sizing of clickable cross button */
-  .bm-cross-button {
-    height: 24px;
-    width: 24px;
-    z-index: 99;
-  }
-  
-  /* Color/shape of close button cross */
-  .bm-cross {
-    background: #fff;
-  }
-  
-  /*
+}
+
+.bm-burger-button:hover {
+  opacity: 1;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  @apply bg-red-500;
+  height: 3px !important;
+}
+
+/* Color/shape of burger icon bars on hover*/
+.bm-burger-bars-hover {
+  @apply bg-red-200;
+  opacity: 1 !important;
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+  z-index: 99;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+  background: #fff;
+}
+
+/*
   Sidebar wrapper styles
   Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
   */
-  .bm-menu-wrap {
-    position: fixed;
-    top: 0;
-    height: 100%;
-    padding: 0;
-  }
-  
-  /* General sidebar styles */
-  .bm-menu {
-    @apply bg-red-800 shadow-sm;
-    padding: 2.5em 1.5em 0;
-    font-size: 1.15em;
-  }
-  
-  body.blog .bm-menu {
-    @apply bg-red-700;
-  }
-  
-  body.project .bm-menu {
-    @apply bg-red-700;
-  }
-  
-  body.contact .bm-menu {
-    @apply bg-yellow-700;
-  }
-  
-  body.contact .bm-burger-bars {
-    @apply bg-red-800;
-  }
-  
-  /* Morph shape necessary with bubble or elastic */
-  .bm-morph-shape {
-    fill: #373a47;
-  }
-  
-  /* Wrapper for item list */
-  .bm-item-list {
-    color: #b8b7ad;
-    padding: 0.8em;
-  }
-  
-  /* Individual item */
-  .bm-item {
-    display: inline-block;
-  }
-  
-  /* Styling of overlay */
+.bm-menu-wrap {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  padding: 0;
+}
+
+/* General sidebar styles */
+.bm-menu {
+  @apply bg-red-800 shadow-sm;
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+}
+
+body.blog .bm-menu {
+  @apply bg-red-700;
+}
+
+body.project .bm-menu {
+  @apply bg-red-700;
+}
+
+body.contact .bm-menu {
+  @apply bg-yellow-700;
+}
+
+body.contact .bm-burger-bars {
+  @apply bg-red-800;
+}
+
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+  fill: #373a47;
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+  color: #b8b7ad;
+  padding: 0.8em;
+}
+
+/* Individual item */
+.bm-item {
+  display: inline-block;
+}
+
+/* Styling of overlay */
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.9);
+  top: 0;
+}
+
+
+.bm-overlay+div:before {
+  right: 54px;
+  position: absolute;
+  content: "Men\FA";
+  font-weight: 700;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  @apply text-gray-900 uppercase;
+
+}
+.bm-overlay+div {
+  background: #fff;
+  padding: 0;
+  position: fixed;
+  right: 0;
+  width: 120px;
+  height: 50px;
+  top: 12px;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+@screen lg {
   .bm-overlay {
-    background: rgba(0, 0, 0, 0.9);
-    top: 0;
   }
-  
-  @screen lg {
-    .bm-overlay {
-    }
+}
+
+@screen sm {
+  .bm-burger-button span {
   }
-  
-  @screen sm {
-    .bm-burger-button span {
-    }
-    /*
+  /*
     .bm-burger-button button {
       height: 50px !important;
       background-size: 50px !important;
@@ -157,27 +190,26 @@
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='svg-icon' viewBox='0 0 20 20'%3E%3Cpath d='M17.969,10c0,1.707-0.5,3.366-1.446,4.802c-0.076,0.115-0.203,0.179-0.333,0.179c-0.075,0-0.151-0.022-0.219-0.065c-0.184-0.122-0.233-0.369-0.113-0.553c0.86-1.302,1.314-2.812,1.314-4.362s-0.454-3.058-1.314-4.363c-0.12-0.183-0.07-0.43,0.113-0.552c0.186-0.12,0.432-0.07,0.552,0.114C17.469,6.633,17.969,8.293,17.969,10 M15.938,10c0,1.165-0.305,2.319-0.88,3.339c-0.074,0.129-0.21,0.201-0.347,0.201c-0.068,0-0.134-0.016-0.197-0.052c-0.191-0.107-0.259-0.351-0.149-0.542c0.508-0.9,0.776-1.918,0.776-2.946c0-1.028-0.269-2.046-0.776-2.946c-0.109-0.191-0.042-0.434,0.149-0.542c0.193-0.109,0.436-0.042,0.544,0.149C15.634,7.681,15.938,8.834,15.938,10 M13.91,10c0,0.629-0.119,1.237-0.354,1.811c-0.063,0.153-0.211,0.247-0.368,0.247c-0.05,0-0.102-0.01-0.151-0.029c-0.203-0.084-0.301-0.317-0.217-0.521c0.194-0.476,0.294-0.984,0.294-1.508s-0.1-1.032-0.294-1.508c-0.084-0.203,0.014-0.437,0.217-0.52c0.203-0.084,0.437,0.014,0.52,0.217C13.791,8.763,13.91,9.373,13.91,10 M11.594,3.227v13.546c0,0.161-0.098,0.307-0.245,0.368c-0.05,0.021-0.102,0.03-0.153,0.03c-0.104,0-0.205-0.04-0.281-0.117l-3.669-3.668H2.43c-0.219,0-0.398-0.18-0.398-0.398V7.012c0-0.219,0.179-0.398,0.398-0.398h4.815l3.669-3.668c0.114-0.115,0.285-0.149,0.435-0.087C11.496,2.92,11.594,3.065,11.594,3.227 M7.012,7.41H2.828v5.18h4.184V7.41z M10.797,4.189L7.809,7.177v5.646l2.988,2.988V4.189z' fill='%23fff'%3E%3C/path%3E%3C/svg%3E") !important;
     }
     */
-  }
-  
+}
+
+.htco1iFrameHolder {
+  position: fixed;
+  top: 0;
+  z-index: 99;
+  left: 0;
+  overflow: hidden !important;
+  height: 152px;
+  background: rgb(40, 17, 54);
+}
+
+@screen sm {
   .htco1iFrameHolder {
-    position: fixed;
-    top: 0;
-    z-index: 99;
-    left: 0;
-    overflow: hidden !important;
-    height: 152px;
-    background: rgb(40, 17, 54);
+    display: none !important;
   }
-  
-  @screen sm {
-    .htco1iFrameHolder {
-      display: none !important;
-    }
-  }
-  
-  .htco1iFrameHolder .live-hour {
-    bottom: 10px;
-    left: 22px;
-  }
-  /* purgecss end ignore */
-  
+}
+
+.htco1iFrameHolder .live-hour {
+  bottom: 10px;
+  left: 22px;
+}
+/* purgecss end ignore */

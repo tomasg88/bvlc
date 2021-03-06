@@ -35,7 +35,7 @@ export default function Home({ news, lastMembers, leadership }) {
                 </a>
               </Link>
             </div>
-            <div className="grid max-w-6xl gap-3 px-2 py-6 pb-24 mx-auto mt-6 md:grid-cols-3">
+            <div className="grid max-w-6xl gap-3 px-2 py-6 pb-24 mx-auto mt-6 md:grid-cols-3 sm:grid-cols-2">
               {news &&
                 news.map((n) => (
                   <div
@@ -57,7 +57,7 @@ export default function Home({ news, lastMembers, leadership }) {
           </div>
           <InfoRows/>
 
-          <div className="pt-12 bg-white ">
+          <div className="hidden pt-12 bg-white md:block ">
             <Link href="/cuerpo-activo">
               <a className="block max-w-6xl pt-12 pb-6 mx-auto font-sans text-6xl font-bold text-red-500 hover:text-red-600">
                 Nuevos miembros
@@ -73,7 +73,7 @@ export default function Home({ news, lastMembers, leadership }) {
                 ))}
             </div>
           </div>
-          <div className="pt-12 bg-white ">
+          <div className="hidden pt-12 bg-white md:block ">
             <Link href="/comision-directiva">
               <a className="block max-w-6xl pt-12 pb-6 mx-auto font-sans text-6xl font-bold text-red-500 hover:text-red-600">
                 Comisión directiva

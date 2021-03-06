@@ -16,7 +16,7 @@ export default function Header() {
                 width={80}
                 height={100}
               />
-              <span className="ml-3 text-base text-gray-900 uppercase md:text-2xl">
+              <span className="ml-3 text-sm text-gray-900 uppercase md:text-2xl">
                 Bomberos Voluntarios <br /> de Luján de Cuyo
               </span>
             </a>
