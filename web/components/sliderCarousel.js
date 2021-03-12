@@ -1,11 +1,8 @@
-import Slide from "react-reveal/Slide"
-import makeCarousel from "react-reveal/makeCarousel"
-import Link from "next/link"
-
-import { BsNewspaper, BsPeopleFill } from "react-icons/bs"
-import { BiRadioCircle, BiRadioCircleMarked } from "react-icons/bi"
-import { FaFireExtinguisher } from "react-icons/fa"
 import { AiOutlineArrowRight, AiOutlineArrowLeft } from "react-icons/ai"
+import { BiRadioCircle, BiRadioCircleMarked } from "react-icons/bi"
+import makeCarousel from "react-reveal/makeCarousel"
+import Slide from "react-reveal/Slide"
+import Link from "next/link"
 
 export default function SliderCarousel() {
   const CarouselUI = ({ position, total, handleClick, children }) => (
@@ -42,7 +39,7 @@ export default function SliderCarousel() {
   )
   const Carousel = makeCarousel(CarouselUI)
   return (
-    <div className="relative flex flex-col items-center justify-center py-48 overflow-hidden text-center text-white bg-gray-700">
+    <div className="relative flex flex-col items-center justify-center py-48 overflow-hidden text-center text-white bg-gray-900">
       <div className="relative z-10 max-w-xl mx-auto text-6xl font-light ">
         Al servicio de la comunidad de Luján de Cuyo
       </div>

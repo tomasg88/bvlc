@@ -28,7 +28,7 @@ body {
   left: 0;
   right: 0;
   z-index: 500;
-  @apply bg-white border-b-2 border-red-400;
+  @apply bg-red-600 border-b-2 border-red-800;
 }
 .headroom--unfixed {
   position: relative;
@@ -52,17 +52,17 @@ body {
 }
 
 header nav a {
-  @apply px-3 py-2 pb-1 font-sans text-sm font-bold uppercase border-b-2 border-transparent;
+  @apply px-3 py-2 pb-1 font-sans text-sm font-bold uppercase border-b-4 border-transparent;
 }
 
 @screen lg {
   header nav a {
-    @apply text-lg;
+    @apply text-lg text-white;
   }
 }
 
 header nav a:hover {
-  @apply border-gray-800;
+  @apply border-gray-100;
 }
 
 .btn {

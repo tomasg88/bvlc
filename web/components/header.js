@@ -16,16 +16,15 @@ export default function Header() {
                 width={80}
                 height={100}
               />
-              <span className="ml-3 text-sm text-gray-900 uppercase md:text-2xl">
+              <span className="ml-3 text-sm text-gray-100 uppercase md:text-2xl">
                 Bomberos Voluntarios <br /> de Luján de Cuyo
               </span>
             </a>
           </Link>
-          <div className="items-end justify-center hidden pb-3 md:flex">
+          <div className="items-end justify-center hidden md:flex">
             <nav className="flex items-center justify-end">
               <HeaderLink url="/noticias" title="Noticias" />
-              <HeaderLink url="/cuerpo-activo" title="Cuerpo Activo" />
-              <HeaderLink url="/comision-directiva" title="Comisión Directiva" />
+              <HeaderLink url="/institucional" title="Institucional" />
               <HeaderLink url="/contacto" title="Contacto" />
               <a
                 target="_blank"

@@ -14,6 +14,21 @@ export default function News({ list }) {
       <div className="pb-24 bg-gray-200">
         <div className="relative py-32 overflow-hidden text-center text-white bg-gray-800 ">
           <h1 className="relative z-10 font-sans text-6xl font-light">Últimas noticias</h1>
+          <Link href="cuerpo-activo">
+            <a className="relative z-10 inline-block px-6 mx-auto mt-6 mr-3 cursor-pointer btn">
+              Contribuciones
+            </a>
+          </Link>
+          <Link href="cuerpo-activo">
+            <a className="relative z-10 inline-block px-6 mx-auto mt-6 mr-3 cursor-pointer btn">
+              Academia
+            </a>
+          </Link>
+          <Link href="cuerpo-activo">
+            <a className="relative z-10 inline-block px-6 mx-auto mt-6 mr-3 cursor-pointer btn">
+              Equipamiento
+            </a>
+          </Link>
           <BackgroundImage image="https://images.unsplash.com/photo-1522578755536-1e6830124399?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=750&q=80" />
         </div>
 
