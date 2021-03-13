@@ -27,10 +27,10 @@ export default function Home({ news, lastMembers, leadership }) {
         <main className="w-full ">
           <SliderCarousel/>
           <div className="pt-12 bg-gray-100">
-            <div className="flex flex-col items-center justify-between max-w-6xl pt-12 pb-6 mx-auto font-sans border-b-2 border-gray-400 md:flex-row">
-              <h3 className="text-6xl font-light text-center text-gray-400 md:text-left">Últimas noticias</h3>
+            <div className="flex flex-col items-center justify-between max-w-6xl pt-12 pb-6 mx-auto font-sans border-b-2 border-yellow-400 md:flex-row">
+              <h3 className="text-5xl font-light text-center text-gray-900 md:text-left">Últimas noticias</h3>
               <Link href="/noticias">
-                <a className="relative z-10 px-6 mt-6 btn ">
+                <a className="relative z-10 px-6 mt-3 btn ">
                   Ver todas las Noticias
                 </a>
               </Link>
