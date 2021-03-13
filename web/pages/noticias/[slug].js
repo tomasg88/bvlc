@@ -68,8 +68,9 @@ export async function getStaticProps({ params, preview = false }) {
 // Returns ALL dynamic pages based on content
 export async function getStaticPaths() {
   const paths = await sanityClient.fetch(postSlugsQuery)
+  console.log("🚀 ~ file: [slug].js ~ line 71 ~ getStaticPaths ~ paths", paths)
   return {
-    paths: paths.map((slug) => ({ params: { slug } })),
+    paths: paths.map((slug) => ({ params: { slug } })) || [],
     fallback: false,
   }
 }
