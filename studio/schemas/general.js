@@ -4,7 +4,7 @@ export default {
   title: "Datos generales",
   fields: [
     {
-      name: "key",
+      name: "title",
       type: "string",
       title: "Nombre del dato",
       validation: Rule => Rule.required(),
