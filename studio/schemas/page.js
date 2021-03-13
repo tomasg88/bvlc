@@ -8,6 +8,12 @@ export default {
         type: "string",
         title: "Título",
       },
+      {
+        name: 'body',
+        title: 'Contenido',
+        type: 'blockContent',
+        validation: Rule => Rule.required(),
+      },
     ],
   };
   
