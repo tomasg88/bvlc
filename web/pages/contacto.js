@@ -21,31 +21,31 @@ export default function Contact(props) {
               comunidad lujanina.
             </p>
             <div>
-              <div class="border-t border-red-400">
+              <div className="border-t border-red-400">
                 <dl>
-                  <div class="px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                    <dt class="text-base font-medium text-gray-500">Emergencias</dt>
-                    <dd class="mt-1 text-base text-gray-900 sm:mt-0 sm:col-span-2">
+                  <div className="px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                    <dt className="text-base font-medium text-gray-500">Emergencias</dt>
+                    <dd className="mt-1 text-base text-gray-900 sm:mt-0 sm:col-span-2">
                     0261 498-0999
                     </dd>
                   </div>
                 </dl>
               </div>
-              <div class="border-t border-red-400">
+              <div className="border-t border-red-400">
                 <dl>
-                  <div class="px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                    <dt class="text-base font-medium text-gray-500">Administrativo</dt>
-                    <dd class="mt-1 text-base text-gray-900 sm:mt-0 sm:col-span-2">
+                  <div className="px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                    <dt className="text-base font-medium text-gray-500">Administrativo</dt>
+                    <dd className="mt-1 text-base text-gray-900 sm:mt-0 sm:col-span-2">
                     0261 498-6341
                     </dd>
                   </div>
                 </dl>
               </div>
-              <div class="border-t border-red-400">
+              <div className="border-t border-red-400">
                 <dl>
-                  <div class="px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                    <dt class="text-base font-medium text-gray-500">Email</dt>
-                    <dd class="mt-1 text-base text-gray-900 sm:mt-0 sm:col-span-2">
+                  <div className="px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                    <dt className="text-base font-medium text-gray-500">Email</dt>
+                    <dd className="mt-1 text-base text-gray-900 sm:mt-0 sm:col-span-2">
                       info@bomberoslujanmza.com.ar
                     </dd>
                   </div>

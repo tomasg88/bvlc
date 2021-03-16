@@ -1,8 +1,6 @@
 import React from "react"
 import BackgroundImage from "../components/backgroundImage"
 import Layout from "../components/layout"
-//import { activeForceQuery } from "../lib/queries"
-//import { getClient } from "../lib/sanity.server"
 import { SRLWrapper } from "simple-react-lightbox"
 export default function Galeria({}) {
   const options = {

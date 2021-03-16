@@ -33,10 +33,9 @@ const Navigation = ({ closeMenu }) => (
   <nav className="flex flex-col w-full">
     {routes.map((route, i) => {
       return (
-        <Link href={route.slug}>
+        <Link href={route.slug} key={route.slug}>
           <a
             className="my-3 text-2xl font-light text-white border-b border-red-600 cursor-pointer hover:text-red-300"
-            key={i}
             onClick={closeMenu}
             alt={route.ariaLabel}
             title={route.ariaLabel}

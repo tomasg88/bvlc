@@ -5,9 +5,15 @@ import { urlForImage } from "../../lib/sanity"
 import Head from "next/head"
 import ArticleContent from "../../components/articleContent"
 import Link from "next/link"
+import { SRLWrapper } from "simple-react-lightbox"
 
 export default function Article(props) {
   const { article, moreArticles } = props.data
+  const options = {
+    settings: {
+      overlayColor: "rgb(255, 255, 255)",
+    },
+  }
   return (
     <Layout>
       <div className="flex flex-col mx-auto bg-white">
@@ -25,12 +31,14 @@ export default function Article(props) {
                   .url()}
               />
             </Head>
-            <ArticleContent
-              title={article.title}
-              mainImage={article.mainImage}
-              dateString={article.publishedAt}
-              body={article.body}
-            />
+            <SRLWrapper options={options}>
+              <ArticleContent
+                title={article.title}
+                mainImage={article.mainImage}
+                dateString={article.publishedAt}
+                body={article.body}
+              />
+            </SRLWrapper>
           </article>
         )}
         <div className="flex flex-col w-full max-w-xl px-4 py-6 mx-auto bg-white">

@@ -1,3 +1,11 @@
 .article p {
     @apply px-6 my-3 text-xl;
 }
+
+.article img {
+    @apply duration-100 cursor-pointer;
+}
+
+.article img:hover {
+    @apply opacity-90;
+}
