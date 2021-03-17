@@ -4,6 +4,7 @@ import Layout from "../components/layout"
 import { activeForceQuery } from "../lib/queries"
 import { getClient } from "../lib/sanity.server"
 import AnchorLink from "react-anchor-link-smooth-scroll"
+import Hero from "../components/hero"
 
 export default function CuerpoActivo({ list }) {
   return (
@@ -29,10 +30,7 @@ export default function CuerpoActivo({ list }) {
           <div className="grid max-w-2xl min-h-screen grid-cols-1 gap-3 p-2 mx-auto mt-6 bg-white ">
             {list &&
               list.map((n) => (
-                <div key={n._id} className="p-3 text-4xl border-b border-gray-200">
-                  <p className="my-2 text-sm font-bold uppercase">{n.rank}</p>
-                  <h3 className="font-sans text-3xl font-bold">{n.title}</h3>
-                </div>
+                <Hero key={n._id} name={n.title} description={n.rank} image={n.image} />
               ))}
           </div>
         </div>
