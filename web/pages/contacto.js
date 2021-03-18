@@ -61,24 +61,3 @@ export default function Contact(props) {
     </Layout>
   )
 }
-
-export async function getStaticProps(ctx) {
-  return {
-    props: {
-      news: [
-        {
-          title: "noticia1",
-          text: "prueba1",
-        },
-        {
-          title: "noticia2",
-          text: "prueba2",
-        },
-        {
-          title: "noticia3",
-          text: "prueba3",
-        },
-      ],
-    },
-  }
-}
