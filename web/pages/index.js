@@ -7,15 +7,8 @@ import Link from "next/link"
 import { getClient } from "../lib/sanity.server"
 import { indexQuery } from "../lib/queries"
 import CoverImage from "../components/coverImage"
-import Fade from "react-reveal/Fade"
-import makeCarousel from "react-reveal/makeCarousel"
-import { BsNewspaper, BsPeopleFill } from "react-icons/bs"
-import { BiRadioCircle, BiRadioCircleMarked } from "react-icons/bi"
-import { FaFireExtinguisher } from "react-icons/fa";
-import { AiOutlineArrowRight, AiOutlineArrowLeft } from "react-icons/ai"
 
 export default function Home({ news, lastMembers, leadership }) {
-  
 
   return (
     <Layout>
