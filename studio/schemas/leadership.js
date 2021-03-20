@@ -12,26 +12,38 @@ export default {
 
     // Para rango (rank)
     // https://www.sanity.io/docs/content-modelling
-
-    {
-      name: "image",
-      title: "Foto",
-      type: "image",
-      options: {
-        hotspot: true,
-      },
-    },
     {
       name: "position",
       title: "Cargo",
       type: "string",
-      validation: Rule => Rule.required()
+      validation: Rule => Rule.required(),
+      options: {
+        list: [
+          {title: 'Presidente', value: 'Presidente'},
+          {title: 'Vice Presidente', value: 'Vice Presidente'},
+          {title: 'Secretario', value: 'Secretario'},
+          {title: 'Tesorero', value: 'Tesorero'},
+          {title: 'Vocal Titular', value: 'Vocal Titular'},
+          {title: 'Vocal Suplente', value: 'Vocal Suplente'},
+          {title: 'Rev. de Ctas. Titular', value: 'Rev. de Ctas. Titular'},
+          {title: 'Rev. de Ctas. Suplente', value: 'Rev. de Ctas. Suplente'}
+        ]
+      }
+    },
+    {
+      name: "image",
+      title: "Foto",
+      type: "image",
+      description: 'Puede añadir una imagen de perfil para ser mostrada en la web',
+      options: {
+        hotspot: true,
+      },
     },
   ],
   preview: {
     select: {
       title: "title",
-      media: "image",
+      position: "string",
     },
   },
 };
