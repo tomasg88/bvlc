@@ -73,7 +73,7 @@ export default {
     },
     {
       name: "rrssUrl",
-      type: "string",
+      type: "url",
       title: "Link a Red social",
       validation: Rule => Rule.custom((thisField, context) => {
         if (context.document.type === 'Red Social' && context.document.rrss && !thisField) {
