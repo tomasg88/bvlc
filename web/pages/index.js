@@ -8,10 +8,10 @@ import { getClient } from "../lib/sanity.server"
 import { indexQuery } from "../lib/queries"
 import CoverImage from "../components/coverImage"
 
-export default function Home({ news, lastMembers, leadership, rrss }) {
+export default function Home({ news, lastMembers, leadership }) {
 
   return (
-    <Layout rrss={rrss} >
+    <Layout>
       <div className={styles.container}>
         <Head>
           <title>Bomberos Voluntarios de Luján de Cuyo</title>
