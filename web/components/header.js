@@ -29,7 +29,14 @@ export default function Header() {
             <div className="flex items-center justify-end w-full p-1 pl-6 pr-2 text-white border-b border-gray-50">
               <span className="font-sans font-bold uppercase"><small className="text-xs">Emergencias</small> (0261) 498-0999</span>
               {
-                rrss && rrss.map(rs => <RrssIcon key={rs._id} rrss={rs.rrss} url={rs.rrssUrl} /> )
+                rrss && rrss.map(rs =>( 
+                  <RrssIcon 
+                    className={"ml-3 text-3xl"} 
+                    key={rs._id} 
+                    rrss={rs.rrss} 
+                    url={rs.rrssUrl} 
+                  />
+                ) )
               }
             </div>
             <nav className="flex items-center justify-end mt-3">
