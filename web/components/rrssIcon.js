@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react'
 import { AiOutlineFacebook, AiOutlineInstagram, AiOutlineYoutube, AiOutlineTwitter } from "react-icons/ai"
 
-export default function RrssIcon({ rrss, url }) {
+export default function RrssIcon({ className, rrss, url }) {
   const getIconComponent = useCallback(
     () => {
       switch(rrss) {
@@ -20,7 +20,7 @@ export default function RrssIcon({ rrss, url }) {
   return (
     <a
       target="_blank"
-      className="ml-3 text-3xl"
+      className={className}
       href={ url }
     >
       { getIconComponent() }
