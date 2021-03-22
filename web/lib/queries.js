@@ -10,6 +10,20 @@ const postFields = `
   "author": author->{name, picture},
 `
 
+const generalFields = `
+  _id, title, type, value, rrss, rrssUrl
+`
+
+export const contactDataQuery = `
+{
+  "phones": *[_type == "general" && type == 'Telefono' ] { ${generalFields} },
+  "mails": *[_type == "general" && type == 'Email' ] { ${generalFields} },
+  "rrss": *[_type == "general" && type == 'Red Social' ] { ${generalFields} } 
+}
+`
+
+export const rrssQuery = `*[_type == "general" && type == 'Red Social' ] { ${generalFields} }`
+
 export const indexQuery = `
 {
   "news": *[_type == "post"] | order(date desc, _updatedAt desc) {
