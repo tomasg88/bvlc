@@ -2,8 +2,26 @@ import Head from "next/head"
 import styles from "../styles/Home.module.css"
 import Layout from "../components/layout"
 import BackgroundImage from "../components/backgroundImage"
+import { getClient } from "../lib/sanity.server"
+import { contactDataQuery } from "../lib/queries"
+import { Context } from "../components/context"
+import { useContext } from "react"
 
-export default function Contact(props) {
+const ContactItem = ({ title, value }) => (
+  <div className="border-t border-red-400">
+    <dl>
+      <div className="px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+        <dt className="text-base font-medium text-gray-500">{ title }</dt>
+        <dd className="mt-1 text-base text-gray-900 sm:mt-0 sm:col-span-2">
+          { value }
+        </dd>
+      </div>
+    </dl>
+  </div>
+)
+
+export default function Contact({ phones, mails }) {
+  const [rrss] = useContext(Context)
   return (
     <Layout>
       <div className={styles.container}>
@@ -21,36 +39,12 @@ export default function Contact(props) {
               comunidad lujanina.
             </p>
             <div>
-              <div className="border-t border-red-400">
-                <dl>
-                  <div className="px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                    <dt className="text-base font-medium text-gray-500">Emergencias</dt>
-                    <dd className="mt-1 text-base text-gray-900 sm:mt-0 sm:col-span-2">
-                    0261 498-0999
-                    </dd>
-                  </div>
-                </dl>
-              </div>
-              <div className="border-t border-red-400">
-                <dl>
-                  <div className="px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                    <dt className="text-base font-medium text-gray-500">Administrativo</dt>
-                    <dd className="mt-1 text-base text-gray-900 sm:mt-0 sm:col-span-2">
-                    0261 498-6341
-                    </dd>
-                  </div>
-                </dl>
-              </div>
-              <div className="border-t border-red-400">
-                <dl>
-                  <div className="px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                    <dt className="text-base font-medium text-gray-500">Email</dt>
-                    <dd className="mt-1 text-base text-gray-900 sm:mt-0 sm:col-span-2">
-                      info@bomberoslujanmza.com.ar
-                    </dd>
-                  </div>
-                </dl>
-              </div>
+              {
+                phones && phones.map(p => <ContactItem key={p._id} title={p.title} value={p.value} />)
+              }
+              {
+                mails && mails.map(m => <ContactItem key={m._id} title={m.title} value={m.value} />)
+              }
             </div>
           </div>
           <div className="opacity-25">
@@ -62,23 +56,11 @@ export default function Contact(props) {
   )
 }
 
-export async function getStaticProps(ctx) {
+export async function getStaticProps() {
+  const { phones, mails } = await getClient(false).fetch(contactDataQuery);
   return {
     props: {
-      news: [
-        {
-          title: "noticia1",
-          text: "prueba1",
-        },
-        {
-          title: "noticia2",
-          text: "prueba2",
-        },
-        {
-          title: "noticia3",
-          text: "prueba3",
-        },
-      ],
-    },
+      phones, mails
+    }
   }
 }

@@ -66,7 +66,7 @@ export default {
         list: [
           { title: 'Twitter', value: 'Twitter' },
           { title: 'Facebook', value: 'Facebook' },
-          { title: 'Instagram', value: 'Instragram' },
+          { title: 'Instagram', value: 'Instagram' },
           { title: 'YouTube', value: 'Youtube' },
         ]
       }
