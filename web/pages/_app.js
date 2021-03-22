@@ -1,10 +1,18 @@
 import '../styles/globals.css'
 import "../components/offcanvas.css"
 import { getClient } from '../lib/sanity.server';
-import { contactDataQuery, rrssQuery } from '../lib/queries';
+import { rrssQuery } from '../lib/queries';
+import { useState } from 'react';
+import { Context } from '../components/context';
 
 function MyApp({ Component, pageProps, rrss }) {
-  return ( <Component {...pageProps} rrss={rrss} /> )
+  const [ context, setContext ] = useState(rrss)
+
+  return ( 
+    <Context.Provider value={[context, setContext]}>
+      <Component {...pageProps} /> 
+    </Context.Provider>
+  )
 }
 
 MyApp.getInitialProps = async ({ Component, ctx }) => {

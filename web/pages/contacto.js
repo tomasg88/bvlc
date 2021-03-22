@@ -4,6 +4,8 @@ import Layout from "../components/layout"
 import BackgroundImage from "../components/backgroundImage"
 import { getClient } from "../lib/sanity.server"
 import { contactDataQuery } from "../lib/queries"
+import { Context } from "../components/context"
+import { useContext } from "react"
 
 const ContactItem = ({ title, value }) => (
   <div className="border-t border-red-400">
@@ -18,7 +20,8 @@ const ContactItem = ({ title, value }) => (
   </div>
 )
 
-export default function Contact({ phones, mails, rrss }) {
+export default function Contact({ phones, mails }) {
+  const [rrss] = useContext(Context)
   return (
     <Layout>
       <div className={styles.container}>
@@ -54,10 +57,10 @@ export default function Contact({ phones, mails, rrss }) {
 }
 
 export async function getStaticProps() {
-  const { phones, mails, rrss } = await getClient(false).fetch(contactDataQuery);
+  const { phones, mails } = await getClient(false).fetch(contactDataQuery);
   return {
     props: {
-      phones, mails, rrss
+      phones, mails
     }
   }
 }

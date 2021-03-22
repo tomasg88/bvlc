@@ -3,8 +3,11 @@ import HeaderLink from "./headerLink"
 import Link from "next/link"
 import Headroom from "react-headroom"
 import RrssIcon from "./rrssIcon"
+import { Context } from "./context"
+import { useContext } from "react"
 
-export default function Header({ rrss }) {
+export default function Header() {
+  const [rrss] = useContext(Context)
   return (
     <Headroom disableInlineStyles className="bg-pattern ">
       <header className="relative z-50 flex flex-col w-full px-3 mx-auto ">
