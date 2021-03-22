@@ -48,7 +48,7 @@ export default function Contact({ phones, mails }) {
               }
               <div className="border-t border-red-400">
                 <dl>
-                  <div className="flex items-center px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                  <div className="px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                     <dt className="text-base font-medium text-gray-500">Nuestras redes</dt>
                     <dd className="flex items-center mt-1 text-base text-gray-900 sm:mt-0 sm:col-span-2">
                       { rrss.map(rs => <RrssIcon className={"mr-3 text-3xl"} key={rs._id} rrss={rs.rrss} url={rs.rrssUrl} />) }
