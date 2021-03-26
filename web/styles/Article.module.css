@@ -1,5 +1,5 @@
 .article p {
-    @apply px-6 my-3 text-xl;
+    @apply max-w-xl mx-auto;
 }
 
 .article img {

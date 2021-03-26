@@ -9,7 +9,6 @@ import { indexQuery } from "../lib/queries"
 import CoverImage from "../components/coverImage"
 
 export default function Home({ news, lastMembers, leadership }) {
-
   return (
     <Layout>
       <div className={styles.container}>
@@ -18,14 +17,15 @@ export default function Home({ news, lastMembers, leadership }) {
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <main className="w-full ">
-          <SliderCarousel/>
+          <SliderCarousel />
+          {/*<SliderCarousel arrows={true} />*/}
           <div className="pt-12 bg-gray-100">
             <div className="flex flex-col items-center justify-between max-w-6xl pt-12 pb-6 mx-auto font-sans border-b-2 border-yellow-400 md:flex-row">
-              <h3 className="text-5xl font-light text-center text-gray-900 md:text-left">Últimas noticias</h3>
+              <h3 className="text-5xl font-light text-center text-gray-900 md:text-left">
+                Últimas noticias
+              </h3>
               <Link href="/noticias">
-                <a className="relative z-10 px-6 mt-3 btn ">
-                  Ver todas las Noticias
-                </a>
+                <a className="relative z-10 px-6 mt-3 btn ">Ver todas las Noticias</a>
               </Link>
             </div>
             <div className="grid max-w-6xl gap-3 px-2 py-6 pb-24 mx-auto mt-6 md:grid-cols-3 sm:grid-cols-2">
@@ -41,14 +41,19 @@ export default function Home({ news, lastMembers, leadership }) {
                       </a>
                     </Link>
                     <div className="px-6 py-3 pb-6">
-                      <h3 className="font-sans text-3xl font-bold">{n.title}</h3>
-                      <p className="mt-2 text-base">{n.excerpt}</p>
+                      <h3 className="font-sans text-xl font-bold">{n.title}</h3>
+                      <p className="mt-2 text-base line-clamp-3">{n.excerpt}</p>
+                      <Link href={`/noticias/${n.slug}`}>
+                        <a className="relative z-10 mt-6 text-base btn">
+                          Leer nota completa
+                        </a>
+                      </Link>
                     </div>
                   </div>
                 ))}
             </div>
           </div>
-          <InfoRows/>
+          <InfoRows />
 
           <div className="hidden pt-12 bg-white md:block ">
             <Link href="/cuerpo-activo">

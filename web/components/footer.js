@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer className={styles.footer}>
       <Link href="/">
-        <a className="flex items-center justify-center transform translate-y-4">
+        <a className="flex items-center justify-center">
           <Image
             src="/logo-bomberos-cuyo.png"
             alt="Bomberos Voluntarios de Luján de Cuyo"

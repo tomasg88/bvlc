@@ -8,8 +8,11 @@
         "start": "next start"
     },
     "dependencies": {
+        "@headlessui/react": "^0.3.1",
         "@sanity/block-content-to-react": "^2.0.7",
         "@sanity/client": "^2.2.6",
+        "@tailwindcss/line-clamp": "^0.2.0",
+        "@tailwindcss/typography": "^0.4.0",
         "date-fns": "^2.19.0",
         "next": "10.0.7",
         "next-sanity": "^0.1.10",
