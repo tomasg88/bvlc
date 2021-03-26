@@ -33,7 +33,7 @@ export default function CuerpoActivo({ list }) {
         </div>
         <div id="integrantes" className="bg-white">
           <h2 className="max-w-2xl px-5 pt-12 mx-auto text-6xl font-light text-left text-gray-400">Integrantes</h2>
-          <div className="grid max-w-2xl min-h-screen grid-cols-1 gap-3 p-2 mx-auto mt-6 bg-white ">
+          <div className="grid max-w-2xl grid-cols-3 p-2 mx-auto mt-6 bg-white ">
             {list &&
               list.map((n) => (
                 <Hero key={n._id} name={n.title} description={n.rank} image={n.image} />
