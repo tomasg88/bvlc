@@ -9,6 +9,17 @@ export default {
         title: "Título",
       },
       {
+        name: 'slug',
+        title: 'URL',
+        type: 'slug',
+        description: 'Click en el botón GENERATE para generar la ruta (URL)',
+        validation: Rule => Rule.required(),
+        options: {
+          source: 'title',
+          maxLength: 96,
+        },
+      },
+      {
         name: 'body',
         title: 'Contenido',
         type: 'blockContent',
