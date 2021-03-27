@@ -5,6 +5,7 @@ import { urlForImage } from "../lib/sanity"
 import { getClient } from "../lib/sanity.server";
 import { albumsQuery } from "../lib/queries"
 import Gallery from "../components/gallery"
+import { BG_CONSTANTS } from "../utils/constants";
 
 function AlbumCover({ album, selectAlbum }) {
   const [showDetails, setShowDetails] = useState(false)
@@ -26,9 +27,9 @@ export default function Galeria({ albums }) {
       <div className="min-h-screen bg-white">
         <div className="relative py-64 overflow-hidden text-center text-white bg-gray-800 ">
           <h1 className="relative z-10 font-sans text-6xl font-light">
-            Galeria fotografica
+            Galería fotográfica
           </h1>
-          <BackgroundImage image="https://scontent.faep8-2.fna.fbcdn.net/v/t1.0-9/145919140_2818111668437412_458251714749266980_o.jpg?_nc_cat=100&ccb=1-3&_nc_sid=e3f864&_nc_ohc=_Uh04GCrRwIAX9lA8eJ&_nc_ht=scontent.faep8-2.fna&oh=61058e52c7a6fb69343074be16bcb93f&oe=606826B9" />
+          <BackgroundImage image={BG_CONSTANTS.team} />
         </div>
         <div className="grid grid-cols-3 gap-2 mt-2 bg-white">
           {

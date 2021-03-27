@@ -5,6 +5,8 @@ import { useRouter } from "next/router"
 import { getClient } from "../lib/sanity.server"
 import { allPostQuery } from "../lib/queries"
 import CoverImage from "../components/coverImage"
+import BackgroundImage from "../components/backgroundImage"
+import { BG_CONSTANTS } from "../utils/constants"
 
 export default function News({ list }) {
   const router = useRouter()
@@ -15,28 +17,22 @@ export default function News({ list }) {
           <h1 className="relative z-10 font-sans text-6xl font-light">
             Últimas noticias
           </h1>
-          <Link href="cuerpo-activo">
+          <Link href="/cuerpo-activo">
             <a className="relative z-10 inline-block px-6 mx-auto mt-6 mr-3 cursor-pointer btn">
               Contribuciones
             </a>
           </Link>
-          <Link href="cuerpo-activo">
+          <Link href="/cuerpo-activo">
             <a className="relative z-10 inline-block px-6 mx-auto mt-6 mr-3 cursor-pointer btn">
               Academia
             </a>
           </Link>
-          <Link href="cuerpo-activo">
+          <Link href="/cuerpo-activo">
             <a className="relative z-10 inline-block px-6 mx-auto mt-6 mr-3 cursor-pointer btn">
               Equipamiento
             </a>
           </Link>
-          <div
-            className="absolute inset-0 z-0 hidden bg-fixed bg-no-repeat bg-cover opacity-50 md:block"
-            style={{
-              backgroundImage:
-                "url(https://images.unsplash.com/photo-1522578755536-1e6830124399?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=750&q=80)",
-            }}
-          ></div>
+          <BackgroundImage image={BG_CONSTANTS.news} />
         </div>
 
         <div className="grid max-w-6xl gap-3 p-2 mx-auto mt-12 md:grid-cols-3 sm:grid-cols-2 ">
