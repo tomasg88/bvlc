@@ -1,28 +1,4 @@
-const postFields = `
-  _id,
-  name,
-  title,
-  publishedAt,
-  excerpt,
-  mainImage,
-  body,
-  "slug": slug.current,
-  "author": author->{name, picture},
-`
-
-const generalFields = `
-  _id, title, type, value, rrss, rrssUrl
-`
-
-export const contactDataQuery = `
-{
-  "phones": *[_type == "general" && type == 'Telefono' ] { ${generalFields} },
-  "mails": *[_type == "general" && type == 'Email' ] { ${generalFields} },
-  "rrss": *[_type == "general" && type == 'Red Social' ] { ${generalFields} } 
-}
-`
-
-export const rrssQuery = `*[_type == "general" && type == 'Red Social' ] { ${generalFields} }`
+import { albumFields, generalFields, pageFields, postFields } from "./fields"
 
 export const indexQuery = `
 {
@@ -33,7 +9,12 @@ export const indexQuery = `
   "lastLeaders": *[_type == "leadership"]
 }`
 
+export const pagesQuery = `
+  *[_type == "page" && slug.current == $slug][0] { ${pageFields} }
+`
+
 export const allPostQuery = ` *[_type == "post"] `
+
 export const postQuery = `
 {
   "post": *[_type == "post" && slug.current == $slug] | order(_updatedAt desc) | [0] {
@@ -51,9 +32,25 @@ export const postSlugsQuery = `
 `
 
 export const postBySlugQuery = `
-*[_type == "post" && slug.current == $slug][0] {
-  ${postFields}
+  *[_type == "post" && slug.current == $slug][0] {
+    ${postFields}
+  }
+`
+
+export const activeForceQuery = ` *[_type == "activeForce"] `
+
+export const leadershipQuery = ` *[_type == "leadership"] `
+
+export const albumsQuery = `
+  *[_type == "album"] { ${albumFields} }
+`
+
+export const contactDataQuery = `
+{
+  "phones": *[_type == "general" && type == 'Telefono' ] { ${generalFields} },
+  "mails": *[_type == "general" && type == 'Email' ] { ${generalFields} },
+  "rrss": *[_type == "general" && type == 'Red Social' ] { ${generalFields} } 
 }
 `
-export const activeForceQuery = ` *[_type == "activeForce"] `
-export const leadershipQuery = ` *[_type == "leadership"] `
+
+export const rrssQuery = `*[_type == "general" && type == 'Red Social' ] { ${generalFields} }`

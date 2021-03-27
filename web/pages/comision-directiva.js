@@ -19,7 +19,7 @@ export default function ComisionDirectiva({ list }) {
             }}
           ></div>
         </div>
-        <div className="flex max-w-6xl p-2 py-12 mx-auto mt-6 bg-white">
+        <div className="flex justify-center max-w-6xl p-2 py-12 mx-auto mt-6 bg-white">
           {list &&
             list.map((n) => (
               <Hero key={n._id} name={n.title} description={n.position} image={n.image} />

@@ -1,14 +1,20 @@
+import { useState } from "react";
 import { urlForImage } from "../lib/sanity";
 
 export default function Hero({ name, description, image}) {
+  const [showDetails, setShowDetails] = useState('opacity-0')
   return (
-    <figure className="flex flex-col w-40 p-4 mx-8 shadow-sm">
+    <figure className="relative flex flex-col w-40 p-15 mx-8">
       <img 
         alt={name} 
-        className={'shadow-small hover:shadow-medium transition-shadow duration-200 rounded-full'} 
-        src={urlForImage(image).height(100).width(100).url()} 
+        className={'rounded-full shadow-none hover:shadow-lg transition-shadow duration-200'} 
+        src={urlForImage(image).height(160).width(160).url()} 
+        style={{ height: '100%', width: '100%' }}
+        onMouseEnter={() => setShowDetails('opacity-1')}
+        onMouseLeave={() => setShowDetails('opacity-0')}
       />
-      <div className="pt-6 p-8 text-center text-left space-y-4">
+
+      <div className={`${showDetails} absolute transition-opacity duration-200 bg-red-300 h-3 bottom-0 w-full text-center space-y-4 mt-2`}>
         <figcaption className="font-medium">
           <div className="text-cyan-600">
             {name}
@@ -18,6 +24,7 @@ export default function Hero({ name, description, image}) {
           </div>
         </figcaption>
       </div>
+
     </figure>
   )
 }

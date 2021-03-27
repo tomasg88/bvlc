@@ -1,32 +1,26 @@
 import React from "react"
-import BackgroundImage from "../components/backgroundImage"
 import Layout from "../components/layout"
-import { activeForceQuery } from "../lib/queries"
 import { getClient } from "../lib/sanity.server"
-import Link from "next/link"
+import ArticleContent from "../components/articleContent"
+import { SRLWrapper } from "simple-react-lightbox"
+import { pagesQuery } from "../lib/queries"
 
+const options = {
+  settings: {
+    overlayColor: "rgb(255, 255, 255)",
+    opacity: '0.4',
+    position: 'absolute'
+  },
+}
 
-export default function Institucional({ list }) {
+export default function Institucional({ pages }) {
   return (
     <Layout>
       <div className="min-h-screen bg-white">
-        <div className="relative py-24 overflow-hidden text-center text-white bg-gray-800 ">
-          <h4 className="relative z-10 mb-6 font-sans text-2xl uppercase font-bolder">
-            institucional
-          </h4>
-          <h1 className="relative z-10 font-sans text-6xl font-light">
-            "Saber para servir"
+        <div className="relative py-24 overflow-hidden text-center text-white bg-gray-800">
+          <h1 className="relative z-10 flex flex-col items-center justify-center font-sans text-6xl font-bold p-40">
+            { pages.title }
           </h1>
-          <Link href="cuerpo-activo">
-            <a className="relative z-10 inline-block px-6 mx-auto mt-6 mr-3 cursor-pointer btn">
-              Cuerpo Activo
-            </a>
-          </Link>
-          <Link href="comision-directiva">
-            <a className="relative z-10 inline-block px-6 mx-auto mt-6 cursor-pointer btn">
-              Comisión Directiva
-            </a>
-          </Link>
           <div
             className="absolute inset-0 z-0 hidden bg-fixed bg-no-repeat bg-cover opacity-50 md:block"
             style={{
@@ -36,19 +30,10 @@ export default function Institucional({ list }) {
           ></div>
           
         </div>
-        <div id="integrantes" className="bg-white">
-          <h2 className="max-w-2xl px-5 pt-12 mx-auto text-6xl font-light text-left text-gray-400">
-            Integrantes
-          </h2>
-          <div className="grid max-w-2xl min-h-screen grid-cols-1 gap-3 p-2 mx-auto mt-6 bg-white ">
-            {list &&
-              list.map((n) => (
-                <div key={n._id} className="p-3 text-4xl border-b border-gray-200">
-                  <p className="my-2 text-sm font-bold uppercase">{n.rank}</p>
-                  <h3 className="font-sans text-3xl font-bold">{n.title}</h3>
-                </div>
-              ))}
-          </div>
+        <div id="body" className="bg-white">
+          <SRLWrapper>
+            <ArticleContent body={pages.body} />
+          </SRLWrapper>
         </div>
       </div>
     </Layout>
@@ -56,11 +41,12 @@ export default function Institucional({ list }) {
 }
 
 export async function getStaticProps(ctx) {
-  const list = await getClient(false).fetch(activeForceQuery)
+  const slug = 'quienes-somos'
+  const pages = await getClient().fetch(pagesQuery, { slug });
 
   return {
     props: {
-      list,
+      pages,
     },
   }
 }
