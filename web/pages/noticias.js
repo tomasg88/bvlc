@@ -1,6 +1,5 @@
 import React from "react"
 import Layout from "../components/layout"
-import BackgroundImage from "../components/backgroundImage"
 import Link from "next/link"
 import { useRouter } from "next/router"
 import { getClient } from "../lib/sanity.server"
