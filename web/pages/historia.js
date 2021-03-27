@@ -1,6 +1,8 @@
 import React from 'react'
 import ArticleContent from '../components/articleContent'
 import { getClient } from '../lib/sanity.server'
+import { pagesQuery } from "../lib/queries"
+import { SRLWrapper } from 'simple-react-lightbox'
 
 const options = {
   settings: {
