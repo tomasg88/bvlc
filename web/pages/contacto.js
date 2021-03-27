@@ -7,6 +7,7 @@ import { contactDataQuery } from "../lib/queries"
 import { Context } from "../components/context"
 import { useContext } from "react"
 import RrssIcon from "../components/rrssIcon"
+import { BG_CONSTANTS } from "../utils/constants"
 
 const ContactItem = ({ title, value }) => (
   <div className="border-t border-red-400">
@@ -59,7 +60,7 @@ export default function Contact({ phones, mails }) {
             </div>
           </div>
           <div className="opacity-25">
-          <BackgroundImage image="https://images.unsplash.com/photo-1453726007388-5df12357fcc6?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1388&q=80" />
+            <BackgroundImage image={BG_CONSTANTS.doors} />
           </div>
         </div>
       </div>

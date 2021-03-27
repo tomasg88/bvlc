@@ -1,10 +1,9 @@
 import { AiOutlineArrowRight, AiOutlineArrowLeft } from "react-icons/ai"
 import { BiRadioCircle, BiRadioCircleMarked } from "react-icons/bi"
 import makeCarousel from "react-reveal/makeCarousel"
-import Slide from "react-reveal/Slide"
 import Fade from "react-reveal/Fade"
-
 import Link from "next/link"
+
 
 export default function SliderCarousel(props) {
   const CarouselUI = ({ position, total, handleClick, children }) => (
@@ -62,9 +61,9 @@ export default function SliderCarousel(props) {
         <Carousel defaultWait={4000} maxTurns={99} /*wait for 1000 milliseconds*/>
           <Fade>
             <div>
-              <p className="absolute top-0 w-full mt-6 font-bold text-center uppercase">
+              {/* <p className="absolute top-0 w-full mt-6 font-bold text-center uppercase">
                 Equipamiento
-              </p>
+              </p> */}
               <img
                 className="object-cover w-full h-screen opacity-50"
                 src="https://scontent.faep8-1.fna.fbcdn.net/v/t1.0-9/149283800_2826697110912201_6199177887266118548_o.jpg?_nc_cat=101&ccb=1-3&_nc_sid=730e14&_nc_ohc=D5mUIWXF_2oAX_7ZVM8&_nc_ht=scontent.faep8-1.fna&oh=76a7f5c1da87f3bc8c14caaae7504058&oe=606864F7"
@@ -73,9 +72,9 @@ export default function SliderCarousel(props) {
           </Fade>
           <Fade>
             <div>
-              <p className="absolute top-0 w-full mt-6 font-bold text-center uppercase">
+              {/* <p className="absolute top-0 w-full mt-6 font-bold text-center uppercase">
                 cuerpo activo
-              </p>
+              </p> */}
               <img
                 className="object-cover w-full h-screen opacity-50"
                 src="https://scontent.faep8-2.fna.fbcdn.net/v/t1.0-9/145919140_2818111668437412_458251714749266980_o.jpg?_nc_cat=100&ccb=1-3&_nc_sid=e3f864&_nc_ohc=_Uh04GCrRwIAX9lA8eJ&_nc_ht=scontent.faep8-2.fna&oh=61058e52c7a6fb69343074be16bcb93f&oe=606826B9"
@@ -84,9 +83,9 @@ export default function SliderCarousel(props) {
           </Fade>
           <Fade>
             <div>
-              <p className="absolute top-0 w-full mt-6 font-bold text-center uppercase">
+              {/* <p className="absolute top-0 w-full mt-6 font-bold text-center uppercase">
                 comunidad
-              </p>
+              </p> */}
               <img
                 className="object-cover w-full h-screen opacity-50"
                 src="https://scontent.faep8-1.fna.fbcdn.net/v/t1.0-9/139424359_2807504019498177_8774613192109568254_o.jpg?_nc_cat=106&ccb=1-3&_nc_sid=730e14&_nc_ohc=aqeakTz2-RYAX8AFIL5&_nc_ht=scontent.faep8-1.fna&oh=8391f0bae1e4cf33d831323765dcc9d8&oe=60675283"

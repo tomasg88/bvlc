@@ -1,9 +1,5 @@
-import { BsNewspaper, BsPeopleFill } from "react-icons/bs"
-import { BiRadioCircle, BiRadioCircleMarked } from "react-icons/bi"
+import { BsPeopleFill } from "react-icons/bs"
 import { FaFireExtinguisher } from "react-icons/fa"
-import BackgroundImage from "../components/backgroundImage"
-
-import { AiOutlineArrowRight, AiOutlineArrowLeft } from "react-icons/ai"
 import { GiFireAxe } from "react-icons/gi"
 import Link from "next/link"
 
