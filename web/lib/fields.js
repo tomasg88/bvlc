@@ -14,5 +14,12 @@ export const generalFields = `
   _id, title, type, value, rrss, rrssUrl
 `
 
-export const pageFields = `_id, title, body,
-  "publishedAt": _createdAt`
+export const pageFields = `
+  _id, title, body,
+  "publishedAt": _createdAt
+`
+
+export const albumFields = `
+  _id, title, description, cover, imageList,
+  "publishedAt": _createdAt
+`

@@ -1,4 +1,4 @@
-import { generalFields, pageFields, postFields } from "./fields"
+import { albumFields, generalFields, pageFields, postFields } from "./fields"
 
 export const indexQuery = `
 {
@@ -32,13 +32,18 @@ export const postSlugsQuery = `
 `
 
 export const postBySlugQuery = `
-*[_type == "post" && slug.current == $slug][0] {
-  ${postFields}
-}
+  *[_type == "post" && slug.current == $slug][0] {
+    ${postFields}
+  }
 `
+
 export const activeForceQuery = ` *[_type == "activeForce"] `
 
 export const leadershipQuery = ` *[_type == "leadership"] `
+
+export const albumsQuery = `
+  *[_type == "album"] { ${albumFields} }
+`
 
 export const contactDataQuery = `
 {
