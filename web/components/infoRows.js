@@ -6,9 +6,6 @@ import Link from "next/link"
 export default function InfoRows() {
   return (
     <div className="relative px-6 py-40 overflow-hidden transition-all duration-1000 transform bg-gray-900 border-t-4 border-gray-600 hover:bg-gray-800">
-      <div className="relative z-10 flex flex-col items-center justify-center max-w-6xl py-12 mx-auto font-sans text-center ">
-        <h3 className="text-6xl font-light text-white">Parallax</h3>
-      </div>
       <div className="relative z-10 grid max-w-6xl gap-3 mx-auto md:grid-cols-3">
         <div className="flex flex-col items-center justify-center px-6 pt-8 pb-8 text-center bg-white border-2 border-gray-600 shadow-2xl rounded-xl">
           <FaFireExtinguisher className="mb-6 text-6xl opacity-50" />
