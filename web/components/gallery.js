@@ -45,7 +45,7 @@ export default function Gallery({ onClose, list }) {
           {
             list.map((img, index) => 
               <img 
-                className="mx-4"
+                className="mx-4 cursor-pointer"
                 key={img._key} 
                 onClick={() => setMainIndex(index)} 
                 src={urlForImage(img).width(200).height(200).url()} 
