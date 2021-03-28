@@ -55,7 +55,7 @@ export default function Home({ news, lastMembers, leadership }) {
           </div>
           <InfoRows />
 
-          <div className="hidden pt-12 bg-white md:block ">
+          {/* <div className="hidden pt-12 bg-white md:block ">
             <Link href="/cuerpo-activo">
               <a className="block max-w-6xl pt-12 pb-6 mx-auto font-sans text-6xl font-bold text-red-500 hover:text-red-600">
                 Nuevos miembros
@@ -70,8 +70,8 @@ export default function Home({ news, lastMembers, leadership }) {
                   </div>
                 ))}
             </div>
-          </div>
-          <div className="hidden pt-12 bg-white md:block ">
+          </div> */}
+          {/* <div className="hidden pt-12 bg-white md:block ">
             <Link href="/comision-directiva">
               <a className="block max-w-6xl pt-12 pb-6 mx-auto font-sans text-6xl font-bold text-red-500 hover:text-red-600">
                 Comisión directiva
@@ -86,7 +86,7 @@ export default function Home({ news, lastMembers, leadership }) {
                   </div>
                 ))}
             </div>
-          </div>
+          </div> */}
         </main>
       </div>
     </Layout>
