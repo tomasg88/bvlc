@@ -10,7 +10,7 @@ export default function Header() {
   const [rrss] = useContext(Context)
   return (
     <Headroom disableInlineStyles className="bg-pattern">
-      <header className="z-50 flex flex-col w-full p-3 pb-0 mx-auto ">
+      <header className="z-50 flex flex-col w-full p-3 pb-0 mx-auto max-w-7xl ">
         <div className="flex justify-between">
           <Link href="/">
             <a className="flex items-center justify-center transform -translate-y-2">
@@ -20,7 +20,7 @@ export default function Header() {
                 width={80}
                 height={100}
               />
-              <span className="ml-3 text-sm text-gray-100 uppercase md:text-2xl">
+              <span className="w-32 ml-3 text-sm text-gray-100 uppercase md:w-auto sm:block lg:text-2xl">
                 Bomberos Voluntarios <br /> de Luján de Cuyo
               </span>
             </a>
@@ -46,10 +46,10 @@ export default function Header() {
                   {({ open }) => (
                     <>
                       <span className="rounded-md shadow-sm">
-                        <Menu.Button className="inline-flex justify-center w-full px-5 py-2 font-sans text-sm font-bold text-white uppercase border-b-4 border-transparent outline-none ring-0 md:text-lg hover:border-white">
+                        <Menu.Button className="inline-flex justify-center w-full px-5 py-2 font-sans text-sm font-bold text-white uppercase border-b-4 border-transparent outline-none ring-0 lg:text-lg hover:border-white">
                           <span>Institucional</span>
                           <svg
-                            className="w-5 h-5 ml-2 -mr-1 transform translate-y-1"
+                            className="w-5 h-5 ml-2 -mr-1 transform lg:translate-y-1"
                             viewBox="0 0 20 20"
                             fill="currentColor"
                           >
@@ -84,20 +84,7 @@ export default function Header() {
                                       active ? "bg-red-500 text-gray-100" : "text-white"
                                     } flex justify-between w-full px-4 py-3  hover:opacity-90 hover:bg-red-700 border-0 text-base leading-5 text-left`}
                                   >
-                                    Quienes Somos
-                                  </a>
-                                </Link>
-                              )}
-                            </Menu.Item>
-                            <Menu.Item>
-                              {({ active }) => (
-                                <Link href="/cuerpo-activo">
-                                  <a
-                                    className={`${
-                                      active ? "bg-red-500 text-gray-100" : "text-white"
-                                    } flex justify-between w-full px-4 py-3  hover:opacity-90 hover:bg-red-700 border-0 text-base leading-5 text-left`}
-                                  >
-                                    Cuerpo Activo
+                                    Historia
                                   </a>
                                 </Link>
                               )}
@@ -115,6 +102,19 @@ export default function Header() {
                                 </Link>
                               )}
                             </Menu.Item>
+                            <Menu.Item>
+                              {({ active }) => (
+                                <Link href="/cuerpo-activo">
+                                  <a
+                                    className={`${
+                                      active ? "bg-red-500 text-gray-100" : "text-white"
+                                    } flex justify-between w-full px-4 py-3  hover:opacity-90 hover:bg-red-700 border-0 text-base leading-5 text-left`}
+                                  >
+                                    Cuerpo Activo
+                                  </a>
+                                </Link>
+                              )}
+                            </Menu.Item>
                           </div>
                         </Menu.Items>
                       </Transition>
@@ -123,6 +123,7 @@ export default function Header() {
                 </Menu>
               </div>
               <HeaderLink url="/noticias" title="Noticias" />
+              <HeaderLink url="/galeria" title="Academia" />
               <HeaderLink url="/galeria" title="Galería" />
               <HeaderLink url="/contacto" title="Contacto" />
             </nav>

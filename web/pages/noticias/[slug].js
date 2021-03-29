@@ -6,15 +6,10 @@ import Head from "next/head"
 import ArticleContent from "../../components/articleContent"
 import Link from "next/link"
 import CoverImage from "../../components/coverImage"
-import { SRLWrapper } from "simple-react-lightbox"
 
 export default function Article(props) {
   const { article, moreArticles } = props.data
-  const options = {
-    settings: {
-      overlayColor: "rgb(255, 255, 255)",
-    },
-  }
+
   return (
     <Layout>
       <div className="flex flex-col mx-auto bg-white">
@@ -32,26 +27,30 @@ export default function Article(props) {
                   .url()}
               />
             </Head>
-            <SRLWrapper options={options}>
-              <ArticleContent
-                title={article.title}
-                mainImage={article.mainImage}
-                dateString={article.publishedAt}
-                body={article.body}
-              />
-            </SRLWrapper>
+
+            <ArticleContent
+              title={article.title}
+              mainImage={article.mainImage}
+              dateString={article.publishedAt}
+              body={article.body}
+            />
           </article>
         )}
         <div className="flex flex-col w-full max-w-3xl px-4 py-6 mx-auto bg-white">
-          <h3 className="font-sans text-2xl">Últimas noticias</h3>
+          <h3 className="pt-6 mb-3 font-sans text-3xl text-red-500 border-b border-red-600">Más noticias</h3>
           <div className="grid gap-2 md:grid-cols-3">
             {moreArticles &&
               moreArticles.length > 0 &&
               moreArticles.map((ma) => (
                 <Link key={ma._id} href={`/noticias/${ma.slug}`}>
-                  <a className="duration-500 hover:opacity-75">
+                  <a className="relative overflow-hidden duration-500 border rounded-md hover:opacity-75">
                     <CoverImage title={ma.title} image={ma.mainImage} />
-                    <span className="block py-3 text-xl font-bold">{ma.title}</span>
+                    <span className="block p-2 text-xl font-bold">{ma.title}</span>
+                    {ma.publishedAt && (
+                      <div className="p-2">
+                        {ma.publishedAt}
+                      </div>
+                    )}
                   </a>
                 </Link>
               ))}

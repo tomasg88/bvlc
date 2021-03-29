@@ -12,9 +12,9 @@ import { BG_CONSTANTS } from "../utils/constants"
 const ContactItem = ({ title, value }) => (
   <div className="border-t border-red-400">
     <dl>
-      <div className="px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-        <dt className="text-base font-medium text-gray-500">{ title }</dt>
-        <dd className="mt-1 text-base text-gray-900 sm:mt-0 sm:col-span-2">
+      <div className="px-4 py-5 text-xl text-center md:text-left sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+        <dt className="font-medium text-gray-500">{ title }</dt>
+        <dd className="mt-1 text-gray-900 sm:mt-0 sm:col-span-2">
           { value }
         </dd>
       </div>
@@ -31,15 +31,11 @@ export default function Contact({ phones, mails }) {
           <title>Bomberos Voluntarios de Luján de Cuyo</title>
           <link rel="icon" href="/favicon.ico" />
         </Head>
-        <div className="relative flex items-start justify-center w-full min-h-screen overflow-hidden text-left text-gray-800 bg-gray-900 ">
-          <div className="relative z-50 max-w-4xl px-12 py-12 mx-auto mt-12 bg-white shadow-2xl">
-            <h1 className="relative z-10 flex items-center flex-col mb-6 font-sans text-6xl font-light md:flex-row">
-              Contacto <small className="ml-3 text-lg font-bold opacity-80">24hs / 365 días</small>
+        <div className="relative flex items-start justify-center w-full min-h-screen overflow-hidden text-left text-gray-800 bg-gray-900 md:items-start ">
+          <div className="relative z-50 w-full max-w-2xl px-12 py-12 mx-auto mt-12 bg-white shadow-2xl">
+            <h1 className="relative z-10 flex flex-col items-center mb-6 font-sans text-6xl font-light md:flex-row">
+              Contacto <small className="mt-3 ml-6 text-lg font-bold opacity-80">24hs / 365 días</small>
             </h1>
-            <p className="my-3 text-2xl font-light">
-              Institución bomberil abocada desde 1968 a salvar vidas y bienes de la
-              comunidad lujanina.
-            </p>
             <div>
               {
                 phones && phones.map(p => <ContactItem key={p._id} title={p.title} value={p.value} />)
@@ -49,19 +45,19 @@ export default function Contact({ phones, mails }) {
               }
               <div className="border-t border-red-400">
                 <dl>
-                  <div className="px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                    <dt className="text-base font-medium text-gray-500">Nuestras redes</dt>
-                    <dd className="flex items-center mt-1 text-base text-gray-900 sm:mt-0 sm:col-span-2">
-                      { rrss.map(rs => <RrssIcon className={"mr-3 text-3xl"} key={rs._id} rrss={rs.rrss} url={rs.rrssUrl} />) }
+                  <div className="px-4 py-5 text-xl text-center md:text-left sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                    <dt className="font-medium text-gray-500">Nuestras redes</dt>
+                    <dd className="flex items-center justify-center mt-1 text-gray-900 md:justify-start sm:mt-0">
+                      { rrss.map(rs => <RrssIcon className={"mr-6 text-3xl"} key={rs._id} rrss={rs.rrss} url={rs.rrssUrl} />) }
                     </dd>
                   </div>
                 </dl>
               </div>
             </div>
           </div>
-          <div className="opacity-25">
-            <BackgroundImage image={BG_CONSTANTS.doors} />
-          </div>
+          
+            <BackgroundImage image={BG_CONSTANTS.doors} opacity={60} />
+          
         </div>
       </div>
     </Layout>

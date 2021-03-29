@@ -12,7 +12,7 @@ export default function Hero({ name, description, image}) {
     }, [image] )
 
   return (
-    <figure id="hero" className="relative flex items-start lg:w-2/3 w-full p-15 mx-none lg:mx-8 bg-white rounded-md shadow-md hover:shadow-2xl transition-shadow">
+    <figure id="hero" className="relative flex items-start w-full bg-white border border-gray-300 rounded-md shadow-lg">
       <img 
         alt={name} 
         className={'rounded-md rounded-r-none'} 
@@ -22,9 +22,9 @@ export default function Hero({ name, description, image}) {
         onMouseLeave={() => setShowDetails('opacity-0')}
       />
 
-      <div className={`w-full space-y-4 mt-2 ml-2`}>
-        <figcaption className="font-medium">
-          <div className="text-cyan-600">
+      <div className={`w-full flex h-full flex-col items-start justify-center  space-y-2 ml-4`}>
+        <figcaption className="text-lg">
+          <div className="font-bold text-gray-800">
             {name}
           </div>
           <div className="text-gray-500">

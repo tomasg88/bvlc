@@ -25,6 +25,7 @@ body {
   top: 0;
   left: 0;
   right: 0;
+  z-index: 999;
 }
 
 /* Para mover luego al lugar correspondiente */
@@ -36,7 +37,7 @@ body {
   @apply bg-red-600 border-b-2 border-red-800;
 }
 .headroom--unfixed {
-  position: relative;
+  position: fixed;
   transform: translateY(0);
 }
 .headroom--scrolled {
@@ -44,7 +45,18 @@ body {
 }
 .headroom--unpinned {
   position: fixed;
-  transform: translateY(-100%);
+  transform: translateY(0);
+}
+
+@screen lg {
+  .headroom--unpinned {
+    position: fixed;
+    transform: translateY(-100%);
+  }
+  .headroom--unfixed {
+    position: relative;
+    transform: translateY(0);
+  }
 }
 
 .headroom--pinned .logo {

@@ -12,6 +12,11 @@ const routes = [
     ariaLabel: "Ver noticias",
   },
   {
+    title: "Historia",
+    slug: "/institucional",
+    ariaLabel: "Ver Historia",
+  },
+  {
     title: "Cuerpo Activo",
     slug: "/cuerpo-activo",
     ariaLabel: "Ver Cuerpo Activo",
@@ -21,21 +26,29 @@ const routes = [
     slug: "/comision-directiva",
     ariaLabel: "Ver Comisión Directiva",
   },
+
+  {
+    title: "Academia",
+    slug: "/academia",
+    ariaLabel: "Ver Academia",
+  },
+
   {
     title: "Contacto",
     slug: "/contacto",
     ariaLabel: "Ver datos contacto",
   },
+
   
 ]
 
 const Navigation = ({ closeMenu }) => (
-  <nav className="flex flex-col w-full">
+  <nav className="flex flex-col w-full pt-6">
     {routes.map((route, i) => {
       return (
         <Link href={route.slug} key={route.slug}>
           <a
-            className="my-3 text-2xl font-light text-white border-b border-red-600 cursor-pointer hover:text-red-300"
+            className="p-3 my-1 text-lg font-light text-white cursor-pointer hover:bg-red-800"
             onClick={closeMenu}
             alt={route.ariaLabel}
             title={route.ariaLabel}

@@ -1,8 +1,8 @@
 import Head from "next/head"
 import styles from "../styles/Home.module.css"
 import Layout from "../components/layout"
-import InfoRows from "../components/infoRows"
-import SliderCarousel from "../components/sliderCarousel"
+// import InfoRows from "../components/infoRows"
+import HomeCarousel from "../components/homeCarousel"
 import Link from "next/link"
 import { getClient } from "../lib/sanity.server"
 import { indexQuery } from "../lib/queries"
@@ -17,9 +17,9 @@ export default function Home({ news, lastMembers, leadership }) {
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <main className="w-full ">
-          <SliderCarousel />
-          {/*<SliderCarousel arrows={true} />*/}
-          <div className="pt-12 bg-gray-100">
+          <HomeCarousel />
+          {/*<HomeCarousel arrows={true} />*/}
+          <div className="bg-gray-100">
             <div className="flex flex-col items-center justify-between max-w-6xl pt-12 pb-6 mx-auto font-sans border-b-2 border-yellow-400 md:flex-row">
               <h3 className="text-5xl font-light text-center text-gray-900 md:text-left">
                 Últimas noticias
@@ -28,7 +28,7 @@ export default function Home({ news, lastMembers, leadership }) {
                 <a className="relative z-10 px-6 mt-3 btn ">Ver todas las Noticias</a>
               </Link>
             </div>
-            <div className="grid max-w-6xl gap-3 px-2 py-6 pb-24 mx-auto mt-6 md:grid-cols-3 sm:grid-cols-2">
+            <div className="grid max-w-6xl gap-3 p-8 pb-24 mx-auto mt-6 md:grid-cols-3 sm:grid-cols-2">
               {news &&
                 news.map((n) => (
                   <div
@@ -40,9 +40,11 @@ export default function Home({ news, lastMembers, leadership }) {
                         <CoverImage title={n.title} image={n.mainImage} />
                       </a>
                     </Link>
-                    <div className="px-6 py-3 pb-6">
-                      <h3 className="font-sans text-xl font-bold">{n.title}</h3>
-                      <p className="mt-2 text-base line-clamp-3">{n.excerpt}</p>
+                    <div className="px-6 py-3 pb-8">
+                      <h3 className="font-sans text-lg font-bold md:text-xl">
+                        {n.title}
+                      </h3>
+                      <p className="my-2 text-base line-clamp-3">{n.excerpt}</p>
                       <Link href={`/noticias/${n.slug}`}>
                         <a className="relative z-10 mt-6 text-base btn">
                           Leer nota completa
@@ -53,7 +55,10 @@ export default function Home({ news, lastMembers, leadership }) {
                 ))}
             </div>
           </div>
-          <InfoRows />
+
+          {/*
+           <InfoRows />
+           */}
 
           {/* <div className="hidden pt-12 bg-white md:block ">
             <Link href="/cuerpo-activo">

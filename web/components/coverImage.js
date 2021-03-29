@@ -16,7 +16,7 @@ export default function CoverImage({ title, slug, image: source }) {
       width={2000}
       height={1300}
       alt={`Cover Image for ${title}`}
-      className={'shadow-small hover:shadow-medium transition-shadow duration-200'}
+      className={'shadow-small hover:shadow-medium transition-shadow duration-200 w-full'}
       { ...imageProps }
     />
   ) : (

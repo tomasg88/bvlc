@@ -17,24 +17,26 @@ export default function News({ list }) {
           <h1 className="relative z-10 font-sans text-6xl font-light">
             Últimas noticias
           </h1>
-          <Link href="/cuerpo-activo">
-            <a className="relative z-10 inline-block px-6 mx-auto mt-6 mr-3 cursor-pointer btn">
-              Contribuciones
-            </a>
-          </Link>
-          <Link href="/cuerpo-activo">
-            <a className="relative z-10 inline-block px-6 mx-auto mt-6 mr-3 cursor-pointer btn">
-              Academia
-            </a>
-          </Link>
-          <Link href="/cuerpo-activo">
-            <a className="relative z-10 inline-block px-6 mx-auto mt-6 mr-3 cursor-pointer btn">
-              Equipamiento
-            </a>
-          </Link>
-          <BackgroundImage image={BG_CONSTANTS.news} />
+          <BackgroundImage image={BG_CONSTANTS.news} opacity={20} />
+          <div className="bottom-0 left-0 right-0 flex flex-col w-full max-w-xl p-6 pb-0 mx-auto sm:space-x-4 sm:flex-row sm:absolute ">
+            <Link href="/institucional">
+              <a className="relative z-10 flex flex-col items-center justify-center w-full p-3 px-6 mx-auto mt-6 text-red-600 duration-100 bg-white shadow-sm hover:bg-red-600 hover:text-red-100 hover:shadow-lg bg-opacity-90">
+                <span className="text-lg font-bold uppercase">Contribuciones</span>
+              </a>
+            </Link>
+            <Link href="/institucional">
+              <a className="relative z-10 flex flex-col items-center justify-center w-full p-3 px-6 mx-auto mt-6 text-red-600 duration-100 bg-white shadow-sm hover:bg-red-600 hover:text-red-100 hover:shadow-lg bg-opacity-90">
+                <span className="text-lg font-bold uppercase">Academia</span>
+              </a>
+            </Link>
+            <Link href="/institucional">
+              <a className="relative z-10 flex flex-col items-center justify-center w-full p-3 px-6 mx-auto mt-6 text-red-600 duration-100 bg-white shadow-sm hover:bg-red-600 hover:text-red-100 hover:shadow-lg bg-opacity-90">
+                <span className="text-lg font-bold uppercase">Equipamiento</span>
+              </a>
+            </Link>
+          </div>
         </div>
-
+        
         <div className="grid max-w-6xl gap-3 p-2 mx-auto mt-12 md:grid-cols-3 sm:grid-cols-2 ">
           {list &&
             list.map((n) => (
@@ -50,7 +52,7 @@ export default function News({ list }) {
                 <div className="px-6 py-3 pb-6">
                   <h3 className="font-sans text-xl font-bold">{n.title}</h3>
                   <p className="mt-2 text-base line-clamp-3">{n.excerpt}</p>
-                  <Link href={`/noticias/${n.slug}`}>
+                  <Link href={router.pathname + "/" + n.slug.current}>
                     <a className="relative z-10 mt-6 text-base btn">Leer nota completa</a>
                   </Link>
                 </div>
