@@ -16,6 +16,7 @@
         "date-fns": "^2.19.0",
         "next": "10.0.7",
         "next-sanity": "^0.1.10",
+        "next-sanity-image": "^1.0.1",
         "react": "next",
         "react-anchor-link-smooth-scroll": "^1.0.12",
         "react-burger-menu": "^2.9.0",
