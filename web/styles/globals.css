@@ -20,6 +20,13 @@ body {
   font-family: "Roboto", sans-serif !important;
 }
 
+.headroom-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
 /* Para mover luego al lugar correspondiente */
 .headroom {
   top: 0;

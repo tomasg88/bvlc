@@ -5,6 +5,7 @@ import { urlForImage } from "../../lib/sanity"
 import Head from "next/head"
 import ArticleContent from "../../components/articleContent"
 import Link from "next/link"
+import CoverImage from "../../components/coverImage"
 import { SRLWrapper } from "simple-react-lightbox"
 
 export default function Article(props) {
@@ -41,14 +42,17 @@ export default function Article(props) {
             </SRLWrapper>
           </article>
         )}
-        <div className="flex flex-col w-full max-w-xl px-4 py-6 mx-auto bg-white">
+        <div className="flex flex-col w-full max-w-3xl px-4 py-6 mx-auto bg-white">
           <h3 className="font-sans text-2xl">Últimas noticias</h3>
           <div className="grid gap-2 md:grid-cols-3">
             {moreArticles &&
               moreArticles.length > 0 &&
               moreArticles.map((ma) => (
                 <Link key={ma._id} href={`/noticias/${ma.slug}`}>
-                  <a className="py-3 mb-3 border-b border-gray-400">{ma.title}</a>
+                  <a className="duration-500 hover:opacity-75">
+                    <CoverImage title={ma.title} image={ma.mainImage} />
+                    <span className="block py-3 text-xl font-bold">{ma.title}</span>
+                  </a>
                 </Link>
               ))}
           </div>

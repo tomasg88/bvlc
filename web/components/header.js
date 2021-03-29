@@ -9,11 +9,11 @@ import { Menu, Transition } from "@headlessui/react"
 export default function Header() {
   const [rrss] = useContext(Context)
   return (
-    <Headroom disableInlineStyles className="bg-pattern ">
+    <Headroom disableInlineStyles className="bg-pattern">
       <header className="z-50 flex flex-col w-full p-3 pb-0 mx-auto ">
         <div className="flex justify-between">
           <Link href="/">
-            <a className="flex items-center justify-center ">
+            <a className="flex items-center justify-center transform -translate-y-2">
               <Image
                 src="/logo-bomberos-cuyo.png"
                 alt="Bomberos Voluntarios de Luján de Cuyo"
@@ -26,7 +26,7 @@ export default function Header() {
             </a>
           </Link>
           <div className="flex-col items-end justify-center hidden md:flex">
-            <div className="flex items-center justify-end w-full p-1 pl-6 pr-2 text-white border-b border-gray-50">
+            <div className="flex items-center justify-end w-full p-1 pl-6 pr-2 text-white border-b border-red-400">
               <span className="font-sans font-bold uppercase">
                 <small className="text-xs">Emergencias</small> (0261) 498-0999
               </span>
@@ -46,7 +46,7 @@ export default function Header() {
                   {({ open }) => (
                     <>
                       <span className="rounded-md shadow-sm">
-                        <Menu.Button className="inline-flex justify-center w-full px-5 py-2 font-sans text-sm font-bold text-white uppercase border-t border-b-4 border-transparent outline-none ring-0 md:text-lg">
+                        <Menu.Button className="inline-flex justify-center w-full px-5 py-2 font-sans text-sm font-bold text-white uppercase border-b-4 border-transparent outline-none ring-0 md:text-lg hover:border-white">
                           <span>Institucional</span>
                           <svg
                             className="w-5 h-5 ml-2 -mr-1 transform translate-y-1"
@@ -75,14 +75,14 @@ export default function Header() {
                           static
                           className="absolute right-0 w-56 origin-top-right bg-red-500 shadow-lg outline-none"
                         >
-                          <div className="py-1">
+                          <div className="py-3">
                             <Menu.Item>
                               {({ active }) => (
                                 <Link href="/institucional">
                                   <a
                                     className={`${
                                       active ? "bg-red-500 text-gray-100" : "text-white"
-                                    } flex justify-between w-full px-4 py-2 text-sm leading-5 text-left`}
+                                    } flex justify-between w-full px-4 py-3  hover:opacity-90 hover:bg-red-700 border-0 text-base leading-5 text-left`}
                                   >
                                     Quienes Somos
                                   </a>
@@ -95,7 +95,7 @@ export default function Header() {
                                   <a
                                     className={`${
                                       active ? "bg-red-500 text-gray-100" : "text-white"
-                                    } flex justify-between w-full px-4 py-2 text-sm leading-5 text-left`}
+                                    } flex justify-between w-full px-4 py-3  hover:opacity-90 hover:bg-red-700 border-0 text-base leading-5 text-left`}
                                   >
                                     Cuerpo Activo
                                   </a>
@@ -108,7 +108,7 @@ export default function Header() {
                                   <a
                                     className={`${
                                       active ? "bg-red-500 text-gray-100" : "text-white"
-                                    } flex justify-between w-full px-4 py-2 text-sm leading-5 text-left`}
+                                    } flex justify-between w-full px-4 py-3  hover:opacity-90 hover:bg-red-700 border-0 text-base leading-5 text-left`}
                                   >
                                     Comisión Directiva
                                   </a>
