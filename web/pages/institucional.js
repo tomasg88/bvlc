@@ -19,11 +19,11 @@ export default function Institucional({ pages }) {
   return (
     <Layout>
       <div className="min-h-screen bg-white">
-        <div className="relative py-24 overflow-hidden text-center text-white bg-gray-800">
-          <h1 className="relative z-10 flex flex-col items-center justify-center font-sans text-6xl font-bold p-40">
+        <div className="relative py-12 mb-12 overflow-hidden text-center text-white bg-gray-800">
+          <h1 className="relative z-10 flex flex-col items-center justify-center p-40 font-sans text-6xl font-bold">
             { pages.title }
           </h1>
-          <BackgroundImage image={BG_CONSTANTS.team} />
+          <BackgroundImage image={BG_CONSTANTS.team} opacity={20} />
         </div>
         <div id="body" className="bg-white">
           <SRLWrapper>

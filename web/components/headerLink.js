@@ -7,7 +7,7 @@ const activeClassStyle = "text-red-200 border-b-4 border-red-200"
 export default function HeaderLink({ url, title }) {
   const router = useRouter()
   const isActive = useCallback(() => {
-    return router.route === url ? activeClassStyle : " border-b-4 border-transparent"
+    return router.route === url ? activeClassStyle : " border-b-4 text-white border-transparent"
   }, [url])
   return (
     <Link href={url}>
