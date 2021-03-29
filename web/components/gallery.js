@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react'
-import { AiFillCloseCircle } from 'react-icons/ai'
-import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from 'react-icons/fa'
+import { MdClose } from 'react-icons/md'
 import { urlForImage } from '../lib/sanity';
+import { AiOutlineArrowRight, AiOutlineArrowLeft } from "react-icons/ai"
 
 export default function Gallery({ onClose, list }) {
   const [mainIndex, setMainIndex] = useState(null)
@@ -21,31 +21,31 @@ export default function Gallery({ onClose, list }) {
 
   return (
     <div id="gallery-container" 
-      style={{ zIndex: 1000, padding: '3rem 1rem 1rem' }}
-      className="w-screen h-screen absolute block bg-black bg-opacity-80 w-full h-full inset-0"
+      style={{ zIndex: 1000}}
+      className="fixed inset-0 block h-screen bg-black bg-opacity-95"
     >
-      <div id="close" className="absolute right-0 top-0 cursor-pointer m-8">
-        <AiFillCloseCircle onClick={onClose} color="#ffffff" size="3rem" />
+      <div id="close" className="absolute top-0 right-0 z-50 m-8 cursor-pointer hover:opacity-75">
+        <MdClose onClick={onClose} className="text-white stroke-current" color="#ffffff" size="3rem" />
       </div>
 
-      <div id="content" className="flex flex-col items-center relative">
-        <div id="main-image" className="flex items-center justify-between w-3/4 mb-5">
+      <div id="content" className="relative flex flex-col items-center h-screen">
+        <div id="main-image" className="flex items-center justify-between w-full h-full mb-5">
           <div id="previous" onClick={ previous } className="cursor-pointer">
-            <FaArrowAltCircleLeft color="#ffffff" size="2rem" />
+            <AiOutlineArrowLeft className="px-3 text-5xl text-white" />
           </div>
           <img 
-            src={urlForImage(list[mainIndex]).width(600).height(600).url()} 
+            src={urlForImage(list[mainIndex]).width(800).url()} 
           />
           <div id="next" onClick={ next } className="cursor-pointer">
-            <FaArrowAltCircleRight color="#ffffff" size="2rem" />
+            <AiOutlineArrowRight  className="px-3 text-5xl text-white" />
           </div>
         </div>
 
-        <div id="bottom-image-list" className="flex items-center justify-start mt-5">
+        <div id="bottom-image-list" className="absolute bottom-0 left-0 right-0 flex items-center justify-center w-full mt-5">
           {
             list.map((img, index) => 
               <img 
-                className="mx-4 cursor-pointer"
+                className="w-24 h-auto mx-2 cursor-pointer"
                 key={img._key} 
                 onClick={() => setMainIndex(index)} 
                 src={urlForImage(img).width(200).height(200).url()} 
