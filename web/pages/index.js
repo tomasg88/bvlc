@@ -1,7 +1,7 @@
 import Head from "next/head"
 import styles from "../styles/Home.module.css"
 import Layout from "../components/layout"
-//import InfoRows from "../components/infoRows"
+// import InfoRows from "../components/infoRows"
 import HomeCarousel from "../components/homeCarousel"
 import Link from "next/link"
 import { getClient } from "../lib/sanity.server"
@@ -19,7 +19,7 @@ export default function Home({ news, lastMembers, leadership }) {
         <main className="w-full ">
           <HomeCarousel />
           {/*<HomeCarousel arrows={true} />*/}
-          <div className="pt-2 bg-gray-100">
+          <div className="bg-gray-100">
             <div className="flex flex-col items-center justify-between max-w-6xl pt-12 pb-6 mx-auto font-sans border-b-2 border-yellow-400 md:flex-row">
               <h3 className="text-5xl font-light text-center text-gray-900 md:text-left">
                 Últimas noticias

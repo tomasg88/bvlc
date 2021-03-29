@@ -52,7 +52,7 @@ export default function News({ list }) {
                 <div className="px-6 py-3 pb-6">
                   <h3 className="font-sans text-xl font-bold">{n.title}</h3>
                   <p className="mt-2 text-base line-clamp-3">{n.excerpt}</p>
-                  <Link href={`/noticias/${n.slug}`}>
+                  <Link href={router.pathname + "/" + n.slug.current}>
                     <a className="relative z-10 mt-6 text-base btn">Leer nota completa</a>
                   </Link>
                 </div>

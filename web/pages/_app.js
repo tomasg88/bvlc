@@ -1,5 +1,5 @@
 import '../styles/globals.css'
-import "../components/offcanvas.css"
+import "../styles/offcanvas.css"
 import { getClient } from '../lib/sanity.server';
 import { rrssQuery } from '../lib/queries';
 import { useState } from 'react';
