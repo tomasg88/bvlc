@@ -26,10 +26,15 @@ const routes = [
     slug: "/comision-directiva",
     ariaLabel: "Ver Comisión Directiva",
   },
+  {
+    title: "Galería",
+    slug: "/galeria",
+    ariaLabel: "Ver galeria fotográfica",
+  },
 
   {
     title: "Academia",
-    slug: "/academia",
+    slug: "/noticias/academia-aspirantes-a-bomberos-ciclo-2021",
     ariaLabel: "Ver Academia",
   },
 

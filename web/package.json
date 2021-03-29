@@ -19,7 +19,7 @@
         "next-sanity-image": "^1.0.1",
         "react": "next",
         "react-anchor-link-smooth-scroll": "^1.0.12",
-        "react-burger-menu": "^2.9.0",
+        "react-burger-menu": "^3.0.6",
         "react-dom": "next",
         "react-headroom": "^3.1.0",
         "react-icons": "^4.2.0",
