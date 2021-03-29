@@ -21,9 +21,9 @@ export default function Home({ news, lastMembers, leadership }) {
           {/*<HomeCarousel arrows={true} />*/}
           <div className="bg-gray-100">
             <div className="flex flex-col items-center justify-between max-w-6xl pt-12 pb-6 mx-auto font-sans border-b-2 border-yellow-400 md:flex-row">
-              <h3 className="text-5xl font-light text-center text-gray-900 md:text-left">
+              <h2 className="text-5xl font-light text-center text-gray-900 md:text-left">
                 Últimas noticias
-              </h3>
+              </h2>
               <Link href="/noticias">
                 <a className="relative z-10 px-6 mt-3 btn ">Ver todas las Noticias</a>
               </Link>
@@ -36,7 +36,7 @@ export default function Home({ news, lastMembers, leadership }) {
                     className="relative overflow-hidden text-4xl duration-500 transform translate-y-0 bg-white rounded-md shadow-md hover:shadow-2xl hover:-translate-y-2 "
                   >
                     <Link href={`/noticias/${n.slug}`}>
-                      <a className="transition-all duration-500 hover:opacity-80">
+                      <a aria-label={n.title} className="transition-all duration-500 hover:opacity-80">
                         <CoverImage title={n.title} image={n.mainImage} />
                       </a>
                     </Link>

@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react'
 import { AiOutlineFacebook, AiOutlineInstagram, AiOutlineYoutube, AiOutlineTwitter } from "react-icons/ai"
 
-export default function RrssIcon({ className, rrss, url }) {
+export default function RrssIcon({ className, rrss, url, title }) {
   const getIconComponent = useCallback(
     () => {
       switch(rrss) {
@@ -22,8 +22,12 @@ export default function RrssIcon({ className, rrss, url }) {
       target="_blank"
       className={className}
       href={ url }
+      aria-label={title}
+      title="visitar red social"
+      rel="noopener noreferrer"
     >
       { getIconComponent() }
+      <span className="sr-only">{ title }</span>
     </a>
   )
 }

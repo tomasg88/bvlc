@@ -17,6 +17,7 @@ export default function Header() {
               <Image
                 src="/logo-bomberos-cuyo.png"
                 alt="Bomberos Voluntarios de Luján de Cuyo"
+                title="Bomberos Voluntarios de Luján de Cuyo"
                 width={80}
                 height={100}
               />
@@ -123,7 +124,7 @@ export default function Header() {
                 </Menu>
               </div>
               <HeaderLink url="/noticias" title="Noticias" />
-              <HeaderLink url="/galeria" title="Academia" />
+              <HeaderLink url="/noticias/academia-aspirantes-a-bomberos-ciclo-2021" title="Academia" />
               <HeaderLink url="/galeria" title="Galería" />
               <HeaderLink url="/contacto" title="Contacto" />
             </nav>
