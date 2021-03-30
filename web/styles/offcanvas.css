@@ -5,7 +5,7 @@
   height: 20px;
   right: 15px;
   display: block;
-  top: 42px;
+  top: 32px;
   opacity: 1;
   transform: scale(1);
   transition: all 0.5s;
@@ -143,7 +143,7 @@
   right: 0;
   width: 120px;
   height: 50px;
-  top: 28px;
+  top: 18px;
   z-index: 9999;
   display: flex;
   justify-content: center;

@@ -40,7 +40,7 @@
 }
 
 .publishedAt {
-  @apply w-full max-w-xl pt-3 mx-auto mb-6 text-lg opacity-70;
+  @apply w-full max-w-xl pt-3 mx-auto mb-6 text-lg;
 }
 
 @screen md {
