@@ -59,7 +59,7 @@ export default function SliderCarousel(props) {
       </h1>
       <div className="bottom-0 left-0 right-0 flex flex-col w-full max-w-xl p-6 pb-0 mx-auto sm:space-x-4 sm:flex-row sm:absolute ">
         <Link href="/contacto">
-          <a className="relative z-10 flex flex-col items-center justify-center w-full p-3 mx-auto mt-6 text-red-800 duration-100 bg-white shadow-sm hover:bg-red-600 hover:text-red-100 hover:shadow-lg bg-opacity-90 ">
+          <a className="relative z-10 flex flex-col items-center justify-center w-full p-3 mx-auto mt-6 text-red-800 duration-100 bg-white shadow-sm hover:bg-red-600 hover:text-red-100 hover:shadow-lg ">
             <FiPhone className="mx-3 mb-2 text-4xl md:text-4xl" />
             <div className="text-lg font-bold uppercase">
               Contacto
@@ -70,7 +70,7 @@ export default function SliderCarousel(props) {
           </a>
         </Link>
         <Link href="/institucional">
-          <a className="relative z-10 flex flex-col items-center justify-center w-full p-3 mx-auto mt-6 text-red-800 duration-100 bg-white shadow-sm hover:bg-red-600 hover:text-red-100 hover:shadow-lg bg-opacity-90">
+          <a className="relative z-10 flex flex-col items-center justify-center w-full p-3 mx-auto mt-6 text-red-800 duration-100 bg-white shadow-sm hover:bg-red-600 hover:text-red-100 hover:shadow-lg ">
             <FiInfo className="mx-3 mb-2 text-4xl md:text-4xl" />
             <span className="text-lg font-bold uppercase">Institucional</span>
           </a>

@@ -20,6 +20,9 @@ export default function Header() {
                 title="Bomberos Voluntarios de Luján de Cuyo"
                 width={80}
                 height={100}
+                objectFit="fill"
+                quality={80}
+                layout="fixed"
               />
               <span className="w-32 ml-3 text-sm text-gray-100 uppercase md:w-auto sm:block lg:text-2xl">
                 Bomberos Voluntarios <br /> de Luján de Cuyo
@@ -124,7 +127,10 @@ export default function Header() {
                 </Menu>
               </div>
               <HeaderLink url="/noticias" title="Noticias" />
-              <HeaderLink url="/noticias/academia-aspirantes-a-bomberos-ciclo-2021" title="Academia" />
+              <HeaderLink
+                url="/noticias/academia-aspirantes-a-bomberos-ciclo-2021"
+                title="Academia"
+              />
               <HeaderLink url="/galeria" title="Galería" />
               <HeaderLink url="/contacto" title="Contacto" />
             </nav>
