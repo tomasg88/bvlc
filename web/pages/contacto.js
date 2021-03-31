@@ -10,13 +10,11 @@ import RrssIcon from "../components/rrssIcon"
 import { BG_CONSTANTS } from "../utils/constants"
 
 const ContactItem = ({ title, value }) => (
-  <div className="border-t border-red-400">
+  <div className="px-12 border-t border-red-400">
     <dl>
       <div className="px-4 py-5 text-xl text-center md:text-left sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-        <dt className="font-medium text-gray-500">{ title }</dt>
-        <dd className="mt-1 text-gray-900 sm:mt-0 sm:col-span-2">
-          { value }
-        </dd>
+        <dt className="mt-1 text-base font-medium text-gray-500 uppercase">{title}</dt>
+        <dd className="mt-1 text-gray-900 sm:mt-0 sm:col-span-2">{value}</dd>
       </div>
     </dl>
   </div>
@@ -31,33 +29,49 @@ export default function Contact({ phones, mails }) {
           <title>Bomberos Voluntarios de Luján de Cuyo</title>
           <link rel="icon" href="/favicon.ico" />
         </Head>
-        <div className="relative flex items-start justify-center w-full min-h-screen overflow-hidden text-left text-gray-800 bg-gray-900 md:items-start ">
-          <div className="relative z-50 w-full max-w-2xl px-12 py-12 mx-auto mt-12 bg-white shadow-2xl">
-            <h1 className="relative z-10 flex flex-col items-center mb-6 font-sans text-6xl font-light md:flex-row">
-              Contacto <small className="mt-3 ml-6 text-lg font-bold opacity-80">24hs / 365 días</small>
+        <div className="relative flex items-start justify-center w-full pb-32 overflow-hidden text-left text-gray-800 bg-gray-900 md:pt-12 md:items-start ">
+          <div className="relative z-50 w-full max-w-4xl mx-auto overflow-hidden bg-white rounded-lg shadow-2xl md:mt-12">
+            <h1 className="relative z-10 flex flex-col items-center justify-between px-10 pt-12 pb-4 font-sans text-6xl font-light text-gray-700 bg-gray-100 pattern-vertical-lines-x ">
+              Contacto{" "}
+              <small className="mt-3 text-lg font-bold opacity-80">
+                24hs / 365 días
+              </small>
             </h1>
-            <div>
-              {
-                phones && phones.map(p => <ContactItem key={p._id} title={p.title} value={p.value} />)
-              }
-              {
-                mails && mails.map(m => <ContactItem key={m._id} title={m.title} value={m.value} />)
-              }
-              <div className="border-t border-red-400">
+            <div className="mb-6">
+              {phones &&
+                phones.map((p) => (
+                  <ContactItem key={p._id} title={p.title} value={p.value} />
+                ))}
+              {mails &&
+                mails.map((m) => (
+                  <ContactItem key={m._id} title={m.title} value={m.value} />
+                ))}
+              <div className="px-12 border-t border-red-400">
                 <dl>
                   <div className="px-4 py-5 text-xl text-center md:text-left sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                    <dt className="font-medium text-gray-500">Nuestras redes</dt>
+                    <dt className="mt-1 text-base font-medium text-gray-500 uppercase">Redes sociales</dt>
                     <dd className="flex items-center justify-center mt-1 text-gray-900 md:justify-start sm:mt-0">
-                      { rrss.map(rs => <RrssIcon className={"mr-6 text-3xl"} key={rs._id} rrss={rs.rrss} url={rs.rrssUrl} />) }
+                      {rrss.map((rs) => (
+                        <RrssIcon
+                          className={"mr-6 text-3xl"}
+                          key={rs._id}
+                          rrss={rs.rrss}
+                          url={rs.rrssUrl}
+                        />
+                      ))}
                     </dd>
                   </div>
                 </dl>
               </div>
             </div>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!4v1617073836651!6m8!1m7!1sJDrb8eUKNjmWiFLuO3zmFw!2m2!1d-33.03411810101265!2d-68.89872557060163!3f256.0376351254512!4f1.281970502218357!5f1.5334771114843995"
+              width="100%"
+              height="450"
+              loading="lazy"
+            ></iframe>
           </div>
-          
-            <BackgroundImage image={BG_CONSTANTS.doors} opacity={60} />
-          
+          <BackgroundImage image={BG_CONSTANTS.doors} opacity={20} />
         </div>
       </div>
     </Layout>
@@ -65,10 +79,11 @@ export default function Contact({ phones, mails }) {
 }
 
 export async function getStaticProps() {
-  const { phones, mails } = await getClient(false).fetch(contactDataQuery);
+  const { phones, mails } = await getClient(false).fetch(contactDataQuery)
   return {
     props: {
-      phones, mails
-    }
+      phones,
+      mails,
+    },
   }
 }

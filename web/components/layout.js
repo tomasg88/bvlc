@@ -20,7 +20,7 @@ export default function Layout({ children }) {
       <Meta />
       <Offcanvas />
       <Header />
-      <div className="min-h-screen bg-red-500 pt-28">
+      <div className="pt-20 bg-red-600 bg-pattern">
         <SimpleReactLightbox>
           <main>{children}</main>
         </SimpleReactLightbox>

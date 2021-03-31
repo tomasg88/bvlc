@@ -36,6 +36,9 @@ export default function Footer() {
                 alt="Bomberos Voluntarios de Luján de Cuyo"
                 width={80}
                 height={100}
+                objectFit="fill"
+                quality={80}
+                layout="fixed"
               />
               <span className="block text-sm font-bold text-center text-gray-900 uppercase">
                 Bomberos Voluntarios <br /> de Luján de Cuyo

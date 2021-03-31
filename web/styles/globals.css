@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,700&display=swap");
 
 html,
 body {
@@ -26,7 +26,7 @@ body {
   left: 0;
   right: 0;
   z-index: 999;
-  height: 113px !important;
+  height: 88px ​!important;
 }
 
 /* Para mover luego al lugar correspondiente */
@@ -70,12 +70,12 @@ body {
 }
 
 header nav a {
-  @apply px-5 py-2 font-sans text-sm font-bold uppercase border-b-4 border-transparent;
+  @apply px-2 py-2 font-sans text-sm font-bold uppercase border-b-4 border-transparent;
 }
 
 @screen lg {
   header nav a {
-    @apply text-lg text-white;
+    @apply px-5 text-lg text-white;
   }
 }
 
@@ -84,7 +84,7 @@ header nav a:hover {
 }
 
 .btn {
-  @apply px-4 py-2 font-bold text-white bg-red-800 border-b-4 border-red-700 rounded hover:bg-red-600 hover:border-red-500;
+  @apply px-4 py-2 font-bold text-white bg-red-800 border-b-4 border-yellow-600 rounded hover:bg-red-600 hover:border-yellow-700;
 }
 
 /*
