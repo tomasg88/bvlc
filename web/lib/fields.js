@@ -23,3 +23,7 @@ export const albumFields = `
   _id, title, description, cover, imageList,
   "publishedAt": _createdAt
 `
+
+export const equipmentFields = `
+  _id, title, title, imagesGallery, body
+`
