@@ -2,7 +2,7 @@ export const BG_CONSTANTS = {
   team: '/web/team.jpeg',
   trucks: '/web/camiones.jpg',
   news: '/web/equipo.jpg',
-  doors: 'https://images.unsplash.com/photo-1453726007388-5df12357fcc6',
+  doors: '/web/doors.jpg',
   index_1: '/web/camion-b34.jpg',
   index_3: '/web/rescate-montana.jpg'
 }
