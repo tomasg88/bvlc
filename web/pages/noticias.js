@@ -66,6 +66,7 @@ export default function News({ list }) {
 
 export async function getStaticProps() {
   const list = await getClient(false).fetch(allPostQuery)
+  // just a test
   return {
     props: { list },
   }
