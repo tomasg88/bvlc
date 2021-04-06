@@ -37,6 +37,13 @@ export const postBySlugQuery = `
   }
 `
 
+export const academyQuery = `
+{
+  "albums": *[_type == "album" && "Academia" in categories[]->.title] { ${albumFields} },
+  "news": *[_type == "post" && "Academia" in categories[]->.title] { ${postFields} }
+}
+`
+
 export const activeForceQuery = ` *[_type == "activeForce"] `
 
 export const leadershipQuery = ` *[_type == "leadership"] `
