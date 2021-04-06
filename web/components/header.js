@@ -128,9 +128,10 @@ export default function Header() {
               </div>
               <HeaderLink url="/noticias" title="Noticias" />
               <HeaderLink
-                url="/noticias/academia-aspirantes-a-bomberos-ciclo-2021"
+                url="/academia"
                 title="Academia"
               />
+              <HeaderLink url="/equipamiento" title="Equipamiento" />
               <HeaderLink url="/galeria" title="Galería" />
               <HeaderLink url="/contacto" title="Contacto" />
             </nav>

@@ -17,6 +17,12 @@ export default {
       validation: Rule => Rule.required(),
     },
     {
+      name: 'categories',
+      title: 'Categorias',
+      type: 'array',
+      of: [{type: 'reference', to: {type: 'category'}}]
+    },
+    {
       name: "cover",
       title: "Imagenes",
       type: "image",

@@ -7,7 +7,7 @@ import { contactDataQuery } from "../lib/queries"
 import { Context } from "../components/context"
 import { useContext } from "react"
 import RrssIcon from "../components/rrssIcon"
-import { BG_CONSTANTS } from "../utils/constants"
+import { BG_CONSTANTS, MAPS_URL } from "../utils/constants"
 
 const ContactItem = ({ title, value }) => (
   <div className="px-12 border-t border-red-400">
@@ -65,7 +65,7 @@ export default function Contact({ phones, mails }) {
               </div>
             </div>
             <iframe
-              src="https://www.google.com/maps/embed?pb=!4v1617073836651!6m8!1m7!1sJDrb8eUKNjmWiFLuO3zmFw!2m2!1d-33.03411810101265!2d-68.89872557060163!3f256.0376351254512!4f1.281970502218357!5f1.5334771114843995"
+              src={MAPS_URL}
               width="100%"
               height="450"
               loading="lazy"

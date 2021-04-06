@@ -1,14 +1,13 @@
 import Head from "next/head"
 import styles from "../styles/Home.module.css"
 import Layout from "../components/layout"
-// import InfoRows from "../components/infoRows"
 import HomeCarousel from "../components/homeCarousel"
 import Link from "next/link"
 import { getClient } from "../lib/sanity.server"
 import { indexQuery } from "../lib/queries"
 import CoverImage from "../components/coverImage"
 
-export default function Home({ news, lastMembers, leadership }) {
+export default function Home({ news }) {
   return (
     <Layout>
       <div className={styles.container}>
@@ -40,8 +39,6 @@ export default function Home({ news, lastMembers, leadership }) {
                         <CoverImage title={n.title} image={n.mainImage} />
                       </a>
                     </Link>
-
-
                     <div className="px-6 py-3 pb-8">
                       <h3 className="font-sans text-lg font-bold md:text-xl">
                         {n.title}
@@ -64,43 +61,6 @@ export default function Home({ news, lastMembers, leadership }) {
               </Link>
             </div>
           </div>
-
-          {/*
-           <InfoRows />
-           */}
-
-          {/* <div className="hidden pt-12 bg-white md:block ">
-            <Link href="/cuerpo-activo">
-              <a className="block max-w-6xl pt-12 pb-6 mx-auto font-sans text-6xl font-bold text-red-500 hover:text-red-600">
-                Nuevos miembros
-              </a>
-            </Link>
-            <div className="grid max-w-6xl grid-cols-3 gap-3 px-2 py-6 mx-auto mt-6">
-              {lastMembers &&
-                lastMembers.map((n) => (
-                  <div key={n._id} className="p-3 text-4xl bg-gray-100 shadow-md ">
-                    <h3 className="font-sans text-3xl font-bold">{n.title}</h3>
-                    <p className="mt-2 text-xl">{n.text}</p>
-                  </div>
-                ))}
-            </div>
-          </div> */}
-          {/* <div className="hidden pt-12 bg-white md:block ">
-            <Link href="/comision-directiva">
-              <a className="block max-w-6xl pt-12 pb-6 mx-auto font-sans text-6xl font-bold text-red-500 hover:text-red-600">
-                Comisión directiva
-              </a>
-            </Link>
-            <div className="grid max-w-6xl grid-cols-3 gap-3 px-2 py-6 mx-auto mt-6">
-              {leadership &&
-                leadership.map((n) => (
-                  <div key={n._id} className="p-3 text-4xl bg-gray-100 shadow-md ">
-                    <h3 className="font-sans text-3xl font-bold">{n.title}</h3>
-                    <p className="mt-2 text-xl">{n.text}</p>
-                  </div>
-                ))}
-            </div>
-          </div> */}
         </main>
       </div>
     </Layout>
