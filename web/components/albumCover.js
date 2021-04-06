@@ -1,15 +1,13 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { urlForImage } from '../lib/sanity'
 
 export default function AlbumCover({ 
   cover, title, description, album, selectAlbum 
 }) {
-  const [showDetails, setShowDetails] = useState(false)
   return (
     <div className="relative flex items-start justify-start mb-3 overflow-hidden border border-gray-300 rounded-sm shadow ">
       <img
-        onMouseEnter={() => setShowDetails(true)}
-        onMouseLeave={() => setShowDetails(false)}
+        onClick={() => selectAlbum(album)}
         className="object-cover w-48 h-48 cursor-pointer opacity-90"
         src={urlForImage(cover).url()}
       />
