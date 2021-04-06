@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import AlbumCover from '../components/albumCover';
 import BackgroundImage from '../components/backgroundImage';
+import Gallery from '../components/gallery';
 import Layout from '../components/layout';
 import { equipmentQuery } from '../lib/queries'
 import { getClient } from '../lib/sanity.server'
@@ -19,7 +20,13 @@ export default function Equipamiento({ equipment }) {
         </div>
         <div className="flex flex-col max-w-2xl mx-auto mt-2 bg-white">
           {equipment?.map((eq) => (
-            <AlbumCover key={eq._id} album={eq} selectAlbum={setSelected} />
+            <AlbumCover 
+              key={eq._id} 
+              title={eq.title}
+              cover={eq.imagesGallery[0]} 
+              album={eq.imagesGallery} 
+              selectAlbum={setSelected} 
+            />
           ))}
         </div>
         {selected && (

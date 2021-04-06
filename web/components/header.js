@@ -131,6 +131,7 @@ export default function Header() {
                 url="/noticias/academia-aspirantes-a-bomberos-ciclo-2021"
                 title="Academia"
               />
+              <HeaderLink url="/equipamiento" title="Equipamiento" />
               <HeaderLink url="/galeria" title="Galería" />
               <HeaderLink url="/contacto" title="Contacto" />
             </nav>

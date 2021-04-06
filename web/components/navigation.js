@@ -31,7 +31,11 @@ const routes = [
     slug: "/galeria",
     ariaLabel: "Ver galeria fotográfica",
   },
-
+  {
+    title: "Equipamiento",
+    slug: "/equipamiento",
+    ariaLabel: "Ver equipamiento",
+  },
   {
     title: "Academia",
     slug: "/noticias/academia-aspirantes-a-bomberos-ciclo-2021",
