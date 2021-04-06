@@ -7,6 +7,7 @@ import { allPostQuery } from "../lib/queries"
 import CoverImage from "../components/coverImage"
 import BackgroundImage from "../components/backgroundImage"
 import { BG_CONSTANTS } from "../utils/constants"
+import Card from "../components/card"
 
 export default function News({ list }) {
   const router = useRouter()
@@ -40,23 +41,7 @@ export default function News({ list }) {
         <div className="grid max-w-6xl gap-3 p-2 mx-auto mt-12 md:grid-cols-3 sm:grid-cols-2 ">
           {list &&
             list.map((n) => (
-              <div
-                key={n._id}
-                className="relative overflow-hidden text-4xl duration-500 transform translate-y-0 bg-white rounded-md shadow-md hover:shadow-2xl hover:-translate-y-1 "
-              >
-                <Link href={router.pathname + "/" + n.slug.current}>
-                  <a className="transition-all duration-500 hover:opacity-80">
-                    <CoverImage title={n.title} image={n.mainImage} />
-                  </a>
-                </Link>
-                <div className="px-6 py-3 pb-6">
-                  <h3 className="font-sans text-xl font-bold">{n.title}</h3>
-                  <p className="mt-2 text-base line-clamp-4">{n.excerpt}</p>
-                  <Link href={router.pathname + "/" + n.slug.current}>
-                    <a className="relative z-10 mt-6 text-base btn">Leer nota completa</a>
-                  </Link>
-                </div>
-              </div>
+              <Card {...n} key={n._id} />
             ))}
         </div>
       </div>

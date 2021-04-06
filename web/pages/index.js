@@ -2,6 +2,7 @@ import Head from "next/head"
 import styles from "../styles/Home.module.css"
 import Layout from "../components/layout"
 import HomeCarousel from "../components/homeCarousel"
+import Card from "../components/card"
 import Link from "next/link"
 import { getClient } from "../lib/sanity.server"
 import { indexQuery } from "../lib/queries"
@@ -26,31 +27,8 @@ export default function Home({ news }) {
             </div>
             <div className="grid max-w-6xl gap-3 p-8 pb-12 mx-auto mt-6 md:grid-cols-3 sm:grid-cols-2">
               {news &&
-                news.map((n) => (
-                  <div
-                    key={n._id}
-                    className="relative overflow-hidden text-4xl duration-500 transform translate-y-0 bg-white rounded-md shadow-md hover:shadow-2xl hover:-translate-y-2 "
-                  >
-                    <Link href={`/noticias/${n.slug}`}>
-                      <a
-                        aria-label={n.title}
-                        className="transition-all duration-500 hover:opacity-80"
-                      >
-                        <CoverImage title={n.title} image={n.mainImage} />
-                      </a>
-                    </Link>
-                    <div className="px-6 py-3 pb-8">
-                      <h3 className="font-sans text-lg font-bold md:text-xl">
-                        {n.title}
-                      </h3>
-                      <p className="my-2 text-base line-clamp-4">{n.excerpt}</p>
-                      <Link href={`/noticias/${n.slug}`}>
-                        <a className="relative z-10 block mt-6 text-base text-center btn">
-                          Leer nota completa
-                        </a>
-                      </Link>
-                    </div>
-                  </div>
+                news.map(n => (
+                 <Card {...n} key={n._id} />
                 ))}
             </div>
             <div className="flex flex-col items-center justify-between max-w-6xl pb-24 mx-auto font-sans">
