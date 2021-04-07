@@ -4,6 +4,30 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,700&display=swap");
 
+/* Turn on custom 8px wide scrollbar */
+::-webkit-scrollbar {
+  width: 10px; /* 1px wider than Lion. */
+  /* This is more usable for users trying to click it. */
+  /*-webkit-border-radius: 100px;*/
+}
+/* hover effect for both scrollbar area, and scrollbar 'thumb' */
+::-webkit-scrollbar:hover {
+  @apply bg-white bg-opacity-90;
+}
+
+/* The scrollbar 'thumb' ...that marque oval shape in a scrollbar */
+::-webkit-scrollbar-thumb:vertical {
+  /* This is the EXACT color of Mac OS scrollbars. 
+     Yes, I pulled out digital color meter */
+  @apply bg-red-500 bg-opacity-90;
+  -webkit-border-radius: 100px;
+}
+::-webkit-scrollbar-thumb:vertical:active {
+  @apply bg-red-800 bg-opacity-100;
+  -webkit-border-radius: 100px;
+}
+
+
 html,
 body {
   padding: 0;

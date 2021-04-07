@@ -8,6 +8,7 @@ import { useState } from "react"
 import Gallery from "../components/gallery"
 import Card from "../components/cardNews"
 
+
 export default function Academia({ news, albums }) {
   const [selectedAlbum, setSelectedAlbum] = useState([])
   return (

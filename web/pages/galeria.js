@@ -6,6 +6,7 @@ import { albumsQuery } from "../lib/queries"
 import Gallery from "../components/gallery"
 import { BG_CONSTANTS } from "../utils/constants"
 import AlbumCover from "../components/albumCover"
+import { motion, AnimatePresence } from "framer-motion"
 
 export default function Galeria({ albums }) {
   const [selectedAlbum, setSelectedAlbum] = useState([])
@@ -18,8 +19,16 @@ export default function Galeria({ albums }) {
           </h1>
           <BackgroundImage image={BG_CONSTANTS.team} opacity={20} />
         </div>
+        <motion.h2
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="py-3 mt-3 text-xl font-bold text-center text-gray-500"
+        >
+          Hacer click en un album
+        </motion.h2>
         <div className="max-w-6xl mx-auto mt-2 bg-white">
-          <div className="grid grid-cols-3 gap-3 ">
+          <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-3 ">
             {albums?.map((a) => (
               <AlbumCover
                 key={a._id}

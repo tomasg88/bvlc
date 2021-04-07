@@ -12,7 +12,7 @@ export default function Equipamiento({ equipment }) {
   return (
     <Layout>
       <div className="min-h-screen bg-white">
-        <HeroInstitucional title="Equipamiento" image={BG_CONSTANTS.team} />
+        <HeroInstitucional title="Equipamiento" image={BG_CONSTANTS.trucks} />
         <div className="max-w-6xl pt-6 mx-auto mt-6 bg-white ">
           <div className="grid grid-cols-3 gap-4">
             {equipment?.map((eq) => (
