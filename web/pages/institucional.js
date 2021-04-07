@@ -4,8 +4,7 @@ import { getClient } from "../lib/sanity.server"
 import ArticleContent from "../components/articleContent"
 import { SRLWrapper } from "simple-react-lightbox"
 import { pagesQuery } from "../lib/queries"
-import BackgroundImage from "../components/backgroundImage"
-import { BG_CONSTANTS } from "../utils/constants"
+import HeroInstitucional from "../components/HeroInstitucional"
 
 const options = {
   settings: {
@@ -19,12 +18,7 @@ export default function Institucional({ pages }) {
   return (
     <Layout>
       <div className="bg-white ">
-        <div className="relative w-full py-32 overflow-hidden text-center text-white bg-gray-800 ">
-          <h1 className="relative z-10 flex flex-col items-center justify-center font-sans text-4xl font-bold">
-            { pages.title }
-          </h1>
-          <BackgroundImage image={BG_CONSTANTS.team} opacity={20} />
-        </div>
+        <HeroInstitucional  title={pages.title}/>
         <div id="body" className="bg-white">
           <SRLWrapper>
             <ArticleContent body={pages.body} />

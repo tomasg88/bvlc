@@ -83,8 +83,12 @@ header nav a:hover {
   @apply border-gray-100;
 }
 
+header nav a.active {
+  @apply border-gray-100;
+}
+
 .btn {
-  @apply px-4 py-2 font-bold text-white bg-red-800 border-b-4 border-yellow-600 rounded hover:bg-red-600 hover:border-yellow-700;
+  @apply px-4 py-2 font-bold text-white bg-red-700 border-b-4 border-red-700 rounded cursor-pointer hover:bg-red-600 hover:border-red-800;
 }
 
 /*

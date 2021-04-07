@@ -2,11 +2,10 @@ import Head from "next/head"
 import styles from "../styles/Home.module.css"
 import Layout from "../components/layout"
 import HomeCarousel from "../components/homeCarousel"
-import Card from "../components/card"
+import Card from "../components/cardNews"
 import Link from "next/link"
 import { getClient } from "../lib/sanity.server"
 import { indexQuery } from "../lib/queries"
-import CoverImage from "../components/coverImage"
 
 export default function Home({ news }) {
   return (
@@ -17,7 +16,7 @@ export default function Home({ news }) {
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <main className="w-full ">
-          <HomeCarousel />
+          <HomeCarousel arrows={false} />
           {/*<HomeCarousel arrows={true} />*/}
           <div className="bg-gray-100">
             <div className="flex flex-col items-center justify-center max-w-6xl pt-24 pb-6 mx-auto font-sans border-b-2 border-yellow-400 md:flex-row">

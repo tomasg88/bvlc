@@ -77,7 +77,7 @@ export default function Header() {
                       >
                         <Menu.Items
                           static
-                          className="absolute right-0 w-56 origin-top-right bg-red-500 shadow-lg outline-none"
+                          className="absolute left-0 right-0 w-full origin-top-right bg-red-600 shadow-lg outline-none"
                         >
                           <div className="py-3">
                             <Menu.Item>
@@ -119,6 +119,19 @@ export default function Header() {
                                 </Link>
                               )}
                             </Menu.Item>
+                            <Menu.Item>
+                              {({ active }) => (
+                                <Link href="/equipamiento">
+                                  <a
+                                    className={`${
+                                      active ? "bg-red-500 text-gray-100" : "text-white"
+                                    } flex justify-between w-full px-4 py-3  hover:opacity-90 hover:bg-red-700 border-0 text-base leading-5 text-left`}
+                                  >
+                                    Equipamiento
+                                  </a>
+                                </Link>
+                              )}
+                            </Menu.Item>
                           </div>
                         </Menu.Items>
                       </Transition>
@@ -131,7 +144,6 @@ export default function Header() {
                 url="/academia"
                 title="Academia"
               />
-              <HeaderLink url="/equipamiento" title="Equipamiento" />
               <HeaderLink url="/galeria" title="Galería" />
               <HeaderLink url="/contacto" title="Contacto" />
             </nav>
