@@ -94,12 +94,12 @@ body {
 }
 
 header nav a {
-  @apply px-2 py-2 font-sans text-sm font-bold uppercase border-b-4 border-transparent;
+  @apply px-2 py-2 font-sans text-sm font-bold text-white uppercase border-b-4 border-transparent;
 }
 
 @screen lg {
   header nav a {
-    @apply px-5 text-lg text-white;
+    @apply px-5 text-lg ;
   }
 }
 

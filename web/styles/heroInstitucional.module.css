@@ -1,5 +1,5 @@
 .tabs {
-  @apply relative z-10 flex justify-center mx-auto space-x-2 font-sans text-xl font-bold -mt-11 max-w-7xl;
+  @apply relative z-10 justify-center hidden mx-auto space-x-2 font-sans text-base font-bold md:text-xl sm:flex sm:-mt-10 md:-mt-11 max-w-7xl;
 }
 
 .tabs a {
