@@ -3,7 +3,7 @@ import Layout from "../components/layout"
 import { activeForceQuery } from "../lib/queries"
 import { getClient } from "../lib/sanity.server"
 import Hero from "../components/hero"
-import HeroInstitucional from "../components/HeroInstitucional"
+import HeroInstitucional from "../components/heroInstitucional"
 import { BG_CONSTANTS } from "../utils/constants"
 
 export default function CuerpoActivo({ list }) {

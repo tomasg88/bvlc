@@ -1,7 +1,7 @@
 import React from "react"
 import Link from "next/link"
 import Layout from "../components/layout"
-import HeroInstitucional from "../components/HeroInstitucional"
+import HeroInstitucional from "../components/heroInstitucional"
 import { getClient } from "../lib/sanity.server"
 import { leadershipQuery } from "../lib/queries"
 import Hero from "../components/hero"

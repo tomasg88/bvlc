@@ -4,7 +4,7 @@ import { getClient } from "../lib/sanity.server"
 import ArticleContent from "../components/articleContent"
 import { SRLWrapper } from "simple-react-lightbox"
 import { pagesQuery } from "../lib/queries"
-import HeroInstitucional from "../components/HeroInstitucional"
+import HeroInstitucional from "../components/heroInstitucional"
 import { BG_CONSTANTS } from "../utils/constants"
 
 export default function Institucional({ pages }) {

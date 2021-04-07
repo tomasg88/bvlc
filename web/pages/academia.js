@@ -19,7 +19,7 @@ export default function Academia({ news, albums }) {
           <BackgroundImage image={BG_CONSTANTS.news} opacity={20} />
         </div>
         <div className="flex flex-col items-center max-w-6xl pt-12 pb-4 mx-auto font-sans border-b-2 border-yellow-400 md:flex-row">
-          <h2 className="text-5xl font-light !bg-red-500 text-gray-900 ">
+          <h2 className="text-5xl font-light text-gray-900 ">
             Últimas noticias
           </h2>
         </div>
@@ -27,7 +27,7 @@ export default function Academia({ news, albums }) {
           {news && news.map((n) => <Card {...n} key={n._id} />)}
         </div>
         <div className="flex flex-col items-center max-w-6xl pt-12 pb-4 mx-auto font-sans border-b-2 border-yellow-400 md:flex-row">
-          <h2 className="text-5xl font-light !bg-red-500 text-gray-900 ">Imagenes</h2>
+          <h2 className="text-5xl font-light text-gray-900 ">Imagenes</h2>
         </div>
         <div className="w-full max-w-6xl mx-auto mt-2 ">
           <div className="grid grid-cols-3 gap-3 ">
