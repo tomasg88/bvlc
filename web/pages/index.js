@@ -8,7 +8,7 @@ import { getClient } from "../lib/sanity.server"
 import { indexQuery } from "../lib/queries"
 import Fade from "react-reveal/Fade"
 
-export default function Home({ news }) {
+export default function Home({ recentNews }) {
   return (
     <Layout>
       <div className={styles.container}>
@@ -27,8 +27,8 @@ export default function Home({ news }) {
               </Fade>
             </div>
               <div className="grid max-w-6xl gap-3 p-8 pb-12 mx-auto mt-6 md:grid-cols-3 sm:grid-cols-2">
-                {news &&
-                  news.map((n) => (
+                {recentNews &&
+                  recentNews.map((n) => (
                     <Fade>
                       <Card {...n} key={n._id} />
                     </Fade>
@@ -49,12 +49,10 @@ export default function Home({ news }) {
 }
 
 export async function getStaticProps(ctx) {
-  const { news, lastMembers, lastLeaders } = await getClient(false).fetch(indexQuery)
+  const { recentNews } = await getClient(false).fetch(indexQuery)
   return {
     props: {
-      news,
-      lastMembers,
-      leadership: lastLeaders,
+      recentNews
     },
   }
 }
