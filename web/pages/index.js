@@ -12,10 +12,6 @@ export default function Home({ recentNews }) {
   return (
     <Layout>
       <div className={styles.container}>
-        <Head>
-          <title>Bomberos Voluntarios de Luján de Cuyo</title>
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
         <main className="w-full ">
           <HomeCarousel arrows={false} />
           <div className="bg-gray-100">
