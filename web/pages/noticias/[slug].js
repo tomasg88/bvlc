@@ -1,5 +1,5 @@
 import Layout from "../../components/layout"
-import { getClient, sanityClient } from "../../lib/sanity.server"
+import { getClient } from "../../lib/sanity.server"
 import { postQuery, postSlugsQuery } from "../../lib/queries"
 import { urlForImage } from "../../lib/sanity"
 import Head from "next/head"
@@ -11,7 +11,7 @@ export default function Article(props) {
   const { article, moreArticles } = props.data
 
   return (
-    <Layout>
+    <Layout description={article.excerpt}>
       <div className="flex flex-col mx-auto bg-white">
         {article && (
           <article className="text-left">
@@ -78,7 +78,7 @@ export async function getStaticProps({ params, preview = false }) {
 
 // Returns ALL dynamic pages based on content
 export async function getStaticPaths() {
-  const paths = await sanityClient.fetch(postSlugsQuery)
+  const paths = await getClient().fetch(postSlugsQuery)
   return {
     paths: paths.map((slug) => ({ params: { slug } })) || [],
     fallback: false,

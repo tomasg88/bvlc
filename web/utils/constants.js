@@ -1,3 +1,6 @@
+export const DEFAULT_PAGE_TITLE = "Bomberos Voluntarios de Luján de Cuyo"
+export const DEFAULT_PAGE_DESCRIPTION = "Sitio web para los Bomberos Voluntarios de Luján de Cuyo, Mendoza"
+
 export const BG_CONSTANTS = {
   team: '/web/team.jpeg',
   trucks: '/web/camiones.jpg',
@@ -56,5 +59,3 @@ export const ROUTES = [
     ariaLabel: "Ver datos contacto",
   }
 ]
-
-export const DEFAULT_PAGE_TITLE = "Bomberos Voluntarios de Luján de Cuyo"
