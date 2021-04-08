@@ -14,7 +14,7 @@ export default function Equipamiento({ equipment }) {
       <div className="min-h-screen bg-white">
         <HeroInstitucional title="Equipamiento" image={BG_CONSTANTS.trucks} />
         <div className="max-w-6xl pt-6 mx-auto mt-6 bg-white ">
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid gap-4 md:grid-cols-3">
             {equipment?.map((eq) => (
               <AlbumCover
                 key={eq._id}

@@ -13,21 +13,21 @@ export default function SliderCarousel(props) {
       {props.arrows ? (
         <div>
           <div
-            className="absolute left-0 z-50 items-center justify-center hidden w-12 h-12 text-5xl text-center text-white cursor-pointer hover:opacity-90 md:flex top-60"
+            className="absolute left-0 z-50 items-center justify-center hidden w-12 h-12 text-5xl text-center text-white cursor-pointer hover:opacity-90 md:flex top-1/2"
             onClick={handleClick}
             data-position={position - 1}
           >
             <AiOutlineArrowLeft />
           </div>
           <div
-            className="absolute right-0 z-50 items-center justify-center hidden w-12 h-12 text-5xl text-center text-white cursor-pointer hover:opacity-90 md:flex top-60"
+            className="absolute right-0 z-50 items-center justify-center hidden w-12 h-12 text-5xl text-center text-white cursor-pointer hover:opacity-90 md:flex top-1/2"
             right="true"
             onClick={handleClick}
             data-position={position + 1}
           >
             <AiOutlineArrowRight />
           </div>
-          <div className="absolute bottom-0 left-0 right-0 z-50 flex items-center justify-center bg-red-500">
+          <div className="absolute left-0 right-0 z-50 flex items-center justify-center bg-red-500 bg-opacity-50 top-8">
             {Array(...Array(total)).map((val, index) => (
               <div
                 className="mx-1 text-4xl cursor-pointer"
@@ -51,12 +51,17 @@ export default function SliderCarousel(props) {
   const Carousel = makeCarousel(CarouselUI)
   return (
     <div className="relative flex flex-col items-center justify-center py-32 overflow-hidden text-center text-white bg-gray-900">
-      <p className="relative z-10 max-w-xl px-6 mx-auto font-mono text-xl font-bold uppercase md:text-xl ">
-        Saber para servir
-      </p> 
-      <h1 className="relative z-10 max-w-xl px-6 py-3 mx-auto font-mono text-4xl font-thin md:text-6xl ">
-        Bomberos Voluntarios de Luján de Cuyo
-      </h1>
+      <Fade cascade delay={900} >
+        <p className="relative z-10 max-w-xl px-6 mx-auto font-mono text-xl font-bold uppercase md:text-xl ">
+          Saber para servir
+        </p>
+      </Fade>
+      <Fade delay={400}>
+        <h1 className="relative z-10 max-w-xl px-6 py-3 mx-auto font-mono text-4xl font-thin md:text-6xl ">
+          Bomberos Voluntarios de Luján de Cuyo
+        </h1>
+      </Fade>
+
       <div className="bottom-0 left-0 right-0 flex flex-col w-full max-w-xl p-6 pb-0 mx-auto sm:space-x-4 sm:flex-row sm:absolute ">
         <Link href="/contacto">
           <a className="relative z-10 flex flex-col items-center justify-center w-full p-3 mx-auto mt-6 text-red-800 duration-100 bg-gray-100 shadow-sm hover:bg-red-600 hover:text-red-100 hover:shadow-lg ">
@@ -64,7 +69,7 @@ export default function SliderCarousel(props) {
             <div className="text-lg font-bold uppercase">
               Contacto
               <span className="flex flex-col text-base text-left sm:text-center opacity-90 sm:hidden">
-                EMERGENCIAS  (0261) 498-0999
+                EMERGENCIAS (0261) 498-0999
               </span>
             </div>
           </a>

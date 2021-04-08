@@ -1,33 +1,24 @@
 import React, { useState } from "react"
-import BackgroundImage from "../components/backgroundImage"
 import Layout from "../components/layout"
 import { getClient } from "../lib/sanity.server"
 import { albumsQuery } from "../lib/queries"
 import Gallery from "../components/gallery"
-import { BG_CONSTANTS } from "../utils/constants"
 import AlbumCover from "../components/albumCover"
-import { motion, AnimatePresence } from "framer-motion"
+import HeroPage from "../components/heroPage"
+import Fade from "react-reveal/Fade"
 
 export default function Galeria({ albums }) {
   const [selectedAlbum, setSelectedAlbum] = useState([])
   return (
     <Layout>
       <div className="min-h-screen bg-white">
-        <div className="relative py-40 overflow-hidden text-center text-white bg-gray-800 ">
-          <h1 className="relative z-10 font-sans text-6xl font-light">
-            Galería fotográfica
-          </h1>
-          <BackgroundImage image={BG_CONSTANTS.team} opacity={20} />
-        </div>
-        <motion.h2
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          className="py-3 mt-3 text-xl font-bold text-center text-gray-500"
-        >
-          Hacer click en un album
-        </motion.h2>
-        <div className="max-w-6xl mx-auto mt-2 bg-white">
+        <HeroPage title="Galería fotográfica" />
+        <Fade>
+          <h2 className="py-3 -mt-16 text-lg font-semibold tracking-wider text-center text-gray-300">
+            Hacer click en un album
+          </h2>
+        </Fade>
+        <div className="max-w-6xl mx-auto mt-12 bg-white">
           <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-3 ">
             {albums?.map((a) => (
               <AlbumCover
