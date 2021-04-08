@@ -7,7 +7,7 @@ import { getClient } from "../lib/sanity.server"
 import { indexQuery } from "../lib/queries"
 import CoverImage from "../components/coverImage"
 
-export default function Home({ news }) {
+export default function Home({ recentNews }) {
   return (
     <Layout>
       <div className={styles.container}>
@@ -25,8 +25,8 @@ export default function Home({ news }) {
               </h2>
             </div>
             <div className="grid max-w-6xl gap-3 p-8 pb-12 mx-auto mt-6 md:grid-cols-3 sm:grid-cols-2">
-              {news &&
-                news.map((n) => (
+              {recentNews &&
+                recentNews.map((n) => (
                   <div
                     key={n._id}
                     className="relative overflow-hidden text-4xl duration-500 transform translate-y-0 bg-white rounded-md shadow-md hover:shadow-2xl hover:-translate-y-2 "
@@ -68,12 +68,10 @@ export default function Home({ news }) {
 }
 
 export async function getStaticProps(ctx) {
-  const { news, lastMembers, lastLeaders } = await getClient(false).fetch(indexQuery)
+  const { recentNews } = await getClient(false).fetch(indexQuery)
   return {
     props: {
-      news,
-      lastMembers,
-      leadership: lastLeaders,
+      recentNews
     },
   }
 }

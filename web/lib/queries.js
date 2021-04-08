@@ -2,11 +2,7 @@ import { albumFields, equipmentFields, generalFields, pageFields, postFields } f
 
 export const indexQuery = `
 {
-  "news": *[_type == "post"] | order(date desc, _updatedAt desc) {
-    ${postFields}
-  },
-  "lastMembers": *[_type == "activeForce"],
-  "lastLeaders": *[_type == "leadership"]
+  "recentNews": *[_type == "post"] | order(publishedAt desc)[0..5] { ${postFields} }
 }`
 
 export const pagesQuery = `
