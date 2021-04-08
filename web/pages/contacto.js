@@ -23,7 +23,7 @@ const ContactItem = ({ title, value }) => (
 export default function Contact({ phones, mails }) {
   const [rrss] = useContext(Context)
   return (
-    <Layout>
+    <Layout title="Contacto">
       <div className={styles.container}>
         <div className="relative flex items-start justify-center w-full pb-32 overflow-hidden text-left text-gray-800 bg-gray-900 md:pt-12 md:items-start ">
           <div className="relative z-50 w-full max-w-4xl mx-auto overflow-hidden bg-white rounded-lg shadow-2xl md:mt-12">

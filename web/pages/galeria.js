@@ -10,7 +10,7 @@ import Fade from "react-reveal/Fade"
 export default function Galeria({ albums }) {
   const [selectedAlbum, setSelectedAlbum] = useState([])
   return (
-    <Layout>
+    <Layout title="Galería">
       <div className="min-h-screen bg-white">
         <HeroPage title="Galería fotográfica" />
         <Fade>

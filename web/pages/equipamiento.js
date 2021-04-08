@@ -10,7 +10,7 @@ import { BG_CONSTANTS } from "../utils/constants"
 export default function Equipamiento({ equipment }) {
   const [selected, setSelected] = useState(null)
   return (
-    <Layout>
+    <Layout title="Equipamiento">
       <div className="min-h-screen bg-white">
         <HeroInstitucional title="Equipamiento" image={BG_CONSTANTS.trucks} />
         <div className="max-w-6xl pt-6 mx-auto mt-6 bg-white ">

@@ -9,7 +9,7 @@ import Fade from "react-reveal/Fade"
 
 export default function CuerpoActivo({ list }) {
   return (
-    <Layout>
+    <Layout title="Cuerpo Activo">
       <div className="min-h-screen">
         <HeroInstitucional title="Cuerpo Activo" image={BG_CONSTANTS.team} />
         <div id="integrantes" className="p-6 mx-auto bg-white max-w-7xl">

@@ -11,7 +11,7 @@ import Card from "../components/cardNews"
 export default function News({ list }) {
   const router = useRouter()
   return (
-    <Layout>
+    <Layout title="Noticias">
       <div className="pb-24 bg-gray-100">
         <div className="relative py-40 overflow-hidden text-center text-white bg-gray-800 ">
           <h1 className="relative z-10 font-sans text-6xl font-light">

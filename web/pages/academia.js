@@ -11,7 +11,7 @@ import HeroPage from "../components/heroPage"
 export default function Academia({ news, albums }) {
   const [selectedAlbum, setSelectedAlbum] = useState([])
   return (
-    <Layout>
+    <Layout title="Academia">
         <div className="pb-24 bg-gray-100">
           <HeroPage title="Academia" image={BG_CONSTANTS.index_3} opacity={20} />
           <div className="flex flex-col items-center max-w-6xl pt-12 pb-4 mx-auto font-sans border-b-2 border-yellow-400 md:flex-row">

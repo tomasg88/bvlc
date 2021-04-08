@@ -10,7 +10,7 @@ import Fade from "react-reveal/Fade"
 
 export default function ComisionDirectiva({ list }) {
   return (
-    <Layout>
+    <Layout title="Comisión Directiva">
       <div className="min-h-screen">
         <HeroInstitucional
           title="Comisión Directiva"
