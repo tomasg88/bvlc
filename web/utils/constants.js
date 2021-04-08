@@ -56,3 +56,5 @@ export const ROUTES = [
     ariaLabel: "Ver datos contacto",
   }
 ]
+
+export const DEFAULT_PAGE_TITLE = "Bomberos Voluntarios de Luján de Cuyo"

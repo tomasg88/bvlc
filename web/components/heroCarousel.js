@@ -5,7 +5,7 @@ import { FiPhone, FiInfo } from "react-icons/fi"
 import makeCarousel from "react-reveal/makeCarousel"
 import Fade from "react-reveal/Fade"
 import Link from "next/link"
-import { BG_CONSTANTS } from "../utils/constants"
+import { BG_CONSTANTS, DEFAULT_PAGE_TITLE } from "../utils/constants"
 
 export default function SliderCarousel(props) {
   const CarouselUI = ({ position, total, handleClick, children }) => (
@@ -58,7 +58,7 @@ export default function SliderCarousel(props) {
       </Fade>
       <Fade delay={400}>
         <h1 className="relative z-10 max-w-xl px-6 py-3 mx-auto font-mono text-4xl font-thin md:text-6xl ">
-          Bomberos Voluntarios de Luján de Cuyo
+          {DEFAULT_PAGE_TITLE}
         </h1>
       </Fade>
 

@@ -4,12 +4,13 @@ import Meta from "../components/meta"
 import Offcanvas from "../components/offcanvas"
 import SimpleReactLightbox from "simple-react-lightbox"
 import Head from "next/head"
+import { DEFAULT_PAGE_TITLE } from "../utils/constants"
 
 export default function Layout({ title, children }) {
   return (
     <>
       <Head>
-        <title>{title && `${title} |`} Bomberos Voluntarios de Luján de Cuyo</title>
+        <title>{title && `${title} |`} {DEFAULT_PAGE_TITLE}</title>
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />

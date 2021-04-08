@@ -1,6 +1,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import styles from "../styles/Home.module.css"
+import { DEFAULT_PAGE_TITLE } from "../utils/constants"
 export default function Footer() {
   return (
     <footer className={styles.footer}>
@@ -33,7 +34,7 @@ export default function Footer() {
             <a className="flex flex-col items-center justify-center">
               <Image
                 src="/logo-bomberos-cuyo.png"
-                alt="Bomberos Voluntarios de Luján de Cuyo"
+                alt={DEFAULT_PAGE_TITLE}
                 width={80}
                 height={100}
                 objectFit="fill"

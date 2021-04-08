@@ -6,6 +6,7 @@ import RrssIcon from "./rrssIcon"
 import { Context } from "./context"
 import { useContext } from "react"
 import { Menu, Transition } from "@headlessui/react"
+import { DEFAULT_PAGE_TITLE } from "../utils/constants"
 export default function Header() {
   const [rrss] = useContext(Context)
   return (
@@ -16,8 +17,8 @@ export default function Header() {
             <a className="flex items-center justify-center transform -translate-y-2">
               <Image
                 src="/logo-bomberos-cuyo.png"
-                alt="Bomberos Voluntarios de Luján de Cuyo"
-                title="Bomberos Voluntarios de Luján de Cuyo"
+                alt={DEFAULT_PAGE_TITLE}
+                title={DEFAULT_PAGE_TITLE}
                 width={80}
                 height={100}
                 objectFit="fill"
