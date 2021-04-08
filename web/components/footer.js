@@ -2,7 +2,12 @@ import Link from "next/link"
 import Image from "next/image"
 import styles from "../styles/Home.module.css"
 import { DEFAULT_PAGE_TITLE } from "../utils/constants"
+import { Context } from "./context"
+import { useContext } from "react"
+
 export default function Footer() {
+  const [rrss] = useContext(Context)
+  console.log("🚀 ~ file: footer.js ~ line 10 ~ Footer ~ rrss", rrss)
   return (
     <footer className={styles.footer}>
       <div className="flex flex-col w-full mx-auto max-w-7xl">
@@ -13,20 +18,22 @@ export default function Footer() {
             <Link href="/contacto">Emergencias - 0261 498 0999</Link>
             <Link href="/contacto">Admistración - 0261 498 6341</Link>
             <Link href="/contacto">info@bomberoslujanmza.com.ar</Link>
-            <Link href="/contacto">Instagram</Link>
-            <Link href="/contacto">Facebook</Link>
+            {
+              rrss.map(rs => (
+                <a key={rs._id} href={rs.rrssUrl} target="_blank">{rs.rrss}</a>
+              ))
+            }
           </div>
           <div className="flex flex-col mt-6 space-y-1 md:mt-0">
             <span className="block mb-3 text-sm font-bold uppercase">Institucional</span>
-            <Link href="/noticias">Historia</Link>
-            <Link href="/noticias">Comisión Directiva</Link>
-            <Link href="/noticias">Cuerpo Activo</Link>
+            <Link href="/institucional">Historia</Link>
+            <Link href="/comision-directiva">Comisión Directiva</Link>
+            <Link href="/cuerpo-activo">Cuerpo Activo</Link>
           </div>
           <div className="flex flex-col mt-6 space-y-1 md:mt-0">
             <span className="block mb-3 text-sm font-bold uppercase">Noticias</span>
-            <Link href="/noticias">Academia</Link>
-            <Link href="/noticias">Contribuciones</Link>
-            <Link href="/noticias">Equipamiento</Link>
+            <Link href="/academia">Academia</Link>
+            <Link href="/equipamiento">Equipamiento</Link>
           </div>
         </div>
         <div className="w-full pt-12">
