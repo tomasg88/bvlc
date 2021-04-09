@@ -2,7 +2,6 @@ import { useCallback, useState } from "react";
 import { urlForImage } from "../lib/sanity";
 
 export default function Hero({ name, description, image}) {
-  const [showDetails, setShowDetails] = useState('opacity-0')
 
   const getImage = useCallback( () => {
     if (!image) 
@@ -18,8 +17,6 @@ export default function Hero({ name, description, image}) {
         className={'rounded-md rounded-r-none'} 
         src={getImage()} 
         style={{ height: '100px', width: '100px' }}
-        onMouseEnter={() => setShowDetails('opacity-1')}
-        onMouseLeave={() => setShowDetails('opacity-0')}
       />
 
       <div className={`w-full flex h-full flex-col items-start justify-center  space-y-2 ml-4`}>
