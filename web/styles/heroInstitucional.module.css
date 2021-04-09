@@ -1,0 +1,15 @@
+.tabs {
+  @apply relative z-10 justify-center hidden mx-auto space-x-2 font-sans text-base font-bold md:text-xl sm:flex sm:-mt-10 md:-mt-11 max-w-7xl;
+}
+
+.tabs a {
+  @apply px-4 py-2 text-gray-900 duration-500 bg-white bg-opacity-90;
+}
+
+.tabs a:hover {
+  @apply text-red-600 bg-opacity-100;
+}
+
+.tabs a:global( .active ) {
+  @apply text-red-600 bg-opacity-100;
+}

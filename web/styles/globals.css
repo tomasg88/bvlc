@@ -4,6 +4,30 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,700&display=swap");
 
+/* Turn on custom 8px wide scrollbar */
+::-webkit-scrollbar {
+  width: 10px; /* 1px wider than Lion. */
+  /* This is more usable for users trying to click it. */
+  /*-webkit-border-radius: 100px;*/
+}
+/* hover effect for both scrollbar area, and scrollbar 'thumb' */
+::-webkit-scrollbar:hover {
+  @apply bg-white bg-opacity-90;
+}
+
+/* The scrollbar 'thumb' ...that marque oval shape in a scrollbar */
+::-webkit-scrollbar-thumb:vertical {
+  /* This is the EXACT color of Mac OS scrollbars. 
+     Yes, I pulled out digital color meter */
+  @apply bg-red-500 bg-opacity-90;
+  -webkit-border-radius: 100px;
+}
+::-webkit-scrollbar-thumb:vertical:active {
+  @apply bg-red-800 bg-opacity-100;
+  -webkit-border-radius: 100px;
+}
+
+
 html,
 body {
   padding: 0;
@@ -70,12 +94,12 @@ body {
 }
 
 header nav a {
-  @apply px-2 py-2 font-sans text-sm font-bold uppercase border-b-4 border-transparent;
+  @apply px-2 py-2 font-sans text-sm font-bold text-white uppercase border-b-4 border-transparent;
 }
 
 @screen lg {
   header nav a {
-    @apply px-5 text-lg text-white;
+    @apply px-5 text-lg ;
   }
 }
 
@@ -83,8 +107,12 @@ header nav a:hover {
   @apply border-gray-100;
 }
 
+header nav a.active {
+  @apply border-gray-100;
+}
+
 .btn {
-  @apply px-4 py-2 font-bold text-white bg-red-800 border-b-4 border-yellow-600 rounded hover:bg-red-600 hover:border-yellow-700;
+  @apply px-4 py-2 font-bold text-white bg-red-700 border-b-4 border-red-700 rounded cursor-pointer hover:bg-red-600 hover:border-red-800;
 }
 
 /*

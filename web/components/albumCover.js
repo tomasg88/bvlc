@@ -1,21 +1,21 @@
-import React from 'react'
-import { urlForImage } from '../lib/sanity'
+import React from "react"
+import { urlForImage } from "../lib/sanity"
 
-export default function AlbumCover({ 
-  cover, title, description, album, selectAlbum 
-}) {
+export default function AlbumCover({ cover, title, description, album, selectAlbum }) {
   return (
-    <div className="relative flex items-start justify-start mb-3 overflow-hidden border border-gray-300 rounded-sm shadow ">
-      <img
-        onClick={() => selectAlbum(album)}
-        className="object-cover w-48 h-48 cursor-pointer opacity-90"
-        src={urlForImage(cover).url()}
-      />
-      <div className="relative z-10 pt-3 pl-3 text-gray-900">
-        <div className="text-xl">{title}</div>
-        <div className="text-base">{description}</div>
-        <div onClick={() => selectAlbum(album)} className="mt-3 font-bold text-red-600 uppercase duration-150 cursor-pointer hover:opacity-80 hover:bg-red-300">
-          abrir galeria
+    <div className="relative h-64 my-3 duration-500 transform translate-y-1 bg-gray-800 shadow-md hover:bg-opacity-90 hover:translate-y-0 hover:shadow-xl">
+      <div className="absolute inset-0 overflow-hidden rounded-md">
+        <img
+          onClick={() => selectAlbum(album)}
+          className="object-cover w-full h-full cursor-pointer opacity-20"
+          src={urlForImage(cover).url()}
+        />
+      </div>
+      <div onClick={() => selectAlbum(album)} className="relative z-10 flex flex-col items-center justify-center w-full h-full p-6 text-center text-gray-100 cursor-pointer ">
+        <div className="mb-2 text-3xl font-bold">{title}</div>
+        <div className="text-xl">{description}</div>
+        <div  className="w-full px-3 mt-3 font-bold uppercase btn">
+          Abrir galería
         </div>
       </div>
     </div>

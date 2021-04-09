@@ -1,41 +1,23 @@
-import React, { Component } from "react"
+import React, { useState, useCallback } from "react"
 import { slide as Menu } from "react-burger-menu"
 import Navigation from "../components/navigation"
 
-class Offcanvas extends Component {
-  constructor() {
-    super()
-    this.state = {
-      openMenu: false,
-    }
-  }
+export default function Offcanvas() {
+  const [openMenu, setOpenMenu] = useState(false)
 
-  closeMenu = () => {
-    this.setState({
-      openMenu: false,
-    })
-  }
+  const closeMenu = useCallback(() => setOpenMenu(false), []);
+  const handleStateChange = useCallback(state => {
+    setOpenMenu(state.isOpen);
+  }, [openMenu, setOpenMenu])
 
-  handleStateChange = (state) => {
-    this.setState({
-      openMenu: state.isOpen,
-    })
-  }
-
-  render = () => {
-    const { openMenu } = this.state
-
-    return (
-      <Menu
-        width={240}
-        right
-        isOpen={openMenu}
-        onStateChange={(state) => this.handleStateChange(state)}
-      >
-        <Navigation closeMenu={this.closeMenu} />
-      </Menu>
-    )
-  }
+  return (
+    <Menu
+      width={240}
+      right
+      isOpen={openMenu}
+      onStateChange={handleStateChange}
+    >
+      <Navigation closeMenu={closeMenu} />
+    </Menu>
+  )
 }
-
-export default Offcanvas

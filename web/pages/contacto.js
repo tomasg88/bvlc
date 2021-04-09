@@ -23,12 +23,8 @@ const ContactItem = ({ title, value }) => (
 export default function Contact({ phones, mails }) {
   const [rrss] = useContext(Context)
   return (
-    <Layout>
+    <Layout title="Contacto">
       <div className={styles.container}>
-        <Head>
-          <title>Bomberos Voluntarios de Luján de Cuyo</title>
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
         <div className="relative flex items-start justify-center w-full pb-32 overflow-hidden text-left text-gray-800 bg-gray-900 md:pt-12 md:items-start ">
           <div className="relative z-50 w-full max-w-4xl mx-auto overflow-hidden bg-white rounded-lg shadow-2xl md:mt-12">
             <h1 className="relative z-10 flex flex-col items-center justify-between px-10 pt-12 pb-4 font-sans text-6xl font-light text-gray-700 bg-gray-100 pattern-vertical-lines-x ">
