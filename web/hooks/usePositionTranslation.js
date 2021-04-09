@@ -1,4 +1,4 @@
-import {find, orderBy} from 'lodash'
+import {find, orderBy, groupBy} from 'lodash'
 
 const positions = [
   {title: 'Presidente', value: 'presidente'},
@@ -58,10 +58,10 @@ export default function usePositionTranslation(listName, list) {
   const getTranslatedRanks = (value) => find(ranks, { value }).title;
 
   // Funcion para ordernar listas
-  const orderByRank = orderBy(list, o => orderRanks[o.rank]);
-  const orderByPosition = orderBy(list, o => orderPositions[o.position]);
+  const orderByRank = orderBy(list, l => orderRanks[l.rank]);
+  const orderByPosition = orderBy(list, l => orderPositions[l.position]);
   
-  const orderedList = listName === 'rank'? orderByRank : orderByPosition
+  const orderedList = listName === 'rank'? groupBy(orderByRank, 'rank') : groupBy(orderByPosition, 'position')
   const getTranslation = listName === 'rank'? getTranslatedRanks : getTranslatedPositions;
 
   return { orderedList, getTranslation }
