@@ -1,7 +1,6 @@
 import React from "react"
 import Layout from "../components/layout"
 import Link from "next/link"
-import { useRouter } from "next/router"
 import { getClient } from "../lib/sanity.server"
 import { allPostQuery } from "../lib/queries"
 import BackgroundImage from "../components/backgroundImage"
@@ -9,7 +8,6 @@ import { BG_CONSTANTS } from "../utils/constants"
 import Card from "../components/cardNews"
 
 export default function News({ list }) {
-  const router = useRouter()
   return (
     <Layout title="Noticias">
       <div className="pb-24 bg-gray-100">
