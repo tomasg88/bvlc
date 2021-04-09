@@ -7,7 +7,6 @@ import { useContext } from "react"
 
 export default function Footer() {
   const [rrss] = useContext(Context)
-  console.log("🚀 ~ file: footer.js ~ line 10 ~ Footer ~ rrss", rrss)
   return (
     <footer className={styles.footer}>
       <div className="flex flex-col w-full mx-auto max-w-7xl">
