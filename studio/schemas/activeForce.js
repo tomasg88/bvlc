@@ -16,16 +16,16 @@ export default {
       validation: Rule => Rule.required(),
       options: {
         list: [
-          {title: 'Comandante General', value: 'Comandante General'},   // agregar jefe del cuerpo - 
-          {title: 'Comandante', value: 'Comandante'},                   // agregar 2do jefe del cuerpo -
-          {title: 'Subcomandante', value: 'Subcomandante'},
-          {title: 'Oficial', value: 'Oficial'},
-          {title: 'Suboficial', value: 'Suboficial'},
-          {title: 'Sargento', value: 'Sargento'},
-          {title: 'Cabo', value: 'Cabo'},
-          {title: 'Bombero', value: 'Bombero'},
-          {title: 'Aspirante', value: 'Aspirante'},
-          {title: 'Cadete', value: 'Cadete'},
+          {title: 'Comandante General', value: 'comandante-general'},   // agregar jefe del cuerpo - 
+          {title: 'Comandante', value: 'comandante'},                   // agregar 2do jefe del cuerpo -
+          {title: 'Subcomandante', value: 'subcomandante'},
+          {title: 'Oficial', value: 'oficial'},
+          {title: 'Suboficial', value: 'suboficial'},
+          {title: 'Sargento', value: 'sargento'},
+          {title: 'Cabo', value: 'cabo'},
+          {title: 'Bombero', value: 'bombero'},
+          {title: 'Aspirante', value: 'aspirante'},
+          {title: 'Cadete', value: 'cadete'},
         ]
       }
     },
