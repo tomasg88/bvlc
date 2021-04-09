@@ -6,10 +6,10 @@ import { leadershipQuery } from "../lib/queries"
 import Hero from "../components/hero"
 import { BG_CONSTANTS } from "../utils/constants"
 import Fade from "react-reveal/Fade"
-import usePositionTranslation from "../hooks/usePositionTranslation"
+import groupAndOrder from "../utils/list"
 
 export default function ComisionDirectiva({ list }) {
-  const { orderedList, getTranslation } = usePositionTranslation('position', list);
+  const { orderedList, getTranslation } = groupAndOrder('position', list);
 
   return (
     <Layout title="Comisión Directiva">
@@ -19,7 +19,7 @@ export default function ComisionDirectiva({ list }) {
           image={BG_CONSTANTS.index_1}
           opacity={20}
         />
-        <div id="integrantes" className="p-6 mx-auto bg-gray-100 max-w-7xl">
+        <div id="integrantes" className="p-6 mx-auto bg-white max-w-7xl">
           {
             Object.keys(orderedList).map(key => {
               return (
@@ -35,7 +35,7 @@ export default function ComisionDirectiva({ list }) {
                     {
                       orderedList[key].map(n => (
                         <Fade key={n._id}>
-                          <Hero name={n.title} description={getTranslation(n.position)} image={n.image} />
+                          <Hero name={n.title} description={getTranslation(key)} image={n.image} />
                         </Fade>
                       ))
                     }
