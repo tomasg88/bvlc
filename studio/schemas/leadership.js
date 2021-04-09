@@ -19,16 +19,16 @@ export default {
       validation: Rule => Rule.required(),
       options: {
         list: [
-          {title: 'Presidente', value: 'Presidente'},
-          {title: 'Vice Presidente', value: 'Vice Presidente'},
-          {title: 'Secretario', value: 'Secretario'},
-          {title: 'Pro secretario', value: 'Pro secretario'},
-          {title: 'Tesorero', value: 'Tesorero'},
-          {title: 'Pro tesorero', value: 'Pro tesorero'},
-          {title: 'Vocal Titular', value: 'Vocal Titular'},
-          {title: 'Vocal Suplente', value: 'Vocal Suplente'},
-          {title: 'Rev. de Ctas. Titular', value: 'Rev. de Ctas. Titular'},
-          {title: 'Rev. de Ctas. Suplente', value: 'Rev. de Ctas. Suplente'}
+          {title: 'Presidente', value: 'presidente'},
+          {title: 'Vice Presidente', value: 'vice-presidente'},
+          {title: 'Secretario', value: 'secretario'},
+          {title: 'Pro secretario', value: 'pro-secretario'},
+          {title: 'Tesorero', value: 'tesorero'},
+          {title: 'Pro tesorero', value: 'pro-tesorero'},
+          {title: 'Vocal Titular', value: 'vocal-titular'},
+          {title: 'Vocal Suplente', value: 'vocal-suplente'},
+          {title: 'Rev. de Ctas. Titular', value: 'cuentas-titular'},
+          {title: 'Rev. de Ctas. Suplente', value: 'cuentas-suplente'}
         ]
       }
     },
