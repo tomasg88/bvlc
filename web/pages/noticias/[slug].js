@@ -2,7 +2,6 @@ import Layout from "../../components/layout"
 import { getClient } from "../../lib/sanity.server"
 import { postQuery, postSlugsQuery } from "../../lib/queries"
 import { urlForImage } from "../../lib/sanity"
-import Head from "next/head"
 import ArticleContent from "../../components/articleContent"
 import Link from "next/link"
 import CoverImage from "../../components/coverImage"
@@ -11,23 +10,13 @@ export default function Article(props) {
   const { article, moreArticles } = props.data
 
   return (
-    <Layout description={article.excerpt}>
+    <Layout title={article.title} 
+      image={urlForImage(article.mainImage).width(1200).height(627).fit("crop").url()}
+      description={article.excerpt}
+    >
       <div className="flex flex-col mx-auto bg-white">
         {article && (
           <article className="text-left">
-            <Head>
-              <title>{article.title}</title>
-              <meta
-                key="ogImage"
-                property="og:image"
-                content={urlForImage(article.mainImage)
-                  .width(1200)
-                  .height(627)
-                  .fit("crop")
-                  .url()}
-              />
-            </Head>
-
             <ArticleContent
               title={article.title}
               mainImage={article.mainImage}

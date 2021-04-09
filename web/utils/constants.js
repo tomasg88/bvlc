@@ -1,5 +1,7 @@
-export const DEFAULT_PAGE_TITLE = "Bomberos Voluntarios de Luján de Cuyo"
-export const DEFAULT_PAGE_DESCRIPTION = "Sitio web para los Bomberos Voluntarios de Luján de Cuyo, Mendoza"
+export const DEFAULT_PAGE_TITLE = "Bomberos Voluntarios de Luján de Cuyo";
+export const DEFAULT_PAGE_DESCRIPTION = "Sitio web para los Bomberos Voluntarios de Luján de Cuyo, Mendoza";
+export const DEFAULT_PAGE_URL = "https://bvlc.vercel.app";
+export const DEFAULT_PAGE_IMAGE = "/logo-bomberos-cuyo.png";
 
 export const BG_CONSTANTS = {
   team: '/web/team.jpeg',

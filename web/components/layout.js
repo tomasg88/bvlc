@@ -3,21 +3,49 @@ import Header from "../components/header"
 import Offcanvas from "../components/offcanvas"
 import SimpleReactLightbox from "simple-react-lightbox"
 import Head from "next/head"
-import { DEFAULT_PAGE_TITLE, DEFAULT_PAGE_DESCRIPTION } from "../utils/constants"
+import { DEFAULT_PAGE_DESCRIPTION, 
+  DEFAULT_PAGE_TITLE, 
+  DEFAULT_PAGE_URL,
+  DEFAULT_PAGE_IMAGE } 
+from '../utils/constants'
 
-export default function Layout({ title, description, children }) {
+export default function Layout({ title, description, image, children }) {
+  const auxTitle = title && title !== ''? `${title} | ${DEFAULT_PAGE_TITLE}` : DEFAULT_PAGE_TITLE;
+  const auxDesc = description && description !== ''? description : DEFAULT_PAGE_DESCRIPTION;
+  const auxImage = image? image : DEFAULT_PAGE_IMAGE;
+  
   return (
     <>
       <Head>
-        <title>{title && `${title} |`} {DEFAULT_PAGE_TITLE}</title>
+        
+        <title>{auxTitle}</title>
+        <meta name="title" content={auxTitle} />
+        <meta name="description" content={auxDesc} />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={DEFAULT_PAGE_URL} />
+        <meta property="og:title" content={auxTitle} />
+        <meta property="og:description" content={auxDesc} />
+        <meta property="og:image" content={auxImage} />
+
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content={DEFAULT_PAGE_URL} />
+        <meta property="twitter:title" content={auxTitle} />
+        <meta property="twitter:description" content={auxDesc} />
+        <meta property="twitter:image" content={auxImage} />
+
+        {/* Otros */}
+        <meta name="msapplication-TileColor" content="#dc2626" />
+        <meta name="theme-color" content="#dc2626" />
+
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="manifest" href="/site.webmanifest" />
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#dc2626" />
-        <meta name="description" content={description || DEFAULT_PAGE_DESCRIPTION} />
-        <meta name="msapplication-TileColor" content="#dc2626" />
-        <meta name="theme-color" content="#dc2626" />
+
       </Head>
       <Offcanvas />
       <Header />
