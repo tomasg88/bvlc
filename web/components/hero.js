@@ -11,7 +11,7 @@ export default function Hero({ name, description, image}) {
     }, [image] )
 
   return (
-    <figure id="hero" className="relative flex items-start w-full bg-white border border-gray-300 rounded-md shadow-lg">
+    <figure id="hero" className="relative flex items-start w-full h-full bg-white border border-gray-300 rounded-md shadow-lg">
       <img 
         alt={name} 
         className={'rounded-md rounded-r-none'} 
