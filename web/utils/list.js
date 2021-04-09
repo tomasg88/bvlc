@@ -14,8 +14,8 @@ const positions = [
 ]
 
 const ranks = [
-  {title: 'Comandante General', value: 'comandante-general'},   
-  {title: 'Comandante', value: 'comandante'},                   
+  {title: 'Comandante General', value: 'comandante-general'},
+  {title: 'Comandante', value: 'comandante'},
   {title: 'Subcomandante', value: 'subcomandante'},
   {title: 'Oficial', value: 'oficial'},
   {title: 'Suboficial', value: 'suboficial'},
@@ -51,7 +51,7 @@ const orderPositions = {
   'cuentas-suplente': 10,
 }
 
-export default function usePositionTranslation(listName, list) {
+export default function groupAndOrder(listName, list) {
 
   // Funcion para traducir valores
   const getTranslatedPositions = (value) => find(positions, { value }).title;
