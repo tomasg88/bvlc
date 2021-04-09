@@ -6,15 +6,16 @@ import Hero from "../components/hero"
 import HeroInstitucional from "../components/heroInstitucional"
 import { BG_CONSTANTS } from "../utils/constants"
 import Fade from "react-reveal/Fade"
-import usePositionTranslation from "../hooks/usePositionTranslation"
+import groupAndOrder from "../utils/list"
 
 export default function CuerpoActivo({ list }) {
-  const { orderedList, getTranslation } = usePositionTranslation('rank', list);
+  const { orderedList, getTranslation } = groupAndOrder('rank', list);
+  const addSubtitle = (value) => (value === 'comandante-general' && " - Jefe del Cuerpo") || (value === 'comandante' && " - 2do. Jefe del Cuerpo")
   return (
     <Layout title="Cuerpo Activo">
       <div className="min-h-screen">
         <HeroInstitucional title="Cuerpo Activo" image={BG_CONSTANTS.team} />
-        <div id="integrantes" className="p-6 mx-auto bg-gray-100 max-w-7xl">
+        <div id="integrantes" className="p-6 mx-auto bg-white max-w-7xl">
           {
             Object.keys(orderedList).map(key => {
               return (
@@ -23,6 +24,10 @@ export default function CuerpoActivo({ list }) {
                     <Fade cascade>
                       <h2 className="text-5xl font-light text-gray-900 ">
                         {getTranslation(key)}
+                        
+                        <span className="text-3xl text-gray-500">
+                          {addSubtitle(key) || ''}
+                        </span>
                       </h2>
                     </Fade>
                   </div>
@@ -30,7 +35,7 @@ export default function CuerpoActivo({ list }) {
                     {
                       orderedList[key].map(n => (
                         <Fade key={n._id}>
-                          <Hero name={n.title} description={getTranslation(n.rank)} image={n.image} />
+                          <Hero name={n.title} description={getTranslation(key)} image={n.image} />
                         </Fade>
                       ))
                     }
