@@ -24,7 +24,7 @@ export default function Card({ title, mainImage, excerpt, slug, publishedAt }) {
         ) : (
           <></>
         )}
-        <div className="flex absolute bottom-0 right-0 bg-red-600 text-white text-center items-center p-2 py-1 rounded-tl-lg">
+        <div className="flex absolute bottom-0 right-0 bg-red-600 text-white items-center p-2 py-1 rounded-tl-lg">
           <p className="text-xl mr-2"> 
             {getDate(publishedAt)} 
           </p>
