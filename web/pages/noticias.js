@@ -22,7 +22,7 @@ export default function News({ list }) {
                 Academia
               </a>
             </Link>
-            <Link href="/institucional">
+            <Link href="/equipamiento">
               <a className="relative z-10 block mt-6 text-base text-center uppercase btn">
                 Equipamiento
               </a>

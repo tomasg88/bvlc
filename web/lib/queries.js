@@ -9,7 +9,7 @@ export const pagesQuery = `
   *[_type == "page" && slug.current == $slug][0] { ${pageFields} }
 `
 
-export const allPostQuery = ` *[_type == "post"] { ${postFields} }`
+export const allPostQuery = ` *[_type == "post"] | order(publishedAt desc) { ${postFields} }`
 
 export const postQuery = `
 {
