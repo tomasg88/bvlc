@@ -81,19 +81,7 @@ export default function Header() {
                           className="absolute left-0 right-0 w-full origin-top-right bg-red-600 shadow-lg outline-none"
                         >
                           <div className="py-3">
-                            <Menu.Item>
-                              {({ active }) => (
-                                <Link href="/institucional">
-                                  <a
-                                    className={`${
-                                      active ? "bg-red-500 text-gray-100" : "text-white"
-                                    } flex justify-between w-full px-4 py-3  hover:opacity-90 hover:bg-red-700 border-0 text-base leading-5 text-left`}
-                                  >
-                                    Historia
-                                  </a>
-                                </Link>
-                              )}
-                            </Menu.Item>
+                            
                             <Menu.Item>
                               {({ active }) => (
                                 <Link href="/comision-directiva">
@@ -129,6 +117,19 @@ export default function Header() {
                                     } flex justify-between w-full px-4 py-3  hover:opacity-90 hover:bg-red-700 border-0 text-base leading-5 text-left`}
                                   >
                                     Equipamiento
+                                  </a>
+                                </Link>
+                              )}
+                            </Menu.Item>
+                            <Menu.Item>
+                              {({ active }) => (
+                                <Link href="/institucional">
+                                  <a
+                                    className={`${
+                                      active ? "bg-red-500 text-gray-100" : "text-white"
+                                    } flex justify-between w-full px-4 py-3  hover:opacity-90 hover:bg-red-700 border-0 text-base leading-5 text-left`}
+                                  >
+                                    Historia
                                   </a>
                                 </Link>
                               )}

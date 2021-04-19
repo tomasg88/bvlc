@@ -29,7 +29,7 @@ export default function Gallery({ onClose, list }) {
       >
         <div
           id="close"
-          className="absolute top-0 right-0 z-50 m-8 cursor-pointer hover:opacity-75"
+          className="absolute top-0 right-0 z-50 m-5 cursor-pointer hover:opacity-75"
         >
           <MdClose
             onClick={onClose}
@@ -53,20 +53,20 @@ export default function Gallery({ onClose, list }) {
           <div
             id="previous"
             onClick={previous}
-            className="absolute bottom-0 left-0 z-50 p-2 duration-200 bg-gray-600 bg-opacity-50 cursor-pointer hover:opacity-60"
+            className="absolute left-0 z-50 p-2 duration-200 bg-gray-600 bg-opacity-50 cursor-pointer top-1/2 hover:opacity-60"
           >
             <AiOutlineArrowLeft className="w-12 h-12 text-gray-300 " />
           </div>
           <div
             id="next"
             onClick={next}
-            className="absolute bottom-0 right-0 z-50 p-2 duration-200 bg-gray-600 bg-opacity-50 cursor-pointer hover:opacity-60"
+            className="absolute right-0 z-50 p-2 duration-200 bg-gray-600 bg-opacity-50 cursor-pointer top-1/2 hover:opacity-60"
           >
             <AiOutlineArrowRight className="w-12 h-12 text-gray-300 " />
           </div>
           <div
             id="bottom-image-list"
-            className="absolute bottom-0 left-0 right-0 items-center justify-center hidden w-full p-2 mt-5 overflow-x-auto bg-gray-900 bg-opacity-90 md:flex"
+            className="absolute bottom-0 left-0 right-0 items-center justify-center hidden w-full p-2 mt-5 overflow-x-auto bg-black md:flex"
           >
             {list.map((img, index) => (
               <Fade delay={500}>

@@ -4,7 +4,8 @@ export const DEFAULT_PAGE_URL = "https://bvlc.vercel.app";
 export const DEFAULT_PAGE_IMAGE = "/logo-bomberos-cuyo.png";
 
 export const BG_CONSTANTS = {
-  team: '/web/team.jpeg',
+  team: '/web/team.jpg',
+  academy: '/web/academia-lujan-cuyo.jpg',
   trucks: '/web/camiones.jpg',
   news: '/web/equipo.jpg',
   doors: '/web/doors.jpg',

@@ -14,7 +14,7 @@ const ContactItem = ({ title, value }) => (
     <dl>
       <div className="px-4 py-5 text-xl text-center md:text-left sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
         <dt className="mt-1 text-base font-medium text-gray-500 uppercase">{title}</dt>
-        <dd className="mt-1 text-gray-900 sm:mt-0 sm:col-span-2">{value}</dd>
+        <dd className="mt-1 text-gray-900 select-all sm:mt-0 sm:col-span-2">{value}</dd>
       </div>
     </dl>
   </div>

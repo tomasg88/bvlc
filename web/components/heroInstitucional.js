@@ -24,8 +24,8 @@ export default function HeroInstitucional({ title, image, opacity }) {
       <div className={styles.tabs}>
         <HeaderLink url="/comision-directiva" title="Comision Directiva" />
         <HeaderLink url="/cuerpo-activo" title="Cuerpo Activo" />
-        <HeaderLink url="/institucional" title="Historia" />
         <HeaderLink url="/equipamiento" title="Equipamiento" />
+        <HeaderLink url="/institucional" title="Historia" />
       </div>
     </div>
   )

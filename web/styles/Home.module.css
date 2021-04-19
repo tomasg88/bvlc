@@ -15,11 +15,11 @@
 
 .footer {
   width: 100%;
-  border-top: 1px solid #eaeaea;
   display: flex;
   justify-content: center;
   align-items: center;
-  @apply py-12;
+  @apply py-12 border-t border-red-500;
+  @apply bg-gray-900;
 }
 
 .footer img {
@@ -27,15 +27,15 @@
 }
 
 .footer a {
-
+  @apply duration-200 hover:text-yellow-500;
 }
 
 .title {
-  @apply text-red-500 ;
+  @apply text-red-500;
 }
 
 .title a {
-  @apply text-white ;
+  @apply text-white;
   text-decoration: none;
 }
 
