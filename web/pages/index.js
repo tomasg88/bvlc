@@ -22,7 +22,7 @@ export default function Home({ recentNews }) {
                 </h2>
               </Fade>
             </div>
-              <div className="grid max-w-6xl gap-3 p-8 pb-12 mx-auto mt-6 md:grid-cols-3 sm:grid-cols-2">
+              <div className="grid max-w-6xl gap-3 p-8 pb-12 mx-auto mt-6 lg:grid-cols-3 sm:grid-cols-2">
                 {recentNews &&
                   recentNews.map((n) => (
                     <Fade>
@@ -32,7 +32,7 @@ export default function Home({ recentNews }) {
               </div>
             <div className="flex flex-col items-center justify-between max-w-6xl pb-24 mx-auto font-sans">
               <Link href="/noticias">
-                <a className="relative z-10 px-8 py-3 mt-3 text-2xl font-bold text-red-600 bg-gray-100 border-b-2 border-red-600 rounded-md hover:bg-red-600 hover:text-white ">
+                <a className="relative z-10 px-8 py-3 mt-3 text-2xl font-bold text-red-600 bg-gray-100 border-b-2 border-red-600 hover:bg-red-600 hover:text-white ">
                   Ver todas las Noticias
                 </a>
               </Link>

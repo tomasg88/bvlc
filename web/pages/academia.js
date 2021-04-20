@@ -13,7 +13,7 @@ export default function Academia({ news, albums }) {
   return (
     <Layout title="Academia">
         <div className="pb-24 bg-gray-100">
-          <HeroPage title="Academia" image={BG_CONSTANTS.index_3} opacity={20} />
+          <HeroPage title="Academia" image={BG_CONSTANTS.academy} opacity={20} />
           <div className="flex flex-col items-center max-w-6xl pt-12 pb-4 mx-auto font-sans border-b-2 border-yellow-400 md:flex-row">
             <h2 className="text-5xl font-light text-gray-900 ">Últimas noticias</h2>
           </div>

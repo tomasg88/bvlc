@@ -2,6 +2,10 @@
   @apply max-w-xl mx-auto;
 }
 
+.articleText blockquote {
+  @apply max-w-xl mx-auto;
+}
+
 .articleText h1,
 .articleText h2,
 .articleText h3,

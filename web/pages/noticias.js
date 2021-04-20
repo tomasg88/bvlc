@@ -4,6 +4,7 @@ import Link from "next/link"
 import { getClient } from "../lib/sanity.server"
 import { allPostQuery } from "../lib/queries"
 import BackgroundImage from "../components/backgroundImage"
+import HorizontalCard from "../components/horizontalCard"
 import { BG_CONSTANTS } from "../utils/constants"
 import Card from "../components/cardNews"
 
@@ -22,7 +23,7 @@ export default function News({ list }) {
                 Academia
               </a>
             </Link>
-            <Link href="/institucional">
+            <Link href="/equipamiento">
               <a className="relative z-10 block mt-6 text-base text-center uppercase btn">
                 Equipamiento
               </a>
@@ -30,8 +31,8 @@ export default function News({ list }) {
           </div>
         </div>
 
-        <div className="grid max-w-6xl gap-3 p-2 mx-auto mt-12 md:grid-cols-3 sm:grid-cols-2 ">
-          {list && list.map((n) => <Card {...n} key={n._id} />)}
+        <div className="grid max-w-4xl grid-cols-1 gap-3 p-2 mx-auto mt-12 ">
+          {list && list.map((n) => <HorizontalCard {...n} key={n._id} />)}
         </div>
       </div>
     </Layout>

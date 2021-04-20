@@ -3,8 +3,7 @@ import { getClient } from "../../lib/sanity.server"
 import { postQuery, postSlugsQuery } from "../../lib/queries"
 import { urlForImage } from "../../lib/sanity"
 import ArticleContent from "../../components/articleContent"
-import Link from "next/link"
-import CoverImage from "../../components/coverImage"
+import HorizontalCard from "../../components/horizontalCard"
 
 export default function Article(props) {
   const { article, moreArticles } = props.data
@@ -27,21 +26,11 @@ export default function Article(props) {
         )}
         <div className="flex flex-col w-full max-w-3xl px-4 py-6 mx-auto bg-white">
           <h3 className="pt-6 mb-3 font-sans text-3xl text-red-500 border-b border-red-600">Más noticias</h3>
-          <div className="grid gap-2 md:grid-cols-3">
+          <div className="">
             {moreArticles &&
               moreArticles.length > 0 &&
               moreArticles.map((ma) => (
-                <Link key={ma._id} href={`/noticias/${ma.slug}`}>
-                  <a className="relative overflow-hidden duration-500 border rounded-md hover:opacity-75">
-                    <CoverImage title={ma.title} image={ma.mainImage} />
-                    <span className="block p-2 text-xl font-bold">{ma.title}</span>
-                    {ma.publishedAt && (
-                      <div className="p-2">
-                        {ma.publishedAt}
-                      </div>
-                    )}
-                  </a>
-                </Link>
+                <HorizontalCard {...ma} key={ma._id} />
               ))}
           </div>
         </div>

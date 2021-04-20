@@ -14,11 +14,11 @@ export default function Galeria({ albums }) {
       <div className="min-h-screen bg-white">
         <HeroPage title="Galería fotográfica" />
         <Fade>
-          <h2 className="py-3 -mt-16 text-lg font-semibold tracking-wider text-center text-gray-300">
-            Hacer click en un album
+          <h2 className="py-3 my-6 text-lg font-semibold tracking-wider text-center text-gray-800">
+            Hacer click en un album para ver todas sus fotos
           </h2>
         </Fade>
-        <div className="max-w-6xl mx-auto mt-12 bg-white">
+        <div className="max-w-6xl mx-auto mt-6 bg-white">
           <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-3 ">
             {albums?.map((a) => (
               <AlbumCover
