@@ -11,20 +11,21 @@ import HeroPage from "../components/heroPage"
 export default function Academia({ news, albums }) {
   const [selectedAlbum, setSelectedAlbum] = useState([])
   return (
-    <Layout title="Academia">
-        <div className="pb-24 bg-gray-100">
-          <HeroPage title="Academia" image={BG_CONSTANTS.academy} opacity={20} />
-          <div className="flex flex-col items-center max-w-6xl pt-12 pb-4 mx-auto font-sans border-b-2 border-yellow-400 md:flex-row">
-            <h2 className="text-5xl font-light text-gray-900 ">Últimas noticias</h2>
-          </div>
-          <div className="grid max-w-6xl gap-3 p-2 mx-auto mt-12 md:grid-cols-3 sm:grid-cols-2">
-            {news && news.map((n) => <Card {...n} key={n._id} />)}
-          </div>
-          <div className="flex flex-col items-center max-w-6xl pt-12 pb-4 mx-auto font-sans border-b-2 border-yellow-400 md:flex-row">
-            <h2 className="text-5xl font-light text-gray-900 ">Imagenes</h2>
-          </div>
-          <div className="w-full max-w-6xl mx-auto mt-2 ">
-            <div className="grid grid-cols-3 gap-3 ">
+    <Layout title="Academia" >
+      <HeroPage title="Academia" image={BG_CONSTANTS.academy} opacity={20} />
+      <div className="bg-gray-100 w-screen mx-auto">
+        <div className="flex items-start max-w-6xl mx-auto pb-24 flex-col md:flex-row">
+          <div id="content" className="px-4 w-full md:w-3/4">
+            <div className="flex flex-col items-center w-full pt-12 pb-4 mx-auto font-sans border-b-2 border-yellow-400 md:flex-row">
+              <h2 className="text-5xl font-light text-gray-900 ">Últimas noticias</h2>
+            </div>
+            <div className="grid w-full gap-3 p-2 mx-auto mt-2 md:grid-cols-3 sm:grid-cols-2">
+              {news && news.map((n) => <Card {...n} key={n._id} />)}
+            </div>
+            <div className="flex flex-col items-center w-full pt-12 pb-4 mx-auto font-sans border-b-2 border-yellow-400 md:flex-row">
+              <h2 className="text-5xl font-light text-gray-900 ">Imagenes</h2>
+            </div>
+            <div className="grid grid-cols-3 w-full mx-auto mt-2 gap-3 md:grid-cols-3 sm:grid-cols-2">
               {albums?.map((a) => (
                 <AlbumCover
                   key={a._id}
@@ -36,17 +37,33 @@ export default function Academia({ news, albums }) {
                 />
               ))}
             </div>
+            {selectedAlbum.length > 0 && (
+              <Gallery list={selectedAlbum} onClose={() => setSelectedAlbum([])} />
+            )}
           </div>
-          {selectedAlbum.length > 0 && (
-            <Gallery list={selectedAlbum} onClose={() => setSelectedAlbum([])} />
-          )}
+          <div id="sidebar" className="px-4 w-full md:w-1/4">
+            <div className="flex flex-col items-center w-full mt-2 pt-12 pb-4 mr-8 font-sans border-b-2 border-yellow-400 md:flex-row">
+              <h2 className="text-4xl font-light text-gray-900">Autoridades</h2>
+            </div>
+            <div className="flex flex-col items-start w-full pt-8 ml-2 mx-auto font-sans">
+              <p className="font-bold text-gray-600 pt-2">DIRECTOR</p>
+              <p>Adrián Gil</p>
+              <br />
+              <p className="font-bold text-gray-600">INSTRUCTORES</p>
+              <p>Otro instructor</p>
+              <p>Marisa González</p>
+              <p>Pedro y Pablo</p>
+            </div>
+          </div>
         </div>
+      </div>
     </Layout>
   )
 }
 
 export async function getStaticProps() {
   const { news, albums } = await getClient().fetch(academyQuery)
+  const members = [{ title: 'Adrián Gil', position: 'director'}]
   return {
     props: { news, albums },
   }
