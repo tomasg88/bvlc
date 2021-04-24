@@ -1,6 +1,6 @@
 import BackgroundImage from "../components/backgroundImage"
 import { BG_CONSTANTS } from "../utils/constants"
-import styles from "../styles/heroPage.module.css"
+import styles from "../styles/HeroPage.module.css"
 import Fade from "react-reveal/Fade"
 
 export default function HeroPage({ title, image, opacity }) {

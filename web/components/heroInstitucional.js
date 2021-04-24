@@ -2,7 +2,7 @@ import Link from "next/link"
 import BackgroundImage from "../components/backgroundImage"
 import { BG_CONSTANTS } from "../utils/constants"
 import HeaderLink from "./headerLink"
-import styles from "../styles/heroInstitucional.module.css"
+import styles from "../styles/HeroInstitucional.module.css"
 import Fade from "react-reveal/Fade"
 
 export default function HeroInstitucional({ title, image, opacity }) {
