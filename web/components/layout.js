@@ -51,7 +51,7 @@ export default function Layout({ title, description, image, children }) {
       <Header />
       <div className="pt-20 bg-red-600 bg-pattern">
         <SimpleReactLightbox>
-          <main>{children}</main>
+          <main className="overflow-x-hidden">{children}</main>
         </SimpleReactLightbox>
       </div>
       <Footer />
