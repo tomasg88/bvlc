@@ -4,7 +4,7 @@ import Gallery from "../components/gallery"
 import Layout from "../components/layout"
 import { equipmentQuery } from "../lib/queries"
 import { getClient } from "../lib/sanity.server"
-import HeroInstitucional from "../components/heroInstitucional"
+import HeroInstitucional from "../components/Heros/HeroInstitucional"
 import { BG_CONSTANTS } from "../utils/constants"
 
 export default function Equipamiento({ equipment }) {

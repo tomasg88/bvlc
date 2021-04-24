@@ -15,17 +15,16 @@ export default function Header() {
         <div className="flex justify-between">
           <Link href="/">
             <a className="flex items-center justify-center transform -translate-y-2">
-              <Image
+              <img
                 src="/logo-bomberos-cuyo.png"
+                width="80"
+                height="100"
+                className="flex-none"
                 alt={DEFAULT_PAGE_TITLE}
                 title={DEFAULT_PAGE_TITLE}
-                width={80}
-                height={100}
-                objectFit="fill"
-                quality={80}
-                layout="fixed"
               />
-              <span className="w-32 ml-3 text-sm text-gray-100 uppercase md:w-auto sm:block lg:text-2xl">
+
+              <span className="w-32 ml-3 text-sm text-gray-100 uppercase md:w-auto sm:block md:text-lg lg:text-2xl">
                 Bomberos Voluntarios <br /> de Luján de Cuyo
               </span>
             </a>
@@ -81,7 +80,6 @@ export default function Header() {
                           className="absolute left-0 right-0 w-full origin-top-right bg-red-600 shadow-lg outline-none"
                         >
                           <div className="py-3">
-                            
                             <Menu.Item>
                               {({ active }) => (
                                 <Link href="/comision-directiva">
@@ -142,10 +140,7 @@ export default function Header() {
                 </Menu>
               </div>
               <HeaderLink url="/noticias" title="Noticias" />
-              <HeaderLink
-                url="/academia"
-                title="Academia"
-              />
+              <HeaderLink url="/academia" title="Academia" />
               <HeaderLink url="/galeria" title="Galería" />
               <HeaderLink url="/contacto" title="Contacto" />
             </nav>

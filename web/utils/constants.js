@@ -6,6 +6,7 @@ export const DEFAULT_PAGE_IMAGE = "/logo-bomberos-cuyo.png";
 export const BG_CONSTANTS = {
   team: '/web/team.jpg',
   academy: '/web/academia-lujan-cuyo.jpg',
+  station: '/web/estacion-bomberos-lujan-cuyo.jpg',
   trucks: '/web/camiones.jpg',
   news: '/web/equipo.jpg',
   doors: '/web/doors.jpg',

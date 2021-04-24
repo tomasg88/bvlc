@@ -5,8 +5,8 @@ import { BG_CONSTANTS } from "../utils/constants"
 import AlbumCover from "../components/albumCover"
 import { useState } from "react"
 import Gallery from "../components/gallery"
-import Card from "../components/cardNews"
-import HeroPage from "../components/heroPage"
+import Card from "../components/Cards/cardNews"
+import HeroPage from "../components/Heros/HeroPage"
 import styles from "../styles/PageSidebar.module.css"
 
 export default function Academia({ news, albums }) {

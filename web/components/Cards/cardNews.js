@@ -1,8 +1,8 @@
 import { format, parseISO } from "date-fns"
 import { es } from "date-fns/locale"
 import Link from "next/link"
-import CoverImage from "./coverImage"
-import styles from "../styles/CardNews.module.css"
+import CoverImage from "../coverImage"
+import styles from "./CardNews.module.css"
 
 const getDate = (date) => {
   const day = "0" + format(parseISO(date), "d", { locale: es })

@@ -1,6 +1,6 @@
 import React from "react"
 import Layout from "../components/layout"
-import HeroInstitucional from "../components/heroInstitucional"
+import HeroInstitucional from "../components/Heros/HeroInstitucional"
 import { getClient } from "../lib/sanity.server"
 import { leadershipQuery } from "../lib/queries"
 import Hero from "../components/hero"
