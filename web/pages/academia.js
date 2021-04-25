@@ -10,6 +10,7 @@ import HeroPage from "../components/Heros/HeroPage"
 import styles from "../styles/PageSidebar.module.css"
 import { MdPhotoCamera } from "react-icons/md"
 import AnchorLink from "react-anchor-link-smooth-scroll"
+import NavCategorias from "../components/Navigation/NavCategorias"
 
 export default function Academia({ news, albums }) {
   const [selectedAlbum, setSelectedAlbum] = useState([])

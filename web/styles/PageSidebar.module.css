@@ -7,7 +7,7 @@
 }
 
 .main {
-  @apply w-full border-l border-gray-300 md:pl-6 md:col-span-4;
+  @apply w-full border-gray-300 md:border-l md:pl-6 md:col-span-4;
 }
 
 .aside {
@@ -39,7 +39,7 @@
 }
 
 .aside .widgetTitle {
-  @apply flex flex-col items-center w-full pt-1 pb-4 mr-8 ;
+  @apply flex flex-col items-center w-full pt-1 pb-4 mr-8 text-left ;
   @apply font-sans text-2xl font-light text-gray-900 border-b border-gray-600;
   @apply md:flex-row;
 }
