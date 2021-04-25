@@ -25,5 +25,5 @@ export const albumFields = `
 `
 
 export const equipmentFields = `
-  _id, title, title, imagesGallery, body
+  _id, title, imagesGallery, body
 `

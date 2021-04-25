@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import AlbumCover from "../components/albumCover"
+import EquipmentProfile from "../components/Cards/CardEquipment"
 import Gallery from "../components/gallery"
 import Layout from "../components/layout"
 import { equipmentQuery } from "../lib/queries"
@@ -13,12 +13,13 @@ export default function Equipamiento({ equipment }) {
     <Layout title="Equipamiento">
       <div className="min-h-screen bg-white">
         <HeroInstitucional title="Equipamiento" image={BG_CONSTANTS.trucks} />
-        <div className="max-w-6xl pt-6 mx-auto mt-6 bg-white ">
-          <div className="grid gap-4 md:grid-cols-3">
+        <div className="max-w-3xl p-6 pt-6 mx-auto mt-6 bg-white md:p-0">
+          <div className="grid grid-cols-1 gap-4 ">
             {equipment?.map((eq) => (
-              <AlbumCover
+              <EquipmentProfile
                 key={eq._id}
                 title={eq.title}
+                body={eq.body}
                 cover={eq.imagesGallery[0]}
                 album={eq.imagesGallery}
                 selectAlbum={setSelected}
