@@ -3,7 +3,7 @@ import Layout from "../components/layout"
 import { getClient } from "../lib/sanity.server"
 import { allPostQuery } from "../lib/queries"
 import Hero from "../components/Heros/HeroNews"
-import HorizontalCard from "../components/Cards/horizontalCard"
+import HorizontalCard from "../components/Cards/HorizontalCard"
 
 export default function News({ list }) {
   return (

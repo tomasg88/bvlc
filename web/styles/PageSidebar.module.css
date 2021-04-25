@@ -3,15 +3,15 @@
 }
 
 .container {
-  @apply flex flex-col-reverse items-start max-w-full pt-2 pb-24 mx-auto md:pt-12 2xl:max-w-7xl md:flex-row-reverse;
+  @apply grid grid-cols-1 gap-6 px-6 pt-12 pb-24 mx-auto md:px-0 md:grid-cols-5 max-w-7xl;
 }
 
 .main {
-  @apply w-full px-4 border-l border-gray-300 md:w-3/4;
+  @apply w-full border-l border-gray-300 md:pl-6 md:col-span-4;
 }
 
 .aside {
-  @apply w-full px-4 md:h-screen md:w-1/4;
+  @apply w-full h-full col-span-1 ;
 }
 
 .header {
@@ -19,15 +19,15 @@
 }
 
 .headerTitle {
-  @apply text-2xl font-light text-gray-900 md:text-5xl;
+  @apply text-2xl text-gray-900 md:text-3xl;
 }
 
 .headerAction {
-  @apply px-2 py-1 font-bold text-white duration-700 bg-red-600 hover:bg-red-500;
+  @apply relative flex items-center px-2 py-1 mt-6 text-sm font-bold text-white duration-700 bg-red-600 hover:bg-red-500;
 }
 
 .gridNews {
-  @apply grid w-full gap-3 p-2 mx-auto mt-2 mb-12 md:grid-cols-2 lg:grid-cols-3;
+  @apply grid w-full gap-3 mx-auto mt-2 mb-12 md:grid-cols-2 lg:grid-cols-3;
 }
 
 .gridGallery {
@@ -35,7 +35,7 @@
 }
 
 .aside .widget {
-  @apply p-3 pb-6 mb-6 bg-white;
+  @apply p-3 pb-6 mb-6 bg-white border-t-4 border-red-500 shadow-sm;
 }
 
 .aside .widgetTitle {

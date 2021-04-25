@@ -1,6 +1,6 @@
 import BackgroundImage from "../backgroundImage"
 import { BG_CONSTANTS } from "../../utils/constants"
-import HeaderLink from "../headerLink"
+import HeaderLink from "../Navigation/HeaderLink"
 import styles from "./HeroInstitucional.module.css"
 import Fade from "react-reveal/Fade"
 

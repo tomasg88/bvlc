@@ -3,7 +3,7 @@ import Layout from "../components/layout"
 import HeroInstitucional from "../components/Heros/HeroInstitucional"
 import { getClient } from "../lib/sanity.server"
 import { leadershipQuery } from "../lib/queries"
-import Hero from "../components/hero"
+import Person from "../components/Cards/MediaObject"
 import { BG_CONSTANTS } from "../utils/constants"
 import Fade from "react-reveal/Fade"
 import groupAndOrder from "../utils/list"
@@ -24,9 +24,9 @@ export default function ComisionDirectiva({ list }) {
             Object.keys(orderedList).map(key => {
               return (
                 <div key={key}>
-                  <div className="flex flex-col items-center max-w-6xl pt-24 pb-6 mx-auto font-sans border-b-2 border-yellow-400 md:flex-row">
+                  <div className="flex flex-col items-center max-w-6xl py-6 mx-auto font-sans border-b-2 border-yellow-400 md:flex-row">
                     <Fade cascade>
-                      <h2 className="text-5xl font-light text-gray-900 ">
+                      <h2 className="text-4xl font-light text-gray-900 ">
                         {getTranslation(key)}
                       </h2>
                     </Fade>
@@ -35,7 +35,7 @@ export default function ComisionDirectiva({ list }) {
                     {
                       orderedList[key].map(n => (
                         <Fade key={n._id}>
-                          <Hero name={n.title} description={getTranslation(key)} image={n.image} />
+                          <Person name={n.title} description={getTranslation(key)} image={n.image} />
                         </Fade>
                       ))
                     }

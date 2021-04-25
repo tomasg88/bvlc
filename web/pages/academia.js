@@ -5,9 +5,11 @@ import { BG_CONSTANTS } from "../utils/constants"
 import AlbumCover from "../components/albumCover"
 import { useState } from "react"
 import Gallery from "../components/gallery"
-import Card from "../components/Cards/cardNews"
+import Card from "../components/Cards/CardNews"
 import HeroPage from "../components/Heros/HeroPage"
 import styles from "../styles/PageSidebar.module.css"
+import { MdPhotoCamera } from "react-icons/md"
+import AnchorLink from "react-anchor-link-smooth-scroll"
 
 export default function Academia({ news, albums }) {
   const [selectedAlbum, setSelectedAlbum] = useState([])
@@ -19,12 +21,30 @@ export default function Academia({ news, albums }) {
       </div>
       <div className={styles.page}>
         <div className={styles.container}>
+          <div id="sidebar" className={styles.aside}>
+            <div className={styles.widget}>
+              <h2 className={styles.widgetTitle}>Autoridades</h2>
+              <div className={styles.widgetContent}>
+                <dl>
+                  <dt>DIRECTOR</dt>
+                  <dd>Adrián Gil</dd>
+                </dl>
+                <dl>
+                  <dt>INSTRUCTORES</dt>
+                  <dd>Ignacio Rodriguez</dd>
+                  <dd>Marisa González</dd>
+                  <dd>Pedro y Pablo</dd>
+                </dl>
+              </div>
+              <AnchorLink href="#ver-galeria" className={styles.headerAction}>
+                <MdPhotoCamera className="absolute top-0 right-0 flex-none w-5 h-5 m-1" />
+                Imágenes de la Academia
+              </AnchorLink>
+            </div>
+          </div>
           <div id="content" className={styles.main}>
             <div className={styles.header}>
               <h2 className={styles.headerTitle}>Noticias de la Academia</h2>
-              <a className={styles.headerAction} href="#ver-galeria">
-                Galeria
-              </a>
             </div>
             <div className={styles.gridNews}>
               {news && news.map((n) => <Card {...n} key={n._id} />)}
@@ -47,23 +67,6 @@ export default function Academia({ news, albums }) {
             {selectedAlbum.length > 0 && (
               <Gallery list={selectedAlbum} onClose={() => setSelectedAlbum([])} />
             )}
-          </div>
-          <div id="sidebar" className={styles.aside}>
-            <div className={styles.widget}>
-              <h2 className={styles.widgetTitle}>Autoridades</h2>
-              <div className={styles.widgetContent}>
-                <dl>
-                  <dt>DIRECTOR</dt>
-                  <dd>Adrián Gil</dd>
-                </dl>
-                <dl>
-                  <dt>INSTRUCTORES</dt>
-                  <dd>Ignacio Rodriguez</dd>
-                  <dd>Marisa González</dd>
-                  <dd>Pedro y Pablo</dd>
-                </dl>
-              </div>
-            </div>
           </div>
         </div>
       </div>
