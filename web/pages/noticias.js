@@ -3,7 +3,7 @@ import Layout from "../components/layout"
 import { getClient } from "../lib/sanity.server"
 import { allPostQuery } from "../lib/queries"
 import Hero from "../components/Heros/HeroNews"
-import HorizontalCard from "../components/Cards/HorizontalCard"
+import HorizontalCard from "../components/Cards/horizontalCard"
 import NavCategorias from "../components/Navigation/NavCategorias"
 import styles from "../styles/PageSidebar.module.css"
 
