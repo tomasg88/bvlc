@@ -1,4 +1,4 @@
-import Footer from "./Footer"
+import Footer from "./footer"
 import Header from "./Navigation/Header"
 import Offcanvas from "./Offcanvas"
 import SimpleReactLightbox from "simple-react-lightbox"
