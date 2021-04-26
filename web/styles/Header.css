@@ -1,0 +1,67 @@
+
+.headroom-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  height: 88px ​!important;
+}
+
+/* Para mover luego al lugar correspondiente */
+.headroom {
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 500;
+  @apply bg-red-600 border-b-2 border-red-800;
+}
+.headroom--unfixed {
+  position: fixed;
+  transform: translateY(0);
+}
+.headroom--scrolled {
+  transition: transform 700ms ease-in-out;
+}
+.headroom--unpinned {
+  position: fixed;
+  transform: translateY(0);
+}
+
+@screen lg {
+  .headroom--unpinned {
+    position: fixed;
+    transform: translateY(-100%);
+  }
+  .headroom--unfixed {
+    position: relative;
+    transform: translateY(0);
+  }
+}
+
+.headroom--pinned .logo {
+  transform: translateY(-100%);
+}
+
+.headroom--pinned {
+  position: fixed;
+  transform: translateY(0%);
+}
+
+header nav a {
+  @apply px-2 py-2 font-sans text-sm font-bold text-white uppercase border-b-4 border-transparent;
+}
+
+@screen lg {
+  header nav a {
+    @apply px-5 text-lg ;
+  }
+}
+
+header nav a:hover {
+  @apply border-gray-100;
+}
+
+header nav a.active {
+  @apply border-gray-100;
+}

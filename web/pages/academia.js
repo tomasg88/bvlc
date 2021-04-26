@@ -5,27 +5,55 @@ import { BG_CONSTANTS } from "../utils/constants"
 import AlbumCover from "../components/albumCover"
 import { useState } from "react"
 import Gallery from "../components/gallery"
-import Card from "../components/cardNews"
-import HeroPage from "../components/heroPage"
+import Card from "../components/Cards/CardNews"
+import HeroPage from "../components/Heros/HeroPage"
+import styles from "../styles/PageSidebar.module.css"
+import { MdPhotoCamera } from "react-icons/md"
+import AnchorLink from "react-anchor-link-smooth-scroll"
+import NavCategorias from "../components/Navigation/NavCategorias"
 
 export default function Academia({ news, albums }) {
   const [selectedAlbum, setSelectedAlbum] = useState([])
   return (
-    <Layout title="Academia" >
-      <HeroPage title="Academia" image={BG_CONSTANTS.academy} opacity={20} />
-      <div className="bg-gray-100 w-screen mx-auto">
-        <div className="flex items-start max-w-6xl mx-auto pb-24 flex-col md:flex-row">
-          <div id="content" className="px-4 w-full md:w-3/4">
-            <div className="flex flex-col items-center w-full pt-12 pb-4 mx-auto font-sans border-b-2 border-yellow-400 md:flex-row">
-              <h2 className="text-5xl font-light text-gray-900 ">Últimas noticias</h2>
+    <Layout title="Academia">
+      {/* <div> que se oculta a partir de md: */}
+      <div className="md:hidden">
+        <HeroPage title="Academia" image={BG_CONSTANTS.academy} opacity={20} />
+      </div>
+      <div className={styles.page}>
+        <div className={styles.container}>
+          <div id="sidebar" className={styles.aside}>
+            <div className={styles.widget}>
+              <h2 className={styles.widgetTitle}>Autoridades</h2>
+              <div className={styles.widgetContent}>
+                <dl>
+                  <dt>DIRECTOR</dt>
+                  <dd>Adrián Gil</dd>
+                </dl>
+                <dl>
+                  <dt>INSTRUCTORES</dt>
+                  <dd>Ignacio Rodriguez</dd>
+                  <dd>Marisa González</dd>
+                  <dd>Pedro y Pablo</dd>
+                </dl>
+              </div>
+              <AnchorLink href="#ver-galeria" className={styles.headerAction}>
+                <MdPhotoCamera className="absolute top-0 right-0 flex-none w-5 h-5 m-1" />
+                Imágenes de la Academia
+              </AnchorLink>
             </div>
-            <div className="grid w-full gap-3 p-2 mx-auto mt-2 md:grid-cols-3 sm:grid-cols-2">
+          </div>
+          <div id="content" className={styles.main}>
+            <div className={styles.header}>
+              <h2 className={styles.headerTitle}>Noticias de la Academia</h2>
+            </div>
+            <div className={styles.gridNews}>
               {news && news.map((n) => <Card {...n} key={n._id} />)}
             </div>
-            <div className="flex flex-col items-center w-full pt-12 pb-4 mx-auto font-sans border-b-2 border-yellow-400 md:flex-row">
-              <h2 className="text-5xl font-light text-gray-900 ">Imagenes</h2>
+            <div id="ver-galeria" className={styles.header}>
+              <h2 className={styles.headerTitle}>Imágenes de la Academia</h2>
             </div>
-            <div className="grid grid-cols-3 w-full mx-auto mt-2 gap-3 md:grid-cols-3 sm:grid-cols-2">
+            <div className={styles.gridGallery}>
               {albums?.map((a) => (
                 <AlbumCover
                   key={a._id}
@@ -41,20 +69,6 @@ export default function Academia({ news, albums }) {
               <Gallery list={selectedAlbum} onClose={() => setSelectedAlbum([])} />
             )}
           </div>
-          <div id="sidebar" className="px-4 w-full md:w-1/4">
-            <div className="flex flex-col items-center w-full mt-2 pt-12 pb-4 mr-8 font-sans border-b-2 border-yellow-400 md:flex-row">
-              <h2 className="text-4xl font-light text-gray-900">Autoridades</h2>
-            </div>
-            <div className="flex flex-col items-start w-full pt-8 ml-2 mx-auto font-sans">
-              <p className="font-bold text-gray-600 pt-2">DIRECTOR</p>
-              <p>Adrián Gil</p>
-              <br />
-              <p className="font-bold text-gray-600">INSTRUCTORES</p>
-              <p>Otro instructor</p>
-              <p>Marisa González</p>
-              <p>Pedro y Pablo</p>
-            </div>
-          </div>
         </div>
       </div>
     </Layout>
@@ -63,7 +77,7 @@ export default function Academia({ news, albums }) {
 
 export async function getStaticProps() {
   const { news, albums } = await getClient().fetch(academyQuery)
-  const members = [{ title: 'Adrián Gil', position: 'director'}]
+  const members = [{ title: "Adrián Gil", position: "director" }]
   return {
     props: { news, albums },
   }

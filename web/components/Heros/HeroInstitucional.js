@@ -1,8 +1,7 @@
-import Link from "next/link"
-import BackgroundImage from "../components/backgroundImage"
-import { BG_CONSTANTS } from "../utils/constants"
-import HeaderLink from "./headerLink"
-import styles from "../styles/heroInstitucional.module.css"
+import BackgroundImage from "../backgroundImage"
+import { BG_CONSTANTS } from "../../utils/constants"
+import NavInstitucional from "../Navigation/NavInstitucional"
+import styles from "./HeroInstitucional.module.css"
 import Fade from "react-reveal/Fade"
 
 export default function HeroInstitucional({ title, image, opacity }) {
@@ -22,10 +21,7 @@ export default function HeroInstitucional({ title, image, opacity }) {
         )}
       </div>
       <div className={styles.tabs}>
-        <HeaderLink url="/comision-directiva" title="Comision Directiva" />
-        <HeaderLink url="/cuerpo-activo" title="Cuerpo Activo" />
-        <HeaderLink url="/equipamiento" title="Equipamiento" />
-        <HeaderLink url="/institucional" title="Historia" />
+        <NavInstitucional/>
       </div>
     </div>
   )

@@ -17,7 +17,7 @@ export default function AlbumCover({ cover, title, description, album, selectAlb
         <div className="w-full px-4 text-lg">{description}</div>
         <div className="flex items-center justify-start w-full p-2 mx-3 mt-2 font-bold uppercase duration-700 bg-red-600 shadow-2xl bg-opacity-20 hover:translate-x-2 hover:bg-red-500">
           <MdPhotoCamera className="w-6 h-6 m-2"/>
-          <span>Ver galería</span>
+          <span className="ml-1">Abrir galería</span>
         </div>
       </div>
     </div>
