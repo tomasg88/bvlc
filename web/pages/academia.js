@@ -1,7 +1,7 @@
 import { getClient } from "../lib/sanity.server"
 import { academyQuery } from "../lib/queries"
 import Layout from "../components/layout"
-import { BG_CONSTANTS } from "../utils/constants"
+import { ACADEMY_MEMBERS, BG_CONSTANTS } from "../utils/constants"
 import AlbumCover from "../components/albumCover"
 import { useState } from "react"
 import Gallery from "../components/gallery"
@@ -10,7 +10,6 @@ import HeroPage from "../components/Heros/HeroPage"
 import styles from "../styles/PageSidebar.module.css"
 import { MdPhotoCamera } from "react-icons/md"
 import AnchorLink from "react-anchor-link-smooth-scroll"
-import NavCategorias from "../components/Navigation/NavCategorias"
 
 export default function Academia({ news, albums }) {
   const [selectedAlbum, setSelectedAlbum] = useState([])
@@ -26,16 +25,14 @@ export default function Academia({ news, albums }) {
             <div className={styles.widget}>
               <h2 className={styles.widgetTitle}>Autoridades</h2>
               <div className={styles.widgetContent}>
-                <dl>
-                  <dt>DIRECTOR</dt>
-                  <dd>Adrián Gil</dd>
-                </dl>
-                <dl>
-                  <dt>INSTRUCTORES</dt>
-                  <dd>Ignacio Rodriguez</dd>
-                  <dd>Marisa González</dd>
-                  <dd>Pedro y Pablo</dd>
-                </dl>
+                {
+                  ACADEMY_MEMBERS.map((m, i) => (
+                    <dl key={i}>
+                      <dt className="uppercase">{m.title}</dt>
+                      <dd>{m.name}</dd>
+                    </dl>
+                  ))
+                }
               </div>
               <AnchorLink href="#ver-galeria" className={styles.headerAction}>
                 <MdPhotoCamera className="absolute top-0 right-0 flex-none w-5 h-5 m-1" />

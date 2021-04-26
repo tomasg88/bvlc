@@ -63,3 +63,30 @@ export const ROUTES = [
     ariaLabel: "Ver datos contacto",
   }
 ]
+
+export const ACADEMY_MEMBERS = [
+  {
+    title: 'DIRECTOR',
+    name: 'Adrián Gil'
+  },
+  {
+    title: 'Subdirector',
+    name: 'Federico Brian'
+  },
+  {
+    title: 'Coordinador Cadetes',
+    name: 'Fernando Cicilotto'
+  },
+  {
+    title: 'Coordinador Aspirantes',
+    name: 'Gastón Goncalvez'
+  },
+  {
+    title: 'Coordinador Bomberos',
+    name: 'Marcelo Rosales'
+  },
+  {
+    title: 'Departamento de Trauma',
+    name: 'Franco Pifaretti'
+  }
+]
