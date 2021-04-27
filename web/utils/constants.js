@@ -10,6 +10,8 @@ export const BG_CONSTANTS = {
   trucks: '/web/camiones.jpg',
   news: '/web/equipo.jpg',
   doors: '/web/doors.jpg',
+  iram: '/web/sello-iram-bvlc.png',
+  iram_pdf: '/web/CUERPO-BOMBEROS-VOLUNTARIOS-LUJAN-DE-CUYO.pdf',
   index_1: '/web/camion-b34.jpg',
   index_3: '/web/rescate-montana.jpg'
 }

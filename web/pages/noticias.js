@@ -13,14 +13,14 @@ export default function News({ list }) {
       <div className="pb-24 bg-gray-100">
         <Hero />
         <div className={styles.page}>
-          <div className="grid max-w-6xl grid-cols-1 gap-6 px-6 pt-12 pb-24 mx-auto md:px-0 md:grid-cols-5">
-            <div id="sidebar" className={styles.aside}>
+          <div className="max-w-5xl grid-cols-1 gap-6 px-6 pt-12 pb-24 mx-auto md:px-0">
+            {/* <div id="sidebar" className={styles.aside}>
               <div className={styles.widget}>
                 <h2 className={styles.widgetTitle}>Categorías</h2>
                 <NavCategorias />
               </div>
-            </div>
-            <div id="content" className={styles.main}>
+            </div> */}
+            <div id="content" className="w-full">
               <div className="grid max-w-4xl grid-cols-1 gap-3 mx-auto ">
                 {list && list.map((n) => <HorizontalCard {...n} key={n._id} />)}
               </div>
