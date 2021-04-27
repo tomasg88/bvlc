@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { ROUTES } from "../utils/constants"
+import { ROUTES } from "./../../utils/constants"
 
 const Navigation = ({ closeMenu }) => (
   <nav className="flex flex-col w-full pt-6">

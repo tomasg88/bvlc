@@ -1,0 +1,59 @@
+// import Image from "next/image"
+import HeaderLink from "./HeaderLink"
+import Link from "next/link"
+import Headroom from "react-headroom"
+import RrssIcon from "../rrssIcon"
+import { Context } from "../context"
+import { useContext } from "react"
+import { DEFAULT_PAGE_TITLE } from "../../utils/constants"
+import MenuDropdown from "./MenuDropdown"
+
+export default function Header() {
+  const [rrss] = useContext(Context)
+  return (
+    <Headroom disableInlineStyles className="bg-pattern">
+      <header className="z-50 flex flex-col w-full p-3 pb-0 mx-auto max-w-7xl ">
+        <div className="flex justify-between">
+          <Link href="/">
+            <a className="flex items-center justify-center transform -translate-y-2">
+              <img
+                src="/logo-bomberos-cuyo.png"
+                width="80"
+                height="100"
+                className="flex-none"
+                alt={DEFAULT_PAGE_TITLE}
+                title={DEFAULT_PAGE_TITLE}
+              />
+              <span className="w-32 ml-3 text-sm text-gray-100 uppercase md:w-auto sm:block md:text-lg lg:text-2xl">
+                Bomberos Voluntarios <br /> de Luján de Cuyo
+              </span>
+            </a>
+          </Link>
+          <div className="flex-col items-end justify-center hidden md:flex">
+            <div className="flex items-center justify-end w-full p-1 pl-6 pr-2 text-white border-b border-red-400">
+              <span className="font-sans font-bold uppercase">
+                <small className="text-xs">Emergencias</small> (0261) 498-0999
+              </span>
+              {rrss &&
+                rrss.map((rs) => (
+                  <RrssIcon
+                    className={"ml-3 text-3xl"}
+                    key={rs._id}
+                    rrss={rs.rrss}
+                    url={rs.rrssUrl}
+                  />
+                ))}
+            </div>
+            <nav className="flex items-center justify-end mt-3">
+              <MenuDropdown title="Institucional" />
+              <HeaderLink url="/noticias" title="Noticias" />
+              <HeaderLink url="/academia" title="Academia" />
+              <HeaderLink url="/galeria" title="Galería" />
+              <HeaderLink url="/contacto" title="Contacto" />
+            </nav>
+          </div>
+        </div>
+      </header>
+    </Headroom>
+  )
+}

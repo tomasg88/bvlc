@@ -23,19 +23,19 @@ export default function ArticleContent({ title, mainImage, dateString, body }) {
           </div>
           <div className={styles.heroBox}>
             <h1 className={styles.heroText}>{title}</h1>
+            {dateString && (
+              <div className={styles.publishedAt}>
+                Publicado el{" "}
+                <time dateTime={dateString}>
+                  {format(date, "do LLLL, yyyy", { locale: es })}
+                </time>
+              </div>
+            )}
           </div>
         </div>
       )}
 
-      <div className={styles.mainContent} >
-        {dateString && (
-          <div className={styles.publishedAt} >
-            Publicado el {" "}
-            <time dateTime={dateString}>
-              {format(date, "do LLLL, yyyy", { locale: es })}
-            </time>
-          </div>
-        )}
+      <div className={styles.mainContent}>
         <SRLWrapper options={options}>
           <article className={styles.articleText}>
             <BlockContent

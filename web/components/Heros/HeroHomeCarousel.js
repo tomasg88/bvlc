@@ -5,9 +5,9 @@ import { FiPhone, FiInfo } from "react-icons/fi"
 import makeCarousel from "react-reveal/makeCarousel"
 import Fade from "react-reveal/Fade"
 import Link from "next/link"
-import { BG_CONSTANTS, DEFAULT_PAGE_TITLE } from "../utils/constants"
+import { BG_CONSTANTS, DEFAULT_PAGE_TITLE } from "../../utils/constants"
 
-export default function SliderCarousel(props) {
+export default function HeroHomeCarousel(props) {
   const CarouselUI = ({ position, total, handleClick, children }) => (
     <div className="relative w-full h-full mb-0 overflow-hidden border-b-2 border-red-600">
       {props.arrows ? (

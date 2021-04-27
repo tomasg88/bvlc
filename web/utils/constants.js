@@ -6,9 +6,12 @@ export const DEFAULT_PAGE_IMAGE = "/logo-bomberos-cuyo.png";
 export const BG_CONSTANTS = {
   team: '/web/team.jpg',
   academy: '/web/academia-lujan-cuyo.jpg',
+  station: '/web/estacion-bomberos-lujan-cuyo.jpg',
   trucks: '/web/camiones.jpg',
   news: '/web/equipo.jpg',
   doors: '/web/doors.jpg',
+  iram: '/web/iram-bvlc.png',
+  iram_pdf: '/web/CUERPO-BOMBEROS-VOLUNTARIOS-LUJAN-DE-CUYO.pdf',
   index_1: '/web/camion-b34.jpg',
   index_3: '/web/rescate-montana.jpg'
 }
@@ -60,5 +63,32 @@ export const ROUTES = [
     title: "Contacto",
     slug: "/contacto",
     ariaLabel: "Ver datos contacto",
+  }
+]
+
+export const ACADEMY_MEMBERS = [
+  {
+    title: 'DIRECTOR',
+    name: 'Adrián Gil'
+  },
+  {
+    title: 'Subdirector',
+    name: 'Federico Brian'
+  },
+  {
+    title: 'Coordinador Cadetes',
+    name: 'Fernando Cicilotto'
+  },
+  {
+    title: 'Coordinador Aspirantes',
+    name: 'Gastón Goncalvez'
+  },
+  {
+    title: 'Coordinador Bomberos',
+    name: 'Marcelo Rosales'
+  },
+  {
+    title: 'Departamento de Trauma',
+    name: 'Franco Pifaretti'
   }
 ]

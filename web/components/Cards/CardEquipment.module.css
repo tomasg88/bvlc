@@ -1,0 +1,27 @@
+.card {
+  @apply relative flex flex-col mb-3 overflow-hidden border border-gray-200 rounded-md shadow-xl bg-gray-50 md:flex-row;
+}
+
+.image {
+  @apply relative flex-none w-full overflow-hidden md:h-64 md:w-64;
+}
+
+.img {
+  @apply object-cover w-full;
+}
+
+.content {
+  @apply w-full p-6;
+}
+
+.title {
+  @apply mb-2 text-2xl font-bold;
+}
+
+.excerpt {
+  @apply mb-3 text-lg md:pr-16;
+}
+
+.action {
+  @apply inline-flex items-center justify-start p-2 px-4 py-2 mt-2 font-bold text-white uppercase duration-700 bg-red-600 rounded cursor-pointer hover:translate-x-2 hover:bg-red-500;
+}

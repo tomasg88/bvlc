@@ -1,30 +1,56 @@
 import { getClient } from "../lib/sanity.server"
 import { academyQuery } from "../lib/queries"
 import Layout from "../components/layout"
-import { BG_CONSTANTS } from "../utils/constants"
+import { ACADEMY_MEMBERS, BG_CONSTANTS } from "../utils/constants"
 import AlbumCover from "../components/albumCover"
 import { useState } from "react"
 import Gallery from "../components/gallery"
-import Card from "../components/cardNews"
-import HeroPage from "../components/heroPage"
+import Card from "../components/Cards/cardNews"
+import HeroPage from "../components/Heros/HeroPage"
+import styles from "../styles/PageSidebar.module.css"
+import { MdPhotoCamera } from "react-icons/md"
+import AnchorLink from "react-anchor-link-smooth-scroll"
 
 export default function Academia({ news, albums }) {
   const [selectedAlbum, setSelectedAlbum] = useState([])
   return (
     <Layout title="Academia">
-        <div className="pb-24 bg-gray-100">
-          <HeroPage title="Academia" image={BG_CONSTANTS.academy} opacity={20} />
-          <div className="flex flex-col items-center max-w-6xl pt-12 pb-4 mx-auto font-sans border-b-2 border-yellow-400 md:flex-row">
-            <h2 className="text-5xl font-light text-gray-900 ">Últimas noticias</h2>
+      {/* <div> que se oculta a partir de md: */}
+      <div className="md:hidden">
+        <HeroPage title="Academia" image={BG_CONSTANTS.academy} opacity={20} />
+      </div>
+      <div className={styles.page}>
+        <div className={styles.container}>
+          <div id="sidebar" className={styles.aside}>
+            <div className={styles.widget}>
+              <h2 className={styles.widgetTitle}>Autoridades</h2>
+              <div className={styles.widgetContent}>
+                {
+                  ACADEMY_MEMBERS.map((m, i) => (
+                    <dl key={i}>
+                      <dt className="uppercase">{m.title}</dt>
+                      <dd>{m.name}</dd>
+                    </dl>
+                  ))
+                }
+              </div>
+              <AnchorLink href="#ver-galeria" className={styles.headerAction}>
+                <MdPhotoCamera className="absolute top-0 right-0 flex-none w-5 h-5 m-1" />
+                Imágenes de la Academia
+              </AnchorLink>
+            </div>
           </div>
-          <div className="grid max-w-6xl gap-3 p-2 mx-auto mt-12 md:grid-cols-3 sm:grid-cols-2">
-            {news && news.map((n) => <Card {...n} key={n._id} />)}
-          </div>
-          <div className="flex flex-col items-center max-w-6xl pt-12 pb-4 mx-auto font-sans border-b-2 border-yellow-400 md:flex-row">
-            <h2 className="text-5xl font-light text-gray-900 ">Imagenes</h2>
-          </div>
-          <div className="w-full max-w-6xl mx-auto mt-2 ">
-            <div className="grid grid-cols-3 gap-3 ">
+          <div id="content" className={styles.main}>
+            <div className={styles.header}>
+              <h2 className={styles.headerTitle}>Noticias de la Academia</h2>
+            </div>
+            <div className={styles.gridNews}>
+              {news && news.map((n) => <Card {...n} key={n._id} />)}
+            </div>
+            <div id="ver-galeria" className={styles.header}>
+              <h2 className={styles.headerTitle}>Imágenes de la Academia</h2>
+            </div>
+            <div className={styles.gridGallery}>
               {albums?.map((a) => (
                 <AlbumCover
                   key={a._id}
@@ -36,17 +62,19 @@ export default function Academia({ news, albums }) {
                 />
               ))}
             </div>
+            {selectedAlbum.length > 0 && (
+              <Gallery list={selectedAlbum} onClose={() => setSelectedAlbum([])} />
+            )}
           </div>
-          {selectedAlbum.length > 0 && (
-            <Gallery list={selectedAlbum} onClose={() => setSelectedAlbum([])} />
-          )}
         </div>
+      </div>
     </Layout>
   )
 }
 
 export async function getStaticProps() {
   const { news, albums } = await getClient().fetch(academyQuery)
+  const members = [{ title: "Adrián Gil", position: "director" }]
   return {
     props: { news, albums },
   }

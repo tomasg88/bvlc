@@ -4,7 +4,7 @@ import { getClient } from "../lib/sanity.server"
 import { albumsQuery } from "../lib/queries"
 import Gallery from "../components/gallery"
 import AlbumCover from "../components/albumCover"
-import HeroPage from "../components/heroPage"
+import HeroPage from "../components/Heros/HeroPage"
 import Fade from "react-reveal/Fade"
 
 export default function Galeria({ albums }) {

@@ -15,29 +15,36 @@ const positions = [
 
 const ranks = [
   {title: 'Comandante General', value: 'comandante-general'},
+  {title: 'Comandante Mayor', value: 'comandante-mayor'},
   {title: 'Comandante', value: 'comandante'},
   {title: 'Subcomandante', value: 'subcomandante'},
-  {title: 'Oficial', value: 'oficial'},
-  {title: 'Suboficial', value: 'suboficial'},
+  {title: 'Oficial Principal', value: 'oficial-principal'},
+  {title: 'Oficial Inspector', value: 'oficial-inspector'},
+  {title: 'Oficial Ayudante', value: 'oficial-ayudante'},
+  {title: 'Suboficial Mayor', value: 'suboficial-mayor'},
+  {title: 'Suboficial Principal', value: 'suboficial-principal'},
+  {title: 'Suboficial Primero', value: 'suboficial-primero'},
   {title: 'Sargento', value: 'sargento'},
+  {title: 'Cabo Primero', value: 'cabo-primero'},
   {title: 'Cabo', value: 'cabo'},
-  {title: 'Bombero', value: 'bombero'},
-  {title: 'Aspirante', value: 'aspirante'},
-  {title: 'Cadete', value: 'cadete'}
 ]
 
 const orderRanks = {
   'comandante-general': 1,
-  'comandante': 2,
-  'subcomandante': 3,
-  'oficial': 4,
-  'suboficial': 5,
-  'sargento': 6,
-  'cabo': 7,
-  'bombero': 8,
-  'aspirante': 9,
-  'cadete': 10,
+  'comandante-mayor': 2,
+  'comandante': 3,
+  'subcomandante': 4,
+  'oficial-principal': 5,
+  'oficial-inspector': 6,
+  'oficial-ayudante': 7,
+  'suboficial-mayor': 8,
+  'suboficial-principal': 9,
+  'suboficial-primero': 10,
+  'sargento': 11,
+  'cabo-primero': 12,
+  'cabo': 13
 }
+
 const orderPositions = {
   'presidente': 1,
   'vice-presidente': 2,
@@ -54,8 +61,8 @@ const orderPositions = {
 export default function groupAndOrder(listName, list) {
 
   // Funcion para traducir valores
-  const getTranslatedPositions = (value) => find(positions, { value }).title;
-  const getTranslatedRanks = (value) => find(ranks, { value }).title;
+  const getTranslatedPositions = (value) => find(positions, { value })?.title;
+  const getTranslatedRanks = (value) => find(ranks, { value })?.title;
 
   // Funcion para ordernar listas
   const orderByRank = orderBy(list, l => orderRanks[l.rank]);

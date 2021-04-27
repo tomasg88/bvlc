@@ -1,6 +1,6 @@
-import Footer from "../components/footer"
-import Header from "../components/header"
-import Offcanvas from "../components/offcanvas"
+import Footer from "./footer"
+import Header from "./Navigation/Header"
+import Offcanvas from "./offcanvas"
 import SimpleReactLightbox from "simple-react-lightbox"
 import Head from "next/head"
 import { DEFAULT_PAGE_DESCRIPTION, 
@@ -51,7 +51,7 @@ export default function Layout({ title, description, image, children }) {
       <Header />
       <div className="pt-20 bg-red-600 bg-pattern">
         <SimpleReactLightbox>
-          <main>{children}</main>
+          <main className="overflow-x-hidden">{children}</main>
         </SimpleReactLightbox>
       </div>
       <Footer />

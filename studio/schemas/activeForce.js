@@ -16,16 +16,22 @@ export default {
       validation: Rule => Rule.required(),
       options: {
         list: [
-          {title: 'Comandante General', value: 'comandante-general'},   // agregar jefe del cuerpo - 
-          {title: 'Comandante', value: 'comandante'},                   // agregar 2do jefe del cuerpo -
+          {title: 'Comandante General', value: 'comandante-general'},
+          {title: 'Comandante Mayor', value: 'comandante-mayor'},
+          {title: 'Comandante', value: 'comandante'},
           {title: 'Subcomandante', value: 'subcomandante'},
-          {title: 'Oficial', value: 'oficial'},
-          {title: 'Suboficial', value: 'suboficial'},
+          {title: 'Oficial Principal', value: 'oficial-principal'},
+          {title: 'Oficial Inspector', value: 'oficial-inspector'},
+          {title: 'Oficial Ayudante', value: 'oficial-ayudante'},
+          {title: 'Suboficial Mayor', value: 'suboficial-mayor'},
+          {title: 'Suboficial Principal', value: 'suboficial-principal'},
+          {title: 'Suboficial Primero', value: 'suboficial-primero'},
           {title: 'Sargento', value: 'sargento'},
+          {title: 'Cabo Primero', value: 'cabo-primero'},
           {title: 'Cabo', value: 'cabo'},
-          {title: 'Bombero', value: 'bombero'},
-          {title: 'Aspirante', value: 'aspirante'},
-          {title: 'Cadete', value: 'cadete'},
+          // {title: 'Bombero', value: 'bombero'},
+          // {title: 'Aspirante', value: 'aspirante'},
+          // {title: 'Cadete', value: 'cadete'},
         ]
       }
     },

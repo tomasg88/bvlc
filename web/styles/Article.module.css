@@ -27,6 +27,13 @@
   @apply relative items-center justify-center w-full overflow-hidden bg-gray-100 md:flex md:bg-gray-800 md:text-center md:text-white;
 }
 
+@screen md {
+  .heroArticle {
+    min-height: 70vh;
+  }
+}
+
+
 .heroImageContainer {
   @apply relative inset-0 z-0 md:absolute md:opacity-40;
 }
@@ -36,7 +43,7 @@
 }
 
 .heroText {
-  @apply pb-3 mb-3 text-4xl md:text-6xl;
+  @apply my-3 text-4xl md:text-6xl;
 }
 
 .mainContent {
@@ -44,11 +51,6 @@
 }
 
 .publishedAt {
-  @apply w-full max-w-xl pt-3 mx-auto mb-6 text-lg;
+  @apply w-full max-w-xl py-2 mx-auto text-lg;
 }
 
-@screen md {
-  .heroArticle {
-    min-height: 60vh;
-  }
-}

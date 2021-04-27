@@ -50,6 +50,26 @@ export const albumsQuery = `
   *[_type == "album"] { ${albumFields} }
 `
 
+
+export const communityPostQuery = `
+{
+  "albums": *[_type == "album" && "Comunidad" in categories[]->.title] { ${albumFields} },
+  "news": *[_type == "post" && "Comunidad" in categories[]->.title] { ${postFields} }
+}
+`
+export const equipmentPostQuery = `
+{
+  "albums": *[_type == "album" && "Equipamiento" in categories[]->.title] { ${albumFields} },
+  "news": *[_type == "post" && "Equipamiento" in categories[]->.title] { ${postFields} }
+}
+`
+export const contributionPostQuery = `
+{
+  "albums": *[_type == "album" && "Contribuciones" in categories[]->.title] { ${albumFields} },
+  "news": *[_type == "post" && "Contribuciones" in categories[]->.title] { ${postFields} }
+}
+`
+
 export const contactDataQuery = `
 {
   "phones": *[_type == "general" && type == 'Telefono' ] { ${generalFields} },

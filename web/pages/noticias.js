@@ -1,38 +1,31 @@
 import React from "react"
 import Layout from "../components/layout"
-import Link from "next/link"
 import { getClient } from "../lib/sanity.server"
 import { allPostQuery } from "../lib/queries"
-import BackgroundImage from "../components/backgroundImage"
-import HorizontalCard from "../components/horizontalCard"
-import { BG_CONSTANTS } from "../utils/constants"
-import Card from "../components/cardNews"
+import Hero from "../components/Heros/HeroNews"
+import HorizontalCard from "../components/Cards/horizontalCard"
+import NavCategorias from "../components/Navigation/NavCategorias"
+import styles from "../styles/PageSidebar.module.css"
 
 export default function News({ list }) {
   return (
     <Layout title="Noticias">
       <div className="pb-24 bg-gray-100">
-        <div className="relative py-40 overflow-hidden text-center text-white bg-gray-800 ">
-          <h1 className="relative z-10 font-sans text-6xl font-light">
-            Últimas noticias
-          </h1>
-          <BackgroundImage image={BG_CONSTANTS.news} opacity={20} />
-          <div className="bottom-0 left-0 right-0 flex flex-col justify-center w-full max-w-3xl p-6 pb-8 mx-auto sm:space-x-4 sm:flex-row sm:absolute ">
-            <Link href="/academia">
-              <a className="relative z-10 block mt-6 text-base text-center uppercase btn">
-                Academia
-              </a>
-            </Link>
-            <Link href="/equipamiento">
-              <a className="relative z-10 block mt-6 text-base text-center uppercase btn">
-                Equipamiento
-              </a>
-            </Link>
+        <Hero />
+        <div className={styles.page}>
+          <div className="max-w-5xl grid-cols-1 gap-6 px-6 pt-12 pb-24 mx-auto md:px-0">
+            {/* <div id="sidebar" className={styles.aside}>
+              <div className={styles.widget}>
+                <h2 className={styles.widgetTitle}>Categorías</h2>
+                <NavCategorias />
+              </div>
+            </div> */}
+            <div id="content" className="w-full">
+              <div className="grid max-w-4xl grid-cols-1 gap-3 mx-auto ">
+                {list && list.map((n) => <HorizontalCard {...n} key={n._id} />)}
+              </div>
+            </div>
           </div>
-        </div>
-
-        <div className="grid max-w-4xl grid-cols-1 gap-3 p-2 mx-auto mt-12 ">
-          {list && list.map((n) => <HorizontalCard {...n} key={n._id} />)}
         </div>
       </div>
     </Layout>

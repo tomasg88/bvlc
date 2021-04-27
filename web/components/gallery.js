@@ -45,8 +45,8 @@ export default function Gallery({ onClose, list }) {
           >
             <Fade>
               <img
-                src={urlForImage(list[mainIndex]).width(1440).url()}
-                className="w-full h-auto max-w-5xl mx-auto mb-24 select-none"
+                src={urlForImage(list[mainIndex]).url()}
+                className="object-contain w-full h-full mx-auto"
               />
             </Fade>
           </div>
@@ -66,27 +66,16 @@ export default function Gallery({ onClose, list }) {
           </div>
           <div
             id="bottom-image-list"
-            className="absolute bottom-0 left-0 right-0 items-center justify-center hidden w-full p-2 mt-5 overflow-x-auto bg-black md:flex"
+            className="absolute bottom-0 left-0 right-0 flex items-center justify-center w-full p-2 mt-5 overflow-x-auto bg-black"
           >
             {list.map((img, index) => (
               <Fade delay={500}>
                 <img
-                  className="w-12 h-12 mx-2 duration-500 cursor-pointer hover:!opacity-90"
+                  className="w-12 h-12 mx-1 duration-500 cursor-pointer hover:!opacity-90"
                   key={img._key}
                   onClick={() => setMainIndex(index)}
                   src={urlForImage(img).width(200).height(200).url()}
                 />
-              </Fade>
-            ))}
-          </div>
-          <div
-            id="bottom-image-list"
-            className="absolute bottom-0 left-0 right-0 flex items-center justify-center w-full py-6 overflow-x-auto bg-gray-900 md:hidden bg-opacity-90"
-          >
-            {list.map((img, index) => (
-              <Fade delay={500}>
-                <div onClick={() => setMainIndex(index)} className="w-5 h-5 mx-2 duration-500 bg-gray-300 hover:!bg-gray-600 rounded-full cursor-pointer ">
-                </div>
               </Fade>
             ))}
           </div>
