@@ -1,6 +1,6 @@
 import Footer from "./footer"
 import Header from "./Navigation/Header"
-import Offcanvas from "./Offcanvas"
+import Offcanvas from "./offcanvas"
 import SimpleReactLightbox from "simple-react-lightbox"
 import Head from "next/head"
 import { DEFAULT_PAGE_DESCRIPTION, 
