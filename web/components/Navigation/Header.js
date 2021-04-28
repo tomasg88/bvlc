@@ -1,11 +1,12 @@
 // import Image from "next/image"
 import HeaderLink from "./HeaderLink"
 import Link from "next/link"
+import Image from "next/image"
 import Headroom from "react-headroom"
 import RrssIcon from "../rrssIcon"
 import { Context } from "../context"
 import { useContext } from "react"
-import { DEFAULT_PAGE_TITLE } from "../../utils/constants"
+import { DEFAULT_PAGE_TITLE, BG_CONSTANTS } from "../../utils/constants"
 import MenuDropdown from "./MenuDropdown"
 
 export default function Header() {
@@ -30,19 +31,38 @@ export default function Header() {
             </a>
           </Link>
           <div className="flex-col items-end justify-center hidden md:flex">
-            <div className="flex items-center justify-end w-full p-1 pl-6 pr-2 text-white border-b border-red-400">
-              <span className="font-sans font-bold uppercase">
-                <small className="text-xs">Emergencias</small> (0261) 498-0999
-              </span>
-              {rrss &&
-                rrss.map((rs) => (
-                  <RrssIcon
-                    className={"ml-3 text-3xl"}
-                    key={rs._id}
-                    rrss={rs.rrss}
-                    url={rs.rrssUrl}
-                  />
-                ))}
+            <div className="flex items-center justify-end w-full p-1 px-2 text-white border-b border-red-400">
+              <a
+                href={BG_CONSTANTS.iram_pdf}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative flex items-center mx-4 overflow-hidden uppercase duration-500 bg-red-700 rounded-full justify-baseline hover:bg-blue-900"
+              >
+                <span className="px-3 pr-1 text-xs font-bold">Certificado IRAM</span>
+                <Image
+                  src={BG_CONSTANTS.sello_iram}
+                  alt={DEFAULT_PAGE_TITLE}
+                  quality={80}
+                  className="flex-none w-8 h-8"
+                  layout="fixed"
+                  width={30}
+                  height={30}
+                />
+              </a>
+              <div className="flex items-center justify-between">
+                <span className="flex items-baseline font-sans font-bold uppercase">
+                  <small className="inline-block mr-1 text-xs">Emergencias</small> (0261) 498-0999
+                </span>
+                {rrss &&
+                  rrss.map((rs) => (
+                    <RrssIcon
+                      className={"ml-3 text-3xl"}
+                      key={rs._id}
+                      rrss={rs.rrss}
+                      url={rs.rrssUrl}
+                    />
+                  ))}
+              </div>
             </div>
             <nav className="flex items-center justify-end mt-3">
               <MenuDropdown title="Institucional" />
