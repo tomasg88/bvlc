@@ -11,6 +11,7 @@ export const BG_CONSTANTS = {
   news: '/web/equipo.jpg',
   doors: '/web/doors.jpg',
   iram: '/web/iram-bvlc.png',
+  sello_iram: '/web/sello-iram.png',
   iram_pdf: '/web/CUERPO-BOMBEROS-VOLUNTARIOS-LUJAN-DE-CUYO.pdf',
   index_1: '/web/camion-b34.jpg',
   index_3: '/web/rescate-montana.jpg'
