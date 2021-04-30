@@ -24,9 +24,12 @@ const ranks = [
   {title: 'Suboficial Mayor', value: 'suboficial-mayor'},
   {title: 'Suboficial Principal', value: 'suboficial-principal'},
   {title: 'Suboficial Primero', value: 'suboficial-primero'},
+  {title: 'Sargento Primero', value: 'sargento-primero'},
   {title: 'Sargento', value: 'sargento'},
   {title: 'Cabo Primero', value: 'cabo-primero'},
   {title: 'Cabo', value: 'cabo'},
+  {title: 'Bombero', value: 'bombero'},
+  {title: 'Aspirante', value: 'aspirante'},
 ]
 
 const orderRanks = {
@@ -40,9 +43,12 @@ const orderRanks = {
   'suboficial-mayor': 8,
   'suboficial-principal': 9,
   'suboficial-primero': 10,
-  'sargento': 11,
-  'cabo-primero': 12,
-  'cabo': 13
+  'sargento-primero': 11,
+  'sargento': 12,
+  'cabo-primero': 13,
+  'cabo': 14,
+  'bombero': 15,
+  'aspirante': 16,
 }
 
 const orderPositions = {
