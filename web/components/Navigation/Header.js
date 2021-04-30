@@ -38,7 +38,7 @@ export default function Header() {
                 rel="noopener noreferrer"
                 className="relative flex items-center mx-4 overflow-hidden uppercase duration-500 bg-red-700 rounded-full justify-baseline hover:bg-blue-900"
               >
-                <span className="px-3 pr-1 text-xs font-bold">Certificado IRAM</span>
+                <span className="px-3 pr-1 text-xs font-bold">Certificación IRAM</span>
                 <Image
                   src={BG_CONSTANTS.sello_iram}
                   alt={DEFAULT_PAGE_TITLE}

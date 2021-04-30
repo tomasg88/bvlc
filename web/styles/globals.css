@@ -19,12 +19,10 @@
 ::-webkit-scrollbar-thumb:vertical {
   /* This is the EXACT color of Mac OS scrollbars. 
      Yes, I pulled out digital color meter */
-  @apply bg-red-500 bg-opacity-90;
-  -webkit-border-radius: 100px;
+  @apply bg-red-500 bg-gradient-to-b from-red-700 to-red-500 bg-opacity-90;
 }
 ::-webkit-scrollbar-thumb:vertical:active {
   @apply bg-red-800 bg-opacity-100;
-  -webkit-border-radius: 100px;
 }
 
 html,
