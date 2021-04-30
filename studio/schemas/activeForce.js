@@ -26,11 +26,12 @@ export default {
           {title: 'Suboficial Mayor', value: 'suboficial-mayor'},
           {title: 'Suboficial Principal', value: 'suboficial-principal'},
           {title: 'Suboficial Primero', value: 'suboficial-primero'},
+          {title: 'Sargento Primero', value: 'sargento-primero'},
           {title: 'Sargento', value: 'sargento'},
           {title: 'Cabo Primero', value: 'cabo-primero'},
           {title: 'Cabo', value: 'cabo'},
-          // {title: 'Bombero', value: 'bombero'},
-          // {title: 'Aspirante', value: 'aspirante'},
+          {title: 'Bombero', value: 'bombero'},
+          {title: 'Aspirante', value: 'aspirante'},
           // {title: 'Cadete', value: 'cadete'},
         ]
       }
