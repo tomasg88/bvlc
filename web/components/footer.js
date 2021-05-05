@@ -58,7 +58,11 @@ export default function Footer() {
           </Link>
         </div>
         <div className="flex flex-col justify-start w-full px-6 pt-12 mx-auto space-y-4 border-t border-gray-700 md:px-0 md:flex-row md:border-none md:space-y-0 max-w-7xl">
-          <a className="relative flex items-center justify-start overflow-hidden duration-500 rounded-2xl ">
+          <a 
+          href={BG_CONSTANTS.spai_pdf}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="relative flex items-center justify-start overflow-hidden duration-500 hover:opacity-80 ">
             <Image
               src={BG_CONSTANTS.escudo_spai}
               alt="Spai"
@@ -69,14 +73,14 @@ export default function Footer() {
               height={74}
             />
             <span className="ml-3 text-lg font-bold text-gray-400 ">
-              Con el apoyo de SPAI
+              En convenio de cooperación con SPAI
             </span>
           </a>
           <a
             href={BG_CONSTANTS.iram_pdf}
             target="_blank"
             rel="noopener noreferrer"
-            className="relative flex items-center justify-start overflow-hidden duration-500 group md:ml-20 rounded-2xl hover:opacity-80"
+            className="relative flex items-center justify-start overflow-hidden duration-500 group md:ml-20 hover:opacity-80"
           >
             <Image
               src={BG_CONSTANTS.iram}

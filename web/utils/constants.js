@@ -14,6 +14,7 @@ export const BG_CONSTANTS = {
   sello_iram: '/web/sello-iram.png',
   iram_pdf: '/web/CUERPO-BOMBEROS-VOLUNTARIOS-LUJAN-DE-CUYO.pdf',
   escudo_spai: '/web/escudo-spai.png',
+  spai_pdf: '/web/historia-de-spai.pdf',
   index_1: '/web/camion-b34.jpg',
   index_3: '/web/rescate-montana.jpg'
 }

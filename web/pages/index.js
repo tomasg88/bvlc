@@ -25,9 +25,7 @@ export default function Home({ recentNews }) {
               <div className="grid max-w-6xl gap-3 p-8 pb-12 mx-auto mt-6 lg:grid-cols-3 sm:grid-cols-2">
                 {recentNews &&
                   recentNews.map((n) => (
-                    <Fade>
-                      <Card {...n} key={n._id} />
-                    </Fade>
+                    <Card {...n} key={n._id} />
                   ))}
               </div>
             <div className="flex flex-col items-center justify-between max-w-6xl pb-24 mx-auto font-sans">

@@ -3,6 +3,7 @@ import { es } from "date-fns/locale"
 import Link from "next/link"
 import CoverImage from "../coverImage"
 import styles from "./CardNews.module.css"
+import Fade from "react-reveal/Fade"
 
 const getDate = (date) => {
   const day = "0" + format(parseISO(date), "d", { locale: es })
@@ -14,31 +15,31 @@ const getMonth = (date) => format(parseISO(date), "LLL", { locale: es })
 // title, mainImage, excerpt, slug
 export default function Card({ title, mainImage, excerpt, slug, publishedAt }) {
   return (
-    <div className={styles.card}>
-      <div className={styles.image}>
-        {mainImage ? (
+    <Fade>
+      <div className={styles.card}>
+        <div className={styles.image}>
+          {mainImage ? (
+            <Link href={`/noticias/${slug}`}>
+              <a aria-label={title}>
+                <CoverImage title={title} image={mainImage} />
+              </a>
+            </Link>
+          ) : (
+            <></>
+          )}
+          <time className={styles.time}>
+            {getDate(publishedAt)}/
+            <span className="capitalize">{getMonth(publishedAt)}</span>
+          </time>
+        </div>
+        <div className={styles.content}>
+          <h3 className={styles.title}>{title}</h3>
+          <p className={styles.excerpt}>{excerpt}</p>
           <Link href={`/noticias/${slug}`}>
-            <a aria-label={title}>
-              <CoverImage title={title} image={mainImage} />
-            </a>
+            <a className={styles.action}>Leer nota completa</a>
           </Link>
-        ) : (
-          <></>
-        )}
-        <time className={styles.time}>
-          {getDate(publishedAt)}/
-          <span className="capitalize">{getMonth(publishedAt)}</span>
-        </time>
+        </div>
       </div>
-      <div className={styles.content}>
-        <h3 className={styles.title}>{title}</h3>
-        <p className={styles.excerpt}>{excerpt}</p>
-        <Link href={`/noticias/${slug}`}>
-          <a className={styles.action}>
-            Leer nota completa
-          </a>
-        </Link>
-      </div>
-    </div>
+    </Fade>
   )
 }

@@ -42,7 +42,7 @@
   }
 }
 
-@screen md {
+@screen lg {
   .bm-burger-button {
     position: absolute;
     width: 36px;
@@ -151,7 +151,7 @@
   z-index: 1000;
 }
 
-@screen md {
+@screen lg {
   .bm-overlay + div:before {
     @apply hidden;
   }
