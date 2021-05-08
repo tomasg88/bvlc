@@ -10,24 +10,7 @@ export default function Footer() {
   return (
     <footer className={styles.footer}>
       <div className="flex flex-col w-full mx-auto max-w-7xl">
-        <div className="grid w-full gap-3 mx-auto mt-12 text-lg text-center text-blue-200 md:mt-3 md:grid-cols-3">
-          <div className="flex flex-col mt-6 space-y-1 md:mt-0">
-            <span className="block mb-3 text-sm font-bold text-white uppercase">
-              Contacto
-            </span>
-            <Link href="/contacto">Emergencias - 0261 498 0999</Link>
-            <Link href="/contacto">Admistración - 0261 498 6341</Link>
-            <Link href="/contacto">info@bomberoslujanmza.com.ar</Link>
-          </div>
-          <div className="flex flex-col mt-6 space-y-1 md:mt-0">
-            <span className="block mb-3 text-sm font-bold text-white uppercase">
-              Institucional
-            </span>
-            <Link href="/institucional">Historia</Link>
-            <Link href="/comision-directiva">Comisión Directiva</Link>
-            <Link href="/cuerpo-activo">Cuerpo Activo</Link>
-            <Link href="/equipamiento">Equipamiento</Link>
-          </div>
+        <div className={styles.siteMap} >
           <div className="flex flex-col mt-6 space-y-1 md:mt-0">
             <span className="block mb-3 text-sm font-bold text-white uppercase">
               Noticias
@@ -40,10 +23,25 @@ export default function Footer() {
               </a>
             ))}
           </div>
-        </div>
-        <div className="flex flex-col justify-between w-full max-w-6xl pt-12 mx-auto md:flex-row">
+          <div className="flex flex-col mt-6 space-y-1 md:mt-0">
+            <span className="block mb-3 text-sm font-bold text-white uppercase">
+              Institucional
+            </span>
+            <Link href="/institucional">Historia</Link>
+            <Link href="/comision-directiva">Comisión Directiva</Link>
+            <Link href="/cuerpo-activo">Cuerpo Activo</Link>
+            <Link href="/equipamiento">Equipamiento</Link>
+          </div>
+          <div className="flex flex-col mt-6 space-y-1 md:mt-0">
+            <span className="block mb-3 text-sm font-bold text-white uppercase">
+              Contacto
+            </span>
+            <Link href="/contacto">Emergencias - 0261 498 0999</Link>
+            <Link href="/contacto">Admistración - 0261 498 6341</Link>
+            <Link href="/contacto">info@bomberoslujanmza.com.ar</Link>
+          </div>
           <Link href="/">
-            <a className="flex flex-col items-center justify-center">
+            <a className="flex flex-col items-center justify-center w-32 mx-auto mt-12 md:mt-0">
               <Image
                 src="/logo-bomberos-cuyo.png"
                 alt={DEFAULT_PAGE_TITLE}
@@ -58,22 +56,46 @@ export default function Footer() {
               </span>
             </a>
           </Link>
+        </div>
+        <div className="flex flex-col justify-start w-full px-6 pt-12 mx-auto space-y-4 border-t border-gray-700 md:px-0 md:flex-row md:border-none md:space-y-0 max-w-7xl">
+          <a 
+          href={BG_CONSTANTS.spai_pdf}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="relative flex items-center justify-start overflow-hidden duration-500 hover:opacity-80 ">
+            <Image
+              src={BG_CONSTANTS.escudo_spai}
+              alt="Spai"
+              quality={80}
+              className="w-full h-auto mx-auto"
+              layout="intrinsic"
+              width={57}
+              height={74}
+            />
+            <span className="ml-3 text-lg font-bold text-gray-400 ">
+              En convenio de cooperación con SPAI
+            </span>
+          </a>
           <a
             href={BG_CONSTANTS.iram_pdf}
             target="_blank"
             rel="noopener noreferrer"
-            className="relative w-32 overflow-hidden duration-500 rounded-2xl hover:opacity-80 md:mr-20"
+            className="relative flex items-center justify-start overflow-hidden duration-500 group md:ml-20 hover:opacity-80"
           >
             <Image
               src={BG_CONSTANTS.iram}
-              alt={DEFAULT_PAGE_TITLE}
+              alt="Certificado Iram"
               quality={80}
               className="w-full h-auto"
               layout="intrinsic"
-              width={200}
-              height={245}
+              width={60}
+              height={74}
             />
+            <span className="ml-3 text-lg font-bold text-gray-400 group-hover:text-gray-100">
+              Certificación Iram Referencial N 12
+            </span>
           </a>
+          
         </div>
       </div>
     </footer>

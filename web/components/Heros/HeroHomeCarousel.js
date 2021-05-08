@@ -50,8 +50,8 @@ export default function HeroHomeCarousel(props) {
   )
   const Carousel = makeCarousel(CarouselUI)
   return (
-    <div className="relative flex flex-col items-center justify-center py-32 overflow-hidden text-center text-white bg-gray-900">
-      <Fade cascade delay={900} >
+    <div className="relative flex flex-col items-center justify-center py-40 overflow-hidden text-center text-white bg-gray-900">
+      <Fade cascade delay={900}>
         <p className="relative z-10 max-w-xl px-6 mx-auto font-mono text-xl font-bold uppercase md:text-xl ">
           Saber para servir
         </p>
@@ -67,17 +67,23 @@ export default function HeroHomeCarousel(props) {
           <a className="relative z-10 flex flex-col items-center justify-center w-full p-3 mx-auto mt-6 text-red-800 duration-100 bg-gray-100 shadow-sm hover:bg-red-600 hover:text-red-100 hover:shadow-lg ">
             <FiPhone className="mx-3 mb-2 text-4xl md:text-4xl" />
             <div className="text-lg font-bold uppercase">
-              Contacto
-              <span className="flex flex-col text-base text-left sm:text-center opacity-90 sm:hidden">
-                EMERGENCIAS (0261) 498-0999
+              Emergencias
+              <span className="flex flex-col text-base text-left sm:text-center opacity-90">
+                (0261) 498-0999
               </span>
             </div>
           </a>
         </Link>
-        <Link href="/institucional">
+        <Link href="/contacto">
           <a className="relative z-10 flex flex-col items-center justify-center w-full p-3 mx-auto mt-6 text-red-800 duration-100 bg-gray-100 shadow-sm hover:bg-red-600 hover:text-red-100 hover:shadow-lg ">
             <FiInfo className="mx-3 mb-2 text-4xl md:text-4xl" />
-            <span className="text-lg font-bold uppercase">Institucional</span>
+            <div className="text-lg font-bold uppercase">
+              Administración
+              <span className="flex flex-col text-base text-left sm:text-center opacity-90">
+                (0261) 498-6341
+              </span>
+            </div>
+            <span className="text-lg font-bold uppercase"></span>
           </a>
         </Link>
       </div>
