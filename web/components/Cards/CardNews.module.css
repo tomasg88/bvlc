@@ -1,5 +1,5 @@
 .card {
-  @apply relative overflow-hidden text-4xl duration-500 transform translate-y-0 bg-white rounded-md shadow-md hover:shadow-2xl hover:-translate-y-1 
+  @apply relative overflow-hidden text-4xl duration-500 mb-6 md:mb-0 transform translate-y-0 bg-white rounded-md shadow-md hover:shadow-2xl hover:-translate-y-1 
 }
 
 .image {
@@ -11,7 +11,13 @@
 }
 
 .content {
-  @apply px-6 py-3 pb-12 md:pb-8 md:h-48;
+  @apply px-6 py-3 pb-12 md:pb-8;
+}
+
+@screen md {
+  .content {
+    min-height: 13rem;
+  }
 }
 
 .title {

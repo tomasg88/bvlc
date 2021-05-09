@@ -1,9 +1,9 @@
 .articleText p {
-  @apply max-w-xl mx-auto;
+  @apply w-full max-w-2xl mx-auto;
 }
 
 .articleText blockquote {
-  @apply max-w-xl mx-auto;
+  @apply w-full max-w-2xl mx-auto;
 }
 
 .articleText h1,
@@ -12,7 +12,7 @@
 .articleText h4,
 .articleText h5,
 .articleText h6 {
-  @apply max-w-xl mx-auto;
+  @apply w-full max-w-2xl mx-auto my-3;
 }
 
 .articleText img {
@@ -22,6 +22,12 @@
 .articleText img:hover {
   @apply opacity-90;
 }
+
+
+.articleText ul > li::before {
+@apply bg-red-600 !important;
+}
+
 
 .heroArticle {
   @apply relative items-center justify-center w-full overflow-hidden bg-gray-100 md:flex md:bg-gray-800 md:text-center md:text-white;
@@ -47,7 +53,7 @@
 }
 
 .mainContent {
-  @apply max-w-3xl px-3 mx-auto mt-6 prose prose-lg md:prose-xl;
+  @apply max-w-3xl px-3 pb-24 mx-auto mt-6 prose prose-lg prose-red md:prose-xl;
 }
 
 .publishedAt {
