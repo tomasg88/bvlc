@@ -21,6 +21,7 @@ export default function Layout({ title, description, image, children }) {
         <title>{auxTitle}</title>
         <meta name="title" content={auxTitle} />
         <meta name="description" content={auxDesc} />
+        <meta name="robots" content="index, follow"/>
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />

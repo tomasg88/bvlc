@@ -13,8 +13,8 @@ export default function Equipamiento({ equipment }) {
     <Layout title="Equipamiento">
       <div className="min-h-screen bg-white">
         <HeroInstitucional title="Equipamiento" image={BG_CONSTANTS.trucks} />
-        <div className="max-w-3xl p-6 pt-6 mx-auto mt-6 bg-white md:p-0">
-          <div className="grid grid-cols-1 gap-4 ">
+        <div className="max-w-full p-6 pt-24 mx-auto mt-6 bg-white md:px-12 md:p-0">
+          <div className="grid gap-4 2xl:grid-cols-2 ">
             {equipment?.map((eq) => (
               <EquipmentProfile
                 key={eq._id}

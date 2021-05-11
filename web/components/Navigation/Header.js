@@ -40,7 +40,7 @@ export default function Header() {
                   className="relative flex items-center mr-2 overflow-hidden uppercase duration-500 bg-red-700 rounded-full mx-x justify-baseline hover:bg-red-900"
                 >
                   <span className="px-3 pr-1 text-xs font-bold">
-                    Convenio SPAI
+                    Fundación SPAI
                   </span>
                   <Image
                     src={BG_CONSTANTS.escudo_spai}

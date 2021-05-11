@@ -3,11 +3,11 @@
 }
 
 .image {
-  @apply relative flex-none w-full overflow-hidden md:h-64 md:w-64;
+  @apply relative flex-none w-full overflow-hidden cursor-pointer md:h-72 md:w-96 hover:opacity-90;
 }
 
 .img {
-  @apply object-cover w-full;
+  @apply object-cover w-full h-full;
 }
 
 .content {
@@ -19,7 +19,7 @@
 }
 
 .excerpt {
-  @apply mb-3 text-lg md:pr-16;
+  @apply mb-3 text-base md:pr-16;
 }
 
 .action {
