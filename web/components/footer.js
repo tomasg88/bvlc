@@ -73,7 +73,7 @@ export default function Footer() {
               height={74}
             />
             <span className="ml-3 text-lg font-bold text-gray-400 ">
-              En convenio de cooperación con SPAI
+              En convenio de cooperación con fundación SPAI
             </span>
           </a>
           <a
