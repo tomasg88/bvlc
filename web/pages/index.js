@@ -42,7 +42,7 @@ export default function Home({ recentNews }) {
     );
 }
 
-export async function getStaticProps(ctx) {
+export async function getStaticProps() {
     const { recentNews } = await getClient(false).fetch(indexQuery);
     return {
         props: {
