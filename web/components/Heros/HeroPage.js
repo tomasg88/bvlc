@@ -5,12 +5,10 @@ import Fade from 'react-reveal/Fade';
 
 export default function HeroPage({ title, image, opacity }) {
     return (
-        <div className={styles.hero}>
-            <div className="relative py-40 overflow-hidden text-center text-white bg-gray-800 ">
+        <div className={styles.root}>
+            <div className={styles.container}>
                 <Fade cascade>
-                    <h1 className="relative z-10 font-sans text-4xl font-light md:text-6xl">
-                        {title}
-                    </h1>
+                    <h1 className={styles.title}>{title}</h1>
                 </Fade>
                 {image ? (
                     <BackgroundImage
