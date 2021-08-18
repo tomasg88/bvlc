@@ -47,7 +47,7 @@ export const leadershipQuery = ` *[_type == "leadership"] `
 export const equipmentQuery = `*[_type == "equipment" ] { ${equipmentFields} }`
 
 export const albumsQuery = `
-  *[_type == "album"] { ${albumFields} }
+  *[_type == "album"] | order(_createdAt desc) { ${albumFields} }
 `
 
 
