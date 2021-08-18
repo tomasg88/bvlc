@@ -26,6 +26,7 @@
         "react-headroom": "^3.1.0",
         "react-icons": "^4.2.0",
         "react-reveal": "^1.2.2",
+        "sass": "^1.38.0",
         "simple-react-lightbox": "^3.6.4"
     },
     "devDependencies": {
