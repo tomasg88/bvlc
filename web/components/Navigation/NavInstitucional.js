@@ -1,6 +1,6 @@
 import HeaderLink from '../Navigation/HeaderLink';
 
-export default function HeroInstitucional() {
+export default function NavInstitucional() {
     return (
         <>
             <HeaderLink url="/comision-directiva" title="Comisión Directiva" />

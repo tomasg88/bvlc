@@ -1,7 +1,7 @@
 import HeaderLink from '../Navigation/HeaderLink';
 import styles from './NavCategorias.module.css';
 
-export default function HeroInstitucional() {
+export default function NavCategorias() {
     return (
         <div className={styles.tabs}>
             <HeaderLink
