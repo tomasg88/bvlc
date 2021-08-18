@@ -3,7 +3,7 @@ import Layout from '../components/layout';
 import { getClient } from '../lib/sanity.server';
 import { allPostQuery } from '../lib/queries';
 import Hero from '../components/Heros/HeroNews';
-import HorizontalCard from '../components/Cards/horizontalCard';
+import CardNewsHorizontal from '../components/Cards/CardNewsHorizontal';
 import styles from '../styles/PageSidebar.module.css';
 
 export default function News({ list }) {
@@ -23,7 +23,10 @@ export default function News({ list }) {
                             <div className="grid max-w-4xl grid-cols-1 gap-3 mx-auto ">
                                 {list &&
                                     list.map((n) => (
-                                        <HorizontalCard {...n} key={n._id} />
+                                        <CardNewsHorizontal
+                                            {...n}
+                                            key={n._id}
+                                        />
                                     ))}
                             </div>
                         </div>

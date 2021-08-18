@@ -3,7 +3,7 @@ import { getClient } from '../../lib/sanity.server';
 import { postQuery, postSlugsQuery } from '../../lib/queries';
 import { urlForImage } from '../../lib/sanity';
 import ArticleContent from '../../components/articleContent';
-import HorizontalCard from '../../components/Cards/horizontalCard';
+import CardNewsHorizontal from '../../components/Cards/CardNewsHorizontal';
 
 export default function Article(props) {
     const { article, moreArticles } = props.data;
@@ -37,7 +37,7 @@ export default function Article(props) {
                         {moreArticles &&
                             moreArticles.length > 0 &&
                             moreArticles.map((ma) => (
-                                <HorizontalCard {...ma} key={ma._id} />
+                                <CardNewsHorizontal {...ma} key={ma._id} />
                             ))}
                     </div>
                 </div>
