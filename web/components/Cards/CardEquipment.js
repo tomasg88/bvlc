@@ -2,7 +2,7 @@ import React from 'react';
 import { urlForImage } from '../../lib/sanity';
 import { MdPhotoCamera } from 'react-icons/md';
 import BlockContent from '@sanity/block-content-to-react';
-import styles from './CardEquipment.module.css';
+import styles from './CardEquipment.module.scss';
 
 export default function CardEquipment({
     cover,

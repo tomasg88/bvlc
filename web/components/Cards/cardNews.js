@@ -2,7 +2,7 @@ import { format, parseISO } from 'date-fns';
 import { es } from 'date-fns/locale';
 import Link from 'next/link';
 import CoverImage from '../coverImage';
-import styles from './CardNews.module.css';
+import styles from './CardNews.module.scss';
 import Fade from 'react-reveal/Fade';
 
 const getDate = (date) => {
