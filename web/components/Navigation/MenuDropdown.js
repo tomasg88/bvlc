@@ -59,7 +59,7 @@ export default function MenuDropdown({ title }) {
                             >
                                 <div className={styles.menuOptions}>
                                     {ROUTES.map((option) => (
-                                        <Menu.Item>
+                                        <Menu.Item key={option.href}>
                                             {({ active }) => (
                                                 <Link href={option.href}>
                                                     <a

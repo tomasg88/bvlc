@@ -76,7 +76,7 @@ export default function Gallery({ onClose, list }) {
                         className="absolute bottom-0 left-0 right-0 flex items-center justify-center w-full p-2 mt-5 overflow-x-auto bg-black"
                     >
                         {list.map((img, index) => (
-                            <Fade delay={500}>
+                            <Fade delay={500} key={img._key}>
                                 <img
                                     className="w-12 h-12 mx-1 duration-500 cursor-pointer hover:!opacity-90"
                                     key={img._key}
