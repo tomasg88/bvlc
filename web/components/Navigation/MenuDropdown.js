@@ -1,17 +1,37 @@
 import { Menu, Transition } from '@headlessui/react';
 import Link from 'next/link';
+import styles from './MenuDropdown.module.scss';
+
+const ROUTES = [
+    {
+        href: '/comision-directiva',
+        title: 'Comisión Directiva',
+    },
+    {
+        href: '/cuerpo-activo',
+        title: 'Cuerpo Activo',
+    },
+    {
+        href: '/equipamiento',
+        title: 'Equipamiento',
+    },
+    {
+        href: '/institucional',
+        title: 'Historia',
+    },
+];
 
 export default function MenuDropdown({ title }) {
     return (
-        <div className="relative inline-block text-left">
+        <div className={styles.root}>
             <Menu>
                 {({ open }) => (
                     <>
-                        <span className="rounded-md shadow-sm">
-                            <Menu.Button className="inline-flex justify-center w-full px-5 py-2 font-sans text-sm font-bold text-white uppercase border-b-4 border-transparent outline-none ring-0 lg:text-lg hover:border-white">
+                        <span className={styles.menuButtonContainer}>
+                            <Menu.Button className={styles.menuButton}>
                                 <span>{title}</span>
                                 <svg
-                                    className="w-5 h-5 ml-2 -mr-1 transform lg:translate-y-1"
+                                    className={styles.arrow}
                                     aria-hidden="true"
                                     viewBox="0 0 20 20"
                                     fill="currentColor"
@@ -34,68 +54,27 @@ export default function MenuDropdown({ title }) {
                             leaveFrom="transform opacity-100 scale-100"
                             leaveTo="transform opacity-0 scale-95"
                         >
-                            <Menu.Items className="absolute left-0 right-0 w-full origin-top-right bg-red-600 shadow-lg outline-none">
-                                <div className="py-3">
-                                    <Menu.Item>
-                                        {({ active }) => (
-                                            <Link href="/comision-directiva">
-                                                <a
-                                                    className={`${
-                                                        active
-                                                            ? 'bg-red-500 text-gray-100'
-                                                            : 'text-white'
-                                                    } flex justify-between w-full px-4 py-3  hover:opacity-90 hover:bg-red-700 border-0 text-base leading-5 text-left`}
-                                                >
-                                                    Comisión Directiva
-                                                </a>
-                                            </Link>
-                                        )}
-                                    </Menu.Item>
-                                    <Menu.Item>
-                                        {({ active }) => (
-                                            <Link href="/cuerpo-activo">
-                                                <a
-                                                    className={`${
-                                                        active
-                                                            ? 'bg-red-500 text-gray-100'
-                                                            : 'text-white'
-                                                    } flex justify-between w-full px-4 py-3  hover:opacity-90 hover:bg-red-700 border-0 text-base leading-5 text-left`}
-                                                >
-                                                    Cuerpo Activo
-                                                </a>
-                                            </Link>
-                                        )}
-                                    </Menu.Item>
-                                    <Menu.Item>
-                                        {({ active }) => (
-                                            <Link href="/equipamiento">
-                                                <a
-                                                    className={`${
-                                                        active
-                                                            ? 'bg-red-500 text-gray-100'
-                                                            : 'text-white'
-                                                    } flex justify-between w-full px-4 py-3  hover:opacity-90 hover:bg-red-700 border-0 text-base leading-5 text-left`}
-                                                >
-                                                    Equipamiento
-                                                </a>
-                                            </Link>
-                                        )}
-                                    </Menu.Item>
-                                    <Menu.Item>
-                                        {({ active }) => (
-                                            <Link href="/institucional">
-                                                <a
-                                                    className={`${
-                                                        active
-                                                            ? 'bg-red-500 text-gray-100'
-                                                            : 'text-white'
-                                                    } flex justify-between w-full px-4 py-3  hover:opacity-90 hover:bg-red-700 border-0 text-base leading-5 text-left`}
-                                                >
-                                                    Historia
-                                                </a>
-                                            </Link>
-                                        )}
-                                    </Menu.Item>
+                            <Menu.Items
+                                className={`${styles.menuContainerRoot} bg-pattern`}
+                            >
+                                <div className={styles.menuOptions}>
+                                    {ROUTES.map((option) => (
+                                        <Menu.Item>
+                                            {({ active }) => (
+                                                <Link href={option.href}>
+                                                    <a
+                                                        className={`${
+                                                            active
+                                                                ? 'bg-red-500 text-gray-100'
+                                                                : 'text-white'
+                                                        } ${styles.option}`}
+                                                    >
+                                                        {option.title}
+                                                    </a>
+                                                </Link>
+                                            )}
+                                        </Menu.Item>
+                                    ))}
                                 </div>
                             </Menu.Items>
                         </Transition>

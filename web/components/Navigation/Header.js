@@ -8,45 +8,46 @@ import { Context } from '../context';
 import { useContext } from 'react';
 import { DEFAULT_PAGE_TITLE, BG_CONSTANTS } from '../../utils/constants';
 import MenuDropdown from './MenuDropdown';
+import styles from './Header.module.scss';
 
 export default function Header() {
     const [rrss] = useContext(Context);
     return (
         <Headroom disableInlineStyles>
-            <div className="bg-pattern">
-                <header className="z-50 flex flex-col w-full p-3 pb-0 mx-auto max-w-7xl ">
-                    <div className="flex justify-between">
+            <div className={'bg-pattern'}>
+                <header className={styles.container}>
+                    <div className={styles.main}>
                         <Link href="/">
-                            <a className="flex items-center justify-center transform -translate-y-2">
+                            <a className={styles.logoContainer}>
                                 <img
                                     src="/logo-bomberos-cuyo.png"
                                     width="80"
                                     height="100"
-                                    className="flex-none"
+                                    className={styles.logoImage}
                                     alt={DEFAULT_PAGE_TITLE}
                                     title={DEFAULT_PAGE_TITLE}
                                 />
-                                <span className="w-32 ml-3 text-sm text-gray-100 uppercase md:w-auto sm:block md:text-lg xl:text-2xl">
+                                <span className={styles.logoTitle}>
                                     Bomberos Voluntarios <br /> de Luján de Cuyo
                                 </span>
                             </a>
                         </Link>
-                        <div className="flex-col items-end justify-center hidden lg:flex">
-                            <div className="flex items-center justify-end w-full p-1 px-2 text-white border-b border-red-400">
+                        <div className={styles.rightItems}>
+                            <div className={styles.rightUpperItems}>
                                 <a
                                     href={BG_CONSTANTS.spai_pdf}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="relative flex items-center mr-2 overflow-hidden uppercase duration-500 bg-red-700 rounded-full mx-x justify-baseline hover:bg-red-900"
+                                    className={styles.spaiLink}
                                 >
-                                    <span className="px-3 pr-1 text-xs font-bold">
+                                    <span className={styles.rightUpperText}>
                                         Fundación SPAI
                                     </span>
                                     <Image
                                         src={BG_CONSTANTS.escudo_spai}
                                         alt={DEFAULT_PAGE_TITLE}
                                         quality={80}
-                                        className="flex-none w-8 h-8"
+                                        className={styles.rightUpperImage}
                                         layout="fixed"
                                         width={30}
                                         height={30}
@@ -56,24 +57,24 @@ export default function Header() {
                                     href={BG_CONSTANTS.iram_pdf}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="relative flex items-center mr-4 overflow-hidden uppercase duration-500 bg-red-700 rounded-full justify-baseline hover:bg-blue-900"
+                                    className={styles.iramLink}
                                 >
-                                    <span className="px-3 pr-1 text-xs font-bold">
+                                    <span className={styles.rightUpperText}>
                                         Certificación IRAM
                                     </span>
                                     <Image
                                         src={BG_CONSTANTS.sello_iram}
                                         alt={DEFAULT_PAGE_TITLE}
                                         quality={80}
-                                        className="flex-none w-8 h-8"
+                                        className={styles.rightUpperImage}
                                         layout="fixed"
                                         width={30}
                                         height={30}
                                     />
                                 </a>
-                                <div className="flex items-center justify-between">
-                                    <span className="flex items-baseline font-sans font-bold uppercase">
-                                        <small className="inline-block mr-1 text-xs">
+                                <div className={styles.rightUpperInfo}>
+                                    <span className={styles.emergencyContact}>
+                                        <small className={styles.emergencyText}>
                                             Emergencias
                                         </small>{' '}
                                         (0261) 498-0999
@@ -81,9 +82,7 @@ export default function Header() {
                                     {rrss &&
                                         rrss.map((rs) => (
                                             <RrssIcon
-                                                className={
-                                                    'hidden xl:inline-block ml-3 text-3xl'
-                                                }
+                                                className={styles.rrss}
                                                 key={rs._id}
                                                 rrss={rs.rrss}
                                                 url={rs.rrssUrl}
@@ -91,7 +90,7 @@ export default function Header() {
                                         ))}
                                 </div>
                             </div>
-                            <nav className="flex items-center justify-end mt-3">
+                            <nav className={styles.navItems}>
                                 <MenuDropdown title="Institucional" />
                                 <HeaderLink url="/noticias" title="Noticias" />
                                 <HeaderLink url="/academia" title="Academia" />

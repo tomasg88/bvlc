@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { ROUTES } from './../../utils/constants';
+import styles from './OffcanvasNavigation.module.scss';
 
 const Navigation = ({ closeMenu }) => (
     <nav className="flex flex-col w-full pt-6">
@@ -7,7 +8,7 @@ const Navigation = ({ closeMenu }) => (
             return (
                 <Link href={route.slug} key={route.slug}>
                     <a
-                        className="p-3 my-1 text-lg font-light text-white cursor-pointer hover:bg-red-800"
+                        className={styles.link}
                         onClick={closeMenu}
                         alt={route.ariaLabel}
                         title={route.ariaLabel}
