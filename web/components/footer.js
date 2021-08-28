@@ -33,7 +33,7 @@ export default function Footer() {
                         <a
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="relative flex items-center justify-start overflow-hidden duration-500 group hover:opacity-80 "
+                            className={styles.special}
                         >
                             <Image
                                 src={BG_CONSTANTS.escudo_spai}
@@ -44,7 +44,7 @@ export default function Footer() {
                                 width={57}
                                 height={74}
                             />
-                            <span className="ml-3 text-lg font-bold text-gray-400 group-hover:text-gray-100">
+                            <span className={styles.text}>
                                 En convenio de cooperación con fundación SPAI
                             </span>
                         </a>
@@ -53,7 +53,7 @@ export default function Footer() {
                         <a
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="relative flex items-center justify-start overflow-hidden duration-500 group md:ml-20 hover:opacity-80"
+                            className={`${styles.special} ${styles.left}`}
                         >
                             <Image
                                 src={BG_CONSTANTS.iram}
@@ -64,7 +64,7 @@ export default function Footer() {
                                 width={60}
                                 height={74}
                             />
-                            <span className="ml-3 text-lg font-bold text-gray-400 group-hover:text-gray-100">
+                            <span className={styles.text}>
                                 Certificación Iram Referencial N 12
                             </span>
                         </a>
