@@ -3,6 +3,7 @@ import { MdClose } from 'react-icons/md';
 import { urlForImage } from '../lib/sanity';
 import { AiOutlineArrowRight, AiOutlineArrowLeft } from 'react-icons/ai';
 import Fade from 'react-reveal/Fade';
+import styles from './Gallery.module.scss';
 
 export default function Gallery({ onClose, list }) {
     const [mainIndex, setMainIndex] = useState(null);
@@ -29,65 +30,51 @@ export default function Gallery({ onClose, list }) {
             <div
                 id="gallery-container"
                 style={{ zIndex: 1000 }}
-                className="fixed inset-0 block h-screen bg-black"
+                className={styles.root}
             >
-                <div
-                    id="close"
-                    className="absolute top-0 right-0 z-50 m-5 cursor-pointer hover:opacity-75"
-                >
-                    <MdClose
-                        onClick={onClose}
-                        className="text-white stroke-current"
-                        color="#ffffff"
-                        size="3rem"
-                    />
+                <div id="close" className={styles.closeButtonContainer}>
+                    <MdClose onClick={onClose} className={styles.closeIcon} />
                 </div>
-                <div
-                    id="content"
-                    className="relative flex flex-col items-center h-screen"
-                >
-                    <div
-                        id="main-image"
-                        className="flex items-center justify-between w-full h-full mb-5"
-                    >
+                <div id="content" className={styles.contentContainer}>
+                    <div id="main-image" className={styles.mainImageContainer}>
                         <Fade>
                             <img
                                 src={urlForImage(list[mainIndex]).url()}
-                                className="object-contain w-full h-full mx-auto"
+                                className={styles.image}
                             />
                         </Fade>
                     </div>
                     <div
                         id="previous"
                         onClick={previous}
-                        className="absolute left-0 z-50 p-2 duration-200 bg-gray-600 bg-opacity-50 cursor-pointer top-1/2 hover:opacity-60"
+                        className={`${styles.arrowContainer} ${styles.previous}`}
                     >
-                        <AiOutlineArrowLeft className="w-12 h-12 text-gray-300 " />
+                        <AiOutlineArrowLeft className={styles.arrow} />
                     </div>
                     <div
                         id="next"
                         onClick={next}
-                        className="absolute right-0 z-50 p-2 duration-200 bg-gray-600 bg-opacity-50 cursor-pointer top-1/2 hover:opacity-60"
+                        className={`${styles.arrowContainer} ${styles.next}`}
                     >
-                        <AiOutlineArrowRight className="w-12 h-12 text-gray-300 " />
+                        <AiOutlineArrowRight className={styles.arrow} />
                     </div>
                     <div
                         id="bottom-image-list"
-                        className="absolute bottom-0 left-0 right-0 flex items-center justify-center w-full p-2 mt-5 overflow-x-auto bg-black"
+                        className={styles.imageListContainer}
                     >
-                        {list.map((img, index) => (
-                            <Fade delay={500}>
+                        <Fade delay={500}>
+                            {list.map((img, index) => (
                                 <img
-                                    className="w-12 h-12 mx-1 duration-500 cursor-pointer hover:!opacity-90"
                                     key={img._key}
+                                    className={styles.smallImage}
                                     onClick={() => setMainIndex(index)}
                                     src={urlForImage(img)
                                         .width(200)
                                         .height(200)
                                         .url()}
                                 />
-                            </Fade>
-                        ))}
+                            ))}
+                        </Fade>
                     </div>
                 </div>
             </div>

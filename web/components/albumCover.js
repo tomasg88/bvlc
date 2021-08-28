@@ -1,6 +1,7 @@
 import React from 'react';
 import { urlForImage } from '../lib/sanity';
 import { MdPhotoCamera } from 'react-icons/md';
+import styles from './AlbumCover.module.scss';
 
 export default function AlbumCover({
     cover,
@@ -10,27 +11,22 @@ export default function AlbumCover({
     selectAlbum,
 }) {
     return (
-        <div className="relative my-3 duration-700 transform translate-y-1 rounded shadow-md h-96 from-gray-800 via-gray-800 to-gray-900 bg-gradient-to-t hover:bg-opacity-90 hover:translate-y-0 hover:shadow-xl">
-            <div className="absolute inset-0 overflow-hidden rounded-md">
+        <div className={styles.root}>
+            <div className={styles.imageContainer}>
                 <img
                     onClick={() => selectAlbum(album)}
-                    className="object-cover w-full h-full cursor-pointer opacity-20"
                     src={urlForImage(cover).url()}
                 />
             </div>
             <div
                 onClick={() => selectAlbum(album)}
-                className="relative z-10 flex flex-col items-center justify-end w-full h-full text-left text-gray-100 cursor-pointer "
+                className={styles.infoContainer}
             >
-                <div className="w-full px-4 mb-2 text-2xl font-bold">
-                    {title}
-                </div>
-                <div className="w-full px-4 text-lg line-clamp-3">
-                    {description}
-                </div>
-                <div className="flex items-center justify-start w-full p-2 mx-3 mt-2 font-bold uppercase duration-700 bg-red-600 shadow-2xl bg-opacity-20 hover:translate-x-2 hover:bg-red-500">
-                    <MdPhotoCamera className="w-6 h-6 m-2" />
-                    <span className="ml-1">Abrir galería</span>
+                <div className={styles.title}>{title}</div>
+                <div className={styles.description}>{description}</div>
+                <div className={styles.ctaButton}>
+                    <MdPhotoCamera className={styles.icon} />
+                    <span className={styles.buttonText}>Abrir galería</span>
                 </div>
             </div>
         </div>

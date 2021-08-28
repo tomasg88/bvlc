@@ -1,0 +1,27 @@
+.root {
+    @apply relative inline-block text-left;
+
+    .menuButtonContainer {
+        @apply rounded-md shadow-sm;
+
+        .menuButton {
+            @apply inline-flex justify-center w-full px-5 py-2 font-sans text-sm font-bold text-white uppercase border-b-4 border-transparent outline-none ring-0 lg:text-lg hover:border-white;
+
+            .arrow {
+                @apply w-5 h-5 ml-2 -mr-1 transform lg:translate-y-1;
+            }
+        }
+    }
+
+    .menuContainerRoot {
+        @apply absolute left-0 right-0 w-full origin-top-right bg-red-600 shadow-lg outline-none;
+
+        .menuOptions {
+            @apply py-3;
+
+            .option {
+                @apply flex justify-between w-full px-4 py-3  hover:opacity-90 hover:bg-red-700 border-0 text-base leading-5 text-left;
+            }
+        }
+    }
+}
