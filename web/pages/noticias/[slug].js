@@ -1,9 +1,9 @@
-import Layout from '../../components/layout';
-import { getClient } from '../../lib/sanity.server';
-import { postQuery, postSlugsQuery } from '../../lib/queries';
-import { urlForImage } from '../../lib/sanity';
-import ArticleContent from '../../components/articleContent';
-import CardNewsHorizontal from '../../components/Cards/CardNewsHorizontal';
+import Layout from 'components/Layout/Layout';
+import { getClient } from 'lib/sanity.server';
+import { postQuery, postSlugsQuery } from 'lib/queries';
+import { urlForImage } from 'lib/sanity';
+import ArticleContent from 'components/ArticleContent/ArticleContent';
+import CardNewsHorizontal from 'components/CardNewsHorizontal/CardNewsHorizontal';
 
 export default function Article(props) {
     const { article, moreArticles } = props.data;

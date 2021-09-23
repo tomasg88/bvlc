@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './Footer.module.scss';
-import { DEFAULT_PAGE_TITLE, BG_CONSTANTS } from '../utils/constants';
+import { DEFAULT_PAGE_TITLE, BG_CONSTANTS } from 'utils/constants';
 
-import SiteMap from './SiteMap/SiteMap';
+import SiteMap from '../SiteMap/SiteMap';
 
 export default function Footer() {
     return (

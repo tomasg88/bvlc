@@ -1,11 +1,11 @@
 import React from 'react';
-import Layout from '../components/layout';
-import { getClient } from '../lib/sanity.server';
-import ArticleContent from '../components/articleContent';
+import Layout from 'components/Layout/Layout';
+import { getClient } from 'lib/sanity.server';
+import ArticleContent from 'components/ArticleContent/ArticleContent';
 import { SRLWrapper } from 'simple-react-lightbox';
-import { pagesQuery } from '../lib/queries';
-import HeroInstitucional from '../components/Heros/HeroInstitucional';
-import { BG_CONSTANTS } from '../utils/constants';
+import { pagesQuery } from 'lib/queries';
+import HeroInstitucional from 'components/HeroInstitucional/HeroInstitucional';
+import { BG_CONSTANTS } from 'utils/constants';
 
 export default function Institucional({ pages }) {
     return (

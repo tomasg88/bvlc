@@ -1,13 +1,13 @@
-import { getClient } from '../lib/sanity.server';
-import { academyQuery } from '../lib/queries';
-import Layout from '../components/layout';
-import { ACADEMY_MEMBERS, BG_CONSTANTS } from '../utils/constants';
-import AlbumCover from '../components/albumCover';
+import { getClient } from 'lib/sanity.server';
+import { academyQuery } from 'lib/queries';
+import Layout from 'components/Layout/Layout';
+import { ACADEMY_MEMBERS, BG_CONSTANTS } from 'utils/constants';
+import AlbumCover from 'components/AlbumCover/AlbumCover';
 import { useState } from 'react';
-import Gallery from '../components/gallery';
-import Card from '../components/Cards/cardNews';
-import HeroPage from '../components/Heros/HeroPage';
-import styles from '../styles/PageSidebar.module.css';
+import Gallery from 'components/Gallery/Gallery';
+import CardNews from 'components/CardNews/CardNews';
+import HeroPage from 'components/HeroPage/HeroPage';
+import styles from 'styles/PageSidebar.module.css';
 import { MdPhotoCamera } from 'react-icons/md';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 
@@ -53,7 +53,9 @@ export default function Academia({ news, albums }) {
                         </div>
                         <div className={styles.gridNews}>
                             {news &&
-                                news.map((n) => <Card {...n} key={n._id} />)}
+                                news.map((n) => (
+                                    <CardNews {...n} key={n._id} />
+                                ))}
                         </div>
                         <div id="ver-galeria" className={styles.header}>
                             <h2 className={styles.headerTitle}>

@@ -1,7 +1,7 @@
 import { format, parseISO } from 'date-fns';
 import { es } from 'date-fns/locale';
 import Link from 'next/link';
-import CoverImage from '../coverImage';
+import CoverImage from '../CoverImage/CoverImage';
 import styles from './CardNews.module.scss';
 import Fade from 'react-reveal/Fade';
 
@@ -13,7 +13,7 @@ const getDate = (date) => {
 const getMonth = (date) => format(parseISO(date), 'LLL', { locale: es });
 
 // title, mainImage, excerpt, slug
-export default function Card({ title, mainImage, excerpt, slug, publishedAt }) {
+function CardNews({ title, mainImage, excerpt, slug, publishedAt }) {
     return (
         <Fade>
             <div className={styles.card}>
@@ -45,3 +45,5 @@ export default function Card({ title, mainImage, excerpt, slug, publishedAt }) {
         </Fade>
     );
 }
+
+export default CardNews;

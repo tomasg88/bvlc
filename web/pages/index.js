@@ -1,8 +1,7 @@
-import Head from 'next/head';
 import styles from '../styles/Home.module.css';
-import Layout from '../components/layout';
-import HomeCarousel from '../components/Heros/HeroHomeCarousel';
-import Card from '../components/Cards/cardNews';
+import Layout from '../components/Layout/Layout';
+import HeroHomeCarousel from '../components/HeroHomeCarousel/HeroHomeCarousel';
+import CardNews from '../components/CardNews/CardNews';
 import Link from 'next/link';
 import { getClient } from '../lib/sanity.server';
 import { indexQuery } from '../lib/queries';
@@ -13,7 +12,7 @@ export default function Home({ recentNews }) {
         <Layout>
             <div className={styles.container}>
                 <main className="w-full ">
-                    <HomeCarousel arrows={false} />
+                    <HeroHomeCarousel arrows={false} />
                     <div className="bg-gray-100">
                         <div className="flex flex-col items-center justify-center max-w-6xl pt-24 pb-6 mx-auto font-sans border-b-2 border-yellow-400 md:flex-row">
                             <Fade cascade>
@@ -25,7 +24,7 @@ export default function Home({ recentNews }) {
                         <div className="grid max-w-6xl gap-3 p-8 pb-12 mx-auto mt-6 lg:grid-cols-3 sm:grid-cols-2">
                             {recentNews &&
                                 recentNews.map((n) => (
-                                    <Card {...n} key={n._id} />
+                                    <CardNews {...n} key={n._id} />
                                 ))}
                         </div>
                         <div className="flex flex-col items-center justify-between max-w-6xl pb-24 mx-auto font-sans">

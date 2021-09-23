@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-import { urlForImage } from './../../lib/sanity';
+import { urlForImage } from 'lib/sanity';
 
 export default function Hero({ name, description, image }) {
     const getImage = useCallback(() => {

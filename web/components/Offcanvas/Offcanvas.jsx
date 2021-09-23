@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from 'react';
 import { slide as Menu } from 'react-burger-menu';
-import Navigation from './Navigation/OffcanvasNavigation';
+import OffcanvasNavigation from '../OffcanvasNavigation/OffcanvasNavigation';
 
 export default function Offcanvas() {
     const [openMenu, setOpenMenu] = useState(false);
@@ -20,7 +20,7 @@ export default function Offcanvas() {
             isOpen={openMenu}
             onStateChange={handleStateChange}
         >
-            <Navigation closeMenu={closeMenu} />
+            <OffcanvasNavigation closeMenu={closeMenu} />
         </Menu>
     );
 }

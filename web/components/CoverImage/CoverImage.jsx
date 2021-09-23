@@ -1,8 +1,8 @@
 import Link from 'next/link';
-import { urlForImage } from '../lib/sanity';
+import { urlForImage } from 'lib/sanity';
 import Image from 'next/image';
 import { useNextSanityImage } from 'next-sanity-image';
-import { sanityConfig } from '../lib/config';
+import { sanityConfig } from 'lib/config';
 import styles from './CoverImage.module.scss';
 
 export default function CoverImage({ title, slug, image: source }) {

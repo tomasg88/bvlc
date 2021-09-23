@@ -1,8 +1,8 @@
-import CoverImage from './coverImage';
+import CoverImage from '../CoverImage/CoverImage';
 import BlockContent from '@sanity/block-content-to-react';
 import { parseISO, format } from 'date-fns';
 import { es } from 'date-fns/locale';
-import styles from '../styles/Article.module.css';
+import styles from 'styles/Article.module.css';
 import { SRLWrapper } from 'simple-react-lightbox';
 
 export default function ArticleContent({ title, mainImage, dateString, body }) {

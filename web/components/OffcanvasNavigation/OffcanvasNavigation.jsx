@@ -1,8 +1,8 @@
 import Link from 'next/link';
-import { ROUTES } from './../../utils/constants';
+import { ROUTES } from 'utils/constants';
 import styles from './OffcanvasNavigation.module.scss';
 
-const Navigation = ({ closeMenu }) => (
+const OffcanvasNavigation = ({ closeMenu }) => (
     <nav className="flex flex-col w-full pt-6">
         {ROUTES.map((route, i) => {
             return (
@@ -22,4 +22,4 @@ const Navigation = ({ closeMenu }) => (
     </nav>
 );
 
-export default Navigation;
+export default OffcanvasNavigation;
