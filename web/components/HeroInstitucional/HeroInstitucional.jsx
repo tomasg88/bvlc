@@ -1,15 +1,17 @@
-import BackgroundImage from '../backgroundImage';
-import { BG_CONSTANTS } from '../../utils/constants';
-import styles from './HeroPage.module.scss';
+import BackgroundImage from '../BackgroundImage/BackgroundImage';
+import { BG_CONSTANTS } from 'utils/constants';
+import NavInstitucional from '../NavInstitucional/NavInstitucional';
+import styles from './HeroInstitucional.module.scss';
 import Fade from 'react-reveal/Fade';
 
-export default function HeroPage({ title, image, opacity }) {
+export default function HeroInstitucional({ title, image, opacity }) {
     return (
-        <div className={styles.root}>
+        <div>
             <div className={styles.container}>
                 <Fade cascade>
                     <h1 className={styles.title}>{title}</h1>
                 </Fade>
+
                 {image ? (
                     <BackgroundImage
                         image={image}
@@ -18,6 +20,9 @@ export default function HeroPage({ title, image, opacity }) {
                 ) : (
                     <BackgroundImage image={BG_CONSTANTS.team} opacity={20} />
                 )}
+            </div>
+            <div className={styles.tabs}>
+                <NavInstitucional />
             </div>
         </div>
     );

@@ -1,13 +1,12 @@
-// import Image from "next/image"
-import HeaderLink from './HeaderLink';
+import HeaderLink from '../HeaderLink/HeaderLink';
 import Link from 'next/link';
 import Image from 'next/image';
 import Headroom from 'react-headroom';
-import RrssIcon from '../rrssIcon';
+import RrssIcon from '../RrssIcon/RrssIcon';
 import { Context } from '../context';
 import { useContext } from 'react';
-import { DEFAULT_PAGE_TITLE, BG_CONSTANTS } from '../../utils/constants';
-import MenuDropdown from './MenuDropdown';
+import { DEFAULT_PAGE_TITLE, BG_CONSTANTS } from 'utils/constants';
+import MenuDropdown from '../MenuDropdown/MenuDropdown';
 import styles from './Header.module.scss';
 
 export default function Header() {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { urlForImage } from '../lib/sanity';
+import { urlForImage } from 'lib/sanity';
 import { MdPhotoCamera } from 'react-icons/md';
 import styles from './AlbumCover.module.scss';
 

@@ -1,13 +1,12 @@
-import Head from 'next/head';
-import styles from '../styles/Home.module.css';
-import Layout from '../components/layout';
-import BackgroundImage from '../components/backgroundImage';
-import { getClient } from '../lib/sanity.server';
-import { contactDataQuery } from '../lib/queries';
-import { Context } from '../components/context';
+import styles from 'styles/Home.module.css';
+import Layout from 'components/Layout/Layout';
+import BackgroundImage from 'components/BackgroundImage/BackgroundImage';
+import { getClient } from 'lib/sanity.server';
+import { contactDataQuery } from 'lib/queries';
+import { Context } from 'components/context';
 import { useContext } from 'react';
-import RrssIcon from '../components/rrssIcon';
-import { BG_CONSTANTS, MAPS_URL } from '../utils/constants';
+import RrssIcon from 'components/RrssIcon/RrssIcon';
+import { BG_CONSTANTS, MAPS_URL } from 'utils/constants';
 
 const ContactItem = ({ title, value }) => (
     <div className="px-12 border-t border-red-400">

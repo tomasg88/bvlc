@@ -1,7 +1,7 @@
 import { format, parseISO } from 'date-fns';
 import { es } from 'date-fns/locale';
 import Link from 'next/link';
-import CoverImage from '../coverImage';
+import CoverImage from '../CoverImage/CoverImage';
 import styles from './CardNewsHorizontal.module.scss';
 
 const getDate = (date) => {

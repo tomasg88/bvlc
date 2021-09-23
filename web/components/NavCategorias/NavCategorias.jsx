@@ -1,4 +1,4 @@
-import HeaderLink from '../Navigation/HeaderLink';
+import HeaderLink from '../HeaderLink/HeaderLink';
 import styles from './NavCategorias.module.scss';
 
 export default function NavCategorias() {

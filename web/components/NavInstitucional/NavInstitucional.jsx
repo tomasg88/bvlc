@@ -1,4 +1,4 @@
-import HeaderLink from '../Navigation/HeaderLink';
+import HeaderLink from '../HeaderLink/HeaderLink';
 
 export default function NavInstitucional() {
     return (

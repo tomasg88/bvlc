@@ -1,5 +1,5 @@
-import BackgroundImage from '../backgroundImage';
-import { BG_CONSTANTS } from '../../utils/constants';
+import BackgroundImage from '../BackgroundImage/BackgroundImage';
+import { BG_CONSTANTS } from 'utils/constants';
 import styles from './HeroNews.module.scss';
 
 export default function HeroNews() {

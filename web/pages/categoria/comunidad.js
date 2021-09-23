@@ -1,12 +1,12 @@
-import { getClient } from '../../lib/sanity.server';
-import { communityPostQuery } from '../../lib/queries';
-import Layout from '../../components/layout';
-import AlbumCover from '../../components/albumCover';
+import { getClient } from 'lib/sanity.server';
+import { communityPostQuery } from 'lib/queries';
+import Layout from 'components/Layout/Layout';
+import AlbumCover from 'components/AlbumCover/AlbumCover';
 import { useState } from 'react';
-import Gallery from '../../components/gallery';
-import Card from '../../components/Cards/cardNews';
-import NavCategorias from '../../components/Navigation/NavCategorias';
-import styles from '../../styles/PageSidebar.module.css';
+import Gallery from 'components/Gallery/Gallery';
+import Card from 'components/CardNews/CardNews';
+import NavCategorias from 'components/NavCategorias/NavCategorias';
+import styles from 'styles/PageSidebar.module.css';
 
 export default function ComunidadCategory({ news, albums }) {
     const [selectedAlbum, setSelectedAlbum] = useState([]);

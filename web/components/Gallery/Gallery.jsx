@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { MdClose } from 'react-icons/md';
-import { urlForImage } from '../lib/sanity';
+import { urlForImage } from 'lib/sanity';
 import { AiOutlineArrowRight, AiOutlineArrowLeft } from 'react-icons/ai';
 import Fade from 'react-reveal/Fade';
 import styles from './Gallery.module.scss';

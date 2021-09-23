@@ -1,6 +1,6 @@
-import Footer from './footer';
-import Header from './Navigation/Header';
-import Offcanvas from './offcanvas';
+import Footer from '../Footer/Footer';
+import Header from '../Header/Header';
+import Offcanvas from '../Offcanvas/Offcanvas';
 import SimpleReactLightbox from 'simple-react-lightbox';
 import Head from 'next/head';
 import {
@@ -8,7 +8,7 @@ import {
     DEFAULT_PAGE_TITLE,
     DEFAULT_PAGE_URL,
     DEFAULT_PAGE_IMAGE,
-} from '../utils/constants';
+} from 'utils/constants';
 
 export default function Layout({ title, description, image, children }) {
     const auxTitle =

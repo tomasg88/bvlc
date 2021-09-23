@@ -1,13 +1,13 @@
-import { getClient } from '../../lib/sanity.server';
-import { equipmentPostQuery } from '../../lib/queries';
-import Layout from '../../components/layout';
-import AlbumCover from '../../components/albumCover';
+import { getClient } from 'lib/sanity.server';
+import { equipmentPostQuery } from 'lib/queries';
+import Layout from 'components/Layout/Layout';
+import AlbumCover from 'components/AlbumCover/AlbumCover';
 import { useState } from 'react';
-import Gallery from '../../components/gallery';
-import Card from '../../components/Cards/cardNews';
-import styles from '../../styles/PageSidebar.module.css';
+import Gallery from 'components/Gallery/Gallery';
+import Card from 'components/CardNews/CardNews';
+import styles from 'styles/PageSidebar.module.css';
 import Link from 'next/link';
-import NavCategorias from '../../components/Navigation/NavCategorias';
+import NavCategorias from 'components/NavCategorias/NavCategorias';
 
 export default function EquipamientoCategory({ news, albums }) {
     const [selectedAlbum, setSelectedAlbum] = useState([]);

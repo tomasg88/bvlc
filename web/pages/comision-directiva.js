@@ -1,12 +1,12 @@
 import React from 'react';
-import Layout from '../components/layout';
-import HeroInstitucional from '../components/Heros/HeroInstitucional';
-import { getClient } from '../lib/sanity.server';
-import { leadershipQuery } from '../lib/queries';
-import Person from '../components/Cards/MediaObject';
-import { BG_CONSTANTS } from '../utils/constants';
+import Layout from 'components/Layout/Layout';
+import HeroInstitucional from 'components/HeroInstitucional/HeroInstitucional';
+import { getClient } from 'lib/sanity.server';
+import { leadershipQuery } from 'lib/queries';
+import MediaObject from 'components/MediaObject/MediaObject';
+import { BG_CONSTANTS } from 'utils/constants';
 import Fade from 'react-reveal/Fade';
-import groupAndOrder from '../utils/list';
+import groupAndOrder from 'utils/list';
 
 export default function ComisionDirectiva({ list }) {
     const { orderedList, getTranslation } = groupAndOrder('position', list);
@@ -36,7 +36,7 @@ export default function ComisionDirectiva({ list }) {
                                 <div className="grid max-w-6xl gap-3 p-8 pb-12 mx-auto mt-6 md:grid-cols-3 sm:grid-cols-2">
                                     {orderedList[key].map((n) => (
                                         <Fade key={n._id}>
-                                            <Person
+                                            <MediaObject
                                                 name={n.title}
                                                 description={getTranslation(
                                                     key

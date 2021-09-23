@@ -1,16 +1,16 @@
 import React from 'react';
-import Layout from '../components/layout';
-import { getClient } from '../lib/sanity.server';
-import { allPostQuery } from '../lib/queries';
-import Hero from '../components/Heros/HeroNews';
-import CardNewsHorizontal from '../components/Cards/CardNewsHorizontal';
-import styles from '../styles/PageSidebar.module.css';
+import Layout from 'components/Layout/Layout';
+import { getClient } from 'lib/sanity.server';
+import { allPostQuery } from 'lib/queries';
+import HeroNews from 'components/HeroNews/HeroNews';
+import CardNewsHorizontal from 'components/CardNewsHorizontal/CardNewsHorizontal';
+import styles from 'styles/PageSidebar.module.css';
 
 export default function News({ list }) {
     return (
         <Layout title="Noticias">
             <div className="pb-24 bg-gray-100">
-                <Hero />
+                <HeroNews />
                 <div className={styles.page}>
                     <div className="max-w-5xl grid-cols-1 gap-6 px-6 pt-12 pb-24 mx-auto md:px-0">
                         {/* <div id="sidebar" className={styles.aside}>
