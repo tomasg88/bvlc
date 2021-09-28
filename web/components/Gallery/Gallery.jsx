@@ -37,12 +37,10 @@ export default function Gallery({ onClose, list }) {
                 </div>
                 <div id="content" className={styles.contentContainer}>
                     <div id="main-image" className={styles.mainImageContainer}>
-                        <Fade>
-                            <img
-                                src={urlForImage(list[mainIndex]).url()}
-                                className={styles.image}
-                            />
-                        </Fade>
+                        <img
+                            src={urlForImage(list[mainIndex]).url()}
+                            className={styles.image}
+                        />
                     </div>
                     <div
                         id="previous"
@@ -62,19 +60,17 @@ export default function Gallery({ onClose, list }) {
                         id="bottom-image-list"
                         className={styles.imageListContainer}
                     >
-                        <Fade delay={500}>
-                            {list.map((img, index) => (
-                                <img
-                                    key={img._key}
-                                    className={styles.smallImage}
-                                    onClick={() => setMainIndex(index)}
-                                    src={urlForImage(img)
-                                        .width(200)
-                                        .height(200)
-                                        .url()}
-                                />
-                            ))}
-                        </Fade>
+                        {list.map((img, index) => (
+                            <img
+                                key={img._key}
+                                className={styles.smallImage}
+                                onClick={() => setMainIndex(index)}
+                                src={urlForImage(img)
+                                    .width(200)
+                                    .height(200)
+                                    .url()}
+                            />
+                        ))}
                     </div>
                 </div>
             </div>
