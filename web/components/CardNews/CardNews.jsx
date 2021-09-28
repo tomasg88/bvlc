@@ -1,16 +1,8 @@
-import { format, parseISO } from 'date-fns';
-import { es } from 'date-fns/locale';
+import { getDate, getMonth } from 'utils/dates';
 import Link from 'next/link';
 import CoverImage from '../CoverImage/CoverImage';
 import styles from './CardNews.module.scss';
 import Fade from 'react-reveal/Fade';
-
-const getDate = (date) => {
-    const day = '0' + format(parseISO(date), 'd', { locale: es });
-    return day.slice(-2);
-};
-
-const getMonth = (date) => format(parseISO(date), 'LLL', { locale: es });
 
 // title, mainImage, excerpt, slug
 function CardNews({ title, mainImage, excerpt, slug, publishedAt }) {

@@ -2,7 +2,7 @@
     @apply relative my-3 duration-700 transform translate-y-1 rounded shadow-md h-96 from-gray-800 via-gray-800 to-gray-900 bg-gradient-to-t hover:bg-opacity-90 hover:translate-y-0 hover:shadow-xl;
 
     .imageContainer {
-        @apply absolute inset-0 overflow-hidden rounded-md;
+        @apply absolute inset-0 overflow-hidden rounded;
 
         img {
             @apply object-cover w-full h-full cursor-pointer opacity-20;
@@ -18,7 +18,7 @@
             @apply w-full px-4 text-lg line-clamp-3;
         }
         .ctaButton {
-            @apply flex items-center justify-start w-full p-2 mx-3 mt-2 font-bold uppercase duration-700 bg-red-600 shadow-2xl bg-opacity-20 hover:translate-x-2 hover:bg-red-500;
+            @apply flex items-center justify-start w-full p-2 mx-3 mt-2 font-bold uppercase duration-300 bg-red-600 shadow-2xl bg-opacity-20 rounded hover:bg-opacity-100;
 
             .icon {
                 @apply w-6 h-6 m-2;
