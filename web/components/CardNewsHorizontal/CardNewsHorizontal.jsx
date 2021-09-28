@@ -1,18 +1,10 @@
-import { format, parseISO } from 'date-fns';
-import { es } from 'date-fns/locale';
+import { getDate, getMonth } from 'utils/dates';
 import Link from 'next/link';
-import CoverImage from '../CoverImage/CoverImage';
+import CoverImage from 'components/CoverImage/CoverImage';
 import styles from './CardNewsHorizontal.module.scss';
 
-const getDate = (date) => {
-    const day = '0' + format(parseISO(date), 'd', { locale: es });
-    return day.slice(-2);
-};
-
-const getMonth = (date) => format(parseISO(date), 'LLL', { locale: es });
-
 // title, mainImage, excerpt, slug
-export default function HorizontalCard({
+export default function CardNewsHorizontal({
     title,
     mainImage,
     excerpt,
