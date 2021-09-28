@@ -4,8 +4,9 @@ import { parseISO, format } from 'date-fns';
 import { es } from 'date-fns/locale';
 import styles from 'styles/Article.module.css';
 import { SRLWrapper } from 'simple-react-lightbox';
+import PropTypes from 'prop-types';
 
-export default function ArticleContent({ title, mainImage, dateString, body }) {
+function ArticleContent({ title, mainImage, dateString, body }) {
     const date = parseISO(dateString);
 
     const options = {
@@ -54,3 +55,10 @@ export default function ArticleContent({ title, mainImage, dateString, body }) {
         </>
     );
 }
+
+ArticleContent.propTypes = {
+    title: PropTypes.string.isRequired,
+    dateString: PropTypes.string.isRequired,
+};
+
+export default ArticleContent;
