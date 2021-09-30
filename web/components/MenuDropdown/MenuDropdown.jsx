@@ -1,6 +1,7 @@
 import { Menu, Transition } from '@headlessui/react';
 import Link from 'next/link';
 import styles from './MenuDropdown.module.scss';
+import PropTypes from 'prop-types';
 
 const ROUTES = [
     {
@@ -21,7 +22,7 @@ const ROUTES = [
     },
 ];
 
-export default function MenuDropdown({ title }) {
+function MenuDropdown({ title }) {
     return (
         <div className={styles.root}>
             <Menu>
@@ -84,3 +85,9 @@ export default function MenuDropdown({ title }) {
         </div>
     );
 }
+
+MenuDropdown.propTypes = {
+    title: PropTypes.string.isRequired,
+};
+
+export default MenuDropdown;

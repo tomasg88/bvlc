@@ -4,8 +4,10 @@ import { urlForImage } from 'lib/sanity';
 import { AiOutlineArrowRight, AiOutlineArrowLeft } from 'react-icons/ai';
 import Fade from 'react-reveal/Fade';
 import styles from './Gallery.module.scss';
+import PropTypes from 'prop-types';
+import { sanityImagePropType } from 'utils/sanityPropType';
 
-export default function Gallery({ onClose, list }) {
+function Gallery({ onClose, list }) {
     const [mainIndex, setMainIndex] = useState(null);
     useEffect(() => {
         if (list && list.length > 0) {
@@ -77,3 +79,10 @@ export default function Gallery({ onClose, list }) {
         </Fade>
     );
 }
+
+Gallery.propTypes = {
+    onClose: PropTypes.func.isRequired,
+    list: PropTypes.arrayOf(sanityImagePropType.isRequired),
+};
+
+export default Gallery;

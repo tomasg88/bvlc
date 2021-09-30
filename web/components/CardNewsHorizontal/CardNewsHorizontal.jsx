@@ -3,6 +3,7 @@ import Link from 'next/link';
 import CoverImage from 'components/CoverImage/CoverImage';
 import styles from './CardNewsHorizontal.module.scss';
 import PropTypes from 'prop-types';
+import { sanityImagePropType } from 'utils/sanityPropType';
 
 function CardNewsHorizontal({ title, mainImage, excerpt, slug, publishedAt }) {
     return (
@@ -37,6 +38,7 @@ CardNewsHorizontal.propTypes = {
     excerpt: PropTypes.string,
     slug: PropTypes.string.isRequired,
     publishedAt: PropTypes.string.isRequired,
+    mainImage: sanityImagePropType,
 };
 
 export default CardNewsHorizontal;

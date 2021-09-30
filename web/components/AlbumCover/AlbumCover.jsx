@@ -3,6 +3,7 @@ import { urlForImage } from 'lib/sanity';
 import { MdPhotoCamera } from 'react-icons/md';
 import styles from './AlbumCover.module.scss';
 import PropTypes from 'prop-types';
+import { sanityImagePropType } from 'utils/sanityPropType';
 
 const AlbumCover = ({ cover, title, description, album, selectAlbum }) => (
     <div className={styles.root}>
@@ -30,6 +31,8 @@ AlbumCover.propTypes = {
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     selectAlbum: PropTypes.func.isRequired,
+    cover: sanityImagePropType.isRequired,
+    album: PropTypes.arrayOf(sanityImagePropType).isRequired,
 };
 
 export default AlbumCover;

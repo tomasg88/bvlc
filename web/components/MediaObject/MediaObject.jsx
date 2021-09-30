@@ -1,7 +1,9 @@
 import { useCallback } from 'react';
 import { urlForImage } from 'lib/sanity';
+import PropTypes from 'prop-types';
+import { sanityImagePropType } from 'utils/sanityPropType';
 
-export default function Hero({ name, description, image }) {
+function MediaObject({ name, description, image }) {
     const getImage = useCallback(() => {
         if (!image) return '/no-profile-image.png';
         else return urlForImage(image).height(100).width(100).url();
@@ -30,3 +32,11 @@ export default function Hero({ name, description, image }) {
         </figure>
     );
 }
+
+MediaObject.propTypes = {
+    name: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    image: sanityImagePropType,
+};
+
+export default MediaObject;

@@ -1,16 +1,16 @@
 import { AiOutlineArrowRight, AiOutlineArrowLeft } from 'react-icons/ai';
 import { BiRadioCircle, BiRadioCircleMarked } from 'react-icons/bi';
 import { FiPhone, FiInfo } from 'react-icons/fi';
-
 import makeCarousel from 'react-reveal/makeCarousel';
 import Fade from 'react-reveal/Fade';
 import Link from 'next/link';
 import { BG_CONSTANTS, DEFAULT_PAGE_TITLE } from 'utils/constants';
+import PropTypes from 'prop-types';
 
-export default function HeroHomeCarousel(props) {
+function HeroHomeCarousel({ arrows }) {
     const CarouselUI = ({ position, total, handleClick, children }) => (
         <div className="relative w-full h-full mb-0 overflow-hidden border-b-2 border-red-600">
-            {props.arrows ? (
+            {arrows ? (
                 <div>
                     <div
                         className="absolute left-0 z-50 items-center justify-center hidden w-12 h-12 text-5xl text-center text-white cursor-pointer hover:opacity-90 md:flex top-1/2"
@@ -144,3 +144,9 @@ export default function HeroHomeCarousel(props) {
         </div>
     );
 }
+
+HeroHomeCarousel.propTypes = {
+    arrows: PropTypes.bool.isRequired,
+};
+
+export default HeroHomeCarousel;

@@ -5,8 +5,9 @@ import {
     AiOutlineYoutube,
     AiOutlineTwitter,
 } from 'react-icons/ai';
+import PropTypes from 'prop-types';
 
-export default function RrssIcon({ className, rrss, url, title }) {
+function RrssIcon({ className, rrss, url, title }) {
     const getIconComponent = useCallback(() => {
         switch (rrss) {
             case 'Facebook':
@@ -33,3 +34,17 @@ export default function RrssIcon({ className, rrss, url, title }) {
         </a>
     );
 }
+
+RrssIcon.defaultProps = {
+    className: '',
+    title: '',
+};
+
+RrssIcon.propTypes = {
+    className: PropTypes.string,
+    rrss: PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired,
+    title: PropTypes.string,
+};
+
+export default RrssIcon;

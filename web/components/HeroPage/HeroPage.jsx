@@ -11,18 +11,21 @@ const HeroPage = ({ title, image, opacity }) => (
                 <h1 className={styles.title}>{title}</h1>
             </Fade>
 
-            <BackgroundImage
-                image={image || BG_CONSTANTS.team}
-                opacity={opacity || 20}
-            />
+            <BackgroundImage image={image} opacity={opacity} />
         </div>
     </div>
 );
 
+HeroPage.defaultProps = {
+    opacity: 20,
+    title: '',
+    image: BG_CONSTANTS.team,
+};
+
 HeroPage.propTypes = {
     opacity: PropTypes.number,
     title: PropTypes.string,
-    image: PropTypes.string.isRequired,
+    image: PropTypes.string,
 };
 
 export default HeroPage;

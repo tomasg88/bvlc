@@ -4,6 +4,7 @@ import { useNextSanityImage } from 'next-sanity-image';
 import { sanityConfig } from 'lib/config';
 import styles from './CoverImage.module.scss';
 import PropTypes from 'prop-types';
+import { sanityImagePropType } from 'utils/sanityPropType';
 
 function CoverImage({ title, image }) {
     const imageProps = useNextSanityImage(sanityConfig, image, {
@@ -29,6 +30,7 @@ function CoverImage({ title, image }) {
 
 CoverImage.propTypes = {
     title: PropTypes.string.isRequired,
+    image: sanityImagePropType,
 };
 
 export default CoverImage;

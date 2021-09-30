@@ -4,6 +4,7 @@ import CoverImage from '../CoverImage/CoverImage';
 import styles from './CardNews.module.scss';
 import Fade from 'react-reveal/Fade';
 import PropTypes from 'prop-types';
+import { sanityImagePropType } from 'utils/sanityPropType';
 
 function CardNews({ title, mainImage, excerpt, slug, publishedAt }) {
     return (
@@ -41,6 +42,7 @@ CardNews.propTypes = {
     excerpt: PropTypes.string,
     slug: PropTypes.string.isRequired,
     publishedAt: PropTypes.string.isRequired,
+    mainImage: sanityImagePropType,
 };
 
 export default CardNews;

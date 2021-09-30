@@ -1,9 +1,10 @@
 import Link from 'next/link';
 import { ROUTES } from 'utils/constants';
 import styles from './OffcanvasNavigation.module.scss';
+import PropTypes from 'prop-types';
 
 const OffcanvasNavigation = ({ closeMenu }) => (
-    <nav className="flex flex-col w-full pt-6">
+    <nav className={styles.root}>
         {ROUTES.map((route, i) => {
             return (
                 <Link href={route.slug} key={route.slug}>
@@ -21,5 +22,9 @@ const OffcanvasNavigation = ({ closeMenu }) => (
         })}
     </nav>
 );
+
+OffcanvasNavigation.propTypes = {
+    closeMenu: PropTypes.func.isRequired,
+};
 
 export default OffcanvasNavigation;
