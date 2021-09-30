@@ -56,9 +56,14 @@ function ArticleContent({ title, mainImage, dateString, body }) {
     );
 }
 
+ArticleContent.defaultProps = {
+    title: '',
+    dateString: '',
+};
+
 ArticleContent.propTypes = {
-    title: PropTypes.string.isRequired,
-    dateString: PropTypes.string.isRequired,
+    title: PropTypes.string,
+    dateString: PropTypes.string,
 };
 
 export default ArticleContent;

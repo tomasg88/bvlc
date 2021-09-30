@@ -3,21 +3,19 @@ import Link from 'next/link';
 import CoverImage from '../CoverImage/CoverImage';
 import styles from './CardNews.module.scss';
 import Fade from 'react-reveal/Fade';
+import PropTypes from 'prop-types';
 
-// title, mainImage, excerpt, slug
 function CardNews({ title, mainImage, excerpt, slug, publishedAt }) {
     return (
         <Fade>
             <div className={styles.card}>
                 <div className={styles.image}>
-                    {mainImage ? (
+                    {mainImage && (
                         <Link href={`/noticias/${slug}`}>
                             <a aria-label={title}>
                                 <CoverImage title={title} image={mainImage} />
                             </a>
                         </Link>
-                    ) : (
-                        <></>
                     )}
                     <time className={styles.time}>
                         {getDate(publishedAt)}/
@@ -37,5 +35,12 @@ function CardNews({ title, mainImage, excerpt, slug, publishedAt }) {
         </Fade>
     );
 }
+
+CardNews.propTypes = {
+    title: PropTypes.string.isRequired,
+    excerpt: PropTypes.string,
+    slug: PropTypes.string.isRequired,
+    publishedAt: PropTypes.string.isRequired,
+};
 
 export default CardNews;

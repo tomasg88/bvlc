@@ -2,26 +2,18 @@ import { getDate, getMonth } from 'utils/dates';
 import Link from 'next/link';
 import CoverImage from 'components/CoverImage/CoverImage';
 import styles from './CardNewsHorizontal.module.scss';
+import PropTypes from 'prop-types';
 
-// title, mainImage, excerpt, slug
-export default function CardNewsHorizontal({
-    title,
-    mainImage,
-    excerpt,
-    slug,
-    publishedAt,
-}) {
+function CardNewsHorizontal({ title, mainImage, excerpt, slug, publishedAt }) {
     return (
         <div className={styles.card}>
             <div className={styles.image}>
-                {mainImage ? (
+                {mainImage && (
                     <Link href={`/noticias/${slug}`}>
                         <a aria-label={title}>
                             <CoverImage title={title} image={mainImage} />
                         </a>
                     </Link>
-                ) : (
-                    <></>
                 )}
                 <time className={styles.time}>
                     {getDate(publishedAt)}/
@@ -39,3 +31,12 @@ export default function CardNewsHorizontal({
         </div>
     );
 }
+
+CardNewsHorizontal.propTypes = {
+    title: PropTypes.string.isRequired,
+    excerpt: PropTypes.string,
+    slug: PropTypes.string.isRequired,
+    publishedAt: PropTypes.string.isRequired,
+};
+
+export default CardNewsHorizontal;
