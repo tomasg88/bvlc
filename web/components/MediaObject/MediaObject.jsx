@@ -2,6 +2,7 @@ import { useCallback } from 'react';
 import { urlForImage } from 'lib/sanity';
 import PropTypes from 'prop-types';
 import { sanityImagePropType } from 'utils/sanityPropType';
+import styles from './MediaObject.module.scss';
 
 function MediaObject({ name, description, image }) {
     const getImage = useCallback(() => {
@@ -10,23 +11,18 @@ function MediaObject({ name, description, image }) {
     }, [image]);
 
     return (
-        <figure
-            id="hero"
-            className="relative flex items-start w-full h-full bg-white border border-gray-300 rounded-md shadow-lg"
-        >
+        <figure id="hero" className={styles.root}>
             <img
                 alt={name}
-                className={'rounded-md rounded-r-none'}
+                className={styles.image}
                 src={getImage()}
                 style={{ height: '100px', width: '100px' }}
             />
 
-            <div
-                className={`w-full flex h-full flex-col items-start justify-center  space-y-2 ml-4`}
-            >
-                <figcaption className="text-lg">
-                    <div className="font-bold text-gray-800">{name}</div>
-                    <div className="text-gray-500">{description}</div>
+            <div className={styles.dataContainer}>
+                <figcaption className={styles.data}>
+                    <div className={styles.name}>{name}</div>
+                    <div className={styles.description}>{description}</div>
                 </figcaption>
             </div>
         </figure>
