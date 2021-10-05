@@ -1,8 +1,19 @@
-import Image from 'next/image';
-import PropTypes from 'prop-types';
+import Image from "next/image";
+import PropTypes from "prop-types";
+import { FunctionComponent, ReactElement } from "react";
 
-function BackgroundImage({ title, image, opacity }) {
-    const opacityClass = opacity ? `opacity-${opacity}` : '';
+interface IProps {
+    title: string;
+    image: string;
+    opacity: number;
+}
+
+const BackgroundImage: FunctionComponent<IProps> = ({
+    title,
+    image,
+    opacity,
+}): ReactElement => {
+    const opacityClass = opacity ? `opacity-${opacity}` : "";
 
     return (
         <div className={`absolute inset-0 z-0 ${opacityClass}`}>
@@ -14,11 +25,11 @@ function BackgroundImage({ title, image, opacity }) {
             />
         </div>
     );
-}
+};
 
 BackgroundImage.defaultProps = {
     opacity: 100,
-    title: '',
+    title: "",
 };
 
 BackgroundImage.propTypes = {

@@ -1,25 +1,38 @@
-import React, { useCallback } from 'react';
+import React, { FunctionComponent, ReactElement, useMemo } from "react";
 import {
     AiOutlineFacebook,
     AiOutlineInstagram,
     AiOutlineYoutube,
     AiOutlineTwitter,
-} from 'react-icons/ai';
-import PropTypes from 'prop-types';
+} from "react-icons/ai";
+import PropTypes from "prop-types";
 
-function RrssIcon({ className, rrss, url, title }) {
-    const getIconComponent = useCallback(() => {
+interface IProps {
+    className: string;
+    rrss: string;
+    url: string;
+    title: string;
+}
+
+const RrssIcon: FunctionComponent<IProps> = ({
+    className,
+    rrss,
+    url,
+    title,
+}): ReactElement => {
+    const getIconComponent = useMemo(() => {
         switch (rrss) {
-            case 'Facebook':
+            case "Facebook":
                 return <AiOutlineFacebook />;
-            case 'Instagram':
+            case "Instagram":
                 return <AiOutlineInstagram />;
-            case 'Twitter':
+            case "Twitter":
                 return <AiOutlineTwitter />;
-            case 'Youtube':
+            case "Youtube":
                 return <AiOutlineYoutube />;
         }
     }, [rrss]);
+
     return (
         <a
             target="_blank"
@@ -29,15 +42,15 @@ function RrssIcon({ className, rrss, url, title }) {
             title="visitar red social"
             rel="noopener noreferrer"
         >
-            {getIconComponent()}
+            {getIconComponent}
             <span className="sr-only">{title}</span>
         </a>
     );
-}
+};
 
 RrssIcon.defaultProps = {
-    className: '',
-    title: '',
+    className: "",
+    title: "",
 };
 
 RrssIcon.propTypes = {
