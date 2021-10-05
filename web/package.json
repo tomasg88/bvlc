@@ -5,7 +5,8 @@
     "scripts": {
         "dev": "next dev",
         "build": "next build",
-        "start": "next start"
+        "start": "next start",
+        "lint:init": "eslint --init"
     },
     "dependencies": {
         "@headlessui/react": "^1.0.0",
@@ -13,7 +14,6 @@
         "@sanity/client": "^2.2.6",
         "@tailwindcss/line-clamp": "^0.2.0",
         "@tailwindcss/typography": "^0.4.0",
-        "@types/react": "^17.0.27",
         "@types/react-dom": "^17.0.9",
         "date-fns": "^2.19.0",
         "framer": "^1.2.29",
@@ -21,10 +21,10 @@
         "next": "10.0.7",
         "next-sanity": "^0.1.10",
         "next-sanity-image": "^1.0.1",
-        "react": "^18.0.0-alpha-f2c381131-20211004",
+        "react": "^18.0.0-alpha-fd5e01c2e-20210913",
         "react-anchor-link-smooth-scroll": "^1.0.12",
         "react-burger-menu": "^3.0.6",
-        "react-dom": "^18.0.0-alpha-f2c381131-20211004",
+        "react-dom": "^18.0.0-alpha-fd5e01c2e-20210913",
         "react-headroom": "^3.1.0",
         "react-icons": "^4.2.0",
         "react-reveal": "^1.2.2",
@@ -33,9 +33,20 @@
     },
     "devDependencies": {
         "@types/node": "^16.10.2",
+        "@types/react": "^17.0.27",
+        "@typescript-eslint/eslint-plugin": "^4.33.0",
+        "@typescript-eslint/parser": "^4.33.0",
         "autoprefixer": "^10.2.4",
+        "eslint": "^7.32.0",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-config-standard": "^16.0.3",
+        "eslint-plugin-import": "^2.24.2",
+        "eslint-plugin-node": "^11.1.0",
+        "eslint-plugin-prettier": "^4.0.0",
+        "eslint-plugin-promise": "^5.1.0",
+        "eslint-plugin-react": "^7.26.1",
         "postcss": "^8.2.7",
-        "prettier": "^2.3.2",
+        "prettier": "^2.4.1",
         "prop-types": "^15.7.2",
         "tailwindcss": "^2.1.2",
         "typescript": "^4.4.3"
