@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import { FunctionComponent, ReactElement } from "react";
 
 interface IProps {
-    closeMenu: () => {};
+    closeMenu: () => void;
 }
 
 const OffcanvasNavigation: FunctionComponent<IProps> = ({
