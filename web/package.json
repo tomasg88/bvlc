@@ -13,16 +13,18 @@
         "@sanity/client": "^2.2.6",
         "@tailwindcss/line-clamp": "^0.2.0",
         "@tailwindcss/typography": "^0.4.0",
+        "@types/react": "^17.0.27",
+        "@types/react-dom": "^17.0.9",
         "date-fns": "^2.19.0",
         "framer": "^1.2.29",
         "lodash": "^4.17.21",
         "next": "10.0.7",
         "next-sanity": "^0.1.10",
         "next-sanity-image": "^1.0.1",
-        "react": "next",
+        "react": "^18.0.0-alpha-f2c381131-20211004",
         "react-anchor-link-smooth-scroll": "^1.0.12",
         "react-burger-menu": "^3.0.6",
-        "react-dom": "next",
+        "react-dom": "^18.0.0-alpha-f2c381131-20211004",
         "react-headroom": "^3.1.0",
         "react-icons": "^4.2.0",
         "react-reveal": "^1.2.2",
@@ -30,10 +32,12 @@
         "simple-react-lightbox": "^3.6.4"
     },
     "devDependencies": {
+        "@types/node": "^16.10.2",
         "autoprefixer": "^10.2.4",
         "postcss": "^8.2.7",
         "prettier": "^2.3.2",
         "prop-types": "^15.7.2",
-        "tailwindcss": "^2.1.2"
+        "tailwindcss": "^2.1.2",
+        "typescript": "^4.4.3"
     }
 }
