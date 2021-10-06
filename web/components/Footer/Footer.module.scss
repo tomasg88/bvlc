@@ -1,0 +1,55 @@
+.root {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @apply py-12 border-t border-red-500;
+    @apply bg-gray-900;
+
+    .container {
+        @apply flex flex-col w-full mx-auto max-w-7xl;
+
+        img {
+            margin-left: 0.5rem;
+        }
+        a {
+            @apply duration-200 hover:text-yellow-500;
+        }
+
+        .siteMap {
+            @apply grid w-full gap-3 px-6 mx-auto my-12 text-lg text-left text-blue-200 md:px-0 md:mt-3 md:grid-cols-4;
+
+            a {
+                @apply max-w-xs;
+            }
+
+            .logoContainer {
+                @apply flex flex-col items-center justify-center w-32 mx-auto mt-12 md:mt-0;
+
+                .logoTitle {
+                    @apply block mt-3 text-sm font-bold text-center text-blue-400 uppercase;
+                }
+            }
+        }
+
+        .footerSpecials {
+            @apply flex flex-col justify-start w-full px-6 pt-12 mx-auto space-y-4 border-t border-gray-700 md:px-0 md:flex-row md:border-none md:space-y-0 max-w-7xl;
+
+            .special {
+                @apply relative flex items-center justify-start overflow-hidden duration-500;
+
+                &.left {
+                    @apply md:ml-20;
+                }
+                &:hover {
+                    .text {
+                        @apply text-gray-100;
+                    }
+                }
+                .text {
+                    @apply ml-3 text-lg font-bold text-gray-400;
+                }
+            }
+        }
+    }
+}

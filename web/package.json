@@ -1,6 +1,6 @@
 {
     "name": "web",
-    "version": "1.0.0-rc",
+    "version": "1.1.1-rc",
     "private": true,
     "scripts": {
         "dev": "next dev",
@@ -26,11 +26,14 @@
         "react-headroom": "^3.1.0",
         "react-icons": "^4.2.0",
         "react-reveal": "^1.2.2",
+        "sass": "^1.38.0",
         "simple-react-lightbox": "^3.6.4"
     },
     "devDependencies": {
         "autoprefixer": "^10.2.4",
         "postcss": "^8.2.7",
+        "prettier": "^2.3.2",
+        "prop-types": "^15.7.2",
         "tailwindcss": "^2.1.2"
     }
 }

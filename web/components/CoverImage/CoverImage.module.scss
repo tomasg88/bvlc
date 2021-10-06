@@ -1,0 +1,12 @@
+.root {
+    @apply sm:mx-0;
+
+    .image {
+        @apply shadow-sm hover:shadow-md transition-shadow duration-200 w-full rounded-t-md sm:rounded-tr-none;
+    }
+
+    .default {
+        padding-top: 50%;
+        background-color: #ddd;
+    }
+}
