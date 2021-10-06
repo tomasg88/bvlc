@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { FunctionComponent, ReactElement } from "react";
 
 interface IProps {
-    title: string;
+    title?: string;
     image: string;
     opacity: number;
 }
