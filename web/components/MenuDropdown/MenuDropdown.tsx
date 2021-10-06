@@ -1,28 +1,33 @@
-import { Menu, Transition } from '@headlessui/react';
-import Link from 'next/link';
-import styles from './MenuDropdown.module.scss';
-import PropTypes from 'prop-types';
+import { Menu, Transition } from "@headlessui/react";
+import Link from "next/link";
+import styles from "./MenuDropdown.module.scss";
+import PropTypes from "prop-types";
+import { FunctionComponent, ReactElement } from "react";
+
+interface IProps {
+    title: string;
+}
 
 const ROUTES = [
     {
-        href: '/comision-directiva',
-        title: 'Comisión Directiva',
+        href: "/comision-directiva",
+        title: "Comisión Directiva",
     },
     {
-        href: '/cuerpo-activo',
-        title: 'Cuerpo Activo',
+        href: "/cuerpo-activo",
+        title: "Cuerpo Activo",
     },
     {
-        href: '/equipamiento',
-        title: 'Equipamiento',
+        href: "/equipamiento",
+        title: "Equipamiento",
     },
     {
-        href: '/institucional',
-        title: 'Historia',
+        href: "/institucional",
+        title: "Historia",
     },
 ];
 
-function MenuDropdown({ title }) {
+const MenuDropdown: FunctionComponent<IProps> = ({ title }): ReactElement => {
     return (
         <div className={styles.root}>
             <Menu>
@@ -66,8 +71,8 @@ function MenuDropdown({ title }) {
                                                     <a
                                                         className={`${
                                                             active
-                                                                ? 'bg-red-500 text-gray-100'
-                                                                : 'text-white'
+                                                                ? "bg-red-500 text-gray-100"
+                                                                : "text-white"
                                                         } ${styles.option}`}
                                                     >
                                                         {option.title}
@@ -84,7 +89,7 @@ function MenuDropdown({ title }) {
             </Menu>
         </div>
     );
-}
+};
 
 MenuDropdown.propTypes = {
     title: PropTypes.string.isRequired,

@@ -11,14 +11,12 @@ interface IProps {
     className: string;
     rrss: string;
     url: string;
-    title: string;
 }
 
 const RrssIcon: FunctionComponent<IProps> = ({
     className,
     rrss,
     url,
-    title,
 }): ReactElement => {
     const getIconComponent = useMemo(() => {
         switch (rrss) {
@@ -38,26 +36,24 @@ const RrssIcon: FunctionComponent<IProps> = ({
             target="_blank"
             className={className}
             href={url}
-            aria-label={title}
+            aria-label={rrss}
             title="visitar red social"
             rel="noopener noreferrer"
         >
             {getIconComponent}
-            <span className="sr-only">{title}</span>
+            <span className="sr-only">{rrss}</span>
         </a>
     );
 };
 
 RrssIcon.defaultProps = {
     className: "",
-    title: "",
 };
 
 RrssIcon.propTypes = {
     className: PropTypes.string,
     rrss: PropTypes.string.isRequired,
     url: PropTypes.string.isRequired,
-    title: PropTypes.string,
 };
 
 export default RrssIcon;
