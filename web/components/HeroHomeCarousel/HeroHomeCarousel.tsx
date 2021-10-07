@@ -6,11 +6,23 @@ import { BG_CONSTANTS, DEFAULT_PAGE_TITLE } from "utils/constants";
 import PropTypes from "prop-types";
 import CarouselUI from "./CarouselUI/CarouselUI";
 import styles from "./HeroHomeCarousel.module.scss";
+import { ClassicComponent, FunctionComponent, ReactElement } from "react";
 
-function HeroHomeCarousel({ arrows }) {
+interface IProps {
+    arrows: boolean;
+}
+
+interface ICarouselProps {
+    defaultWait: number;
+    maxTurns: number;
+}
+
+const HeroHomeCarousel: FunctionComponent<IProps> = ({
+    arrows,
+}): ReactElement => {
     const Carousel = makeCarousel((props) => (
         <CarouselUI arrows={arrows} {...props} />
-    ));
+    )) as FunctionComponent<ICarouselProps>;
 
     const PICTURES = [
         BG_CONSTANTS.index_1,
@@ -70,7 +82,7 @@ function HeroHomeCarousel({ arrows }) {
             </div>
         </div>
     );
-}
+};
 
 HeroHomeCarousel.propTypes = {
     arrows: PropTypes.bool.isRequired,

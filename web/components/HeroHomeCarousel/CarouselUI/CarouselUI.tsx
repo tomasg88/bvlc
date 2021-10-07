@@ -1,8 +1,22 @@
+import { FunctionComponent, ReactElement } from "react";
 import { AiOutlineArrowRight, AiOutlineArrowLeft } from "react-icons/ai";
 import { BiRadioCircle, BiRadioCircleMarked } from "react-icons/bi";
 import styles from "./CarouselUI.module.scss";
 
-const CarouselUI = ({ position, total, handleClick, children, arrows }) => {
+interface IProps {
+    position: number;
+    total: string[];
+    handleClick: () => void;
+    arrows: boolean;
+}
+
+const CarouselUI: FunctionComponent<IProps> = ({
+    position,
+    total,
+    handleClick,
+    children,
+    arrows,
+}): ReactElement => {
     function renderControls() {
         return (
             <>
@@ -15,7 +29,7 @@ const CarouselUI = ({ position, total, handleClick, children, arrows }) => {
                 </div>
                 <div
                     className={`${styles.arrows} ${styles.arrowRight}`}
-                    right="true"
+                    // right="true"
                     onClick={handleClick}
                     data-position={position + 1}
                 >
