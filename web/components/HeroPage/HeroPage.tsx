@@ -8,13 +8,11 @@ import { FunctionComponent, ReactElement } from "react";
 interface IProps {
     title: string;
     image: string;
-    opacity: number;
 }
 
 const HeroPage: FunctionComponent<IProps> = ({
     title,
     image,
-    opacity,
 }): ReactElement => (
     <div className={styles.root}>
         <div className={styles.container}>
@@ -22,19 +20,17 @@ const HeroPage: FunctionComponent<IProps> = ({
                 <h1 className={styles.title}>{title}</h1>
             </Fade>
 
-            <BackgroundImage image={image} opacity={opacity} />
+            <BackgroundImage image={image} />
         </div>
     </div>
 );
 
 HeroPage.defaultProps = {
-    opacity: 20,
     title: "",
     image: BG_CONSTANTS.team,
 };
 
 HeroPage.propTypes = {
-    opacity: PropTypes.number,
     title: PropTypes.string,
     image: PropTypes.string,
 };

@@ -9,13 +9,11 @@ import { FunctionComponent, ReactElement } from "react";
 interface IProps {
     title?: string;
     image: string;
-    opacity: number;
 }
 
 const HeroInstitucional: FunctionComponent<IProps> = ({
     title,
     image,
-    opacity,
 }): ReactElement => (
     <div>
         <div className={styles.container}>
@@ -23,10 +21,7 @@ const HeroInstitucional: FunctionComponent<IProps> = ({
                 <h1 className={styles.title}>{title}</h1>
             </Fade>
 
-            <BackgroundImage
-                image={image || BG_CONSTANTS.team}
-                opacity={opacity || 20}
-            />
+            <BackgroundImage image={image || BG_CONSTANTS.team} />
         </div>
         <div className={styles.tabs}>
             <NavInstitucional />
@@ -35,7 +30,6 @@ const HeroInstitucional: FunctionComponent<IProps> = ({
 );
 
 HeroInstitucional.propTypes = {
-    opacity: PropTypes.number,
     title: PropTypes.string,
     image: PropTypes.string.isRequired,
 };
