@@ -1,0 +1,15 @@
+.root {
+    @apply px-12 border-t border-red-400;
+
+    .dataContainer {
+        @apply px-4 py-5 text-xl text-center md:text-left sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0;
+
+        .title {
+            @apply mt-1 text-base font-medium text-gray-500 uppercase;
+        }
+
+        .value {
+            @apply mt-1 text-gray-900 select-all sm:mt-0 sm:col-span-2;
+        }
+    }
+}
