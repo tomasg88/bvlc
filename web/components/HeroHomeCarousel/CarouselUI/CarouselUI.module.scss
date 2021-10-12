@@ -1,0 +1,15 @@
+.root {
+    @apply relative w-full h-full mb-0 overflow-hidden border-b-2 border-red-600;
+    .bullets {
+        @apply absolute left-0 right-0 z-50 flex items-center justify-center bg-red-500 bg-opacity-50 top-8;
+    }
+    .arrows {
+        @apply absolute z-50 items-center justify-center hidden w-12 h-12 text-5xl text-center text-white cursor-pointer hover:opacity-90 md:flex top-1/2;
+        &.arrowLeft {
+            @apply left-0;
+        }
+        &.arrowRight {
+            @apply right-0;
+        }
+    }
+}

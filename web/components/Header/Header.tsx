@@ -1,19 +1,19 @@
-import HeaderLink from '../HeaderLink/HeaderLink';
-import Link from 'next/link';
-import Image from 'next/image';
-import Headroom from 'react-headroom';
-import RrssIcon from '../RrssIcon/RrssIcon';
-import { Context } from '../context';
-import { useContext } from 'react';
-import { DEFAULT_PAGE_TITLE, BG_CONSTANTS } from 'utils/constants';
-import MenuDropdown from '../MenuDropdown/MenuDropdown';
-import styles from './Header.module.scss';
+import HeaderLink from "../HeaderLink/HeaderLink";
+import Link from "next/link";
+import Image from "next/image";
+import Headroom from "react-headroom";
+import RrssIcon from "../RrssIcon/RrssIcon";
+import { Context } from "../context";
+import { FunctionComponent, ReactElement, useContext } from "react";
+import { DEFAULT_PAGE_TITLE, BG_CONSTANTS } from "utils/constants";
+import MenuDropdown from "../MenuDropdown/MenuDropdown";
+import styles from "./Header.module.scss";
 
-export default function Header() {
+const Header: FunctionComponent = (): ReactElement => {
     const [rrss] = useContext(Context);
     return (
         <Headroom disableInlineStyles>
-            <div className={'bg-pattern'}>
+            <div className={"bg-pattern"}>
                 <header className={styles.container}>
                     <div className={styles.main}>
                         <Link href="/">
@@ -75,7 +75,7 @@ export default function Header() {
                                     <span className={styles.emergencyContact}>
                                         <small className={styles.emergencyText}>
                                             Emergencias
-                                        </small>{' '}
+                                        </small>{" "}
                                         (0261) 498-0999
                                     </span>
                                     {rrss &&
@@ -102,4 +102,6 @@ export default function Header() {
             </div>
         </Headroom>
     );
-}
+};
+
+export default Header;

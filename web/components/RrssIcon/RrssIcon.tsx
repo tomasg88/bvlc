@@ -1,50 +1,59 @@
-import React, { useCallback } from 'react';
+import React, { FunctionComponent, ReactElement, useMemo } from "react";
 import {
     AiOutlineFacebook,
     AiOutlineInstagram,
     AiOutlineYoutube,
     AiOutlineTwitter,
-} from 'react-icons/ai';
-import PropTypes from 'prop-types';
+} from "react-icons/ai";
+import PropTypes from "prop-types";
 
-function RrssIcon({ className, rrss, url, title }) {
-    const getIconComponent = useCallback(() => {
+interface IProps {
+    className: string;
+    rrss: string;
+    url: string;
+}
+
+const RrssIcon: FunctionComponent<IProps> = ({
+    className,
+    rrss,
+    url,
+}): ReactElement => {
+    const getIconComponent = useMemo(() => {
         switch (rrss) {
-            case 'Facebook':
+            case "Facebook":
                 return <AiOutlineFacebook />;
-            case 'Instagram':
+            case "Instagram":
                 return <AiOutlineInstagram />;
-            case 'Twitter':
+            case "Twitter":
                 return <AiOutlineTwitter />;
-            case 'Youtube':
+            case "Youtube":
                 return <AiOutlineYoutube />;
         }
     }, [rrss]);
+
     return (
         <a
             target="_blank"
             className={className}
             href={url}
-            aria-label={title}
+            aria-label={rrss}
             title="visitar red social"
             rel="noopener noreferrer"
         >
-            {getIconComponent()}
-            <span className="sr-only">{title}</span>
+            {getIconComponent}
+            <span className="sr-only">{rrss}</span>
         </a>
     );
-}
+};
 
 RrssIcon.defaultProps = {
-    className: '',
-    title: '',
+    className: "",
 };
 
 RrssIcon.propTypes = {
     className: PropTypes.string,
     rrss: PropTypes.string.isRequired,
     url: PropTypes.string.isRequired,
-    title: PropTypes.string,
 };
 
 export default RrssIcon;
