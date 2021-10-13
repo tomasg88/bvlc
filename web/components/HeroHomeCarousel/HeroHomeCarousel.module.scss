@@ -1,0 +1,39 @@
+.root {
+    @apply relative flex flex-col items-center justify-center py-40 overflow-hidden text-center text-white bg-gray-900;
+
+    .legend {
+        @apply relative z-10 max-w-xl px-6 mx-auto font-mono text-xl font-bold uppercase md:text-xl;
+    }
+
+    .title {
+        @apply relative z-10 max-w-xl px-6 py-3 mx-auto font-mono text-4xl font-thin md:text-6xl;
+    }
+
+    .buttonsContainer {
+        @apply bottom-0 left-0 right-0 flex flex-col w-full max-w-xl p-6 pb-0 mx-auto sm:space-x-4 sm:flex-row sm:absolute;
+
+        .button {
+            @apply relative z-10 flex flex-col items-center justify-center w-full p-3 mx-auto mt-6 text-red-800 duration-100 bg-gray-100 shadow-sm hover:bg-red-600 hover:text-red-100 hover:shadow-lg;
+
+            .icon {
+                @apply mx-3 mb-2 text-4xl md:text-4xl;
+            }
+
+            .text {
+                @apply text-lg font-bold uppercase;
+
+                .number {
+                    @apply flex flex-col text-base text-left sm:text-center opacity-90;
+                }
+            }
+        }
+    }
+
+    .carouselContainer {
+        @apply absolute inset-0 z-0;
+
+        .image {
+            @apply object-cover w-full h-screen opacity-20;
+        }
+    }
+}

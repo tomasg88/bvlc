@@ -1,15 +1,15 @@
-import React from 'react';
-import Layout from 'components/Layout/Layout';
-import HeroInstitucional from 'components/HeroInstitucional/HeroInstitucional';
-import { getClient } from 'lib/sanity.server';
-import { leadershipQuery } from 'lib/queries';
-import MediaObject from 'components/MediaObject/MediaObject';
-import { BG_CONSTANTS } from 'utils/constants';
-import Fade from 'react-reveal/Fade';
-import groupAndOrder from 'utils/list';
+import React from "react";
+import Layout from "components/Layout/Layout";
+import HeroInstitucional from "components/HeroInstitucional/HeroInstitucional";
+import { getClient } from "lib/sanity.server";
+import { leadershipQuery } from "lib/queries";
+import MediaObject from "components/MediaObject/MediaObject";
+import { BG_CONSTANTS } from "utils/constants";
+import Fade from "react-reveal/Fade";
+import groupAndOrder from "utils/list";
 
 export default function ComisionDirectiva({ list }) {
-    const { orderedList, getTranslation } = groupAndOrder('position', list);
+    const { orderedList, getTranslation } = groupAndOrder("position", list);
 
     return (
         <Layout title="Comisión Directiva">
@@ -17,7 +17,6 @@ export default function ComisionDirectiva({ list }) {
                 <HeroInstitucional
                     title="Comisión Directiva"
                     image={BG_CONSTANTS.index_1}
-                    opacity={20}
                 />
                 <div
                     id="integrantes"

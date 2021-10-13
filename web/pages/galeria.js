@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import Layout from 'components/Layout/Layout';
-import { getClient } from 'lib/sanity.server';
-import { albumsQuery } from 'lib/queries';
-import Gallery from 'components/Gallery/Gallery';
-import AlbumCover from 'components/AlbumCover/AlbumCover';
-import HeroPage from 'components/HeroPage/HeroPage';
-import Fade from 'react-reveal/Fade';
+import React, { useState } from "react";
+import Layout from "components/Layout/Layout";
+import { getClient } from "lib/sanity.server";
+import { albumsQuery } from "lib/queries";
+import Gallery from "components/Gallery/Gallery";
+import AlbumCover from "components/AlbumCover/AlbumCover";
+import HeroPage from "components/HeroPage/HeroPage";
+import Fade from "react-reveal/Fade";
 
 export default function Galeria({ albums }) {
     const [selectedAlbum, setSelectedAlbum] = useState([]);
