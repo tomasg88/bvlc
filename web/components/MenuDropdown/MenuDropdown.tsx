@@ -10,6 +10,14 @@ interface IProps {
 
 const ROUTES = [
     {
+        href: "/institucional",
+        title: "Historia",
+    },
+    {
+        href: "/libro-amigos",
+        title: "2 Amigos por un Sueño",
+    },
+    {
         href: "/comision-directiva",
         title: "Comisión Directiva",
     },
@@ -20,10 +28,6 @@ const ROUTES = [
     {
         href: "/equipamiento",
         title: "Equipamiento",
-    },
-    {
-        href: "/institucional",
-        title: "Historia",
     },
 ];
 
