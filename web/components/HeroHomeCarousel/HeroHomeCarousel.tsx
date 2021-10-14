@@ -30,11 +30,6 @@ const HeroHomeCarousel: FunctionComponent<IProps> = ({
         BG_CONSTANTS.index_3,
     ];
 
-    const BUTTONS = [
-        { text: "Emergencias", number: "(0261) 498-0999", Icon: FiPhone },
-        { text: "Administración", number: "(0261) 498-6341", Icon: FiInfo },
-    ];
-
     return (
         <div className={styles.root}>
             <Fade cascade delay={900}>
@@ -45,19 +40,17 @@ const HeroHomeCarousel: FunctionComponent<IProps> = ({
             </Fade>
 
             <div className={styles.buttonsContainer}>
-                {BUTTONS.map((b) => (
-                    <Link href="/contacto" key={b.text}>
-                        <a className={styles.button}>
-                            <b.Icon className={styles.icon} />
-                            <div className={styles.text}>
-                                {b.text}
-                                <span className={styles.number}>
-                                    {b.number}
-                                </span>
-                            </div>
-                        </a>
-                    </Link>
-                ))}
+                <Link href="/contacto">
+                    <a className={styles.button}>
+                        <FiPhone className={styles.icon} />
+                        <div className={styles.text}>
+                            {"Emergencias"}
+                            <span className={styles.number}>
+                                {"(0261) 498-0999"}
+                            </span>
+                        </div>
+                    </a>
+                </Link>
             </div>
 
             <div className={styles.carouselContainer}>
