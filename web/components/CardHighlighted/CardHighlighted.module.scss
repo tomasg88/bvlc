@@ -1,0 +1,35 @@
+.root {
+    @apply relative;
+    @apply shadow-sm;
+    @apply translate-y-1;
+    @apply transition-all;
+    @apply duration-500;
+    @apply hover:shadow-2xl;
+    @apply hover:translate-y-0;
+
+    .image {
+        @apply rounded-md;
+    }
+
+    .title {
+        @apply w-full;
+        @apply absolute;
+        @apply left-0;
+        @apply bottom-0;
+        @apply pb-2;
+        @apply pl-2;
+        @apply md:pb-6;
+        @apply md:pl-6;
+        @apply text-xl;
+        @apply md:text-4xl;
+        @apply text-white;
+        @apply rounded-md;
+        background: linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 1) 0%,
+            rgba(0, 0, 0, 0.9) 20%,
+            rgba(0, 0, 0, 0.7) 50%,
+            rgba(0, 0, 0, 0) 100%
+        );
+    }
+}
