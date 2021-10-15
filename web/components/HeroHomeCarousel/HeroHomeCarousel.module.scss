@@ -1,29 +1,93 @@
 .root {
-    @apply relative flex flex-col items-center justify-center py-40 overflow-hidden text-center text-white bg-gray-900;
+    @apply relative;
+    @apply flex;
+    @apply flex-col;
+    @apply items-center;
+    @apply justify-center;
+    @apply py-40;
+    @apply overflow-hidden;
+    @apply text-center;
+    @apply text-white;
+    @apply bg-gray-900;
 
     .legend {
-        @apply relative z-10 max-w-xl px-6 mx-auto font-mono text-xl font-bold uppercase md:text-xl;
+        @apply relative;
+        @apply z-10;
+        @apply max-w-xl;
+        @apply px-6;
+        @apply mx-auto;
+        @apply font-mono;
+        @apply text-xl;
+        @apply font-bold;
+        @apply uppercase;
+        @apply md:text-xl;
     }
 
     .title {
-        @apply relative z-10 max-w-xl px-6 py-3 mx-auto font-mono text-4xl font-thin md:text-6xl;
+        @apply relative;
+        @apply z-10;
+        @apply max-w-xl;
+        @apply px-6;
+        @apply py-3;
+        @apply mx-auto;
+        @apply font-mono;
+        @apply text-4xl;
+        @apply font-thin;
+        @apply md:text-6xl;
     }
 
     .buttonsContainer {
-        @apply bottom-0 left-0 right-0 flex flex-col w-full max-w-xl p-6 pb-0 mx-auto sm:space-x-4 sm:flex-row sm:absolute;
+        @apply bottom-0;
+        @apply left-0;
+        @apply right-0;
+        @apply flex;
+        @apply flex-col;
+        @apply w-full;
+        @apply max-w-xs;
+        @apply p-6;
+        @apply pb-0;
+        @apply mx-auto;
+        @apply sm:space-x-4;
+        @apply sm:flex-row;
+        @apply sm:absolute;
 
         .button {
-            @apply relative z-10 flex flex-col items-center justify-center w-full p-3 mx-auto mt-6 text-red-800 duration-100 bg-gray-100 shadow-sm hover:bg-red-600 hover:text-red-100 hover:shadow-lg;
+            @apply relative;
+            @apply z-10;
+            @apply flex;
+            @apply flex-col;
+            @apply items-center;
+            @apply justify-center;
+            @apply w-full;
+            @apply p-3;
+            @apply mx-auto;
+            @apply mt-6;
+            @apply text-red-800;
+            @apply duration-100;
+            @apply bg-gray-100;
+            @apply shadow-sm;
+            @apply hover:bg-red-600;
+            @apply hover:text-red-100;
+            @apply hover:shadow-lg;
 
             .icon {
-                @apply mx-3 mb-2 text-4xl md:text-4xl;
+                @apply mb-2;
+                @apply text-4xl;
+                @apply md:text-4xl;
             }
 
             .text {
-                @apply text-lg font-bold uppercase;
+                @apply text-lg;
+                @apply font-bold;
+                @apply uppercase;
 
                 .number {
-                    @apply flex flex-col text-base text-left sm:text-center opacity-90;
+                    @apply flex;
+                    @apply flex-col;
+                    @apply text-base;
+                    @apply text-left;
+                    @apply sm:text-center;
+                    @apply opacity-90;
                 }
             }
         }
