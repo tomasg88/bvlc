@@ -13,7 +13,7 @@ function CardHighlighted({ title, slug, mainImage }) {
     const imageProps = useNextSanityImage(sanityConfig, mainImage, {
         imageBuilder: () => urlForImage(mainImage).height(300).width(900),
     });
-    console.log(`imageProps`, imageProps);
+
     return (
         <Fade>
             <div className={styles.root}>
