@@ -8,7 +8,7 @@
     @apply hover:translate-y-0;
 
     .image {
-        @apply rounded-md;
+        @apply rounded-md transition-all hover:opacity-80;
     }
 
     .title {
