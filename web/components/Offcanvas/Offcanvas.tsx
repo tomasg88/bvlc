@@ -12,7 +12,7 @@ const Offcanvas: FunctionComponent = (): ReactElement => {
 
     const closeMenu = useCallback(() => setOpenMenu(false), []);
     const handleStateChange = useCallback(
-        (state) => {
+        (state: { isOpen: boolean }) => {
             setOpenMenu(state.isOpen);
         },
         [openMenu, setOpenMenu]

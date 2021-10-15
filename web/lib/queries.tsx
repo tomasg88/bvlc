@@ -6,6 +6,11 @@ import {
     postFields,
 } from "./fields";
 
+/**
+ * recentNews: latest news - restricted to 6
+ * highlighted: only one news to be shown highlighted
+ * heroImages: an album containing images for the Home hero
+ */
 export const indexQuery = `
 {
     "recentNews": *[_type == "post"] | order(publishedAt desc)[0..5] { ${postFields} },
@@ -13,12 +18,22 @@ export const indexQuery = `
     "heroImages": *[_type == "album" && title == "IMAGENES_HOME"][0] { ${albumFields} }
 }`;
 
+/**
+ * content for specific pages
+ */
 export const pagesQuery = `
     *[_type == "page" && slug.current == $slug][0] { ${pageFields} }
 `;
 
+/**
+ * all news, latest first
+ */
 export const allPostQuery = ` *[_type == "post"] | order(publishedAt desc) { ${postFields} }`;
 
+/**
+ * post: find news, and restrict to one
+ * morePosts: other "related" news, limited to 3
+ */
 export const postQuery = `
 {
   "post": *[_type == "post" && slug.current == $slug] | order(_updatedAt desc) | [0] {
@@ -31,6 +46,9 @@ export const postQuery = `
   }
 }`;
 
+/**
+ * all news with a defined slug
+ */
 export const postSlugsQuery = `
 *[_type == "post" && defined(slug.current)][].slug.current
 `;
