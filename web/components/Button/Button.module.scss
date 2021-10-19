@@ -1,0 +1,6 @@
+.root {
+    @apply flex justify-center max-w-6xl pb-24 mx-auto font-sans;
+    .text {
+        @apply relative z-10 px-8 py-3 mt-3 text-2xl font-bold text-red-600 bg-gray-100 border-b-2 border-red-600 hover:bg-red-600 hover:text-white transition-all duration-200 hover:rounded-md hover:shadow-2xl;
+    }
+}
