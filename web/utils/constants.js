@@ -40,6 +40,11 @@ export const ROUTES = [
         ariaLabel: "Ver Historia",
     },
     {
+        title: "2 Amigos por un Sueño",
+        slug: "/libro-amigos",
+        ariaLabel: "Ver libro 2 Amigos por un Sueño",
+    },
+    {
         title: "Cuerpo Activo",
         slug: "/cuerpo-activo",
         ariaLabel: "Ver Cuerpo Activo",

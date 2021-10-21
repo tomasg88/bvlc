@@ -1,15 +1,44 @@
 .container {
-    @apply relative w-full py-40 overflow-hidden text-center text-white bg-gray-800;
+    @apply relative;
+    @apply w-full;
+    @apply py-40;
+    @apply overflow-hidden;
+    @apply text-center;
+    @apply text-white;
+    @apply bg-gray-800;
 
     .title {
-        @apply relative z-10 font-sans text-4xl font-light md:text-6xl;
+        @apply relative;
+        @apply z-10;
+        @apply font-sans;
+        @apply text-4xl;
+        @apply font-light;
+        @apply md:text-6xl;
     }
 }
 .tabs {
-    @apply relative z-10 justify-center hidden mx-auto space-x-2 font-sans text-base font-bold md:text-xl sm:flex sm:-mt-10 md:-mt-11 max-w-7xl;
+    @apply relative;
+    @apply z-10;
+    @apply justify-center;
+    @apply hidden;
+    @apply mx-auto;
+    @apply space-x-2;
+    @apply font-sans;
+    @apply font-bold;
+    @apply max-w-7xl;
+    @apply sm:-mt-10;
+    @apply md:flex;
+    @apply md:text-base;
+    @apply lg:text-xl;
+    @apply lg:-mt-11;
 
     a {
-        @apply px-4 py-2 text-gray-900 duration-500 bg-white bg-opacity-90;
+        @apply px-4;
+        @apply py-2;
+        @apply text-gray-900;
+        @apply duration-500;
+        @apply bg-white;
+        @apply bg-opacity-90;
 
         &:hover {
             @apply text-red-600 bg-opacity-100;

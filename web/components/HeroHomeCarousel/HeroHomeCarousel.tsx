@@ -1,15 +1,19 @@
-import { FiPhone, FiInfo } from "react-icons/fi";
+import { FiPhone } from "react-icons/fi";
 import makeCarousel from "react-reveal/makeCarousel";
 import Fade from "react-reveal/Fade";
 import Link from "next/link";
+import Image from "next/image";
+import { urlForImage } from "lib/sanity";
 import { BG_CONSTANTS, DEFAULT_PAGE_TITLE } from "utils/constants";
 import PropTypes from "prop-types";
 import CarouselUI from "./CarouselUI/CarouselUI";
 import styles from "./HeroHomeCarousel.module.scss";
-import { ClassicComponent, FunctionComponent, ReactElement } from "react";
+import { FunctionComponent, ReactElement } from "react";
+import { sanityImagePropType } from "utils/sanityPropType";
 
 interface IProps {
     arrows: boolean;
+    images: any[];
 }
 
 interface ICarouselProps {
@@ -19,21 +23,11 @@ interface ICarouselProps {
 
 const HeroHomeCarousel: FunctionComponent<IProps> = ({
     arrows,
+    images,
 }): ReactElement => {
     const Carousel = makeCarousel((props) => (
         <CarouselUI arrows={arrows} {...props} />
     )) as FunctionComponent<ICarouselProps>;
-
-    const PICTURES = [
-        BG_CONSTANTS.index_1,
-        BG_CONSTANTS.team,
-        BG_CONSTANTS.index_3,
-    ];
-
-    const BUTTONS = [
-        { text: "Emergencias", number: "(0261) 498-0999", Icon: FiPhone },
-        { text: "Administración", number: "(0261) 498-6341", Icon: FiInfo },
-    ];
 
     return (
         <div className={styles.root}>
@@ -45,19 +39,17 @@ const HeroHomeCarousel: FunctionComponent<IProps> = ({
             </Fade>
 
             <div className={styles.buttonsContainer}>
-                {BUTTONS.map((b) => (
-                    <Link href="/contacto" key={b.text}>
-                        <a className={styles.button}>
-                            <b.Icon className={styles.icon} />
-                            <div className={styles.text}>
-                                {b.text}
-                                <span className={styles.number}>
-                                    {b.number}
-                                </span>
-                            </div>
-                        </a>
-                    </Link>
-                ))}
+                <Link href="/contacto">
+                    <a className={styles.button}>
+                        <FiPhone className={styles.icon} />
+                        <div className={styles.text}>
+                            {"Emergencias"}
+                            <span className={styles.number}>
+                                {"(0261) 498-0999"}
+                            </span>
+                        </div>
+                    </a>
+                </Link>
             </div>
 
             <div className={styles.carouselContainer}>
@@ -65,15 +57,18 @@ const HeroHomeCarousel: FunctionComponent<IProps> = ({
                     defaultWait={4000}
                     maxTurns={99} /*wait for 1000 milliseconds*/
                 >
-                    {PICTURES.map((p) => (
-                        <Fade key={p}>
+                    {images.map((img) => (
+                        <Fade key={img._key}>
                             <div>
-                                <img
+                                <Image
                                     className={styles.image}
-                                    alt=""
                                     width="1800"
                                     height="800"
-                                    src={p}
+                                    layout="fixed"
+                                    src={urlForImage(img)
+                                        .width(1800)
+                                        .height(800)
+                                        .url()}
                                 />
                             </div>
                         </Fade>
@@ -84,8 +79,13 @@ const HeroHomeCarousel: FunctionComponent<IProps> = ({
     );
 };
 
+HeroHomeCarousel.defaultProps = {
+    images: [],
+};
+
 HeroHomeCarousel.propTypes = {
     arrows: PropTypes.bool.isRequired,
+    images: PropTypes.arrayOf(sanityImagePropType),
 };
 
 export default HeroHomeCarousel;
