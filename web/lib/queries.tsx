@@ -73,7 +73,7 @@ export const leadershipQuery = ` *[_type == "leadership"] `;
 export const equipmentQuery = `*[_type == "equipment" ] { ${equipmentFields} }`;
 
 export const albumsQuery = `
-  *[_type == "album"] | order(_createdAt desc) { ${albumFields} }
+  *[_type == "album" && title != "IMAGENES_HOME"] | order(_createdAt desc) { ${albumFields} }
 `;
 
 export const communityPostQuery = `
