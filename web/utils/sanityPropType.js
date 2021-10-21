@@ -1,4 +1,4 @@
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
 export const sanityImagePropType = PropTypes.shape({
     _type: PropTypes.string.isRequired,
