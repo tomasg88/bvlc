@@ -6,7 +6,8 @@
         "dev": "next dev",
         "build": "next build",
         "start": "next start",
-        "lint:init": "eslint --init"
+        "lint:init": "eslint --init",
+        "postbuild": "next-sitemap --config next-sitemap.config.js"
     },
     "dependencies": {
         "@headlessui/react": "^1.0.0",
@@ -21,6 +22,7 @@
         "next": "10.0.7",
         "next-sanity": "^0.1.10",
         "next-sanity-image": "^1.0.1",
+        "next-sitemap": "^1.6.192",
         "react": "^18.0.0-alpha-fd5e01c2e-20210913",
         "react-anchor-link-smooth-scroll": "^1.0.12",
         "react-burger-menu": "^3.0.6",
@@ -32,7 +34,7 @@
         "simple-react-lightbox": "^3.6.4"
     },
     "devDependencies": {
-        "@types/node": "^16.10.2",
+        "@types/node": "^16.11.2",
         "@types/react": "^17.0.27",
         "@typescript-eslint/eslint-plugin": "^4.33.0",
         "@typescript-eslint/parser": "^4.33.0",
@@ -49,6 +51,6 @@
         "prettier": "^2.4.1",
         "prop-types": "^15.7.2",
         "tailwindcss": "^2.1.2",
-        "typescript": "^4.4.3"
+        "typescript": "^4.4.4"
     }
 }
