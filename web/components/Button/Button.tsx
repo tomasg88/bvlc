@@ -1,24 +1,26 @@
-import PropTypes from "prop-types";
-import { FunctionComponent, ReactElement } from "react";
-import Link from "next/link";
-import styles from "./Button.module.scss";
+import PropTypes from 'prop-types';
+import { FunctionComponent, ReactElement } from 'react';
+import Link from 'next/link';
+import styles from './Button.module.scss';
 
-const targetValues = ["_blank", "_self", "_parent", "_top"];
+const targetValues = ['_blank', '_self', '_parent', '_top'];
 
 interface IProp {
     text: string;
     href: string;
     target?: string;
+    onClick?: () => void;
 }
 
 const Button: FunctionComponent<IProp> = ({
     text,
     href,
     target,
+    onClick,
 }): ReactElement => (
     <div className={styles.root}>
         <Link href={href}>
-            <a target={target} className={styles.text}>
+            <a target={target} className={styles.text} onClick={onClick}>
                 {text}
             </a>
         </Link>
@@ -26,13 +28,14 @@ const Button: FunctionComponent<IProp> = ({
 );
 
 Button.defaultProps = {
-    target: "_self",
+    target: '_self',
 };
 
 Button.propTypes = {
     text: PropTypes.string.isRequired,
     href: PropTypes.string.isRequired,
     target: PropTypes.oneOf(targetValues),
+    onClick: PropTypes.func,
 };
 
 export default Button;
