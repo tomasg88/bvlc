@@ -4,8 +4,8 @@
     .imageContainer {
         @apply absolute inset-0 overflow-hidden rounded;
 
-        img {
-            @apply object-cover w-full h-full cursor-pointer opacity-20;
+        .img {
+            @apply w-full h-full cursor-pointer opacity-20;
         }
     }
     .infoContainer {
