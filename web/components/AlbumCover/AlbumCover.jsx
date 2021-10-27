@@ -19,6 +19,7 @@ const AlbumCover = ({ cover, title, description, onClick }) => {
                     layout="fill"
                     objectFit="cover"
                     className={styles.img}
+                    alt={title}
                 />
             </div>
             <div onClick={onClick} className={styles.infoContainer}>
