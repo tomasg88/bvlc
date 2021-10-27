@@ -1,15 +1,15 @@
-import { getClient } from "lib/sanity.server";
-import { academyQuery } from "lib/queries";
-import Layout from "components/Layout/Layout";
-import { ACADEMY_MEMBERS, BG_CONSTANTS } from "utils/constants";
-import AlbumCover from "components/AlbumCover/AlbumCover";
-import { useState } from "react";
-import Gallery from "components/Gallery/Gallery";
-import CardNews from "components/CardNews/CardNews";
-import HeroPage from "components/HeroPage/HeroPage";
-import styles from "styles/PageSidebar.module.css";
-import { MdPhotoCamera } from "react-icons/md";
-import AnchorLink from "react-anchor-link-smooth-scroll";
+import { getClient } from 'lib/sanity.server';
+import { academyQuery } from 'lib/queries';
+import Layout from 'components/Layout/Layout';
+import { ACADEMY_MEMBERS, BG_CONSTANTS } from 'utils/constants';
+import AlbumCover from 'components/AlbumCover/AlbumCover';
+import { useState } from 'react';
+import Gallery from 'components/Gallery/Gallery';
+import CardNews from 'components/CardNews/CardNews';
+import HeroPage from 'components/HeroPage/HeroPage';
+import styles from 'styles/PageSidebar.module.css';
+import { MdPhotoCamera } from 'react-icons/md';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
 
 export default function Academia({ news, albums }) {
     const [selectedAlbum, setSelectedAlbum] = useState([]);
@@ -65,8 +65,9 @@ export default function Academia({ news, albums }) {
                                     title={a.title}
                                     description={a.description}
                                     cover={a.cover}
-                                    album={a.imageList}
-                                    selectAlbum={setSelectedAlbum}
+                                    onClick={() =>
+                                        setSelectedAlbum(a.imageList)
+                                    }
                                 />
                             ))}
                         </div>

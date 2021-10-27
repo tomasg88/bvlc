@@ -7,7 +7,7 @@ import { sanityImagePropType } from 'utils/sanityPropType';
 import { sanityConfig } from 'lib/config';
 import { useNextSanityImage } from 'next-sanity-image';
 
-const AlbumCover = ({ cover, title, description, album, selectAlbum }) => {
+const AlbumCover = ({ cover, title, description, onClick }) => {
     const { src, loader } = useNextSanityImage(sanityConfig, cover);
 
     return (
@@ -21,10 +21,7 @@ const AlbumCover = ({ cover, title, description, album, selectAlbum }) => {
                     className={styles.img}
                 />
             </div>
-            <div
-                onClick={() => selectAlbum(album)}
-                className={styles.infoContainer}
-            >
+            <div onClick={onClick} className={styles.infoContainer}>
                 <div className={styles.title}>{title}</div>
                 <div className={styles.description}>{description}</div>
                 <div className={styles.ctaButton}>
@@ -39,9 +36,8 @@ const AlbumCover = ({ cover, title, description, album, selectAlbum }) => {
 AlbumCover.propTypes = {
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
-    selectAlbum: PropTypes.func.isRequired,
     cover: sanityImagePropType.isRequired,
-    album: PropTypes.arrayOf(sanityImagePropType).isRequired,
+    onClick: PropTypes.func.isRequired,
 };
 
 export default AlbumCover;
