@@ -6,6 +6,8 @@ import Fade from 'react-reveal/Fade';
 import styles from './Gallery.module.scss';
 import PropTypes from 'prop-types';
 import { sanityImagePropType } from 'utils/sanityPropType';
+import SanityImage from 'components/SanityImage/SanityImage';
+import classNames from 'classnames';
 
 function Gallery({ onClose, list }) {
     const [mainIndex, setMainIndex] = useState(null);
@@ -39,10 +41,13 @@ function Gallery({ onClose, list }) {
                 </div>
                 <div id="content" className={styles.contentContainer}>
                     <div id="main-image" className={styles.mainImageContainer}>
-                        <img
-                            src={urlForImage(list[mainIndex]).url()}
-                            className={styles.image}
-                        />
+                        {list[mainIndex] && (
+                            <SanityImage
+                                src={list[mainIndex]}
+                                layout="fill"
+                                className={styles.image}
+                            />
+                        )}
                     </div>
                     <div
                         id="previous"
@@ -63,15 +68,22 @@ function Gallery({ onClose, list }) {
                         className={styles.imageListContainer}
                     >
                         {list.map((img, index) => (
-                            <img
-                                key={img._key}
-                                className={styles.smallImage}
-                                onClick={() => setMainIndex(index)}
-                                src={urlForImage(img)
-                                    .width(200)
-                                    .height(200)
-                                    .url()}
-                            />
+                            <div
+                                key={img._id}
+                                className={classNames(
+                                    styles.smallImage,
+                                    index === mainIndex && styles.active
+                                )}
+                            >
+                                <SanityImage
+                                    src={img}
+                                    width={48}
+                                    height={48}
+                                    layout={'fixed'}
+                                    objectFit="cover"
+                                    onClick={() => setMainIndex(index)}
+                                />
+                            </div>
                         ))}
                     </div>
                 </div>

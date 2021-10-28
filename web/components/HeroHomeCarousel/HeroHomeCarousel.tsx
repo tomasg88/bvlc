@@ -2,14 +2,13 @@ import { FiPhone } from 'react-icons/fi';
 import makeCarousel from 'react-reveal/makeCarousel';
 import Fade from 'react-reveal/Fade';
 import Link from 'next/link';
-import Image from 'next/image';
-import { urlForImage } from 'lib/sanity';
-import { BG_CONSTANTS, DEFAULT_PAGE_TITLE } from 'utils/constants';
+import { DEFAULT_PAGE_TITLE } from 'utils/constants';
 import PropTypes from 'prop-types';
 import CarouselUI from './CarouselUI/CarouselUI';
 import styles from './HeroHomeCarousel.module.scss';
 import { FunctionComponent, ReactElement } from 'react';
 import { sanityImagePropType } from 'utils/sanityPropType';
+import SanityImage from 'components/SanityImage/SanityImage';
 
 interface IProps {
     arrows: boolean;
@@ -59,14 +58,14 @@ const HeroHomeCarousel: FunctionComponent<IProps> = ({
                 >
                     {images.map((img) => (
                         <Fade key={img._key}>
-                            <div>
-                                <Image
-                                    src={urlForImage(img).url()}
-                                    layout="fill"
-                                    objectFit="cover"
-                                    className={styles.image}
-                                />
-                            </div>
+                            <SanityImage
+                                src={img}
+                                width={1920}
+                                height={800}
+                                layout="fixed"
+                                objectFit="cover"
+                                className={styles.image}
+                            />
                         </Fade>
                     ))}
                 </Carousel>
