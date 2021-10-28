@@ -3,6 +3,7 @@ import { MdClose } from 'react-icons/md';
 import { urlForImage } from 'lib/sanity';
 import { AiOutlineArrowRight, AiOutlineArrowLeft } from 'react-icons/ai';
 import Fade from 'react-reveal/Fade';
+import Slide from 'react-reveal/Slide';
 import styles from './Gallery.module.scss';
 import PropTypes from 'prop-types';
 import { sanityImagePropType } from 'utils/sanityPropType';
@@ -45,7 +46,9 @@ function Gallery({ onClose, list }) {
                             <SanityImage
                                 src={list[mainIndex]}
                                 layout="fill"
+                                objectFit="contain"
                                 className={styles.image}
+                                quality={100}
                             />
                         )}
                     </div>
