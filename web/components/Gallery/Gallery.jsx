@@ -49,6 +49,7 @@ function Gallery({ onClose, list }) {
                                 objectFit="contain"
                                 className={styles.image}
                                 quality={100}
+                                priority
                             />
                         )}
                     </div>
@@ -85,6 +86,7 @@ function Gallery({ onClose, list }) {
                                     layout={'fixed'}
                                     objectFit="cover"
                                     onClick={() => setMainIndex(index)}
+                                    priority
                                 />
                             </div>
                         ))}

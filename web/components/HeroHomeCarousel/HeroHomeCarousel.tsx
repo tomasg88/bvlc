@@ -65,6 +65,7 @@ const HeroHomeCarousel: FunctionComponent<IProps> = ({
                                 layout="fixed"
                                 objectFit="cover"
                                 className={styles.image}
+                                priority
                             />
                         </Fade>
                     ))}
