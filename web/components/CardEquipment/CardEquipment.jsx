@@ -11,7 +11,7 @@ const CardEquipment = ({ cover, title, body, onClick }) => {
     const { src, loader } = useNextSanityImage(sanityConfig, cover);
     return (
         <div className={styles.card}>
-            <div className={styles.image}>
+            <div className={styles.imageContainer}>
                 <Image
                     loader={loader}
                     src={src}
