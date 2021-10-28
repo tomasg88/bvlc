@@ -97,7 +97,7 @@
         @apply absolute inset-0 z-0;
 
         .image {
-            @apply object-cover w-full h-screen opacity-20;
+            @apply opacity-20;
         }
     }
 }
