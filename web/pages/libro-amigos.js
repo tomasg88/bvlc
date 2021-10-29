@@ -13,6 +13,7 @@ const BOOK_PUBLIC_URL =
     'https://drive.google.com/file/d/1-Ej0AXd14-xLfvooEfzWHG1bGdZYbOjO/view?usp=sharing';
 
 export default function LibroAmigos({ pages }) {
+
     function handleClick() {
         ga.pageEvent('download_book', {
             event_category: 'engagement',
