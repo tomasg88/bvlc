@@ -1,19 +1,24 @@
-import React from "react";
-import Link from "next/link";
-import Layout from "components/Layout/Layout";
-import { getClient } from "lib/sanity.server";
-import ArticleContent from "components/ArticleContent/ArticleContent";
-import { SRLWrapper } from "simple-react-lightbox";
-import { pagesQuery } from "lib/queries";
-import HeroInstitucional from "components/HeroInstitucional/HeroInstitucional";
-import { BG_CONSTANTS } from "utils/constants";
-import Button from "components/Button/Button";
+import React from 'react';
+import Layout from 'components/Layout/Layout';
+import { getClient } from 'lib/sanity.server';
+import ArticleContent from 'components/ArticleContent/ArticleContent';
+import { SRLWrapper } from 'simple-react-lightbox';
+import { pagesQuery } from 'lib/queries';
+import HeroInstitucional from 'components/HeroInstitucional/HeroInstitucional';
+import { BG_CONSTANTS } from 'utils/constants';
+import Button from 'components/Button/Button';
 
-// link publico a un pdf de prueba: https://drive.google.com/file/d/0B_uZcKZGPPu_QzdWTHdHTnVpbG8/view?usp=sharing&resourcekey=0-IteDYA-bhBeL7zN5wYHpCQ
+const BOOK_PUBLIC_URL =
+    'https://drive.google.com/file/d/1-Ej0AXd14-xLfvooEfzWHG1bGdZYbOjO/view?usp=sharing';
 
 export default function LibroAmigos({ pages }) {
-    const link =
-        "https://drive.google.com/file/d/0B_uZcKZGPPu_QzdWTHdHTnVpbG8/view?usp=sharing&resourcekey=0-IteDYA-bhBeL7zN5wYHpCQ";
+    function handleClick() {
+        ga.pageEvent('download_book', {
+            event_category: 'engagement',
+            event_label: 'Libro descargado',
+        });
+    }
+
     return (
         <Layout title={pages.title}>
             <div className="bg-white ">
@@ -27,9 +32,10 @@ export default function LibroAmigos({ pages }) {
                     </SRLWrapper>
                 </div>
                 <Button
-                    text={"Descargalo acá!"}
-                    href={link}
-                    target={"_blank"}
+                    text={'Descargalo acá!'}
+                    href={BOOK_PUBLIC_URL}
+                    target={'_blank'}
+                    onClick={handleClick}
                 />
             </div>
         </Layout>
@@ -37,7 +43,7 @@ export default function LibroAmigos({ pages }) {
 }
 
 export async function getStaticProps() {
-    const slug = "libro-amigos";
+    const slug = 'libro-amigos';
     const pages = await getClient().fetch(pagesQuery, { slug });
     return {
         props: {
