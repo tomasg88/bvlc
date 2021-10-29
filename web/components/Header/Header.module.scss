@@ -7,10 +7,6 @@
         .logoContainer {
             @apply flex items-center justify-center transform -translate-y-2;
 
-            .logoImage {
-                @apply flex-none;
-            }
-
             .logoTitle {
                 @apply w-32 ml-3 text-sm text-gray-100 uppercase md:w-auto sm:block md:text-lg xl:text-2xl;
             }

@@ -1,23 +1,32 @@
-import { useCallback } from 'react';
-import { urlForImage } from 'lib/sanity';
 import PropTypes from 'prop-types';
 import { sanityImagePropType } from 'utils/sanityPropType';
 import styles from './MediaObject.module.scss';
+import { sanityConfig } from 'lib/config';
+import { useNextSanityImage } from 'next-sanity-image';
+import Image from 'next/image';
 
 function MediaObject({ name, description, image }) {
-    const getImage = useCallback(() => {
-        if (!image) return '/no-profile-image.png';
-        else return urlForImage(image).height(100).width(100).url();
-    }, [image]);
+    const NO_PROFILE_IMAGE = '/no-profile-image.png';
+    let imageProps = {};
+    try {
+        imageProps = useNextSanityImage(sanityConfig, image);
+    } catch (error) {
+        imageProps = { src: NO_PROFILE_IMAGE };
+    }
 
     return (
         <figure id="hero" className={styles.root}>
-            <img
-                alt={name}
-                className={styles.image}
-                src={getImage()}
-                style={{ height: '100px', width: '100px' }}
-            />
+            <div className={styles.imageContainer}>
+                <Image
+                    src={imageProps.src}
+                    layout="fixed"
+                    height={100}
+                    width={100}
+                    objectFit="cover"
+                    alt={name}
+                    className={styles.image}
+                />
+            </div>
 
             <div className={styles.dataContainer}>
                 <figcaption className={styles.data}>

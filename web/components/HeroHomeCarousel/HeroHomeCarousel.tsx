@@ -1,15 +1,14 @@
-import { FiPhone } from "react-icons/fi";
-import makeCarousel from "react-reveal/makeCarousel";
-import Fade from "react-reveal/Fade";
-import Link from "next/link";
-import Image from "next/image";
-import { urlForImage } from "lib/sanity";
-import { BG_CONSTANTS, DEFAULT_PAGE_TITLE } from "utils/constants";
-import PropTypes from "prop-types";
-import CarouselUI from "./CarouselUI/CarouselUI";
-import styles from "./HeroHomeCarousel.module.scss";
-import { FunctionComponent, ReactElement } from "react";
-import { sanityImagePropType } from "utils/sanityPropType";
+import { FiPhone } from 'react-icons/fi';
+import makeCarousel from 'react-reveal/makeCarousel';
+import Fade from 'react-reveal/Fade';
+import Link from 'next/link';
+import { DEFAULT_PAGE_TITLE } from 'utils/constants';
+import PropTypes from 'prop-types';
+import CarouselUI from './CarouselUI/CarouselUI';
+import styles from './HeroHomeCarousel.module.scss';
+import { FunctionComponent, ReactElement } from 'react';
+import { sanityImagePropType } from 'utils/sanityPropType';
+import SanityImage from 'components/SanityImage/SanityImage';
 
 interface IProps {
     arrows: boolean;
@@ -43,9 +42,9 @@ const HeroHomeCarousel: FunctionComponent<IProps> = ({
                     <a className={styles.button}>
                         <FiPhone className={styles.icon} />
                         <div className={styles.text}>
-                            {"Emergencias"}
+                            {'Emergencias'}
                             <span className={styles.number}>
-                                {"(0261) 498-0999"}
+                                {'(0261) 498-0999'}
                             </span>
                         </div>
                     </a>
@@ -59,18 +58,15 @@ const HeroHomeCarousel: FunctionComponent<IProps> = ({
                 >
                     {images.map((img) => (
                         <Fade key={img._key}>
-                            <div>
-                                <Image
-                                    className={styles.image}
-                                    width="1800"
-                                    height="800"
-                                    layout="fixed"
-                                    src={urlForImage(img)
-                                        .width(1800)
-                                        .height(800)
-                                        .url()}
-                                />
-                            </div>
+                            <SanityImage
+                                src={img}
+                                width={1920}
+                                height={800}
+                                layout="fixed"
+                                objectFit="cover"
+                                className={styles.image}
+                                priority
+                            />
                         </Fade>
                     ))}
                 </Carousel>
