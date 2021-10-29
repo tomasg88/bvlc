@@ -9,17 +9,15 @@ import { BG_CONSTANTS } from 'utils/constants';
 import Button from 'components/Button/Button';
 import * as ga from 'lib/ga';
 
-// link publico a un pdf de prueba: https://drive.google.com/file/d/0B_uZcKZGPPu_QzdWTHdHTnVpbG8/view?usp=sharing&resourcekey=0-IteDYA-bhBeL7zN5wYHpCQ
+const BOOK_PUBLIC_URL =
+    'https://drive.google.com/file/d/1-Ej0AXd14-xLfvooEfzWHG1bGdZYbOjO/view?usp=sharing';
 
 export default function LibroAmigos({ pages }) {
-    const link =
-        'https://drive.google.com/file/d/0B_uZcKZGPPu_QzdWTHdHTnVpbG8/view?usp=sharing&resourcekey=0-IteDYA-bhBeL7zN5wYHpCQ';
 
     function handleClick() {
-        ga.pageEvent({
-            action: 'download_book',
-            category: 'engagement',
-            label: 'Libro descargado',
+        ga.pageEvent('download_book', {
+            event_category: 'engagement',
+            event_label: 'Libro descargado',
         });
     }
 
@@ -37,7 +35,7 @@ export default function LibroAmigos({ pages }) {
                 </div>
                 <Button
                     text={'Descargalo acá!'}
-                    href={link}
+                    href={BOOK_PUBLIC_URL}
                     target={'_blank'}
                     onClick={handleClick}
                 />
