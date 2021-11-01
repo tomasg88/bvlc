@@ -1,30 +1,31 @@
-import HeaderLink from "../HeaderLink/HeaderLink";
-import Link from "next/link";
-import Image from "next/image";
-import Headroom from "react-headroom";
-import RrssIcon from "../RrssIcon/RrssIcon";
-import { Context } from "../context";
-import { FunctionComponent, ReactElement, useContext } from "react";
-import { DEFAULT_PAGE_TITLE, BG_CONSTANTS } from "utils/constants";
-import MenuDropdown from "../MenuDropdown/MenuDropdown";
-import styles from "./Header.module.scss";
+import HeaderLink from '../HeaderLink/HeaderLink';
+import Link from 'next/link';
+import Image from 'next/image';
+import Headroom from 'react-headroom';
+import RrssIcon from '../RrssIcon/RrssIcon';
+import { Context } from '../context';
+import { FunctionComponent, ReactElement, useContext } from 'react';
+import { DEFAULT_PAGE_TITLE, BG_CONSTANTS } from 'utils/constants';
+import MenuDropdown from '../MenuDropdown/MenuDropdown';
+import styles from './Header.module.scss';
 
 const Header: FunctionComponent = (): ReactElement => {
     const [rrss] = useContext(Context);
     return (
         <Headroom disableInlineStyles>
-            <div className={"bg-pattern"}>
+            <div className={'bg-pattern'}>
                 <header className={styles.container}>
                     <div className={styles.main}>
                         <Link href="/">
                             <a className={styles.logoContainer}>
-                                <img
+                                <Image
                                     src="/logo-bomberos-cuyo.png"
-                                    width="80"
-                                    height="100"
-                                    className={styles.logoImage}
+                                    width={80}
+                                    height={100}
+                                    objectFit="fill"
+                                    quality={50}
+                                    layout="fixed"
                                     alt={DEFAULT_PAGE_TITLE}
-                                    title={DEFAULT_PAGE_TITLE}
                                 />
                                 <span className={styles.logoTitle}>
                                     Bomberos Voluntarios <br /> de Luján de Cuyo
@@ -45,7 +46,7 @@ const Header: FunctionComponent = (): ReactElement => {
                                     <Image
                                         src={BG_CONSTANTS.escudo_spai}
                                         alt={DEFAULT_PAGE_TITLE}
-                                        quality={80}
+                                        quality={50}
                                         className={styles.rightUpperImage}
                                         layout="fixed"
                                         width={30}
@@ -64,7 +65,7 @@ const Header: FunctionComponent = (): ReactElement => {
                                     <Image
                                         src={BG_CONSTANTS.sello_iram}
                                         alt={DEFAULT_PAGE_TITLE}
-                                        quality={80}
+                                        quality={50}
                                         className={styles.rightUpperImage}
                                         layout="fixed"
                                         width={30}
@@ -75,7 +76,7 @@ const Header: FunctionComponent = (): ReactElement => {
                                     <span className={styles.emergencyContact}>
                                         <small className={styles.emergencyText}>
                                             Emergencias
-                                        </small>{" "}
+                                        </small>{' '}
                                         (0261) 498-0999
                                     </span>
                                     {rrss &&

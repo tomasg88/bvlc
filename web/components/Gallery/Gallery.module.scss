@@ -40,7 +40,11 @@
             @apply absolute bottom-0 left-0 right-0 flex items-center justify-center w-full p-2 mt-5 overflow-x-auto bg-black;
 
             .smallImage {
-                @apply w-12 h-12 mx-1 duration-500 cursor-pointer hover:opacity-90;
+                @apply mx-1 cursor-pointer opacity-70 hover:opacity-100;
+
+                &.active {
+                    @apply opacity-100;
+                }
             }
         }
     }

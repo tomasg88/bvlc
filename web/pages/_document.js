@@ -1,4 +1,8 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
+import {
+    GoogleScriptHeaderTag,
+    GoogleNoScriptBodyTag,
+} from 'components/GoogleScripts/GoogleScripts';
 
 class HtmlDocument extends Document {
     static async getInitialProps(ctx) {
@@ -9,8 +13,11 @@ class HtmlDocument extends Document {
     render() {
         return (
             <Html lang="es">
-                <Head />
+                <Head>
+                    <GoogleScriptHeaderTag />
+                </Head>
                 <body>
+                    <GoogleNoScriptBodyTag />
                     <Main />
                     <NextScript />
                 </body>

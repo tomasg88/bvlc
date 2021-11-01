@@ -33,6 +33,10 @@ const SiteMap: FunctionComponent = (): ReactElement => {
                 <span className={styles.columnTitle}>Institucional</span>
                 <CustomLink href="/institucional" title="Historia" />
                 <CustomLink
+                    href="/libro-amigos"
+                    title="2 Amigos por un Sueño"
+                />
+                <CustomLink
                     href="/comision-directiva"
                     title="Comisión Directiva"
                 />
