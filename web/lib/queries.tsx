@@ -13,7 +13,7 @@ import {
  */
 export const indexQuery = `
 {
-    "recentNews": *[_type == "post" && !isHighlighted] | order(publishedAt desc)[0..5] { ${postFields} },
+    "recentNews": *[_type == "post" && (!isHighlighted || !defined(isHighlighted))] | order(publishedAt desc)[0..5] { ${postFields} },
     "highlighted": *[_type == "post" && isHighlighted][0] { ${postFields} },
     "heroImages": *[_type == "album" && title == "IMAGENES_HOME"][0] { ${albumFields} }
 }`;
