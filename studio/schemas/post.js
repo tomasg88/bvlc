@@ -97,6 +97,7 @@ export default {
       name: "isHighlighted",
       title: "Noticia Destacada?",
       type: "boolean",
+      initialValue: false,
       validation: (Rule) =>
         Rule.custom((field, { document }) => {
           if (!document.isHighlighted) return true;
@@ -104,9 +105,6 @@ export default {
         }),
     },
   ],
-  initialValue: {
-    isHighlighted: false,
-  },
 
   preview: {
     select: {
