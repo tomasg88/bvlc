@@ -1,9 +1,9 @@
 .articleText p {
-  @apply w-full max-w-2xl mx-auto;
+    @apply w-full max-w-2xl mx-auto;
 }
 
 .articleText blockquote {
-  @apply w-full max-w-2xl mx-auto;
+    @apply w-full max-w-2xl mx-auto;
 }
 
 .articleText h1,
@@ -12,51 +12,62 @@
 .articleText h4,
 .articleText h5,
 .articleText h6 {
-  @apply w-full max-w-2xl mx-auto my-3;
+    @apply w-full max-w-2xl mx-auto my-3;
 }
 
 .articleText img {
-  @apply duration-100 cursor-pointer;
+    @apply duration-100 cursor-pointer;
 }
 
 .articleText img:hover {
-  @apply opacity-90;
+    @apply opacity-90;
 }
-
 
 .articleText ul > li::before {
-@apply bg-red-600 !important;
+    @apply bg-red-600 !important;
 }
 
-
 .heroArticle {
-  @apply relative items-center justify-center w-full overflow-hidden bg-gray-100 md:flex md:bg-gray-800 md:text-center md:text-white;
+    @apply relative items-center justify-center w-full overflow-hidden bg-gray-100 md:flex md:bg-gray-800 md:text-center md:text-white;
 }
 
 @screen md {
-  .heroArticle {
-    min-height: 70vh;
-  }
+    .heroArticle {
+        min-height: 70vh;
+    }
 }
 
+.videoResponsive {
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+    height: 0;
+}
+
+.videoResponsive iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
 
 .heroImageContainer {
-  @apply relative inset-0 z-0 md:absolute md:opacity-40;
+    @apply relative inset-0 z-0 md:absolute md:opacity-40;
 }
 
 .heroBox {
-  @apply relative z-10 flex flex-col items-center justify-center w-full max-w-3xl p-3 pt-6 font-sans;
+    @apply relative z-10 flex flex-col items-center justify-center w-full max-w-3xl p-3 pt-6 font-sans;
 }
 
 .heroText {
-  @apply my-3 text-4xl md:text-6xl;
+    @apply my-3 text-4xl md:text-6xl;
 }
 
 .mainContent {
-  @apply max-w-3xl px-3 pb-24 mx-auto mt-6 prose prose-lg prose-red md:prose-xl;
+    @apply max-w-3xl px-3 pb-24 mx-auto mt-6 prose prose-lg prose-red md:prose-xl;
 }
 
 .publishedAt {
-  @apply w-full max-w-xl py-2 mx-auto text-lg;
+    @apply w-full max-w-xl py-2 mx-auto text-lg;
 }
-

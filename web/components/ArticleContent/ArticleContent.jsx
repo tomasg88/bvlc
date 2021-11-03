@@ -5,6 +5,8 @@ import { es } from 'date-fns/locale';
 import styles from 'styles/Article.module.css';
 import { SRLWrapper } from 'simple-react-lightbox';
 import PropTypes from 'prop-types';
+import getYouTubeID from 'get-youtube-id';
+import YouTube from 'react-youtube';
 
 function ArticleContent({ title, mainImage, dateString, body }) {
     const date = parseISO(dateString);
@@ -12,6 +14,20 @@ function ArticleContent({ title, mainImage, dateString, body }) {
     const options = {
         settings: {
             overlayColor: 'rgb(255, 255, 255)',
+        },
+    };
+
+    const serializers = {
+        types: {
+            youtube: ({ node }) => {
+                const { url } = node;
+                const id = getYouTubeID(url);
+                return (
+                    <div className={styles.videoResponsive}>
+                        <YouTube videoId={id} />
+                    </div>
+                );
+            },
         },
     };
 
@@ -48,6 +64,7 @@ function ArticleContent({ title, mainImage, dateString, body }) {
                             }
                             imageOptions={{ w: 1200, fit: 'fill' }}
                             dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
+                            serializers={serializers}
                         />
                     </article>
                 </SRLWrapper>

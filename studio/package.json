@@ -22,9 +22,11 @@
     "@sanity/default-login": "^2.21.9",
     "@sanity/desk-tool": "^2.21.9",
     "@sanity/vision": "^2.21.9",
+    "get-youtube-id": "^1.0.1",
     "prop-types": "^15.7",
     "react": "^17.0",
     "react-dom": "^17.0",
+    "react-youtube": "^7.13.1",
     "sanity-plugin-media-library": "^1.0.7",
     "sanity-plugin-vercel-deploy": "^1.1.0",
     "styled-components": "^5.3.1"
