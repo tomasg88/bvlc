@@ -7,16 +7,9 @@ import { SRLWrapper } from 'simple-react-lightbox';
 import PropTypes from 'prop-types';
 import getYouTubeID from 'get-youtube-id';
 import YouTube from 'react-youtube';
-import { useMemo } from 'react';
 
 function ArticleContent({ title, mainImage, dateString, body }) {
-    const date = useMemo(
-        () =>
-            format(parseISO(dateString), 'do LLLL, yyyy', {
-                locale: es,
-            }),
-        [dateString]
-    );
+    const date = parseISO(dateString);
 
     const options = {
         settings: {
@@ -50,7 +43,11 @@ function ArticleContent({ title, mainImage, dateString, body }) {
                         {dateString && (
                             <div className={styles.publishedAt}>
                                 Publicado el{' '}
-                                <time dateTime={dateString}>{date}</time>
+                                <time dateTime={dateString}>
+                                    {format(date, 'do LLLL, yyyy', {
+                                        locale: es,
+                                    })}
+                                </time>
                             </div>
                         )}
                     </div>
