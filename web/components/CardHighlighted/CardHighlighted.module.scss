@@ -1,6 +1,7 @@
 .root {
     @apply relative;
     @apply shadow-sm;
+    @apply border-r-4 border-red-600 rounded-lg;
     @apply translate-y-1;
     @apply transition-all;
     @apply duration-500;
