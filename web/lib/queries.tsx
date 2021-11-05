@@ -4,6 +4,7 @@ import {
     generalFields,
     pageFields,
     postFields,
+    specialtyFields,
 } from './fields';
 
 /**
@@ -71,6 +72,8 @@ export const activeForceQuery = ` *[_type == "activeForce"] `;
 export const leadershipQuery = ` *[_type == "leadership"] `;
 
 export const equipmentQuery = `*[_type == "equipment" ] { ${equipmentFields} }`;
+
+export const specialtyQuery = `*[_type == "specialty" ] { ${specialtyFields} }`;
 
 export const albumsQuery = `
   *[_type == "album" && title != "IMAGENES_HOME"] | order(_createdAt desc) { ${albumFields} }

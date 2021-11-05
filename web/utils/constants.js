@@ -30,11 +30,6 @@ export const ROUTES = [
         ariaLabel: 'Bomberos voluntarios - pagina de inicio',
     },
     {
-        title: 'Noticias',
-        slug: '/noticias',
-        ariaLabel: 'Ver noticias',
-    },
-    {
         title: 'Historia',
         slug: '/institucional',
         ariaLabel: 'Ver Historia',
@@ -55,19 +50,29 @@ export const ROUTES = [
         ariaLabel: 'Ver Comisión Directiva',
     },
     {
-        title: 'Galería',
-        slug: '/galeria',
-        ariaLabel: 'Ver galeria fotográfica',
-    },
-    {
         title: 'Equipamiento',
         slug: '/equipamiento',
         ariaLabel: 'Ver equipamiento',
     },
     {
+        title: 'Especialidades',
+        slug: '/especialidades',
+        ariaLabel: 'Ver especialidades',
+    },
+    {
+        title: 'Noticias',
+        slug: '/noticias',
+        ariaLabel: 'Ver noticias',
+    },
+    {
         title: 'Academia',
         slug: '/academia',
         ariaLabel: 'Ver Academia',
+    },
+    {
+        title: 'Galería',
+        slug: '/galeria',
+        ariaLabel: 'Ver galeria fotográfica',
     },
     {
         title: 'Contacto',

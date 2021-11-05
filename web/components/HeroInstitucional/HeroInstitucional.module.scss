@@ -1,51 +1,56 @@
-.container {
+.root {
     @apply relative;
-    @apply w-full;
-    @apply py-40;
-    @apply overflow-hidden;
-    @apply text-center;
-    @apply text-white;
-    @apply bg-gray-800;
 
-    .title {
+    .container {
         @apply relative;
-        @apply z-10;
-        @apply font-sans;
-        @apply text-4xl;
-        @apply font-light;
-        @apply md:text-6xl;
-    }
-}
-.tabs {
-    @apply relative;
-    @apply z-10;
-    @apply justify-center;
-    @apply hidden;
-    @apply mx-auto;
-    @apply space-x-2;
-    @apply font-sans;
-    @apply font-bold;
-    @apply max-w-7xl;
-    @apply sm:-mt-10;
-    @apply md:flex;
-    @apply md:text-base;
-    @apply lg:text-xl;
-    @apply lg:-mt-11;
+        @apply w-full;
+        @apply py-40;
+        @apply overflow-hidden;
+        @apply text-center;
+        @apply text-white;
+        @apply bg-gray-800;
 
-    a {
-        @apply px-4;
-        @apply py-2;
-        @apply text-gray-900;
-        @apply duration-500;
-        @apply bg-white;
-        @apply bg-opacity-90;
-
-        &:hover {
-            @apply text-red-600 bg-opacity-100;
+        .title {
+            @apply relative;
+            @apply z-10;
+            @apply font-sans;
+            @apply text-4xl;
+            @apply font-light;
+            @apply md:text-6xl;
         }
+    }
+    .tabs {
+        @apply absolute;
+        @apply left-0 right-0 bottom-0;
+        @apply z-10;
+        @apply justify-center;
+        @apply hidden;
+        @apply mx-auto;
+        @apply space-x-2;
+        @apply font-sans;
+        @apply font-bold;
+        @apply max-w-7xl;
+        @apply sm:-mt-10;
+        @apply md:flex;
+        @apply md:text-base;
+        @apply lg:text-xl;
+        @apply lg:-mt-11;
 
-        &:global(.active) {
-            @apply text-red-600 bg-opacity-100;
+        a {
+            @apply px-4;
+            @apply py-2;
+            @apply text-gray-900;
+            @apply duration-500;
+            @apply bg-white;
+            @apply bg-opacity-90;
+
+            &:hover {
+                @apply text-red-600 bg-opacity-100;
+            }
+
+            &:global(.active) {
+                @apply text-red-600 bg-opacity-100;
+            }
         }
     }
 }

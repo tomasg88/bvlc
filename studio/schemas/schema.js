@@ -22,6 +22,7 @@ import general from "./general";
 import equipment from "./equipment";
 import album from "./album";
 import youtube from "./youtube";
+import specialty from "./specialty";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -40,6 +41,7 @@ export default createSchema({
     activeForce,
     category,
     equipment,
+    specialty,
     album,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
