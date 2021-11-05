@@ -1,29 +1,34 @@
 export const postFields = `
-  _id,
-  name,
-  title,
-  publishedAt,
-  excerpt,
-  mainImage,
-  body,
-  "slug": slug.current,
-  "author": author->{name, picture},
-`
+    _id,
+    name,
+    title,
+    publishedAt,
+    excerpt,
+    mainImage,
+    body,
+    "slug": slug.current,
+    "author": author->{name, picture},
+`;
 
 export const generalFields = `
-  _id, title, type, value, rrss, rrssUrl
-`
+    _id, title, type, value, rrss, rrssUrl
+`;
 
 export const pageFields = `
-  _id, title, body,
-  "publishedAt": _createdAt
-`
+    _id, title, body,
+    "publishedAt": _createdAt
+`;
 
 export const albumFields = `
-  _id, title, description, cover, imageList,
-  "publishedAt": _createdAt
-`
+    _id, title, description, cover, imageList,
+    "publishedAt": _createdAt
+`;
 
 export const equipmentFields = `
-  _id, title, imagesGallery, body
-`
+    _id, title, imagesGallery, body
+`;
+
+// members is a reference
+export const specialtyFields = `
+    _id, title, imagesGallery, body, members[]->{_id, title, image}
+`;
