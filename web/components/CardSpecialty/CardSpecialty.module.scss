@@ -55,6 +55,9 @@
 
                 .memberPicture {
                     @apply relative block h-12 w-12 md:h-16 md:w-16 mr-2 rounded-full hover:shadow-lg transition-all;
+                    .picture {
+                        @apply rounded-full;
+                    }
                 }
             }
         }
