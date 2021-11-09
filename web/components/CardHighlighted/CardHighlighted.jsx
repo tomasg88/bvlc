@@ -1,17 +1,21 @@
-import { urlForImage } from "lib/sanity";
-import React from "react";
-import Link from "next/link";
-import Image from "next/image";
-import { useNextSanityImage } from "next-sanity-image";
-import { sanityConfig } from "lib/config";
-import styles from "./CardHighlighted.module.scss";
-import Fade from "react-reveal/Fade";
-import { sanityImagePropType } from "utils/sanityPropType";
-import PropTypes from "prop-types";
+import { urlForImage } from 'lib/sanity';
+import React from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import { useNextSanityImage } from 'next-sanity-image';
+import { sanityConfig } from 'lib/config';
+import styles from './CardHighlighted.module.scss';
+import Fade from 'react-reveal/Fade';
+import { sanityImagePropType } from 'utils/sanityPropType';
+import PropTypes from 'prop-types';
+import useWindowSize from '../../hooks/useWindowSizes';
 
 function CardHighlighted({ title, slug, mainImage }) {
-    const imageProps = useNextSanityImage(sanityConfig, mainImage, {
-        imageBuilder: () => urlForImage(mainImage).height(300).width(900),
+    const { isMobile } = useWindowSize();
+    const imageHeight = isMobile ? 1000 : 300;
+
+    const imgProps = useNextSanityImage(sanityConfig, mainImage, {
+        imageBuilder: () => urlForImage(mainImage).size(900, imageHeight),
     });
 
     return (
@@ -20,11 +24,9 @@ function CardHighlighted({ title, slug, mainImage }) {
                 <Link href={`/noticias/${slug}`}>
                     <a aria-label={title}>
                         <Image
+                            {...imgProps}
+                            alt={title}
                             className={styles.image}
-                            height={300}
-                            width={900}
-                            alt={`Cover Image for ${title}`}
-                            {...imageProps}
                         />
                         <p className={styles.title}>{title}</p>
                     </a>
