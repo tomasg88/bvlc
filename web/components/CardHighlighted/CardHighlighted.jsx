@@ -11,8 +11,8 @@ import PropTypes from 'prop-types';
 import useWindowSize from '../../hooks/useWindowSizes';
 
 function CardHighlighted({ title, slug, mainImage }) {
-    const { isMobile } = useWindowSize();
-    const imageHeight = isMobile ? 1000 : 300;
+    const { width, isMobile } = useWindowSize();
+    const imageHeight = isMobile || width <= 500 ? 1000 : 300;
 
     const imgProps = useNextSanityImage(sanityConfig, mainImage, {
         imageBuilder: () => urlForImage(mainImage).size(900, imageHeight),
