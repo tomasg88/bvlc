@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import Image from 'next/image';
 import { MdPhotoCamera } from 'react-icons/md';
 import BlockContent from '@sanity/block-content-to-react';
@@ -6,8 +6,23 @@ import styles from './CardEquipment.module.scss';
 import PropTypes from 'prop-types';
 import { useNextSanityImage } from 'next-sanity-image';
 import { sanityConfig } from 'lib/config';
+import { SanityImageSource } from '@sanity/image-url/lib/types/types';
+import { SanityDocumentStub } from '@sanity/client';
+import { sanityImagePropType } from 'utils/sanityPropType';
 
-const CardEquipment = ({ cover, title, body, onClick }) => {
+interface IProp {
+    body: SanityDocumentStub;
+    cover: SanityImageSource;
+    onClick: () => void;
+    title: string;
+}
+
+const CardEquipment: FC<IProp> = ({
+    body,
+    cover,
+    onClick,
+    title,
+}): JSX.Element => {
     const { src, loader } = useNextSanityImage(sanityConfig, cover);
     return (
         <div className={styles.card}>
@@ -43,6 +58,7 @@ const CardEquipment = ({ cover, title, body, onClick }) => {
 CardEquipment.propTypes = {
     title: PropTypes.string.isRequired,
     onClick: PropTypes.func.isRequired,
+    cover: sanityImagePropType.isRequired,
 };
 
 export default CardEquipment;

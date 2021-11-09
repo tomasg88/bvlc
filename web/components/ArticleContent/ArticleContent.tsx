@@ -7,8 +7,24 @@ import { SRLWrapper } from 'simple-react-lightbox';
 import PropTypes from 'prop-types';
 import getYouTubeID from 'get-youtube-id';
 import YouTube from 'react-youtube';
+import { FC } from 'react';
+import { SanityImageSource } from '@sanity/image-url/lib/types/types';
+import { SanityDocumentStub } from '@sanity/client';
+import { sanityImagePropType } from 'utils/sanityPropType';
 
-function ArticleContent({ title, mainImage, dateString, body }) {
+interface IProp {
+    title: string;
+    mainImage: SanityImageSource;
+    dateString: string;
+    body: SanityDocumentStub;
+}
+
+const ArticleContent: FC<IProp> = ({
+    title,
+    mainImage,
+    dateString,
+    body,
+}): JSX.Element => {
     const date = parseISO(dateString);
 
     const options = {
@@ -71,7 +87,7 @@ function ArticleContent({ title, mainImage, dateString, body }) {
             </div>
         </>
     );
-}
+};
 
 ArticleContent.defaultProps = {
     title: '',
@@ -81,6 +97,7 @@ ArticleContent.defaultProps = {
 ArticleContent.propTypes = {
     title: PropTypes.string,
     dateString: PropTypes.string,
+    mainImage: sanityImagePropType.isRequired,
 };
 
 export default ArticleContent;

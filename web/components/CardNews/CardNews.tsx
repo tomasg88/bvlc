@@ -1,12 +1,29 @@
 import { getDate, getMonth } from 'utils/dates';
 import Link from 'next/link';
-import CoverImage from 'components/CoverImage/CoverImage';
-import styles from './CardNewsHorizontal.module.scss';
+import CoverImage from '../CoverImage/CoverImage';
+import styles from './CardNews.module.scss';
+import Fade from 'react-reveal/Fade';
 import PropTypes from 'prop-types';
 import { sanityImagePropType } from 'utils/sanityPropType';
+import { SanityImageSource } from '@sanity/image-url/lib/types/types';
+import { FC } from 'react';
 
-function CardNewsHorizontal({ title, mainImage, excerpt, slug, publishedAt }) {
-    return (
+interface IProp {
+    title: string;
+    mainImage: SanityImageSource;
+    excerpt: string;
+    slug: string;
+    publishedAt: string;
+}
+
+const CardNews: FC<IProp> = ({
+    title,
+    mainImage,
+    excerpt,
+    slug,
+    publishedAt,
+}): JSX.Element => (
+    <Fade>
         <div className={styles.card}>
             <div className={styles.image}>
                 {mainImage && (
@@ -22,18 +39,17 @@ function CardNewsHorizontal({ title, mainImage, excerpt, slug, publishedAt }) {
                 </time>
             </div>
             <div className={styles.content}>
-                <Link href={`/noticias/${slug}`}>
-                    <a aria-label={title} className={styles.title}>
-                        {title}
-                    </a>
-                </Link>
+                <h3 className={styles.title}>{title}</h3>
                 <p className={styles.excerpt}>{excerpt}</p>
+                <Link href={`/noticias/${slug}`}>
+                    <a className={styles.action}>Leer nota completa</a>
+                </Link>
             </div>
         </div>
-    );
-}
+    </Fade>
+);
 
-CardNewsHorizontal.propTypes = {
+CardNews.propTypes = {
     title: PropTypes.string.isRequired,
     excerpt: PropTypes.string,
     slug: PropTypes.string.isRequired,
@@ -41,4 +57,4 @@ CardNewsHorizontal.propTypes = {
     mainImage: sanityImagePropType,
 };
 
-export default CardNewsHorizontal;
+export default CardNews;
