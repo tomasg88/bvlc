@@ -4,14 +4,22 @@ import styles from './MediaObject.module.scss';
 import { sanityConfig } from 'lib/config';
 import { useNextSanityImage } from 'next-sanity-image';
 import Image from 'next/image';
+import { SanityImageSource } from '@sanity/image-url/lib/types/types';
+import { FC } from 'react';
 
-function MediaObject({ name, description, image }) {
+interface IProp {
+    name: string;
+    description: string;
+    image: SanityImageSource;
+}
+
+const MediaObject: FC<IProp> = ({ name, description, image }): JSX.Element => {
     const NO_PROFILE_IMAGE = '/no-profile-image.png';
-    let imageProps = {};
+    let imageProps = { src: '' };
     try {
         imageProps = useNextSanityImage(sanityConfig, image);
     } catch (error) {
-        imageProps = { src: NO_PROFILE_IMAGE };
+        imageProps.src = NO_PROFILE_IMAGE;
     }
 
     return (
@@ -36,7 +44,7 @@ function MediaObject({ name, description, image }) {
             </div>
         </figure>
     );
-}
+};
 
 MediaObject.propTypes = {
     name: PropTypes.string.isRequired,

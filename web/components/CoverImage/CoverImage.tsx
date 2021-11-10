@@ -5,8 +5,15 @@ import { sanityConfig } from 'lib/config';
 import styles from './CoverImage.module.scss';
 import PropTypes from 'prop-types';
 import { sanityImagePropType } from 'utils/sanityPropType';
+import { SanityImageSource } from '@sanity/image-url/lib/types/types';
+import { FC } from 'react';
 
-function CoverImage({ title, image }) {
+interface IProp {
+    title: string;
+    image: SanityImageSource;
+}
+
+const CoverImage: FC<IProp> = ({ title, image }): JSX.Element => {
     const imageProps = useNextSanityImage(sanityConfig, image, {
         imageBuilder: () => urlForImage(image).height(1300).width(2000),
     });
@@ -26,7 +33,7 @@ function CoverImage({ title, image }) {
             )}
         </div>
     );
-}
+};
 
 CoverImage.propTypes = {
     title: PropTypes.string.isRequired,

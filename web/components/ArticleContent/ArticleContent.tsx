@@ -97,7 +97,7 @@ ArticleContent.defaultProps = {
 ArticleContent.propTypes = {
     title: PropTypes.string,
     dateString: PropTypes.string,
-    mainImage: sanityImagePropType.isRequired,
+    mainImage: sanityImagePropType,
 };
 
 export default ArticleContent;
