@@ -6,18 +6,10 @@ import styles from './CardEquipment.module.scss';
 import PropTypes from 'prop-types';
 import { useNextSanityImage } from 'next-sanity-image';
 import { sanityConfig } from 'lib/config';
-import { SanityImageSource } from '@sanity/image-url/lib/types/types';
-import { SanityDocumentStub } from '@sanity/client';
 import { sanityImagePropType } from 'utils/sanityPropType';
+import { Equipment } from 'interfaces/News';
 
-interface IProp {
-    body: SanityDocumentStub;
-    cover: SanityImageSource;
-    onClick: () => void;
-    title: string;
-}
-
-const CardEquipment: FC<IProp> = ({
+const CardEquipment: FC<Equipment> = ({
     body,
     cover,
     onClick,

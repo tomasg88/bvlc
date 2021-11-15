@@ -9,16 +9,9 @@ import Fade from 'react-reveal/Fade';
 import CardHighlighted from 'components/CardHighlighted/CardHighlighted';
 import { GetStaticProps } from 'next';
 import { FC } from 'react';
-import { ImageProps } from 'next/image';
-import { NewsType } from 'interfaces/News';
+import { HomeType } from 'interfaces/News';
 
-interface IProp {
-    recentNews: NewsType[];
-    highlighted: NewsType;
-    heroImages: ImageProps[];
-}
-
-const Home: FC<IProp> = ({ recentNews, highlighted, heroImages }) => (
+const Home: FC<HomeType> = ({ recentNews, highlighted, heroImages }) => (
     <Layout>
         <div className={styles.container}>
             <main className="w-full ">

@@ -9,15 +9,9 @@ import Fade from 'react-reveal/Fade';
 import { sanityImagePropType } from 'utils/sanityPropType';
 import PropTypes from 'prop-types';
 import useWindowSize from 'hooks/useWindowSizes';
-import { SanityImageSource } from '@sanity/image-url/lib/types/types';
+import { NewsHighlighted } from 'interfaces/News';
 
-interface IProp {
-    title: string;
-    slug: string;
-    mainImage: SanityImageSource;
-}
-
-const CardHighlighted: FC<IProp> = ({
+const CardHighlighted: FC<NewsHighlighted> = ({
     title,
     slug,
     mainImage,

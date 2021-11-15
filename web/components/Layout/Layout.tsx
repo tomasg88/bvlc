@@ -13,10 +13,10 @@ import PropTypes from 'prop-types';
 import { FC } from 'react';
 
 interface IProp {
-    title: string;
-    description: string;
-    image: string;
-    children: JSX.Element;
+    title?: string;
+    description?: string;
+    image?: string;
+    children: JSX.Element | JSX.Element[];
 }
 
 const Layout: FC<IProp> = ({
@@ -33,7 +33,7 @@ const Layout: FC<IProp> = ({
         description && description !== ''
             ? description
             : DEFAULT_PAGE_DESCRIPTION;
-    const auxImage = image ? image : DEFAULT_PAGE_IMAGE;
+    const auxImage = image ? image : DEFAULT_PAGE_URL + DEFAULT_PAGE_IMAGE;
 
     return (
         <>

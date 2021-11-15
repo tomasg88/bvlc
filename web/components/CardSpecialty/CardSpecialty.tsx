@@ -9,21 +9,15 @@ import { sanityConfig } from 'lib/config';
 import { sanityImagePropType } from 'utils/sanityPropType';
 import SanityImage from 'components/SanityImage/SanityImage';
 import Zoom from 'react-reveal/Zoom';
-import { SanityImageSource } from '@sanity/image-url/lib/types/types';
-import { SanityDocumentStub } from '@sanity/client';
+import { Specialty } from 'interfaces/News';
 
-interface IProp {
-    body: SanityDocumentStub;
-    cover: SanityImageSource;
-    onClick: () => void;
-    title: string;
-    members: {
-        _id: string;
-        image: SanityImageSource;
-    }[];
-}
-
-const CardSpecialty: FC<IProp> = ({ cover, title, body, onClick, members }) => {
+const CardSpecialty: FC<Specialty> = ({
+    cover,
+    title,
+    body,
+    onClick,
+    members,
+}) => {
     const { src, loader } = useNextSanityImage(sanityConfig, cover);
 
     return (

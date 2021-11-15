@@ -5,15 +5,12 @@ import Fade from 'react-reveal/Fade';
 import styles from './Gallery.module.scss';
 import PropTypes from 'prop-types';
 import SanityImage from 'components/SanityImage/SanityImage';
-import { SanityImageSource } from '@sanity/image-url/lib/types/types';
+import { SanityAsset } from '@sanity/image-url/lib/types/types';
 import classNames from 'classnames';
 
 interface IProp {
     onClose: () => void;
-    list: {
-        _key: string;
-        image: SanityImageSource;
-    }[];
+    list: SanityAsset[];
 }
 
 const Gallery: FC<IProp> = ({ onClose, list }): JSX.Element => {
@@ -79,7 +76,7 @@ const Gallery: FC<IProp> = ({ onClose, list }): JSX.Element => {
                     >
                         {list.map((img, index) => (
                             <div
-                                key={img._key}
+                                key={img._id}
                                 className={classNames(
                                     styles.smallImage,
                                     index === mainIndex && styles.active

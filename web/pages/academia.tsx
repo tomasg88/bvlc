@@ -3,16 +3,19 @@ import { academyQuery } from 'lib/queries';
 import Layout from 'components/Layout/Layout';
 import { ACADEMY_MEMBERS, BG_CONSTANTS } from 'utils/constants';
 import AlbumCover from 'components/AlbumCover/AlbumCover';
-import { useState } from 'react';
+import { FC, useState } from 'react';
 import Gallery from 'components/Gallery/Gallery';
 import CardNews from 'components/CardNews/CardNews';
 import HeroPage from 'components/HeroPage/HeroPage';
 import styles from 'styles/PageSidebar.module.css';
 import { MdPhotoCamera } from 'react-icons/md';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
+import { GetStaticProps } from 'next';
+import { AcademiaType } from 'interfaces/News';
+import { SanityAsset } from '@sanity/image-url/lib/types/types';
 
-export default function Academia({ news, albums }) {
-    const [selectedAlbum, setSelectedAlbum] = useState([]);
+const Academia: FC<AcademiaType> = ({ news, albums }): JSX.Element => {
+    const [selectedAlbum, setSelectedAlbum] = useState<SanityAsset[]>([]);
     return (
         <Layout title="Academia">
             {/* <div> que se oculta a partir de md: */}
@@ -62,9 +65,7 @@ export default function Academia({ news, albums }) {
                             {albums?.map((a) => (
                                 <AlbumCover
                                     key={a._id}
-                                    title={a.title}
-                                    description={a.description}
-                                    cover={a.cover}
+                                    {...a}
                                     onClick={() =>
                                         setSelectedAlbum(a.imageList)
                                     }
@@ -82,11 +83,13 @@ export default function Academia({ news, albums }) {
             </div>
         </Layout>
     );
-}
+};
 
-export async function getStaticProps() {
+export default Academia;
+
+export const getStaticProps: GetStaticProps = async () => {
     const { news, albums } = await getClient().fetch(academyQuery);
     return {
         props: { news, albums },
     };
-}
+};

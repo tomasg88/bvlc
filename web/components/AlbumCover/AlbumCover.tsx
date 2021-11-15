@@ -6,16 +6,9 @@ import PropTypes from 'prop-types';
 import { sanityImagePropType } from 'utils/sanityPropType';
 import { sanityConfig } from 'lib/config';
 import { useNextSanityImage } from 'next-sanity-image';
-import { SanityImageSource } from '@sanity/image-url/lib/types/types';
+import { Album } from 'interfaces/News';
 
-interface IProp {
-    cover: SanityImageSource;
-    title: string;
-    description: string;
-    onClick: () => void;
-}
-
-const AlbumCover: FC<IProp> = ({
+const AlbumCover: FC<Album> = ({
     cover,
     title,
     description,

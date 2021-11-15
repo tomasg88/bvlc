@@ -1,8 +1,8 @@
-import React, { FunctionComponent, ReactElement, useMemo } from "react";
-import styles from "./SiteMap.module.scss";
-import { Context } from "../context";
-import { useContext } from "react";
-import CustomLink from "../CustomLink/CustomLink";
+import React, { FunctionComponent, ReactElement, useMemo } from 'react';
+import styles from './SiteMap.module.scss';
+import { Context } from '../context';
+import { useContext } from 'react';
+import CustomLink from '../CustomLink/CustomLink';
 
 const SiteMap: FunctionComponent = (): ReactElement => {
     const [rrss] = useContext(Context);
@@ -14,7 +14,7 @@ const SiteMap: FunctionComponent = (): ReactElement => {
 
                 <CustomLink href="/academia" title="Academia" />
                 <CustomLink href="/galeria" title="Galería" />
-                {rrss.map((rs) => (
+                {rrss?.map((rs) => (
                     <CustomLink
                         key={rs._id}
                         title={`Ir a ${rs.rrss}`}
@@ -52,9 +52,9 @@ const SiteMap: FunctionComponent = (): ReactElement => {
             <div className={styles.siteMapColumn}>
                 <span className={styles.columnTitle}>Contacto</span>
                 {[
-                    "Emergencias - 0261 498 0999",
-                    "Admistración - 0261 498 6341",
-                    "info@bomberoslujanmza.com.ar",
+                    'Emergencias - 0261 498 0999',
+                    'Admistración - 0261 498 6341',
+                    'info@bomberoslujanmza.com.ar',
                 ].map((title) => (
                     <CustomLink key={title} href="/contacto" title={title} />
                 ))}

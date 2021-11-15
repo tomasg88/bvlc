@@ -1,3 +1,4 @@
+import { ActiveForcePerson, ComisionPerson } from 'interfaces/News';
 import { find, orderBy, groupBy } from 'lodash';
 
 const positions = [
@@ -64,7 +65,15 @@ const orderPositions = {
     'cuentas-suplente': 10,
 };
 
-export default function groupAndOrder(listName, list) {
+type MembersList = {
+    orderedList: ActiveForcePerson[] | ComisionPerson[];
+    getTranslation: (K: string) => string;
+}
+
+export default function groupAndOrder(
+    listName: 'position' | 'rank', 
+    list: ActiveForcePerson[] | ComisionPerson[]
+): MembersList {
     // Funcion para traducir valores
     const getTranslatedPositions = (value) => find(positions, { value })?.title;
     const getTranslatedRanks = (value) => find(ranks, { value })?.title;

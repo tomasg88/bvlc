@@ -1,24 +1,24 @@
-import React from 'react';
+import React, { FC } from 'react';
 import Layout from 'components/Layout/Layout';
-import { activeForceQuery } from 'lib/queries';
-import { getClient } from 'lib/sanity.server';
-import MediaObject from 'components/MediaObject/MediaObject';
 import HeroInstitucional from 'components/HeroInstitucional/HeroInstitucional';
+import { getClient } from 'lib/sanity.server';
+import { leadershipQuery } from 'lib/queries';
+import MediaObject from 'components/MediaObject/MediaObject';
 import { BG_CONSTANTS } from 'utils/constants';
 import Fade from 'react-reveal/Fade';
 import groupAndOrder from 'utils/list';
+import { ComisionType } from 'interfaces/News';
+import { GetStaticProps } from 'next';
 
-export default function CuerpoActivo({ list }) {
-    const { orderedList, getTranslation } = groupAndOrder('rank', list);
-    const addSubtitle = (value) =>
-        (value === 'comandante-general' && ' - Jefe del Cuerpo') ||
-        (value === 'comandante' && ' - 2do. Jefe del Cuerpo');
+const ComisionDirectiva: FC<ComisionType> = ({ list }): JSX.Element => {
+    const { orderedList, getTranslation } = groupAndOrder('position', list);
+
     return (
-        <Layout title="Cuerpo Activo">
+        <Layout title="Comisión Directiva">
             <div className="min-h-screen">
                 <HeroInstitucional
-                    title="Cuerpo Activo"
-                    image={BG_CONSTANTS.team}
+                    title="Comisión Directiva"
+                    image={BG_CONSTANTS.index_1}
                 />
                 <div
                     id="integrantes"
@@ -27,13 +27,10 @@ export default function CuerpoActivo({ list }) {
                     {Object.keys(orderedList).map((key) => {
                         return (
                             <div key={key}>
-                                <div className="flex flex-col items-center max-w-6xl pt-6 pb-6 mx-auto font-sans border-b-2 border-yellow-400 md:flex-row">
+                                <div className="flex flex-col items-center max-w-6xl py-6 mx-auto font-sans border-b-2 border-yellow-400 md:flex-row">
                                     <Fade cascade>
                                         <h2 className="text-4xl font-light text-gray-900 ">
                                             {getTranslation(key)}
-                                            <span className="text-3xl text-gray-500">
-                                                {addSubtitle(key) || ''}
-                                            </span>
                                         </h2>
                                     </Fade>
                                 </div>
@@ -57,14 +54,15 @@ export default function CuerpoActivo({ list }) {
             </div>
         </Layout>
     );
-}
+};
 
-export async function getStaticProps() {
-    const list = await getClient(false).fetch(activeForceQuery);
+export default ComisionDirectiva;
 
+export const getStaticProps: GetStaticProps = async () => {
+    const list: ComisionType[] = await getClient(false).fetch(leadershipQuery);
     return {
         props: {
             list,
         },
     };
-}
+};

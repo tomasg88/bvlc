@@ -13,9 +13,9 @@ import { SanityDocumentStub } from '@sanity/client';
 import { sanityImagePropType } from 'utils/sanityPropType';
 
 interface IProp {
-    title: string;
-    mainImage: SanityImageSource;
-    dateString: string;
+    title?: string;
+    mainImage?: SanityImageSource;
+    dateString?: string;
     body: SanityDocumentStub;
 }
 

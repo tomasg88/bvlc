@@ -5,18 +5,10 @@ import styles from './CardNews.module.scss';
 import Fade from 'react-reveal/Fade';
 import PropTypes from 'prop-types';
 import { sanityImagePropType } from 'utils/sanityPropType';
-import { SanityImageSource } from '@sanity/image-url/lib/types/types';
 import { FC } from 'react';
+import { News } from 'interfaces/News';
 
-interface IProp {
-    title: string;
-    mainImage: SanityImageSource;
-    excerpt: string;
-    slug: string;
-    publishedAt: string;
-}
-
-const CardNews: FC<IProp> = ({
+const CardNews: FC<News> = ({
     title,
     mainImage,
     excerpt,

@@ -1,13 +1,13 @@
-import BackgroundImage from "../BackgroundImage/BackgroundImage";
-import { BG_CONSTANTS } from "utils/constants";
-import styles from "./HeroPage.module.scss";
-import Fade from "react-reveal/Fade";
-import PropTypes from "prop-types";
-import { FunctionComponent, ReactElement } from "react";
+import BackgroundImage from '../BackgroundImage/BackgroundImage';
+import { BG_CONSTANTS } from 'utils/constants';
+import styles from './HeroPage.module.scss';
+import Fade from 'react-reveal/Fade';
+import PropTypes from 'prop-types';
+import { FunctionComponent, ReactElement } from 'react';
 
 interface IProps {
     title: string;
-    image: string;
+    image?: string;
 }
 
 const HeroPage: FunctionComponent<IProps> = ({
@@ -26,7 +26,7 @@ const HeroPage: FunctionComponent<IProps> = ({
 );
 
 HeroPage.defaultProps = {
-    title: "",
+    title: '',
     image: BG_CONSTANTS.team,
 };
 

@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { FC } from 'react';
 import Layout from 'components/Layout/Layout';
 import { getClient } from 'lib/sanity.server';
 import { allPostQuery } from 'lib/queries';
 import HeroNews from 'components/HeroNews/HeroNews';
 import CardNewsHorizontal from 'components/CardNewsHorizontal/CardNewsHorizontal';
 import styles from 'styles/PageSidebar.module.css';
+import { News, NewsType } from 'interfaces/News';
+import { GetStaticProps } from 'next';
 
-export default function News({ list }) {
+const Noticias: FC<NewsType> = ({ list }): JSX.Element => {
     return (
         <Layout title="Noticias">
             <div className="pb-24 bg-gray-100">
@@ -35,11 +37,13 @@ export default function News({ list }) {
             </div>
         </Layout>
     );
-}
+};
 
-export async function getStaticProps() {
-    const list = await getClient(false).fetch(allPostQuery);
+export default Noticias;
+
+export const getStaticProps: GetStaticProps = async () => {
+    const list: News[] = await getClient(false).fetch(allPostQuery);
     return {
         props: { list },
     };
-}
+};
