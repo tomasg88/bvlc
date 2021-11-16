@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { FC, useState } from 'react';
 import Layout from 'components/Layout/Layout';
 import { getClient } from 'lib/sanity.server';
 import { albumsQuery } from 'lib/queries';
@@ -6,8 +6,10 @@ import Gallery from 'components/Gallery/Gallery';
 import AlbumCover from 'components/AlbumCover/AlbumCover';
 import HeroPage from 'components/HeroPage/HeroPage';
 import Fade from 'react-reveal/Fade';
+import { GetStaticProps } from 'next';
+import { Album, GaleriaType } from 'interfaces/News';
 
-export default function Galeria({ albums }) {
+const Galeria: FC<GaleriaType> = ({ albums }): JSX.Element => {
     const [selectedAlbum, setSelectedAlbum] = useState([]);
     return (
         <Layout title="Galería">
@@ -23,9 +25,7 @@ export default function Galeria({ albums }) {
                         {albums?.map((a) => (
                             <AlbumCover
                                 key={a._id}
-                                title={a.title}
-                                description={a.description}
-                                cover={a.cover}
+                                {...a}
                                 onClick={() => setSelectedAlbum(a.imageList)}
                             />
                         ))}
@@ -40,12 +40,14 @@ export default function Galeria({ albums }) {
             </div>
         </Layout>
     );
-}
+};
 
-export async function getStaticProps() {
-    const albums = await getClient().fetch(albumsQuery);
+export default Galeria;
+
+export const getStaticProps: GetStaticProps = async () => {
+    const albums: Album = await getClient().fetch(albumsQuery);
 
     return {
         props: { albums },
     };
-}
+};

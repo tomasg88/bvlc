@@ -4,10 +4,10 @@ import { postQuery, postSlugsQuery } from 'lib/queries';
 import { urlForImage } from 'lib/sanity';
 import ArticleContent from 'components/ArticleContent/ArticleContent';
 import CardNewsHorizontal from 'components/CardNewsHorizontal/CardNewsHorizontal';
+import { FC } from 'react';
+import { SlugType } from 'interfaces/News';
 
-export default function Article(props) {
-    const { article, moreArticles } = props.data;
-
+const Article: FC<SlugType> = ({ article, moreArticles }): JSX.Element => {
     return (
         <Layout
             title={article.title}
@@ -24,7 +24,7 @@ export default function Article(props) {
                         <ArticleContent
                             title={article.title}
                             mainImage={article.mainImage}
-                            dateString={article.publishedAt}
+                            publishedAt={article.publishedAt}
                             body={article.body}
                         />
                     </article>
@@ -44,7 +44,9 @@ export default function Article(props) {
             </div>
         </Layout>
     );
-}
+};
+
+export default Article;
 
 export async function getStaticProps({ params, preview = false }) {
     const { post, morePosts } = await getClient(preview).fetch(postQuery, {
@@ -53,10 +55,8 @@ export async function getStaticProps({ params, preview = false }) {
     return {
         props: {
             preview,
-            data: {
-                article: post,
-                moreArticles: morePosts,
-            },
+            article: post,
+            moreArticles: morePosts,
         },
     };
 }

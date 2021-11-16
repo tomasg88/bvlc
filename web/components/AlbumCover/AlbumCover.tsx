@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import Image from 'next/image';
 import { MdPhotoCamera } from 'react-icons/md';
 import styles from './AlbumCover.module.scss';
@@ -6,8 +6,14 @@ import PropTypes from 'prop-types';
 import { sanityImagePropType } from 'utils/sanityPropType';
 import { sanityConfig } from 'lib/config';
 import { useNextSanityImage } from 'next-sanity-image';
+import { Album } from 'interfaces/News';
 
-const AlbumCover = ({ cover, title, description, onClick }) => {
+const AlbumCover: FC<Album> = ({
+    cover,
+    title,
+    description,
+    onClick,
+}): JSX.Element => {
     const { src, loader } = useNextSanityImage(sanityConfig, cover);
 
     return (

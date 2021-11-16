@@ -1,16 +1,19 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { FC, useCallback, useEffect, useState } from 'react';
 import { MdClose } from 'react-icons/md';
-import { urlForImage } from 'lib/sanity';
 import { AiOutlineArrowRight, AiOutlineArrowLeft } from 'react-icons/ai';
 import Fade from 'react-reveal/Fade';
-import Slide from 'react-reveal/Slide';
 import styles from './Gallery.module.scss';
 import PropTypes from 'prop-types';
-import { sanityImagePropType } from 'utils/sanityPropType';
 import SanityImage from 'components/SanityImage/SanityImage';
+import { SanityAsset } from '@sanity/image-url/lib/types/types';
 import classNames from 'classnames';
 
-function Gallery({ onClose, list }) {
+interface IProp {
+    onClose: () => void;
+    list: SanityAsset[];
+}
+
+const Gallery: FC<IProp> = ({ onClose, list }): JSX.Element => {
     const [mainIndex, setMainIndex] = useState(null);
     useEffect(() => {
         if (list && list.length > 0) {
@@ -81,8 +84,8 @@ function Gallery({ onClose, list }) {
                             >
                                 <SanityImage
                                     src={img}
-                                    width={48}
-                                    height={48}
+                                    width={60}
+                                    height={60}
                                     layout={'fixed'}
                                     objectFit="cover"
                                     onClick={() => setMainIndex(index)}
@@ -95,11 +98,10 @@ function Gallery({ onClose, list }) {
             </div>
         </Fade>
     );
-}
+};
 
 Gallery.propTypes = {
     onClose: PropTypes.func.isRequired,
-    list: PropTypes.arrayOf(sanityImagePropType.isRequired),
 };
 
 export default Gallery;

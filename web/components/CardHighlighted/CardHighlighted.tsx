@@ -1,5 +1,5 @@
 import { urlForImage } from 'lib/sanity';
-import React from 'react';
+import React, { FC } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useNextSanityImage } from 'next-sanity-image';
@@ -8,9 +8,10 @@ import styles from './CardHighlighted.module.scss';
 import Fade from 'react-reveal/Fade';
 import { sanityImagePropType } from 'utils/sanityPropType';
 import PropTypes from 'prop-types';
-import useWindowSize from '../../hooks/useWindowSizes';
+import useWindowSize from 'hooks/useWindowSizes';
+import { News } from 'interfaces/News';
 
-function CardHighlighted({ title, slug, mainImage }) {
+const CardHighlighted: FC<News> = ({ title, slug, mainImage }): JSX.Element => {
     const { width, isMobile } = useWindowSize();
     const imageHeight = isMobile || width <= 500 ? 1000 : 300;
 
@@ -34,7 +35,7 @@ function CardHighlighted({ title, slug, mainImage }) {
             </div>
         </Fade>
     );
-}
+};
 
 CardHighlighted.propTypes = {
     title: PropTypes.string.isRequired,

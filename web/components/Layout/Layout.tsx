@@ -10,8 +10,21 @@ import {
     DEFAULT_PAGE_IMAGE,
 } from 'utils/constants';
 import PropTypes from 'prop-types';
+import { FC } from 'react';
 
-function Layout({ title, description, image, children }) {
+interface IProp {
+    title?: string;
+    description?: string;
+    image?: string;
+    children: JSX.Element | JSX.Element[];
+}
+
+const Layout: FC<IProp> = ({
+    title,
+    description,
+    image,
+    children,
+}): JSX.Element => {
     const auxTitle =
         title && title !== ''
             ? `${title} | ${DEFAULT_PAGE_TITLE}`
@@ -20,7 +33,7 @@ function Layout({ title, description, image, children }) {
         description && description !== ''
             ? description
             : DEFAULT_PAGE_DESCRIPTION;
-    const auxImage = image ? image : DEFAULT_PAGE_IMAGE;
+    const auxImage = image ? image : DEFAULT_PAGE_URL + DEFAULT_PAGE_IMAGE;
 
     return (
         <>
@@ -82,7 +95,7 @@ function Layout({ title, description, image, children }) {
             <Footer />
         </>
     );
-}
+};
 
 Layout.defaultProps = {
     title: '',

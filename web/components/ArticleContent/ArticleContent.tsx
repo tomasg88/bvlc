@@ -7,9 +7,17 @@ import { SRLWrapper } from 'simple-react-lightbox';
 import PropTypes from 'prop-types';
 import getYouTubeID from 'get-youtube-id';
 import YouTube from 'react-youtube';
+import { FC } from 'react';
+import { sanityImagePropType } from 'utils/sanityPropType';
+import { NewsBody } from 'interfaces/News';
 
-function ArticleContent({ title, mainImage, dateString, body }) {
-    const date = parseISO(dateString);
+const ArticleContent: FC<NewsBody> = ({
+    title,
+    mainImage,
+    publishedAt,
+    body,
+}): JSX.Element => {
+    const date = parseISO(publishedAt);
 
     const options = {
         settings: {
@@ -33,17 +41,17 @@ function ArticleContent({ title, mainImage, dateString, body }) {
 
     return (
         <>
-            {title && mainImage && dateString && (
+            {title && mainImage && publishedAt && (
                 <div className={styles.heroArticle}>
                     <div className={styles.heroImageContainer}>
                         <CoverImage title={title} image={mainImage} />
                     </div>
                     <div className={styles.heroBox}>
                         <h1 className={styles.heroText}>{title}</h1>
-                        {dateString && (
+                        {publishedAt && (
                             <div className={styles.publishedAt}>
                                 Publicado el{' '}
-                                <time dateTime={dateString}>
+                                <time dateTime={publishedAt}>
                                     {format(date, 'do LLLL, yyyy', {
                                         locale: es,
                                     })}
@@ -71,16 +79,17 @@ function ArticleContent({ title, mainImage, dateString, body }) {
             </div>
         </>
     );
-}
+};
 
 ArticleContent.defaultProps = {
     title: '',
-    dateString: '',
+    publishedAt: '',
 };
 
 ArticleContent.propTypes = {
     title: PropTypes.string,
-    dateString: PropTypes.string,
+    publishedAt: PropTypes.string,
+    mainImage: sanityImagePropType,
 };
 
 export default ArticleContent;

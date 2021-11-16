@@ -1,16 +1,26 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document';
+import Document, {
+    Html,
+    Head,
+    Main,
+    NextScript,
+    DocumentInitialProps,
+    DocumentContext,
+} from 'next/document';
 import {
     GoogleScriptHeaderTag,
     GoogleNoScriptBodyTag,
 } from 'components/GoogleScripts/GoogleScripts';
+import { ReactElement } from 'react';
 
 class HtmlDocument extends Document {
-    static async getInitialProps(ctx) {
+    static async getInitialProps(
+        ctx: DocumentContext
+    ): Promise<DocumentInitialProps> {
         const initialProps = await Document.getInitialProps(ctx);
         return { ...initialProps };
     }
 
-    render() {
+    render(): ReactElement {
         return (
             <Html lang="es">
                 <Head>

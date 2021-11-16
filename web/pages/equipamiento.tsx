@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { FC, useState } from 'react';
 import CardEquipment from 'components/CardEquipment/CardEquipment';
 import Gallery from 'components/Gallery/Gallery';
 import Layout from 'components/Layout/Layout';
@@ -6,8 +6,10 @@ import { equipmentQuery } from 'lib/queries';
 import { getClient } from 'lib/sanity.server';
 import HeroInstitucional from 'components/HeroInstitucional/HeroInstitucional';
 import { BG_CONSTANTS } from 'utils/constants';
+import { GetStaticProps } from 'next';
+import { EquipmentType } from 'interfaces/News';
 
-export default function Equipamiento({ equipment }) {
+const Equipamiento: FC<EquipmentType> = ({ equipment }): JSX.Element => {
     const [selected, setSelected] = useState(null);
 
     return (
@@ -39,13 +41,15 @@ export default function Equipamiento({ equipment }) {
             </div>
         </Layout>
     );
-}
+};
 
-export async function getStaticProps() {
+export default Equipamiento;
+
+export const getStaticProps: GetStaticProps = async () => {
     const equipment = await getClient().fetch(equipmentQuery);
     return {
         props: {
             equipment,
         },
     };
-}
+};
