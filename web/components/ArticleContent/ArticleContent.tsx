@@ -8,24 +8,16 @@ import PropTypes from 'prop-types';
 import getYouTubeID from 'get-youtube-id';
 import YouTube from 'react-youtube';
 import { FC } from 'react';
-import { SanityImageSource } from '@sanity/image-url/lib/types/types';
-import { SanityDocumentStub } from '@sanity/client';
 import { sanityImagePropType } from 'utils/sanityPropType';
+import { NewsBody } from 'interfaces/News';
 
-interface IProp {
-    title?: string;
-    mainImage?: SanityImageSource;
-    dateString?: string;
-    body: SanityDocumentStub;
-}
-
-const ArticleContent: FC<IProp> = ({
+const ArticleContent: FC<NewsBody> = ({
     title,
     mainImage,
-    dateString,
+    publishedAt,
     body,
 }): JSX.Element => {
-    const date = parseISO(dateString);
+    const date = parseISO(publishedAt);
 
     const options = {
         settings: {
@@ -49,17 +41,17 @@ const ArticleContent: FC<IProp> = ({
 
     return (
         <>
-            {title && mainImage && dateString && (
+            {title && mainImage && publishedAt && (
                 <div className={styles.heroArticle}>
                     <div className={styles.heroImageContainer}>
                         <CoverImage title={title} image={mainImage} />
                     </div>
                     <div className={styles.heroBox}>
                         <h1 className={styles.heroText}>{title}</h1>
-                        {dateString && (
+                        {publishedAt && (
                             <div className={styles.publishedAt}>
                                 Publicado el{' '}
-                                <time dateTime={dateString}>
+                                <time dateTime={publishedAt}>
                                     {format(date, 'do LLLL, yyyy', {
                                         locale: es,
                                     })}
@@ -91,12 +83,12 @@ const ArticleContent: FC<IProp> = ({
 
 ArticleContent.defaultProps = {
     title: '',
-    dateString: '',
+    publishedAt: '',
 };
 
 ArticleContent.propTypes = {
     title: PropTypes.string,
-    dateString: PropTypes.string,
+    publishedAt: PropTypes.string,
     mainImage: sanityImagePropType,
 };
 

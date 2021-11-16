@@ -24,7 +24,7 @@ const Article: FC<SlugType> = ({ article, moreArticles }): JSX.Element => {
                         <ArticleContent
                             title={article.title}
                             mainImage={article.mainImage}
-                            dateString={article.publishedAt}
+                            publishedAt={article.publishedAt}
                             body={article.body}
                         />
                     </article>

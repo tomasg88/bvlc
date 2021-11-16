@@ -9,13 +9,9 @@ import Fade from 'react-reveal/Fade';
 import { sanityImagePropType } from 'utils/sanityPropType';
 import PropTypes from 'prop-types';
 import useWindowSize from 'hooks/useWindowSizes';
-import { NewsHighlighted } from 'interfaces/News';
+import { News } from 'interfaces/News';
 
-const CardHighlighted: FC<NewsHighlighted> = ({
-    title,
-    slug,
-    mainImage,
-}): JSX.Element => {
+const CardHighlighted: FC<News> = ({ title, slug, mainImage }): JSX.Element => {
     const { width, isMobile } = useWindowSize();
     const imageHeight = isMobile || width <= 500 ? 1000 : 300;
 

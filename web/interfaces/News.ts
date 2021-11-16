@@ -2,14 +2,24 @@ import { SanityDocumentStub } from '@sanity/client';
 import { SanityImageSource, SanityAsset } from '@sanity/image-url/lib/types/types';
 import { ImageProps } from 'next/image';
 
-export interface News {
-    _id: string;
+export interface IButton {
+    text: string;
+    href: string;
+    target?: '_blank' | '_self' | '_parent' | '_top';
+    onClick?: () => void;
+}
+
+export interface NewsBody {
     body: SanityDocumentStub;
+    mainImage?: SanityImageSource;
+    publishedAt?: string;
+    title?: string;
+}
+
+export interface News extends NewsBody {
+    _id: string;
     excerpt: string;
-    mainImage: SanityImageSource;
-    publishedAt: string;
     slug: string;
-    title: string;
 }
 
 export interface Album {
@@ -22,7 +32,7 @@ export interface Album {
 }
 
 export interface Contact {
-    _id: string;
+    _id?: string;
     title: string;
     value: string;
 }
@@ -32,12 +42,6 @@ export interface IGallery {
         _key: string;
         image: SanityImageSource;
     }[];
-}
-
-export interface NewsHighlighted {
-    title: string;
-    slug: string;
-    mainImage: SanityImageSource;
 }
 
 export interface ComisionPerson {
@@ -89,12 +93,7 @@ export interface SlugType {
 }
 
 export interface Page {
-    pages: {
-        title?: string;
-        mainImage?: SanityImageSource;
-        dateString?: string;
-        body: SanityDocumentStub;
-    }
+    pages: NewsBody;
 }
 
 export interface AcademiaType {

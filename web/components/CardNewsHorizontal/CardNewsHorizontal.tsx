@@ -4,18 +4,10 @@ import CoverImage from 'components/CoverImage/CoverImage';
 import styles from './CardNewsHorizontal.module.scss';
 import PropTypes from 'prop-types';
 import { sanityImagePropType } from 'utils/sanityPropType';
-import { SanityImageSource } from '@sanity/image-url/lib/types/types';
 import { FC } from 'react';
+import { News } from 'interfaces/News';
 
-interface IProp {
-    title: string;
-    mainImage: SanityImageSource;
-    excerpt: string;
-    slug: string;
-    publishedAt: string;
-}
-
-const CardNewsHorizontal: FC<IProp> = ({
+const CardNewsHorizontal: FC<News> = ({
     title,
     mainImage,
     excerpt,
