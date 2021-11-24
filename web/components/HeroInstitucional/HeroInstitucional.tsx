@@ -1,10 +1,10 @@
-import BackgroundImage from "../BackgroundImage/BackgroundImage";
-import { BG_CONSTANTS } from "utils/constants";
-import NavInstitucional from "../NavInstitucional/NavInstitucional";
-import styles from "./HeroInstitucional.module.scss";
-import Fade from "react-reveal/Fade";
-import PropTypes from "prop-types";
-import { FunctionComponent, ReactElement } from "react";
+import BackgroundImage from '../BackgroundImage/BackgroundImage';
+import { BG_CONSTANTS } from 'utils/constants';
+import NavInstitucional from '../NavInstitucional/NavInstitucional';
+import styles from './HeroInstitucional.module.scss';
+import Fade from 'react-reveal/Fade';
+import PropTypes from 'prop-types';
+import { FunctionComponent, ReactElement } from 'react';
 
 interface IProps {
     title?: string;
@@ -15,7 +15,7 @@ const HeroInstitucional: FunctionComponent<IProps> = ({
     title,
     image,
 }): ReactElement => (
-    <div>
+    <div className={styles.root}>
         <div className={styles.container}>
             <Fade cascade>
                 <h1 className={styles.title}>{title}</h1>

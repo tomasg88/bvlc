@@ -29,7 +29,7 @@ export const GoogleNoScriptBodyTag: FC = (): ReactElement => (
         dangerouslySetInnerHTML={{
             __html: `
             <iframe 
-                src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXX"
+                src="https://www.googletagmanager.com/ns.html?id=${GA_TRACKING_ID}"
                 height="0" width="0" style="display:none;visibility:hidden"
             ></iframe>`,
         }}

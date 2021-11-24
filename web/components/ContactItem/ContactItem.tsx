@@ -1,15 +1,8 @@
-import { FunctionComponent, ReactElement } from "react";
-import styles from "./ContactItem.module.scss";
+import { Contact } from 'interfaces/News';
+import { FC } from 'react';
+import styles from './ContactItem.module.scss';
 
-interface IProps {
-    title: string;
-    value: string;
-}
-
-const ContactItem: FunctionComponent<IProps> = ({
-    title,
-    value,
-}): ReactElement => (
+const ContactItem: FC<Contact> = ({ title, value }): JSX.Element => (
     <div className={styles.root}>
         <dl>
             <div className={styles.dataContainer}>

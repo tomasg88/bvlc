@@ -2,13 +2,15 @@
     @apply relative inline-block text-left;
 
     .menuButtonContainer {
-        @apply rounded-md shadow-sm;
-
         .menuButton {
             @apply inline-flex justify-center w-full px-5 py-2 font-sans text-sm font-bold text-white uppercase border-b-4 border-transparent outline-none ring-0 lg:text-lg hover:border-white;
 
             .arrow {
-                @apply w-5 h-5 ml-2 -mr-1 transform lg:translate-y-1;
+                @apply w-5 h-5 ml-2 -mr-1 transform lg:translate-y-1 transition-all duration-200;
+
+                &.open {
+                    @apply rotate-180;
+                }
             }
         }
     }

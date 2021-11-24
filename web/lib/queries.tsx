@@ -4,6 +4,7 @@ import {
     generalFields,
     pageFields,
     postFields,
+    specialtyFields,
 } from './fields';
 
 /**
@@ -16,19 +17,20 @@ export const indexQuery = `
     "recentNews": *[_type == "post" && (!isHighlighted || !defined(isHighlighted))] | order(publishedAt desc)[0..5] { ${postFields} },
     "highlighted": *[_type == "post" && isHighlighted][0] { ${postFields} },
     "heroImages": *[_type == "album" && title == "IMAGENES_HOME"][0] { ${albumFields} }
-}`;
+}` as string;
 
 /**
  * content for specific pages
  */
 export const pagesQuery = `
     *[_type == "page" && slug.current == $slug][0] { ${pageFields} }
-`;
+` as string;
 
 /**
  * all news, latest first
  */
-export const allPostQuery = ` *[_type == "post"] | order(publishedAt desc) { ${postFields} }`;
+export const allPostQuery =
+    ` *[_type == "post"] | order(publishedAt desc) { ${postFields} }` as string;
 
 /**
  * post: find news, and restrict to one
@@ -44,56 +46,60 @@ export const postQuery = `
     content,
     ${postFields}
   }
-}`;
+}` as string;
 
 /**
  * all news with a defined slug
  */
 export const postSlugsQuery = `
 *[_type == "post" && defined(slug.current)][].slug.current
-`;
+` as string;
 
 export const postBySlugQuery = `
   *[_type == "post" && slug.current == $slug][0] {
     ${postFields}
   }
-`;
+` as string;
 
 export const academyQuery = `
 {
   "albums": *[_type == "album" && "Academia" in categories[]->.title] { ${albumFields} },
   "news": *[_type == "post" && "Academia" in categories[]->.title] | order(publishedAt desc) { ${postFields} }
 }
-`;
+` as string;
 
-export const activeForceQuery = ` *[_type == "activeForce"] `;
+export const activeForceQuery = ` *[_type == "activeForce"] ` as string;
 
-export const leadershipQuery = ` *[_type == "leadership"] `;
+export const leadershipQuery = ` *[_type == "leadership"] ` as string;
 
-export const equipmentQuery = `*[_type == "equipment" ] { ${equipmentFields} }`;
+export const equipmentQuery =
+    `*[_type == "equipment" ] { ${equipmentFields} }` as string;
+
+export const specialtyQuery =
+    `*[_type == "specialty" ] { ${specialtyFields} }` as string;
 
 export const albumsQuery = `
   *[_type == "album" && title != "IMAGENES_HOME"] | order(_createdAt desc) { ${albumFields} }
-`;
+` as string;
 
 export const communityPostQuery = `
 {
   "albums": *[_type == "album" && "Comunidad" in categories[]->.title] { ${albumFields} },
   "news": *[_type == "post" && "Comunidad" in categories[]->.title] { ${postFields} }
 }
-`;
+` as string;
 export const equipmentPostQuery = `
 {
   "albums": *[_type == "album" && "Equipamiento" in categories[]->.title] { ${albumFields} },
   "news": *[_type == "post" && "Equipamiento" in categories[]->.title] { ${postFields} }
 }
-`;
+` as string;
 export const contributionPostQuery = `
 {
   "albums": *[_type == "album" && "Contribuciones" in categories[]->.title] { ${albumFields} },
   "news": *[_type == "post" && "Contribuciones" in categories[]->.title] { ${postFields} }
 }
-`;
+` as string;
 
 export const contactDataQuery = `
 {
@@ -101,6 +107,7 @@ export const contactDataQuery = `
   "mails": *[_type == "general" && type == 'Email' ] { ${generalFields} },
   "rrss": *[_type == "general" && type == 'Red Social' ] { ${generalFields} } 
 }
-`;
+` as string;
 
-export const rrssQuery = `*[_type == "general" && type == 'Red Social' ] { ${generalFields} }`;
+export const rrssQuery =
+    `*[_type == "general" && type == 'Red Social' ] { ${generalFields} }` as string;

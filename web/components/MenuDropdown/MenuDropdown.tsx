@@ -1,8 +1,9 @@
-import { Menu, Transition } from "@headlessui/react";
-import Link from "next/link";
-import styles from "./MenuDropdown.module.scss";
-import PropTypes from "prop-types";
-import { FunctionComponent, ReactElement } from "react";
+import { Menu, Transition } from '@headlessui/react';
+import Link from 'next/link';
+import styles from './MenuDropdown.module.scss';
+import PropTypes from 'prop-types';
+import { FunctionComponent, ReactElement } from 'react';
+import classNames from 'classnames';
 
 interface IProps {
     title: string;
@@ -10,24 +11,28 @@ interface IProps {
 
 const ROUTES = [
     {
-        href: "/institucional",
-        title: "Historia",
+        href: '/institucional',
+        title: 'Historia',
     },
     {
-        href: "/libro-amigos",
-        title: "2 Amigos por un Sueño",
+        href: '/libro-amigos',
+        title: '2 Amigos por un Sueño',
     },
     {
-        href: "/comision-directiva",
-        title: "Comisión Directiva",
+        href: '/comision-directiva',
+        title: 'Comisión Directiva',
     },
     {
-        href: "/cuerpo-activo",
-        title: "Cuerpo Activo",
+        href: '/cuerpo-activo',
+        title: 'Cuerpo Activo',
     },
     {
-        href: "/equipamiento",
-        title: "Equipamiento",
+        href: '/equipamiento',
+        title: 'Equipamiento',
+    },
+    {
+        href: '/especialidades',
+        title: 'Especialidades',
     },
 ];
 
@@ -41,7 +46,10 @@ const MenuDropdown: FunctionComponent<IProps> = ({ title }): ReactElement => {
                             <Menu.Button className={styles.menuButton}>
                                 <span>{title}</span>
                                 <svg
-                                    className={styles.arrow}
+                                    className={classNames(
+                                        styles.arrow,
+                                        open && styles.open
+                                    )}
                                     aria-hidden="true"
                                     viewBox="0 0 20 20"
                                     fill="currentColor"
@@ -75,8 +83,8 @@ const MenuDropdown: FunctionComponent<IProps> = ({ title }): ReactElement => {
                                                     <a
                                                         className={`${
                                                             active
-                                                                ? "bg-red-500 text-gray-100"
-                                                                : "text-white"
+                                                                ? 'bg-red-500 text-gray-100'
+                                                                : 'text-white'
                                                         } ${styles.option}`}
                                                     >
                                                         {option.title}

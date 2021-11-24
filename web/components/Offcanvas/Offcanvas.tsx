@@ -3,9 +3,9 @@ import React, {
     useCallback,
     FunctionComponent,
     ReactElement,
-} from "react";
-import { slide as Menu } from "react-burger-menu";
-import OffcanvasNavigation from "../OffcanvasNavigation/OffcanvasNavigation";
+} from 'react';
+import { slide as Menu } from 'react-burger-menu';
+import OffcanvasNavigation from '../OffcanvasNavigation/OffcanvasNavigation';
 
 const Offcanvas: FunctionComponent = (): ReactElement => {
     const [openMenu, setOpenMenu] = useState<boolean>(false);
@@ -20,7 +20,7 @@ const Offcanvas: FunctionComponent = (): ReactElement => {
 
     return (
         <Menu
-            width={240}
+            width={260}
             right
             isOpen={openMenu}
             onStateChange={handleStateChange}
