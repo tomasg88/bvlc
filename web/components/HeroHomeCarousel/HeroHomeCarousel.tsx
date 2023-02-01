@@ -6,27 +6,28 @@ import { DEFAULT_PAGE_TITLE } from 'utils/constants';
 import PropTypes from 'prop-types';
 import CarouselUI from './CarouselUI/CarouselUI';
 import styles from './HeroHomeCarousel.module.scss';
-import { FunctionComponent, ReactElement } from 'react';
+import { FunctionComponent, ReactElement, ReactNode } from 'react';
 import { sanityImagePropType } from 'utils/sanityPropType';
 import SanityImage from 'components/SanityImage/SanityImage';
 
-interface IProps {
+interface HeroHomeCarouselProps {
     arrows: boolean;
     images: any[];
 }
 
-interface ICarouselProps {
+interface CarouselProps {
+    children: ReactNode;
     defaultWait: number;
     maxTurns: number;
 }
 
-const HeroHomeCarousel: FunctionComponent<IProps> = ({
+const HeroHomeCarousel: FunctionComponent<HeroHomeCarouselProps> = ({
     arrows,
     images,
 }): ReactElement => {
     const Carousel = makeCarousel((props) => (
         <CarouselUI arrows={arrows} {...props} />
-    )) as FunctionComponent<ICarouselProps>;
+    )) as FunctionComponent<CarouselProps>;
 
     return (
         <div className={styles.root}>
@@ -54,7 +55,7 @@ const HeroHomeCarousel: FunctionComponent<IProps> = ({
             <div className={styles.carouselContainer}>
                 <Carousel
                     defaultWait={4000}
-                    maxTurns={99} /*wait for 1000 milliseconds*/
+                    maxTurns={99} /* wait for 1000 milliseconds */
                 >
                     {images.map((img) => (
                         <Fade key={img._key}>
