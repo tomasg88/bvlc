@@ -1,10 +1,10 @@
 import {
-    albumFields,
-    equipmentFields,
-    generalFields,
-    pageFields,
-    postFields,
-    specialtyFields,
+  albumFields,
+  equipmentFields,
+  generalFields,
+  pageFields,
+  postFields,
+  specialtyFields,
 } from './fields';
 
 /**
@@ -30,7 +30,7 @@ export const pagesQuery = `
  * all news, latest first
  */
 export const allPostQuery =
-    ` *[_type == "post"] | order(publishedAt desc) { ${postFields} }` as string;
+  ` *[_type == "post"] | order(publishedAt desc) { ${postFields} }` as string;
 
 /**
  * post: find news, and restrict to one
@@ -72,11 +72,9 @@ export const activeForceQuery = ` *[_type == "activeForce"] ` as string;
 
 export const leadershipQuery = ` *[_type == "leadership"] ` as string;
 
-export const equipmentQuery =
-    `*[_type == "equipment" ] { ${equipmentFields} }` as string;
+export const equipmentQuery = `*[_type == "equipment" ] { ${equipmentFields} }` as string;
 
-export const specialtyQuery =
-    `*[_type == "specialty" ] { ${specialtyFields} }` as string;
+export const specialtyQuery = `*[_type == "specialty" ] { ${specialtyFields} }` as string;
 
 export const albumsQuery = `
   *[_type == "album" && title != "IMAGENES_HOME"] | order(_createdAt desc) { ${albumFields} }
@@ -110,4 +108,4 @@ export const contactDataQuery = `
 ` as string;
 
 export const rrssQuery =
-    `*[_type == "general" && type == 'Red Social' ] { ${generalFields} }` as string;
+  `*[_type == "general" && type == 'Red Social' ] { ${generalFields} }` as string;

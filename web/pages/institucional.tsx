@@ -10,29 +10,26 @@ import { GetStaticProps } from 'next';
 import { Page } from 'interfaces/News';
 
 const Institucional: FC<Page> = ({ pages }): JSX.Element => (
-    <Layout title={pages.title}>
-        <div className="bg-white ">
-            <HeroInstitucional
-                image={BG_CONSTANTS.station}
-                title={pages.title}
-            />
-            <div id="body" className="bg-white">
-                <SRLWrapper>
-                    <ArticleContent body={pages.body} />
-                </SRLWrapper>
-            </div>
-        </div>
-    </Layout>
+  <Layout title={pages.title}>
+    <div className="bg-white ">
+      <HeroInstitucional image={BG_CONSTANTS.station} title={pages.title} />
+      <div id="body" className="bg-white">
+        <SRLWrapper>
+          <ArticleContent body={pages.body} />
+        </SRLWrapper>
+      </div>
+    </div>
+  </Layout>
 );
 
 export default Institucional;
 
 export const getStaticProps: GetStaticProps = async () => {
-    const slug = 'quienes-somos';
-    const pages = await getClient().fetch(pagesQuery, { slug });
-    return {
-        props: {
-            pages,
-        },
-    };
+  const slug = 'quienes-somos';
+  const pages = await getClient().fetch(pagesQuery, { slug });
+  return {
+    props: {
+      pages,
+    },
+  };
 };

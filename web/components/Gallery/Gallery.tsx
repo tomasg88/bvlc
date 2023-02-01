@@ -9,99 +9,81 @@ import { SanityAsset } from '@sanity/image-url/lib/types/types';
 import classNames from 'classnames';
 
 interface IProp {
-    onClose: () => void;
-    list: SanityAsset[];
+  onClose: () => void;
+  list: SanityAsset[];
 }
 
 const Gallery: FC<IProp> = ({ onClose, list }): JSX.Element => {
-    const [mainIndex, setMainIndex] = useState(null);
-    useEffect(() => {
-        if (list && list.length > 0) {
-            setMainIndex(0);
-        }
-    }, [list]);
+  const [mainIndex, setMainIndex] = useState(null);
+  useEffect(() => {
+    if (list && list.length > 0) {
+      setMainIndex(0);
+    }
+  }, [list]);
 
-    const previous = useCallback(() => {
-        setMainIndex((prevState) =>
-            prevState === 0 ? list.length - 1 : prevState - 1
-        );
-    }, [mainIndex]);
+  const previous = useCallback(() => {
+    setMainIndex((prevState) => (prevState === 0 ? list.length - 1 : prevState - 1));
+  }, [mainIndex]);
 
-    const next = useCallback(() => {
-        setMainIndex((prevState) =>
-            prevState === list.length - 1 ? 0 : prevState + 1
-        );
-    }, [mainIndex]);
+  const next = useCallback(() => {
+    setMainIndex((prevState) => (prevState === list.length - 1 ? 0 : prevState + 1));
+  }, [mainIndex]);
 
-    return (
-        <Fade>
-            <div
-                id="gallery-container"
-                style={{ zIndex: 1000 }}
-                className={styles.root}
-            >
-                <div id="close" className={styles.closeButtonContainer}>
-                    <MdClose onClick={onClose} className={styles.closeIcon} />
-                </div>
-                <div id="content" className={styles.contentContainer}>
-                    <div id="main-image" className={styles.mainImageContainer}>
-                        {list[mainIndex] && (
-                            <SanityImage
-                                src={list[mainIndex]}
-                                layout="fill"
-                                objectFit="contain"
-                                className={styles.image}
-                                quality={100}
-                                priority
-                            />
-                        )}
-                    </div>
-                    <div
-                        id="previous"
-                        onClick={previous}
-                        className={`${styles.arrowContainer} ${styles.previous}`}
-                    >
-                        <AiOutlineArrowLeft className={styles.arrow} />
-                    </div>
-                    <div
-                        id="next"
-                        onClick={next}
-                        className={`${styles.arrowContainer} ${styles.next}`}
-                    >
-                        <AiOutlineArrowRight className={styles.arrow} />
-                    </div>
-                    <div
-                        id="bottom-image-list"
-                        className={styles.imageListContainer}
-                    >
-                        {list.map((img, index) => (
-                            <div
-                                key={img._id}
-                                className={classNames(
-                                    styles.smallImage,
-                                    index === mainIndex && styles.active
-                                )}
-                            >
-                                <SanityImage
-                                    src={img}
-                                    width={60}
-                                    height={60}
-                                    layout={'fixed'}
-                                    objectFit="cover"
-                                    onClick={() => setMainIndex(index)}
-                                    priority
-                                />
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </div>
-        </Fade>
-    );
+  return (
+    <Fade>
+      <div id="gallery-container" style={{ zIndex: 1000 }} className={styles.root}>
+        <div id="close" className={styles.closeButtonContainer}>
+          <MdClose onClick={onClose} className={styles.closeIcon} />
+        </div>
+        <div id="content" className={styles.contentContainer}>
+          <div id="main-image" className={styles.mainImageContainer}>
+            {list[mainIndex] && (
+              <SanityImage
+                src={list[mainIndex]}
+                layout="fill"
+                objectFit="contain"
+                className={styles.image}
+                quality={100}
+                priority
+              />
+            )}
+          </div>
+          <div
+            id="previous"
+            onClick={previous}
+            className={`${styles.arrowContainer} ${styles.previous}`}
+          >
+            <AiOutlineArrowLeft className={styles.arrow} />
+          </div>
+          <div id="next" onClick={next} className={`${styles.arrowContainer} ${styles.next}`}>
+            <AiOutlineArrowRight className={styles.arrow} />
+          </div>
+          <div id="bottom-image-list" className={styles.imageListContainer}>
+            {list.map((img, index) => (
+              <div
+                key={img._id}
+                className={classNames(styles.smallImage, index === mainIndex && styles.active)}
+              >
+                <SanityImage
+                  src={img}
+                  width={60}
+                  height={60}
+                  layout={'fixed'}
+                  objectFit="cover"
+                  onClick={() => setMainIndex(index)}
+                  priority
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </Fade>
+  );
 };
 
 Gallery.propTypes = {
-    onClose: PropTypes.func.isRequired,
+  onClose: PropTypes.func.isRequired,
 };
 
 export default Gallery;

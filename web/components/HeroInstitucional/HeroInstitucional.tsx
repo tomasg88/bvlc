@@ -7,31 +7,28 @@ import PropTypes from 'prop-types';
 import { FunctionComponent, ReactElement } from 'react';
 
 interface IProps {
-    title?: string;
-    image: string;
+  title?: string;
+  image: string;
 }
 
-const HeroInstitucional: FunctionComponent<IProps> = ({
-    title,
-    image,
-}): ReactElement => (
-    <div className={styles.root}>
-        <div className={styles.container}>
-            <Fade cascade>
-                <h1 className={styles.title}>{title}</h1>
-            </Fade>
+const HeroInstitucional: FunctionComponent<IProps> = ({ title, image }): ReactElement => (
+  <div className={styles.root}>
+    <div className={styles.container}>
+      <Fade cascade>
+        <h1 className={styles.title}>{title}</h1>
+      </Fade>
 
-            <BackgroundImage image={image || BG_CONSTANTS.team} />
-        </div>
-        <div className={styles.tabs}>
-            <NavInstitucional />
-        </div>
+      <BackgroundImage image={image || BG_CONSTANTS.team} />
     </div>
+    <div className={styles.tabs}>
+      <NavInstitucional />
+    </div>
+  </div>
 );
 
 HeroInstitucional.propTypes = {
-    title: PropTypes.string,
-    image: PropTypes.string.isRequired,
+  title: PropTypes.string,
+  image: PropTypes.string.isRequired,
 };
 
 export default HeroInstitucional;
