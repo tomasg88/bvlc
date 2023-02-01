@@ -1,16 +1,17 @@
-import { FunctionComponent, ReactElement } from "react";
+import React, { FunctionComponent, ReactElement, ReactNode } from "react";
 import { AiOutlineArrowRight, AiOutlineArrowLeft } from "react-icons/ai";
 import { BiRadioCircle, BiRadioCircleMarked } from "react-icons/bi";
 import styles from "./CarouselUI.module.scss";
 
-interface IProps {
+interface CarouselUIProps {
+    children: ReactNode;
     position: number;
     total: string[];
     handleClick: () => void;
     arrows: boolean;
 }
 
-const CarouselUI: FunctionComponent<IProps> = ({
+const CarouselUI: FunctionComponent<CarouselUIProps> = ({
     position,
     total,
     handleClick,
@@ -29,7 +30,6 @@ const CarouselUI: FunctionComponent<IProps> = ({
                 </div>
                 <div
                     className={`${styles.arrows} ${styles.arrowRight}`}
-                    // right="true"
                     onClick={handleClick}
                     data-position={position + 1}
                 >
