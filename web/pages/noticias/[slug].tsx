@@ -6,6 +6,7 @@ import ArticleContent from 'components/ArticleContent/ArticleContent';
 import CardNewsHorizontal from 'components/CardNewsHorizontal/CardNewsHorizontal';
 import { FC } from 'react';
 import { SlugType } from 'interfaces/News';
+import { GetStaticPathsResult, GetStaticPropsResult } from 'next';
 
 const Article: FC<SlugType> = ({ article, moreArticles }): JSX.Element => {
   return (
@@ -42,13 +43,18 @@ const Article: FC<SlugType> = ({ article, moreArticles }): JSX.Element => {
 
 export default Article;
 
-export async function getStaticProps({ params, preview = false }) {
+export async function getStaticProps({
+  params,
+  preview = false,
+}: {
+  params: { slug: string };
+  preview: boolean;
+}): Promise<GetStaticPropsResult<SlugType>> {
   const { post, morePosts } = await getClient(preview).fetch(postQuery, {
     slug: params.slug,
   });
   return {
     props: {
-      preview,
       article: post,
       moreArticles: morePosts,
     },
@@ -56,7 +62,7 @@ export async function getStaticProps({ params, preview = false }) {
 }
 
 // Returns ALL dynamic pages based on content
-export async function getStaticPaths() {
+export async function getStaticPaths(): Promise<GetStaticPathsResult> {
   const paths = await getClient().fetch(postSlugsQuery);
   return {
     paths: paths.map((slug) => ({ params: { slug } })) || [],

@@ -10,11 +10,11 @@ export const pageView = (url: URL): void => {
 // log specific events happening.
 export const pageEvent = (
   action: Gtag.EventNames | string,
-  { event_category, event_label, value }: Gtag.EventParams
+  { event_category: eventCategory, event_label: eventLabel, value }: Gtag.EventParams
 ): void => {
   window.gtag('event', action, {
-    event_category,
-    event_label,
+    event_category: eventCategory,
+    event_label: eventLabel,
     value,
   });
 };
