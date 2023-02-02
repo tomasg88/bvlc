@@ -1,36 +1,34 @@
-import Link from "next/link";
-import { ROUTES } from "utils/constants";
-import styles from "./OffcanvasNavigation.module.scss";
-import PropTypes from "prop-types";
-import { FunctionComponent, ReactElement } from "react";
+import Link from 'next/link';
+import { ROUTES } from 'utils/constants';
+import styles from './OffcanvasNavigation.module.scss';
+import PropTypes from 'prop-types';
+import { FunctionComponent, ReactElement } from 'react';
 
 interface IProps {
-    closeMenu: () => void;
+  closeMenu: () => void;
 }
 
-const OffcanvasNavigation: FunctionComponent<IProps> = ({
-    closeMenu,
-}): ReactElement => (
-    <nav className={styles.root}>
-        {ROUTES.map((route) => {
-            return (
-                <Link href={route.slug} key={route.slug}>
-                    <a
-                        className={styles.link}
-                        onClick={closeMenu}
-                        title={route.ariaLabel}
-                        aria-label={route.ariaLabel}
-                    >
-                        {route.title}
-                    </a>
-                </Link>
-            );
-        })}
-    </nav>
+const OffcanvasNavigation: FunctionComponent<IProps> = ({ closeMenu }): ReactElement => (
+  <nav className={styles.root}>
+    {ROUTES.map((route) => {
+      return (
+        <Link href={route.slug} key={route.slug}>
+          <a
+            className={styles.link}
+            onClick={closeMenu}
+            title={route.ariaLabel}
+            aria-label={route.ariaLabel}
+          >
+            {route.title}
+          </a>
+        </Link>
+      );
+    })}
+  </nav>
 );
 
 OffcanvasNavigation.propTypes = {
-    closeMenu: PropTypes.func.isRequired,
+  closeMenu: PropTypes.func.isRequired,
 };
 
 export default OffcanvasNavigation;

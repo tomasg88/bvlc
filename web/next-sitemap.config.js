@@ -1,6 +1,6 @@
-const siteUrl = "https://bomberoslujandecuyo.org.ar/";
+const siteUrl = 'https://bomberoslujandecuyo.org.ar/';
 
 module.exports = {
-    siteUrl,
-    generateRobotsTxt: true,
+  siteUrl,
+  generateRobotsTxt: true,
 };

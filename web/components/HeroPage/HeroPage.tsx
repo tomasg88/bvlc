@@ -6,33 +6,30 @@ import PropTypes from 'prop-types';
 import { FunctionComponent, ReactElement } from 'react';
 
 interface IProps {
-    title: string;
-    image?: string;
+  title: string;
+  image?: string;
 }
 
-const HeroPage: FunctionComponent<IProps> = ({
-    title,
-    image,
-}): ReactElement => (
-    <div className={styles.root}>
-        <div className={styles.container}>
-            <Fade cascade>
-                <h1 className={styles.title}>{title}</h1>
-            </Fade>
+const HeroPage: FunctionComponent<IProps> = ({ title, image }): ReactElement => (
+  <div className={styles.root}>
+    <div className={styles.container}>
+      <Fade cascade>
+        <h1 className={styles.title}>{title}</h1>
+      </Fade>
 
-            <BackgroundImage image={image} />
-        </div>
+      <BackgroundImage image={image} />
     </div>
+  </div>
 );
 
 HeroPage.defaultProps = {
-    title: '',
-    image: BG_CONSTANTS.team,
+  title: '',
+  image: BG_CONSTANTS.team,
 };
 
 HeroPage.propTypes = {
-    title: PropTypes.string,
-    image: PropTypes.string,
+  title: PropTypes.string,
+  image: PropTypes.string,
 };
 
 export default HeroPage;

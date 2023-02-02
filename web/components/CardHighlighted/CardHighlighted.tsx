@@ -12,35 +12,31 @@ import useWindowSize from 'hooks/useWindowSizes';
 import { News } from 'interfaces/News';
 
 const CardHighlighted: FC<News> = ({ title, slug, mainImage }): JSX.Element => {
-    const { width, isMobile } = useWindowSize();
-    const imageHeight = isMobile || width <= 500 ? 1000 : 300;
+  const { width, isMobile } = useWindowSize();
+  const imageHeight = isMobile || width <= 500 ? 1000 : 300;
 
-    const imgProps = useNextSanityImage(sanityConfig, mainImage, {
-        imageBuilder: () => urlForImage(mainImage).size(900, imageHeight),
-    });
+  const imgProps = useNextSanityImage(sanityConfig, mainImage, {
+    imageBuilder: () => urlForImage(mainImage).size(900, imageHeight),
+  });
 
-    return (
-        <Fade>
-            <div className={styles.root}>
-                <Link href={`/noticias/${slug}`}>
-                    <a aria-label={title}>
-                        <Image
-                            {...imgProps}
-                            alt={title}
-                            className={styles.image}
-                        />
-                        <p className={styles.title}>{title}</p>
-                    </a>
-                </Link>
-            </div>
-        </Fade>
-    );
+  return (
+    <Fade>
+      <div className={styles.root}>
+        <Link href={`/noticias/${slug}`}>
+          <a aria-label={title}>
+            <Image {...imgProps} alt={title} className={styles.image} />
+            <p className={styles.title}>{title}</p>
+          </a>
+        </Link>
+      </div>
+    </Fade>
+  );
 };
 
 CardHighlighted.propTypes = {
-    title: PropTypes.string.isRequired,
-    slug: PropTypes.string.isRequired,
-    mainImage: sanityImagePropType,
+  title: PropTypes.string.isRequired,
+  slug: PropTypes.string.isRequired,
+  mainImage: sanityImagePropType,
 };
 
 export default CardHighlighted;

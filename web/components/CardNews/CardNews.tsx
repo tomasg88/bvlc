@@ -8,45 +8,38 @@ import { sanityImagePropType } from 'utils/sanityPropType';
 import { FC } from 'react';
 import { News } from 'interfaces/News';
 
-const CardNews: FC<News> = ({
-    title,
-    mainImage,
-    excerpt,
-    slug,
-    publishedAt,
-}): JSX.Element => (
-    <Fade>
-        <div className={styles.card}>
-            <div className={styles.image}>
-                {mainImage && (
-                    <Link href={`/noticias/${slug}`}>
-                        <a aria-label={title}>
-                            <CoverImage title={title} image={mainImage} />
-                        </a>
-                    </Link>
-                )}
-                <time className={styles.time}>
-                    {getDate(publishedAt)}/
-                    <span className="capitalize">{getMonth(publishedAt)}</span>
-                </time>
-            </div>
-            <div className={styles.content}>
-                <h3 className={styles.title}>{title}</h3>
-                <p className={styles.excerpt}>{excerpt}</p>
-                <Link href={`/noticias/${slug}`}>
-                    <a className={styles.action}>Leer nota completa</a>
-                </Link>
-            </div>
-        </div>
-    </Fade>
+const CardNews: FC<News> = ({ title, mainImage, excerpt, slug, publishedAt }): JSX.Element => (
+  <Fade>
+    <div className={styles.card}>
+      <div className={styles.image}>
+        {mainImage && (
+          <Link href={`/noticias/${slug}`}>
+            <a aria-label={title}>
+              <CoverImage title={title} image={mainImage} />
+            </a>
+          </Link>
+        )}
+        <time className={styles.time}>
+          {getDate(publishedAt)}/<span className="capitalize">{getMonth(publishedAt)}</span>
+        </time>
+      </div>
+      <div className={styles.content}>
+        <h3 className={styles.title}>{title}</h3>
+        <p className={styles.excerpt}>{excerpt}</p>
+        <Link href={`/noticias/${slug}`}>
+          <a className={styles.action}>Leer nota completa</a>
+        </Link>
+      </div>
+    </div>
+  </Fade>
 );
 
 CardNews.propTypes = {
-    title: PropTypes.string.isRequired,
-    excerpt: PropTypes.string,
-    slug: PropTypes.string.isRequired,
-    publishedAt: PropTypes.string.isRequired,
-    mainImage: sanityImagePropType,
+  title: PropTypes.string.isRequired,
+  excerpt: PropTypes.string,
+  slug: PropTypes.string.isRequired,
+  publishedAt: PropTypes.string.isRequired,
+  mainImage: sanityImagePropType,
 };
 
 export default CardNews;
