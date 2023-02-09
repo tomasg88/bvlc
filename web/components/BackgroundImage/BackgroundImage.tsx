@@ -10,7 +10,7 @@ interface IProps {
 
 const BackgroundImage: FunctionComponent<IProps> = ({ title, image }): ReactElement => (
   <div className={styles.root}>
-    <Image layout="fill" className={styles.image} src={image} title={title} />
+    <Image alt={title} className={styles.image} src={image} title={title} fill sizes="100vw" />
   </div>
 );
 

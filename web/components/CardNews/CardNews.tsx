@@ -13,10 +13,8 @@ const CardNews: FC<News> = ({ title, mainImage, excerpt, slug, publishedAt }): J
     <div className={styles.card}>
       <div className={styles.image}>
         {mainImage && (
-          <Link href={`/noticias/${slug}`}>
-            <a aria-label={title}>
-              <CoverImage title={title} image={mainImage} />
-            </a>
+          <Link href={`/noticias/${slug}`} aria-label={title}>
+            <CoverImage title={title} image={mainImage} />
           </Link>
         )}
         <time className={styles.time}>
@@ -26,8 +24,8 @@ const CardNews: FC<News> = ({ title, mainImage, excerpt, slug, publishedAt }): J
       <div className={styles.content}>
         <h3 className={styles.title}>{title}</h3>
         <p className={styles.excerpt}>{excerpt}</p>
-        <Link href={`/noticias/${slug}`}>
-          <a className={styles.action}>Leer nota completa</a>
+        <Link href={`/noticias/${slug}`} className={styles.action}>
+          Leer nota completa
         </Link>
       </div>
     </div>

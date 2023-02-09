@@ -9,8 +9,8 @@ interface IProps {
 }
 
 const CustomLink: FunctionComponent<IProps> = ({ href, title, target }): ReactElement => (
-  <Link href={href}>
-    <a target={target}>{title}</a>
+  <Link href={href} target={target}>
+    {title}
   </Link>
 );
 

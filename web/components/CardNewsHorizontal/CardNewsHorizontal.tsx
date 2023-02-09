@@ -17,10 +17,8 @@ const CardNewsHorizontal: FC<News> = ({
   <div className={styles.card}>
     <div className={styles.image}>
       {mainImage && (
-        <Link href={`/noticias/${slug}`}>
-          <a aria-label={title}>
-            <CoverImage title={title} image={mainImage} />
-          </a>
+        <Link href={`/noticias/${slug}`} aria-label={title}>
+          <CoverImage title={title} image={mainImage} />
         </Link>
       )}
       <time className={styles.time}>
@@ -28,10 +26,8 @@ const CardNewsHorizontal: FC<News> = ({
       </time>
     </div>
     <div className={styles.content}>
-      <Link href={`/noticias/${slug}`}>
-        <a aria-label={title} className={styles.title}>
-          {title}
-        </a>
+      <Link href={`/noticias/${slug}`} aria-label={title} className={styles.title}>
+        {title}
       </Link>
       <p className={styles.excerpt}>{excerpt}</p>
     </div>

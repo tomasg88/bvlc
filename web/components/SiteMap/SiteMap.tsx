@@ -1,10 +1,10 @@
 import React, { FunctionComponent, ReactElement, useMemo, useContext } from 'react';
 import styles from './SiteMap.module.scss';
-import { Context } from '../context';
+import { RrssContext } from '../context';
 import CustomLink from '../CustomLink/CustomLink';
 
 const SiteMap: FunctionComponent = (): ReactElement => {
-  const [rrss] = useContext(Context);
+  const rrss = useContext(RrssContext);
 
   const firstColumn = useMemo(
     () => (

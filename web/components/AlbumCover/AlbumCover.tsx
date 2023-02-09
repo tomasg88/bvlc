@@ -17,10 +17,13 @@ const AlbumCover: FC<Album> = ({ cover, title, description, onClick }): JSX.Elem
         <Image
           loader={loader}
           src={src}
-          layout="fill"
-          objectFit="cover"
           className={styles.img}
           alt={title}
+          fill
+          sizes="100vw"
+          style={{
+            objectFit: 'cover',
+          }}
         />
       </div>
       <div onClick={onClick} className={styles.infoContainer}>

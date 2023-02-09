@@ -27,12 +27,13 @@ const MediaObject: FC<IProp> = ({ name, description, image }): JSX.Element => {
       <div className={styles.imageContainer}>
         <Image
           src={imageProps.src}
-          layout="fixed"
           height={100}
           width={100}
-          objectFit="cover"
           alt={name}
           className={styles.image}
+          style={{
+            objectFit: 'cover',
+          }}
         />
       </div>
 
