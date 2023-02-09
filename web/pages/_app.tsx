@@ -8,10 +8,16 @@ import { RrssContext, IRrss } from 'components/context';
 import * as ga from 'lib/ga';
 import { useRouter } from 'next/router';
 import { AppProps } from 'next/app';
+import { Roboto } from '@next/font/google';
 
 interface MyAppProps extends AppProps {
   rrss: IRrss[];
 }
+
+const roboto = Roboto({
+  subsets: ['latin'],
+  weight: ['100', '300', '400', '500', '700', '900'],
+});
 
 function MyApp({ Component, pageProps, rrss }: MyAppProps): JSX.Element {
   const [context] = useState<IRrss[]>(rrss);
@@ -27,7 +33,9 @@ function MyApp({ Component, pageProps, rrss }: MyAppProps): JSX.Element {
 
   return (
     <RrssContext.Provider value={context}>
-      <Component {...pageProps} />
+      <div className={roboto.className}>
+        <Component {...pageProps} />
+      </div>
     </RrssContext.Provider>
   );
 }
