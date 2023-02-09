@@ -1,11 +1,11 @@
 .root {
-    @apply relative;
+  @apply relative;
 
-    .container {
-        @apply relative py-40 overflow-hidden text-center text-white bg-gray-800;
+  .container {
+    @apply relative py-40 overflow-hidden text-center text-white bg-gray-800;
 
-        .title {
-            @apply relative z-10 font-sans text-4xl font-light md:text-6xl;
-        }
+    .title {
+      @apply relative z-10 text-4xl font-light md:text-6xl;
     }
+  }
 }

@@ -21,7 +21,7 @@ const ComisionDirectiva: FC<ComisionType> = ({ list }): JSX.Element => {
           {Object.keys(orderedList).map((key) => {
             return (
               <div key={key}>
-                <div className="flex flex-col items-center max-w-6xl py-6 mx-auto font-sans border-b-2 border-yellow-400 md:flex-row">
+                <div className="flex flex-col items-center max-w-6xl py-6 mx-auto border-b-2 border-yellow-400 md:flex-row">
                   <Fade cascade>
                     <h2 className="text-4xl font-light text-gray-900 ">{getTranslation(key)}</h2>
                   </Fade>
