@@ -55,12 +55,6 @@ export const postSlugsQuery = `
 *[_type == "post" && defined(slug.current)][].slug.current
 ` as string;
 
-export const postBySlugQuery = `
-  *[_type == "post" && slug.current == $slug][0] {
-    ${postFields}
-  }
-` as string;
-
 export const academyQuery = `
 {
   "albums": *[_type == "album" && "Academia" in categories[]->.title] { ${albumFields} },
@@ -78,25 +72,6 @@ export const specialtyQuery = `*[_type == "specialty" ] { ${specialtyFields} }` 
 
 export const albumsQuery = `
   *[_type == "album" && title != "IMAGENES_HOME"] | order(_createdAt desc) { ${albumFields} }
-` as string;
-
-export const communityPostQuery = `
-{
-  "albums": *[_type == "album" && "Comunidad" in categories[]->.title] { ${albumFields} },
-  "news": *[_type == "post" && "Comunidad" in categories[]->.title] { ${postFields} }
-}
-` as string;
-export const equipmentPostQuery = `
-{
-  "albums": *[_type == "album" && "Equipamiento" in categories[]->.title] { ${albumFields} },
-  "news": *[_type == "post" && "Equipamiento" in categories[]->.title] { ${postFields} }
-}
-` as string;
-export const contributionPostQuery = `
-{
-  "albums": *[_type == "album" && "Contribuciones" in categories[]->.title] { ${albumFields} },
-  "news": *[_type == "post" && "Contribuciones" in categories[]->.title] { ${postFields} }
-}
 ` as string;
 
 export const contactDataQuery = `
