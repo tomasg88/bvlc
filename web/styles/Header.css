@@ -1,11 +1,10 @@
-
 .headroom-wrapper {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   z-index: 999;
-  height: 88px ​!important;
+  height: 88px ​ !important;
 }
 
 /* Para mover luego al lugar correspondiente */
@@ -49,12 +48,12 @@
 }
 
 header nav a {
-  @apply px-2 py-2 font-sans text-sm font-bold text-white uppercase border-b-4 border-transparent;
+  @apply px-2 py-2 text-sm font-bold text-white uppercase border-b-4 border-transparent;
 }
 
 @screen lg {
   header nav a {
-    @apply px-5 text-lg ;
+    @apply px-5 text-lg;
   }
 }
 
