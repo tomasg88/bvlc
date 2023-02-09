@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Image from 'next/image';
+import Image from 'next/legacy/image';
 import styles from './Footer.module.scss';
 import { DEFAULT_PAGE_TITLE, BG_CONSTANTS } from 'utils/constants';
 import SiteMap from '../SiteMap/SiteMap';

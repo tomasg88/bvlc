@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image from 'next/legacy/image';
 import PropTypes from 'prop-types';
 import { FunctionComponent, ReactElement } from 'react';
 import styles from './BackgroundImage.module.scss';

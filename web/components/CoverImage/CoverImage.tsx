@@ -1,5 +1,5 @@
 import { urlForImage } from 'lib/sanity';
-import Image from 'next/image';
+import Image from 'next/legacy/image';
 import { useNextSanityImage } from 'next-sanity-image';
 import { sanityConfig } from 'lib/config';
 import styles from './CoverImage.module.scss';

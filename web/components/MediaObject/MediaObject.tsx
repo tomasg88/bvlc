@@ -3,7 +3,7 @@ import { sanityImagePropType } from 'utils/sanityPropType';
 import styles from './MediaObject.module.scss';
 import { sanityConfig } from 'lib/config';
 import { useNextSanityImage } from 'next-sanity-image';
-import Image from 'next/image';
+import Image from 'next/legacy/image';
 import { SanityImageSource } from '@sanity/image-url/lib/types/types';
 import { FC } from 'react';
 

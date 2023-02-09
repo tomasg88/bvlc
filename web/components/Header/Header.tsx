@@ -1,6 +1,6 @@
 import HeaderLink from '../HeaderLink/HeaderLink';
 import Link from 'next/link';
-import Image from 'next/image';
+import Image from 'next/legacy/image';
 import Headroom from 'react-headroom';
 import RrssIcon from '../RrssIcon/RrssIcon';
 import { RrssContext } from '../context';

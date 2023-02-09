@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import Image from 'next/image';
+import Image from 'next/legacy/image';
 import { MdPhotoCamera } from 'react-icons/md';
 import styles from './AlbumCover.module.scss';
 import PropTypes from 'prop-types';

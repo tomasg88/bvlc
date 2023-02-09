@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import Image from 'next/image';
+import Image from 'next/legacy/image';
 import { MdPhotoCamera } from 'react-icons/md';
 import BlockContent from '@sanity/block-content-to-react';
 import styles from './CardEquipment.module.scss';
