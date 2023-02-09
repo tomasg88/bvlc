@@ -74,14 +74,13 @@ const MenuDropdown: FunctionComponent<IProps> = ({ title }): ReactElement => {
                   {ROUTES.map((option) => (
                     <Menu.Item key={option.href}>
                       {({ active }) => (
-                        <Link href={option.href}>
-                          <a
-                            className={`${active ? 'bg-red-500 text-gray-100' : 'text-white'} ${
-                              styles.option
-                            }`}
-                          >
-                            {option.title}
-                          </a>
+                        <Link
+                          href={option.href}
+                          className={`${active ? 'bg-red-500 text-gray-100' : 'text-white'} ${
+                            styles.option
+                          }`}
+                        >
+                          {option.title}
                         </Link>
                       )}
                     </Menu.Item>

@@ -16,21 +16,19 @@ const Header: FunctionComponent = (): ReactElement => {
       <div className={'bg-pattern'}>
         <header className={styles.container}>
           <div className={styles.main}>
-            <Link href="/">
-              <a className={styles.logoContainer}>
-                <Image
-                  src="/logo-bomberos-cuyo.png"
-                  width={80}
-                  height={100}
-                  objectFit="fill"
-                  quality={50}
-                  layout="fixed"
-                  alt={DEFAULT_PAGE_TITLE}
-                />
-                <span className={styles.logoTitle}>
-                  Bomberos Voluntarios <br /> de Luján de Cuyo
-                </span>
-              </a>
+            <Link href="/" className={styles.logoContainer}>
+              <Image
+                src="/logo-bomberos-cuyo.png"
+                width={80}
+                height={100}
+                objectFit="fill"
+                quality={50}
+                layout="fixed"
+                alt={DEFAULT_PAGE_TITLE}
+              />
+              <span className={styles.logoTitle}>
+                Bomberos Voluntarios <br /> de Luján de Cuyo
+              </span>
             </Link>
             <div className={styles.rightItems}>
               <div className={styles.rightUpperItems}>

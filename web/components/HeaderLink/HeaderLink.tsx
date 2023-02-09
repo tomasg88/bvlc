@@ -13,8 +13,8 @@ const HeaderLink: FunctionComponent<IProps> = ({ url, title }): ReactElement => 
   const isActive = useMemo(() => (router.route === url ? 'active' : ''), [url]);
 
   return (
-    <Link href={url}>
-      <a className={isActive}>{title}</a>
+    <Link href={url} className={isActive}>
+      {title}
     </Link>
   );
 };

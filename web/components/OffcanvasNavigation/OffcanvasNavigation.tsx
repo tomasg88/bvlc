@@ -12,15 +12,15 @@ const OffcanvasNavigation: FunctionComponent<IProps> = ({ closeMenu }): ReactEle
   <nav className={styles.root}>
     {ROUTES.map((route) => {
       return (
-        <Link href={route.slug} key={route.slug}>
-          <a
-            className={styles.link}
-            onClick={closeMenu}
-            title={route.ariaLabel}
-            aria-label={route.ariaLabel}
-          >
-            {route.title}
-          </a>
+        <Link
+          href={route.slug}
+          key={route.slug}
+          className={styles.link}
+          onClick={closeMenu}
+          title={route.ariaLabel}
+          aria-label={route.ariaLabel}
+        >
+          {route.title}
         </Link>
       );
     })}

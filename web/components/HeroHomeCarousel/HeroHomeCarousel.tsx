@@ -39,14 +39,12 @@ const HeroHomeCarousel: FunctionComponent<HeroHomeCarouselProps> = ({
       </Fade>
 
       <div className={styles.buttonsContainer}>
-        <Link href="/contacto">
-          <a className={styles.button}>
-            <FiPhone className={styles.icon} />
-            <div className={styles.text}>
-              {'Emergencias'}
-              <span className={styles.number}>{'(0261) 498-0999'}</span>
-            </div>
-          </a>
+        <Link href="/contacto" className={styles.button}>
+          <FiPhone className={styles.icon} />
+          <div className={styles.text}>
+            {'Emergencias'}
+            <span className={styles.number}>{'(0261) 498-0999'}</span>
+          </div>
         </Link>
       </div>
 
