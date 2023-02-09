@@ -1,33 +1,33 @@
 .card {
-    @apply relative overflow-hidden text-4xl duration-500 mb-6 md:mb-0 transform translate-y-0 bg-white rounded-md shadow-md hover:shadow-2xl hover:-translate-y-1;
+  @apply relative overflow-hidden text-4xl duration-500 mb-6 md:mb-0 transform translate-y-0 bg-white rounded-md shadow-md hover:shadow-2xl hover:-translate-y-1;
 }
 
 .image {
-    @apply relative transition-all duration-500 border-b-4 border-red-600 hover:opacity-80;
+  @apply relative transition-all duration-500 border-b-4 border-red-600 hover:opacity-80;
 }
 
 .time {
-    @apply absolute bottom-0 right-0 flex items-center p-3 py-1 text-sm font-bold text-white bg-red-600 rounded-tl-md;
+  @apply absolute bottom-0 right-0 flex items-center p-3 py-1 text-sm font-bold text-white bg-red-600 rounded-tl-md;
 }
 
 .content {
-    @apply px-6 py-3 pb-12 md:pb-8;
+  @apply px-6 py-3 pb-12 md:pb-8;
 }
 
 @screen md {
-    .content {
-        min-height: 13rem;
-    }
+  .content {
+    min-height: 13rem;
+  }
 }
 
 .title {
-    @apply font-sans text-lg font-bold md:text-xl;
+  @apply text-lg font-bold md:text-xl;
 }
 
 .excerpt {
-    @apply my-2 text-base line-clamp-3 md:line-clamp-2;
+  @apply my-2 text-base line-clamp-3 md:line-clamp-2;
 }
 
 .action {
-    @apply absolute bottom-0 left-0 right-0 z-10 block px-4 py-2 mt-6 text-base font-bold text-center text-white bg-red-700 border-b-4 border-red-700 rounded cursor-pointer hover:bg-red-600 hover:border-red-800;
+  @apply absolute bottom-0 left-0 right-0 z-10 block px-4 py-2 mt-6 text-base font-bold text-center text-white bg-red-700 border-b-4 border-red-700 rounded cursor-pointer hover:bg-red-600 hover:border-red-800;
 }
