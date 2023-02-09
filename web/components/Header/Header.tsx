@@ -3,14 +3,14 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Headroom from 'react-headroom';
 import RrssIcon from '../RrssIcon/RrssIcon';
-import { Context } from '../context';
+import { RrssContext } from '../context';
 import { FunctionComponent, ReactElement, useContext } from 'react';
 import { DEFAULT_PAGE_TITLE, BG_CONSTANTS } from 'utils/constants';
 import MenuDropdown from '../MenuDropdown/MenuDropdown';
 import styles from './Header.module.scss';
 
 const Header: FunctionComponent = (): ReactElement => {
-  const [rrss] = useContext(Context);
+  const rrss = useContext(RrssContext);
   return (
     <Headroom disableInlineStyles>
       <div className={'bg-pattern'}>

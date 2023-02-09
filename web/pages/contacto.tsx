@@ -3,7 +3,7 @@ import Layout from 'components/Layout/Layout';
 import BackgroundImage from 'components/BackgroundImage/BackgroundImage';
 import { getClient } from 'lib/sanity.server';
 import { contactDataQuery } from 'lib/queries';
-import { Context, IRrss } from 'components/context';
+import { RrssContext } from 'components/context';
 import { FC, useContext } from 'react';
 import RrssIcon from 'components/RrssIcon/RrssIcon';
 import ContactItem from 'components/ContactItem/ContactItem';
@@ -12,7 +12,7 @@ import { GetStaticProps } from 'next';
 import { ContactoType } from 'interfaces/News';
 
 const Contact: FC<ContactoType> = ({ phones, mails }) => {
-  const [rrss]: IRrss[] = useContext(Context);
+  const rrss = useContext(RrssContext);
   return (
     <Layout title="Contacto">
       <div className={styles.container}>
