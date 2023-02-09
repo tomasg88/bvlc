@@ -9,19 +9,22 @@ import { BG_CONSTANTS } from 'utils/constants';
 import { GetStaticProps } from 'next';
 import { Page } from 'interfaces/News';
 
-const Institucional: FC<Page> = ({ pages }): JSX.Element => (
-  <Layout title={pages.title}>
-    <div className="bg-white ">
-      <HeroInstitucional image={BG_CONSTANTS.station} title={pages.title} />
-      <div id="body" className="bg-white">
-        <SRLWrapper>
-          <ArticleContent body={pages.body} />
-        </SRLWrapper>
+const Institucional: FC<Page> = (props): JSX.Element => {
+  console.log({ props });
+  const { pages } = props;
+  return (
+    <Layout title={pages.title}>
+      <div className="bg-white ">
+        <HeroInstitucional image={BG_CONSTANTS.station} title={pages.title} />
+        <div id="body" className="bg-white">
+          <SRLWrapper>
+            <ArticleContent body={pages.body} />
+          </SRLWrapper>
+        </div>
       </div>
-    </div>
-  </Layout>
-);
-
+    </Layout>
+  );
+};
 export default Institucional;
 
 export const getStaticProps: GetStaticProps = async () => {
