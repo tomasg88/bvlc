@@ -1,4 +1,4 @@
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 import { sanityConfig } from 'lib/config';
 import { useNextSanityImage } from 'next-sanity-image';
 import React from 'react';

@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 import { MdPhotoCamera } from 'react-icons/md';
 import BlockContent from '@sanity/block-content-to-react';
 import styles from './CardEquipment.module.scss';
@@ -17,11 +17,14 @@ const CardEquipment: FC<Equipment> = ({ body, cover, onClick, title }): JSX.Elem
         <Image
           loader={loader}
           src={src}
-          layout="fill"
-          objectFit="cover"
           className={styles.img}
           onClick={onClick}
           alt={title}
+          fill
+          sizes="100vw"
+          style={{
+            objectFit: 'cover',
+          }}
         />
       </div>
       <div className={styles.content}>

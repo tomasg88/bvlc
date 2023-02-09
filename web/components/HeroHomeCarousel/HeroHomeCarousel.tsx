@@ -56,8 +56,10 @@ const HeroHomeCarousel: FunctionComponent<HeroHomeCarouselProps> = ({
                 src={img}
                 width={1920}
                 height={800}
-                layout="fixed"
-                objectFit="cover"
+                fixed
+                style={{
+                  objectFit: 'cover',
+                }}
                 className={styles.image}
                 priority
               />

@@ -1,5 +1,5 @@
 import { urlForImage } from 'lib/sanity';
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 import { useNextSanityImage } from 'next-sanity-image';
 import { sanityConfig } from 'lib/config';
 import styles from './CoverImage.module.scss';
@@ -27,6 +27,10 @@ const CoverImage: FC<IProp> = ({ title, image }): JSX.Element => {
           alt={`Cover Image for ${title}`}
           className={styles.image}
           {...imageProps}
+          style={{
+            maxWidth: '100%',
+            height: 'auto',
+          }}
         />
       ) : (
         <div className={styles.default} />

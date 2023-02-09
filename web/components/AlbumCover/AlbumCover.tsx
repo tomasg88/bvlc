@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 import { MdPhotoCamera } from 'react-icons/md';
 import styles from './AlbumCover.module.scss';
 import PropTypes from 'prop-types';
@@ -17,10 +17,13 @@ const AlbumCover: FC<Album> = ({ cover, title, description, onClick }): JSX.Elem
         <Image
           loader={loader}
           src={src}
-          layout="fill"
-          objectFit="cover"
           className={styles.img}
           alt={title}
+          fill
+          sizes="100vw"
+          style={{
+            objectFit: 'cover',
+          }}
         />
       </div>
       <div onClick={onClick} className={styles.infoContainer}>

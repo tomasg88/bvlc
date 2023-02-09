@@ -1,6 +1,6 @@
 import HeaderLink from '../HeaderLink/HeaderLink';
 import Link from 'next/link';
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 import Headroom from 'react-headroom';
 import RrssIcon from '../RrssIcon/RrssIcon';
 import { RrssContext } from '../context';
@@ -21,10 +21,11 @@ const Header: FunctionComponent = (): ReactElement => {
                 src="/logo-bomberos-cuyo.png"
                 width={80}
                 height={100}
-                objectFit="fill"
                 quality={50}
-                layout="fixed"
                 alt={DEFAULT_PAGE_TITLE}
+                style={{
+                  objectFit: 'fill',
+                }}
               />
               <span className={styles.logoTitle}>
                 Bomberos Voluntarios <br /> de Luján de Cuyo
@@ -44,7 +45,6 @@ const Header: FunctionComponent = (): ReactElement => {
                     alt={DEFAULT_PAGE_TITLE}
                     quality={50}
                     className={styles.rightUpperImage}
-                    layout="fixed"
                     width={30}
                     height={30}
                   />
@@ -61,7 +61,6 @@ const Header: FunctionComponent = (): ReactElement => {
                     alt={DEFAULT_PAGE_TITLE}
                     quality={50}
                     className={styles.rightUpperImage}
-                    layout="fixed"
                     width={30}
                     height={30}
                   />

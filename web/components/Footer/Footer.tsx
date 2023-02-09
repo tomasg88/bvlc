@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 import styles from './Footer.module.scss';
 import { DEFAULT_PAGE_TITLE, BG_CONSTANTS } from 'utils/constants';
 import SiteMap from '../SiteMap/SiteMap';
@@ -16,9 +16,10 @@ const Footer: FunctionComponent = (): ReactElement => (
             alt={DEFAULT_PAGE_TITLE}
             width={80}
             height={100}
-            objectFit="fill"
             quality={80}
-            layout="fixed"
+            style={{
+              objectFit: 'fill',
+            }}
           />
           <span className={styles.logoTitle}>
             Bomberos Voluntarios <br /> de Luján de Cuyo
@@ -36,8 +37,7 @@ const Footer: FunctionComponent = (): ReactElement => (
             src={BG_CONSTANTS.escudo_spai}
             alt="Spai"
             quality={80}
-            className="w-full h-auto mx-auto"
-            layout="intrinsic"
+            className="h-auto mx-auto"
             width={57}
             height={74}
           />
@@ -53,8 +53,7 @@ const Footer: FunctionComponent = (): ReactElement => (
             src={BG_CONSTANTS.iram}
             alt="Certificado Iram"
             quality={80}
-            className="w-full h-auto"
-            layout="intrinsic"
+            className="h-auto"
             width={60}
             height={74}
           />
