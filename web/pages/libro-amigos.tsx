@@ -14,15 +14,14 @@ import { Page } from 'interfaces/News';
 const BOOK_PUBLIC_URL =
   'https://drive.google.com/file/d/1-Ej0AXd14-xLfvooEfzWHG1bGdZYbOjO/view?usp=sharing';
 
-const LibroAmigos: FC<Page> = (props): JSX.Element => {
+const LibroAmigos: FC<Page> = ({ pages }): JSX.Element => {
   function handleClick(): void {
     ga.pageEvent('download_book', {
       event_category: 'engagement',
       event_label: 'Libro descargado',
     });
   }
-  console.log({ props });
-  const { pages } = props;
+
   return (
     <Layout title={pages.title}>
       <div className="bg-white ">
