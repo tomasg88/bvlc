@@ -3,12 +3,12 @@ import Layout from 'components/Layout/Layout';
 import HeroInstitucional from 'components/HeroInstitucional/HeroInstitucional';
 import { getClient } from 'lib/sanity.server';
 import { leadershipQuery } from 'lib/queries';
-import MediaObject from 'components/MediaObject/MediaObject';
 import { BG_CONSTANTS } from 'utils/constants';
 import Fade from 'react-reveal/Fade';
 import groupAndOrder from 'utils/list';
 import { ComisionType } from 'interfaces/News';
 import { GetStaticProps } from 'next';
+import MemberCard from 'components/MemberCard/MemberCard';
 
 const ComisionDirectiva: FC<ComisionType> = ({ list }): JSX.Element => {
   const { orderedList, getTranslation } = groupAndOrder('position', list);
@@ -29,7 +29,7 @@ const ComisionDirectiva: FC<ComisionType> = ({ list }): JSX.Element => {
                 <div className="grid max-w-6xl gap-3 p-8 pb-12 mx-auto mt-6 md:grid-cols-3 sm:grid-cols-2">
                   {orderedList[key].map((n) => (
                     <Fade key={n._id}>
-                      <MediaObject
+                      <MemberCard
                         name={n.title}
                         description={getTranslation(key)}
                         image={n.image}

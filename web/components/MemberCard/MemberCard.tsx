@@ -1,19 +1,19 @@
 import PropTypes from 'prop-types';
 import { sanityImagePropType } from 'utils/sanityPropType';
-import styles from './MediaObject.module.scss';
+import styles from './MemberCard.module.scss';
 import { sanityConfig } from 'lib/config';
 import { useNextSanityImage } from 'next-sanity-image';
 import Image from 'next/image';
-import { SanityImageSource } from '@sanity/image-url/lib/types/types';
 import { FC } from 'react';
+import { SanityImageSource } from '@sanity/image-url/lib/types/types';
 
-interface IProp {
+type MemberCardProps = {
   name: string;
   description: string;
   image: SanityImageSource;
-}
+};
 
-const MediaObject: FC<IProp> = ({ name, description, image }): JSX.Element => {
+const MemberCard: FC<MemberCardProps> = ({ name, description, image }): JSX.Element => {
   const NO_PROFILE_IMAGE = '/no-profile-image.png';
   let imageProps = { src: '' };
   try {
@@ -27,8 +27,7 @@ const MediaObject: FC<IProp> = ({ name, description, image }): JSX.Element => {
       <div className={styles.imageContainer}>
         <Image
           src={imageProps.src}
-          height={100}
-          width={100}
+          fill
           alt={name}
           className={styles.image}
           style={{
@@ -47,10 +46,10 @@ const MediaObject: FC<IProp> = ({ name, description, image }): JSX.Element => {
   );
 };
 
-MediaObject.propTypes = {
+MemberCard.propTypes = {
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   image: sanityImagePropType,
 };
 
-export default MediaObject;
+export default MemberCard;
