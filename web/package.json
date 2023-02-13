@@ -27,7 +27,7 @@
     "lodash": "^4.17.21",
     "next": "^13.1.6",
     "next-sanity": "^0.1.10",
-    "next-sanity-image": "^1.0.1",
+    "next-sanity-image": "^5.0.0",
     "next-sitemap": "^1.6.192",
     "react": "^18.2.0",
     "react-anchor-link-smooth-scroll": "^1.0.12",
