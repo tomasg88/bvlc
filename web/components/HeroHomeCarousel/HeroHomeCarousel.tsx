@@ -53,6 +53,7 @@ const HeroHomeCarousel: FunctionComponent<HeroHomeCarouselProps> = ({
           {images.map((img) => (
             <Fade key={img._key}>
               <SanityImage
+                alt={'´Carrusel ' + DEFAULT_PAGE_TITLE}
                 src={img}
                 width={1920}
                 height={800}
