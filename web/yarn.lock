@@ -838,10 +838,15 @@
     split2 "^3.2.2"
     throttle-debounce "^3.0.1"
 
-"@sanity/image-url@^0.140.15", "@sanity/image-url@^0.140.19", "@sanity/image-url@^0.140.22":
+"@sanity/image-url@^0.140.15", "@sanity/image-url@^0.140.22":
   version "0.140.22"
   resolved "https://registry.yarnpkg.com/@sanity/image-url/-/image-url-0.140.22.tgz#7a65f56bb751f7b1c5dfacfadd34ee10fc4f0fde"
   integrity sha512-CAmQZnj+KM7FSEYiWlIGDit072syicYuAw0w7R2ctMzHiZ4p9mE/g6dBnYqrqFUrw2J+GpJgPt+RVspKP8vdqA==
+
+"@sanity/image-url@^1.0.0":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@sanity/image-url/-/image-url-1.0.2.tgz#1ff7259e9bad6bfca4169f21c53a4123f6ac78c3"
+  integrity sha512-C4+jb2ny3ZbMgEkLd7Z3C75DsxcTEoE+axXQJsQ75ou0AKWGdVsP351hqK6mJUUxn5HCSlu3vznoh7Yljye4cQ==
 
 "@sanity/observable@2.0.9":
   version "2.0.9"
@@ -4413,12 +4418,12 @@ natural-compare@^1.4.0:
   resolved "https://registry.yarnpkg.com/natural-compare/-/natural-compare-1.4.0.tgz#4abebfeed7541f2c27acfb29bdbbd15c8d5ba4f7"
   integrity sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==
 
-next-sanity-image@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/next-sanity-image/-/next-sanity-image-1.0.1.tgz#401cd42d7de36eaddfe5bd03391da4b9aef79611"
-  integrity sha512-lGaatEBBtR3eSWeGODByboEPKq4zWvo49XgZ3MZg5nlOYj8PH0Y486HONAnEM454l+HUGEN85J3XZUs3wYs9lQ==
+next-sanity-image@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/next-sanity-image/-/next-sanity-image-5.0.0.tgz#ecbdb3eebe71862bcbc53bea5129bd5d76401481"
+  integrity sha512-mVnybxCEcy3l4mi/Ob+0RhPw6W1b9RcCNfx4PyUCP67+R/Cs75o0x6UEZ2Xk7Vxg9Ms4YAaEXO7GJ5mF5zL0rQ==
   dependencies:
-    "@sanity/image-url" "^0.140.19"
+    "@sanity/image-url" "^1.0.0"
 
 next-sanity@^0.1.10:
   version "0.1.12"
