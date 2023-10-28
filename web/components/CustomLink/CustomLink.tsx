@@ -9,7 +9,7 @@ interface IProps {
 }
 
 const CustomLink: FunctionComponent<IProps> = ({ href, title, target }): ReactElement => (
-  <Link href={href}>
+  <Link href={href} legacyBehavior>
     <a target={target}>{title}</a>
   </Link>
 );

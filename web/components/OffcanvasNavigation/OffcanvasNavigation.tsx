@@ -12,7 +12,7 @@ const OffcanvasNavigation: FunctionComponent<IProps> = ({ closeMenu }): ReactEle
   <nav className={styles.root}>
     {ROUTES.map((route) => {
       return (
-        <Link href={route.slug} key={route.slug}>
+        <Link href={route.slug} key={route.slug} legacyBehavior>
           <a
             className={styles.link}
             onClick={closeMenu}

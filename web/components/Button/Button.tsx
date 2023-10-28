@@ -6,7 +6,7 @@ import { IButton } from 'interfaces/News';
 
 const Button: FC<IButton> = ({ text, href, target, onClick }): JSX.Element => (
   <div className={styles.root}>
-    <Link href={href}>
+    <Link href={href} legacyBehavior>
       <a target={target} className={styles.text} onClick={onClick}>
         {text}
       </a>

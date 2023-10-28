@@ -22,7 +22,7 @@ const CardHighlighted: FC<News> = ({ title, slug, mainImage }): JSX.Element => {
   return (
     <Fade>
       <div className={styles.root}>
-        <Link href={`/noticias/${slug}`}>
+        <Link href={`/noticias/${slug}`} legacyBehavior>
           <a aria-label={title}>
             <Image {...imgProps} alt={title} className={styles.image} />
             <p className={styles.title}>{title}</p>

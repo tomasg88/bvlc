@@ -17,7 +17,7 @@ const CardNewsHorizontal: FC<News> = ({
   <div className={styles.card}>
     <div className={styles.image}>
       {mainImage && (
-        <Link href={`/noticias/${slug}`}>
+        <Link href={`/noticias/${slug}`} legacyBehavior>
           <a aria-label={title}>
             <CoverImage title={title} image={mainImage} />
           </a>
@@ -28,7 +28,7 @@ const CardNewsHorizontal: FC<News> = ({
       </time>
     </div>
     <div className={styles.content}>
-      <Link href={`/noticias/${slug}`}>
+      <Link href={`/noticias/${slug}`} legacyBehavior>
         <a aria-label={title} className={styles.title}>
           {title}
         </a>

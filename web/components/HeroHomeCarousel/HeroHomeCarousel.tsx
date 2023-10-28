@@ -39,7 +39,7 @@ const HeroHomeCarousel: FunctionComponent<HeroHomeCarouselProps> = ({
       </Fade>
 
       <div className={styles.buttonsContainer}>
-        <Link href="/contacto">
+        <Link href="/contacto" legacyBehavior>
           <a className={styles.button}>
             <FiPhone className={styles.icon} />
             <div className={styles.text}>

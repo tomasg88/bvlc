@@ -16,7 +16,7 @@ const Header: FunctionComponent = (): ReactElement => {
       <div className={'bg-pattern'}>
         <header className={styles.container}>
           <div className={styles.main}>
-            <Link href="/">
+            <Link href="/" legacyBehavior>
               <a className={styles.logoContainer}>
                 <Image
                   src="/logo-bomberos-cuyo.png"

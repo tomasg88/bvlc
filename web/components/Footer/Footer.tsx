@@ -10,7 +10,7 @@ const Footer: FunctionComponent = (): ReactElement => (
     <div className={styles.container}>
       <div className={styles.siteMap}>
         <SiteMap />
-        <Link href="/">
+        <Link href="/" legacyBehavior>
           <a className={styles.logoContainer}>
             <Image
               src="/logo-bomberos-cuyo.png"
@@ -28,7 +28,7 @@ const Footer: FunctionComponent = (): ReactElement => (
         </Link>
       </div>
       <div className={styles.footerSpecials}>
-        <Link href={BG_CONSTANTS.spai_pdf}>
+        <Link href={BG_CONSTANTS.spai_pdf} legacyBehavior>
           <a target="_blank" rel="noopener noreferrer" className={styles.special}>
             <Image
               src={BG_CONSTANTS.escudo_spai}
@@ -42,7 +42,7 @@ const Footer: FunctionComponent = (): ReactElement => (
             <span className={styles.text}> En convenio de cooperación con fundación SPAI </span>
           </a>
         </Link>
-        <Link href={BG_CONSTANTS.iram_pdf}>
+        <Link href={BG_CONSTANTS.iram_pdf} legacyBehavior>
           <a
             target="_blank"
             rel="noopener noreferrer"

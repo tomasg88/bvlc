@@ -13,7 +13,7 @@ const CardNews: FC<News> = ({ title, mainImage, excerpt, slug, publishedAt }): J
     <div className={styles.card}>
       <div className={styles.image}>
         {mainImage && (
-          <Link href={`/noticias/${slug}`}>
+          <Link href={`/noticias/${slug}`} legacyBehavior>
             <a aria-label={title}>
               <CoverImage title={title} image={mainImage} />
             </a>
@@ -26,7 +26,7 @@ const CardNews: FC<News> = ({ title, mainImage, excerpt, slug, publishedAt }): J
       <div className={styles.content}>
         <h3 className={styles.title}>{title}</h3>
         <p className={styles.excerpt}>{excerpt}</p>
-        <Link href={`/noticias/${slug}`}>
+        <Link href={`/noticias/${slug}`} legacyBehavior>
           <a className={styles.action}>Leer nota completa</a>
         </Link>
       </div>

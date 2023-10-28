@@ -74,7 +74,7 @@ const MenuDropdown: FunctionComponent<IProps> = ({ title }): ReactElement => {
                   {ROUTES.map((option) => (
                     <Menu.Item key={option.href}>
                       {({ active }) => (
-                        <Link href={option.href}>
+                        <Link href={option.href} legacyBehavior>
                           <a
                             className={`${active ? 'bg-red-500 text-gray-100' : 'text-white'} ${
                               styles.option
