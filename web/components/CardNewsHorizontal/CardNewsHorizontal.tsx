@@ -5,7 +5,7 @@ import styles from './CardNewsHorizontal.module.scss';
 import PropTypes from 'prop-types';
 import { sanityImagePropType } from 'utils/sanityPropType';
 import { FC } from 'react';
-import { News } from 'interfaces/News';
+import { News } from 'types/News';
 
 const CardNewsHorizontal: FC<News> = ({
   title,

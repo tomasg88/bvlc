@@ -7,7 +7,7 @@ import AlbumCover from 'components/AlbumCover/AlbumCover';
 import HeroPage from 'components/HeroPage/HeroPage';
 import Fade from 'react-reveal/Fade';
 import { GetStaticProps } from 'next';
-import { Album, GaleriaType } from 'interfaces/News';
+import { Album, GaleriaType } from 'types/News';
 
 const Galeria: FC<GaleriaType> = ({ albums }): JSX.Element => {
   const [selectedAlbum, setSelectedAlbum] = useState([]);

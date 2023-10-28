@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 import { useNextSanityImage } from 'next-sanity-image';
 import { sanityConfig } from 'lib/config';
 import { sanityImagePropType } from 'utils/sanityPropType';
-import { Equipment } from 'interfaces/News';
+import { Equipment } from 'types/News';
 
 const CardEquipment: FC<Equipment> = ({ body, cover, onClick, title }): JSX.Element => {
   const { src, loader } = useNextSanityImage(sanityConfig, cover);

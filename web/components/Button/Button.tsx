@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { FC } from 'react';
 import Link from 'next/link';
 import styles from './Button.module.scss';
-import { IButton } from 'interfaces/News';
+import { IButton } from 'types/News';
 
 const Button: FC<IButton> = ({ text, href, target, onClick }): JSX.Element => (
   <div className={styles.root}>

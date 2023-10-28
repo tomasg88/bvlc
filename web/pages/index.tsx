@@ -9,7 +9,7 @@ import Fade from 'react-reveal/Fade';
 import CardHighlighted from 'components/CardHighlighted/CardHighlighted';
 import { GetStaticProps } from 'next';
 import { FC } from 'react';
-import { HomeType } from 'interfaces/News';
+import { HomeType } from 'types/News';
 
 const Home: FC<HomeType> = ({ recentNews, highlighted, heroImages }) => (
   <Layout>

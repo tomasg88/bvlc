@@ -1,4 +1,4 @@
-import { ActiveForcePerson, ComisionPerson } from 'interfaces/News';
+import { ActiveForcePerson, ComisionPerson } from 'types/News';
 import { find, orderBy, groupBy } from 'lodash';
 
 const positions = [

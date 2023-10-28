@@ -1,4 +1,4 @@
-import { Contact } from 'interfaces/News';
+import { Contact } from 'types/News';
 import { FC } from 'react';
 import styles from './ContactItem.module.scss';
 

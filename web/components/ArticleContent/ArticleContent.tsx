@@ -9,7 +9,7 @@ import getYouTubeID from 'get-youtube-id';
 import YouTube from 'react-youtube';
 import { FC } from 'react';
 import { sanityImagePropType } from 'utils/sanityPropType';
-import { NewsBody } from 'interfaces/News';
+import { NewsBody } from 'types/News';
 
 const ArticleContent: FC<NewsBody> = ({ title, mainImage, publishedAt, body }): JSX.Element => {
   const date = parseISO(publishedAt);

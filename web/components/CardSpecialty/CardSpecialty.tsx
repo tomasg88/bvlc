@@ -9,7 +9,7 @@ import { sanityConfig } from 'lib/config';
 import { sanityImagePropType } from 'utils/sanityPropType';
 import SanityImage from 'components/SanityImage/SanityImage';
 import Zoom from 'react-reveal/Zoom';
-import { Specialty } from 'interfaces/News';
+import { Specialty } from 'types/News';
 
 const CardSpecialty: FC<Specialty> = ({ cover, title, body, onClick, members }) => {
   const { src, loader } = useNextSanityImage(sanityConfig, cover);

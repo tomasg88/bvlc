@@ -7,7 +7,7 @@ import { pagesQuery } from 'lib/queries';
 import HeroInstitucional from 'components/HeroInstitucional/HeroInstitucional';
 import { BG_CONSTANTS } from 'utils/constants';
 import { GetStaticProps } from 'next';
-import { Page } from 'interfaces/News';
+import { Page } from 'types/News';
 
 const Institucional: FC<Page> = ({ pages }): JSX.Element => (
   <Layout title={pages.title}>

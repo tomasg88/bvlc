@@ -5,7 +5,7 @@ import { allPostQuery } from 'lib/queries';
 import HeroNews from 'components/HeroNews/HeroNews';
 import CardNewsHorizontal from 'components/CardNewsHorizontal/CardNewsHorizontal';
 import styles from 'styles/PageSidebar.module.css';
-import { News, NewsType } from 'interfaces/News';
+import { News, NewsType } from 'types/News';
 import { GetStaticProps } from 'next';
 
 const Noticias: FC<NewsType> = ({ list }): JSX.Element => {

@@ -7,7 +7,7 @@ import { getClient } from 'lib/sanity.server';
 import HeroInstitucional from 'components/HeroInstitucional/HeroInstitucional';
 import { BG_CONSTANTS } from 'utils/constants';
 import { GetStaticProps } from 'next';
-import { EquipmentType } from 'interfaces/News';
+import { EquipmentType } from 'types/News';
 
 const Equipamiento: FC<EquipmentType> = ({ equipment }): JSX.Element => {
   const [selected, setSelected] = useState(null);

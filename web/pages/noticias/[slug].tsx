@@ -5,7 +5,7 @@ import { urlForImage } from 'lib/sanity';
 import ArticleContent from 'components/ArticleContent/ArticleContent';
 import CardNewsHorizontal from 'components/CardNewsHorizontal/CardNewsHorizontal';
 import { FC } from 'react';
-import { SlugType } from 'interfaces/News';
+import { SlugType } from 'types/News';
 import { GetStaticPathsResult, GetStaticPropsResult } from 'next';
 
 const Article: FC<SlugType> = ({ article, moreArticles }): JSX.Element => {

@@ -7,7 +7,7 @@ import { BG_CONSTANTS } from 'utils/constants';
 import Fade from 'react-reveal/Fade';
 import groupAndOrder from 'utils/list';
 import { ComisionType } from 'interfaces/News';
-import { GetStaticProps } from 'next';
+import { GetStaticProps } fromtypes/News
 import MemberCard from 'components/MemberCard/MemberCard';
 
 const ComisionDirectiva: FC<ComisionType> = ({ list }): JSX.Element => {

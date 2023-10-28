@@ -7,7 +7,7 @@ import { getClient } from 'lib/sanity.server';
 import HeroInstitucional from 'components/HeroInstitucional/HeroInstitucional';
 import { BG_CONSTANTS } from 'utils/constants';
 import { GetStaticProps } from 'next';
-import { SpecialtyType } from 'interfaces/News';
+import { SpecialtyType } from 'types/News';
 import { SanityAsset } from '@sanity/image-url/lib/types/types';
 
 const Especialidades: FC<SpecialtyType> = ({ specialties }): JSX.Element => {

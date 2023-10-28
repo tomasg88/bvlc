@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import { sanityImagePropType } from 'utils/sanityPropType';
 import { sanityConfig } from 'lib/config';
 import { useNextSanityImage } from 'next-sanity-image';
-import { Album } from 'interfaces/News';
+import { Album } from 'types/News';
 
 const AlbumCover: FC<Album> = ({ cover, title, description, onClick }): JSX.Element => {
   const { src, loader } = useNextSanityImage(sanityConfig, cover);

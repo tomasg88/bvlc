@@ -6,7 +6,7 @@ import Fade from 'react-reveal/Fade';
 import PropTypes from 'prop-types';
 import { sanityImagePropType } from 'utils/sanityPropType';
 import { FC } from 'react';
-import { News } from 'interfaces/News';
+import { News } from 'types/News';
 
 const CardNews: FC<News> = ({ title, mainImage, excerpt, slug, publishedAt }): JSX.Element => (
   <Fade>

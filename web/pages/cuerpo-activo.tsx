@@ -8,7 +8,7 @@ import Fade from 'react-reveal/Fade';
 import groupAndOrder from 'utils/list';
 import { GetStaticProps } from 'next';
 import { ActiveForceType } from 'interfaces/News';
-import MemberCard from 'components/MemberCard/MemberCard';
+import MemberCard from 'componenttypes/NewsmberCard';
 
 const CuerpoActivo: FC<ActiveForceType> = ({ list }): JSX.Element => {
   const { orderedList, getTranslation } = groupAndOrder('rank', list);
