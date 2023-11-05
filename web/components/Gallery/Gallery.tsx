@@ -71,7 +71,7 @@ const Gallery: FC<IProp> = ({ onClose, list }): JSX.Element => {
                   src={img}
                   width={60}
                   height={60}
-                  fixed
+                  fixed="true"
                   style={{
                     objectFit: 'cover',
                   }}

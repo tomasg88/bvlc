@@ -8,7 +8,7 @@ import { RrssContext, IRrss } from 'components/context';
 import * as ga from 'lib/ga';
 import { useRouter } from 'next/router';
 import { AppProps } from 'next/app';
-import { Roboto } from '@next/font/google';
+import { Roboto } from 'next/font/google';
 
 interface MyAppProps extends AppProps {
   rrss: IRrss[];

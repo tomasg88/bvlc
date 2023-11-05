@@ -14,7 +14,6 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.0.0",
-    "@next/font": "^13.1.6",
     "@sanity/block-content-to-react": "^2.0.7",
     "@sanity/client": "^2.2.6",
     "@tailwindcss/line-clamp": "^0.2.0",
