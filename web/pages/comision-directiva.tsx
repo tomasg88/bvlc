@@ -1,14 +1,15 @@
 import React, { FC } from 'react';
-import Layout from 'components/Layout/Layout';
-import HeroInstitucional from 'components/HeroInstitucional/HeroInstitucional';
+import { GetStaticProps } from 'next';
+import { ComisionType } from '../types/News';
 import { getClient } from 'lib/sanity.server';
 import { leadershipQuery } from 'lib/queries';
+
+import Layout from 'components/Layout/Layout';
+import HeroInstitucional from 'components/HeroInstitucional/HeroInstitucional';
+import MemberCard from 'components/MemberCard/MemberCard';
 import { BG_CONSTANTS } from 'utils/constants';
 import Fade from 'react-reveal/Fade';
 import groupAndOrder from 'utils/list';
-import { ComisionType } from 'interfaces/News';
-import { GetStaticProps } fromtypes/News
-import MemberCard from 'components/MemberCard/MemberCard';
 
 const ComisionDirectiva: FC<ComisionType> = ({ list }): JSX.Element => {
   const { orderedList, getTranslation } = groupAndOrder('position', list);

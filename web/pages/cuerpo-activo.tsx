@@ -1,14 +1,16 @@
 import React, { FC } from 'react';
-import Layout from 'components/Layout/Layout';
-import { activeForceQuery } from 'lib/queries';
 import { getClient } from 'lib/sanity.server';
-import HeroInstitucional from 'components/HeroInstitucional/HeroInstitucional';
-import { BG_CONSTANTS } from 'utils/constants';
-import Fade from 'react-reveal/Fade';
-import groupAndOrder from 'utils/list';
 import { GetStaticProps } from 'next';
-import { ActiveForceType } from 'interfaces/News';
-import MemberCard from 'componenttypes/NewsmberCard';
+
+import { activeForceQuery } from 'lib/queries';
+import { BG_CONSTANTS } from 'utils/constants';
+import groupAndOrder from 'utils/list';
+import { ActiveForceType } from '../types/News';
+
+import Fade from 'react-reveal/Fade';
+import Layout from 'components/Layout/Layout';
+import MemberCard from 'components/MemberCard/MemberCard';
+import HeroInstitucional from 'components/HeroInstitucional/HeroInstitucional';
 
 const CuerpoActivo: FC<ActiveForceType> = ({ list }): JSX.Element => {
   const { orderedList, getTranslation } = groupAndOrder('rank', list);
