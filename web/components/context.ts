@@ -4,6 +4,6 @@ export type IRrss = {
   _id: string;
   rrss: string;
   rrssUrl: string;
-}[];
+};
 
-export const Context = React.createContext<IRrss[]>([]);
+export const RrssContext = React.createContext<IRrss[]>([]);

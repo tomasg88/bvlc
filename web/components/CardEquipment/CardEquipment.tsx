@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 import { useNextSanityImage } from 'next-sanity-image';
 import { sanityConfig } from 'lib/config';
 import { sanityImagePropType } from 'utils/sanityPropType';
-import { Equipment } from 'interfaces/News';
+import { Equipment } from 'types/News';
 
 const CardEquipment: FC<Equipment> = ({ body, cover, onClick, title }): JSX.Element => {
   const { src, loader } = useNextSanityImage(sanityConfig, cover);
@@ -17,11 +17,14 @@ const CardEquipment: FC<Equipment> = ({ body, cover, onClick, title }): JSX.Elem
         <Image
           loader={loader}
           src={src}
-          layout="fill"
-          objectFit="cover"
           className={styles.img}
           onClick={onClick}
           alt={title}
+          fill
+          sizes="100vw"
+          style={{
+            objectFit: 'cover',
+          }}
         />
       </div>
       <div className={styles.content}>

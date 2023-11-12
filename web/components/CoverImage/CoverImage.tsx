@@ -27,6 +27,10 @@ const CoverImage: FC<IProp> = ({ title, image }): JSX.Element => {
           alt={`Cover Image for ${title}`}
           className={styles.image}
           {...imageProps}
+          style={{
+            maxWidth: '100%',
+            height: 'auto',
+          }}
         />
       ) : (
         <div className={styles.default} />

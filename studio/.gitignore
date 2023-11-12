@@ -1,0 +1,8 @@
+// variables de entorno
+
+.env
+.env.local
+
+// Ignorar el archivo package-lock.json
+
+package-lock.json

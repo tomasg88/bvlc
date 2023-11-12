@@ -9,7 +9,7 @@ import { sanityConfig } from 'lib/config';
 import { sanityImagePropType } from 'utils/sanityPropType';
 import SanityImage from 'components/SanityImage/SanityImage';
 import Zoom from 'react-reveal/Zoom';
-import { Specialty } from 'interfaces/News';
+import { Specialty } from 'types/News';
 
 const CardSpecialty: FC<Specialty> = ({ cover, title, body, onClick, members }) => {
   const { src, loader } = useNextSanityImage(sanityConfig, cover);
@@ -24,11 +24,14 @@ const CardSpecialty: FC<Specialty> = ({ cover, title, body, onClick, members }) 
             <Image
               loader={loader}
               src={src}
-              layout="fill"
-              objectFit="cover"
               className={styles.img}
               onClick={onClick}
               alt={title}
+              fill
+              sizes="100vw"
+              style={{
+                objectFit: 'cover',
+              }}
             />
           </div>
           <div className={styles.content}>
@@ -43,7 +46,7 @@ const CardSpecialty: FC<Specialty> = ({ cover, title, body, onClick, members }) 
             <div className={styles.membersContainer}>
               {members.map((m) => (
                 <div key={m._id} className={styles.memberPicture}>
-                  <SanityImage src={m.image} layout="fill" className={styles.picture} />
+                  <SanityImage src={m.image} fill className={styles.picture} />
                 </div>
               ))}
             </div>

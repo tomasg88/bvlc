@@ -40,8 +40,11 @@ const Gallery: FC<IProp> = ({ onClose, list }): JSX.Element => {
             {list[mainIndex] && (
               <SanityImage
                 src={list[mainIndex]}
-                layout="fill"
-                objectFit="contain"
+                fill
+                sizes="100vw"
+                style={{
+                  objectFit: 'contain',
+                }}
                 className={styles.image}
                 quality={100}
                 priority
@@ -68,8 +71,10 @@ const Gallery: FC<IProp> = ({ onClose, list }): JSX.Element => {
                   src={img}
                   width={60}
                   height={60}
-                  layout={'fixed'}
-                  objectFit="cover"
+                  fixed="true"
+                  style={{
+                    objectFit: 'cover',
+                  }}
                   onClick={() => setMainIndex(index)}
                   priority
                 />

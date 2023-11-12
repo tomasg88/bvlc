@@ -9,7 +9,7 @@ import Fade from 'react-reveal/Fade';
 import { sanityImagePropType } from 'utils/sanityPropType';
 import PropTypes from 'prop-types';
 import useWindowSize from 'hooks/useWindowSizes';
-import { News } from 'interfaces/News';
+import { News } from 'types/News';
 
 const CardHighlighted: FC<News> = ({ title, slug, mainImage }): JSX.Element => {
   const { width, isMobile } = useWindowSize();
@@ -22,11 +22,17 @@ const CardHighlighted: FC<News> = ({ title, slug, mainImage }): JSX.Element => {
   return (
     <Fade>
       <div className={styles.root}>
-        <Link href={`/noticias/${slug}`}>
-          <a aria-label={title}>
-            <Image {...imgProps} alt={title} className={styles.image} />
-            <p className={styles.title}>{title}</p>
-          </a>
+        <Link href={`/noticias/${slug}`} aria-label={title}>
+          <Image
+            {...imgProps}
+            alt={title}
+            className={styles.image}
+            style={{
+              maxWidth: '100%',
+              height: 'auto',
+            }}
+          />
+          <p className={styles.title}>{title}</p>
         </Link>
       </div>
     </Fade>

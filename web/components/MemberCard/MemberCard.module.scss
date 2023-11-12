@@ -1,0 +1,28 @@
+.root {
+  @apply relative flex items-start w-full h-full bg-white border border-gray-300 rounded-md shadow-lg;
+
+  .imageContainer {
+    @apply relative;
+    width: 100px;
+    height: 100px;
+
+    .image {
+      @apply rounded-md rounded-r-none w-auto h-full;
+    }
+  }
+
+  .dataContainer {
+    @apply flex h-full flex-col items-start justify-center  space-y-2 ml-4;
+
+    .data {
+      @apply text-lg;
+
+      .name {
+        @apply font-bold text-gray-800;
+      }
+      .description {
+        @apply text-gray-500;
+      }
+    }
+  }
+}

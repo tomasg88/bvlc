@@ -1,7 +1,7 @@
 .root {
-    @apply relative py-40 overflow-hidden text-center text-white bg-gray-800;
+  @apply relative py-40 overflow-hidden text-center text-white bg-gray-800;
 
-    .title {
-        @apply relative z-10 font-sans text-6xl font-light;
-    }
+  .title {
+    @apply relative z-10 text-6xl font-light;
+  }
 }

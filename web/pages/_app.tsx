@@ -4,14 +4,23 @@ import 'styles/Header.css';
 import { getClient } from 'lib/sanity.server';
 import { rrssQuery } from 'lib/queries';
 import { useEffect, useState } from 'react';
-import { Context } from 'components/context';
+import { RrssContext, IRrss } from 'components/context';
 import * as ga from 'lib/ga';
 import { useRouter } from 'next/router';
-import { AppProps } from 'next/dist/next-server/lib/router/router';
-import { AppContextType } from 'next/dist/next-server/lib/utils';
+import { AppProps } from 'next/app';
+import { Roboto } from 'next/font/google';
 
-function MyApp({ Component, pageProps, rrss }: AppProps): JSX.Element {
-  const [context, setContext] = useState(rrss);
+interface MyAppProps extends AppProps {
+  rrss: IRrss[];
+}
+
+const roboto = Roboto({
+  subsets: ['latin'],
+  weight: ['100', '300', '400', '500', '700', '900'],
+});
+
+function MyApp({ Component, pageProps, rrss }: MyAppProps): JSX.Element {
+  const [context] = useState<IRrss[]>(rrss);
   const router = useRouter();
 
   useEffect(() => {
@@ -23,13 +32,15 @@ function MyApp({ Component, pageProps, rrss }: AppProps): JSX.Element {
   }, [router.events]);
 
   return (
-    <Context.Provider value={[context, setContext]}>
-      <Component {...pageProps} />
-    </Context.Provider>
+    <RrssContext.Provider value={context}>
+      <div className={roboto.className}>
+        <Component {...pageProps} />
+      </div>
+    </RrssContext.Provider>
   );
 }
 
-MyApp.getInitialProps = async ({ Component, ctx }: AppContextType) => {
+MyApp.getInitialProps = async ({ Component, ctx }) => {
   const rrss = await getClient(false).fetch(rrssQuery);
   let pageProps = {};
   if (Component.getInitialProps) {

@@ -3,34 +3,33 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Headroom from 'react-headroom';
 import RrssIcon from '../RrssIcon/RrssIcon';
-import { Context } from '../context';
+import { RrssContext } from '../context';
 import { FunctionComponent, ReactElement, useContext } from 'react';
 import { DEFAULT_PAGE_TITLE, BG_CONSTANTS } from 'utils/constants';
 import MenuDropdown from '../MenuDropdown/MenuDropdown';
 import styles from './Header.module.scss';
 
 const Header: FunctionComponent = (): ReactElement => {
-  const [rrss] = useContext(Context);
+  const rrss = useContext(RrssContext);
   return (
     <Headroom disableInlineStyles>
       <div className={'bg-pattern'}>
         <header className={styles.container}>
           <div className={styles.main}>
-            <Link href="/">
-              <a className={styles.logoContainer}>
-                <Image
-                  src="/logo-bomberos-cuyo.png"
-                  width={80}
-                  height={100}
-                  objectFit="fill"
-                  quality={50}
-                  layout="fixed"
-                  alt={DEFAULT_PAGE_TITLE}
-                />
-                <span className={styles.logoTitle}>
-                  Bomberos Voluntarios <br /> de Luján de Cuyo
-                </span>
-              </a>
+            <Link href="/" className={styles.logoContainer}>
+              <Image
+                src="/logo-bomberos-cuyo.png"
+                width={80}
+                height={100}
+                quality={50}
+                alt={DEFAULT_PAGE_TITLE}
+                style={{
+                  objectFit: 'fill',
+                }}
+              />
+              <span className={styles.logoTitle}>
+                Bomberos Voluntarios <br /> de Luján de Cuyo
+              </span>
             </Link>
             <div className={styles.rightItems}>
               <div className={styles.rightUpperItems}>
@@ -46,7 +45,6 @@ const Header: FunctionComponent = (): ReactElement => {
                     alt={DEFAULT_PAGE_TITLE}
                     quality={50}
                     className={styles.rightUpperImage}
-                    layout="fixed"
                     width={30}
                     height={30}
                   />
@@ -63,7 +61,6 @@ const Header: FunctionComponent = (): ReactElement => {
                     alt={DEFAULT_PAGE_TITLE}
                     quality={50}
                     className={styles.rightUpperImage}
-                    layout="fixed"
                     width={30}
                     height={30}
                   />

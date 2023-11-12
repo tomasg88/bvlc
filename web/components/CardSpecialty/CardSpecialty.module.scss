@@ -1,87 +1,86 @@
 .root {
-    @apply relative;
-    @apply block;
+  @apply relative;
+  @apply block;
+  @apply w-full;
+  @apply my-8;
+  @apply overflow-hidden;
+  @apply lg:w-4/5;
+  @apply 2xl:w-3/5;
+
+  .title {
+    @apply sm:pl-6;
+    @apply pb-4;
+    @apply mb-2;
+    @apply text-3xl;
+    @apply font-light;
+    @apply text-left;
+    @apply text-gray-900;
+    @apply border-b-2;
+    @apply border-yellow-400;
+  }
+
+  .mainContent {
     @apply w-full;
-    @apply my-8;
-    @apply overflow-hidden;
-    @apply lg:w-4/5;
-    @apply 2xl:w-3/5;
+    @apply sm:p-6;
+    @apply flex;
+    @apply flex-col;
+    @apply lg:flex-row;
 
-    .title {
-        @apply sm:pl-6;
-        @apply pb-4;
-        @apply mb-2;
-        @apply text-3xl;
-        @apply font-light;
-        @apply text-left;
-        @apply text-gray-900;
-        @apply font-sans;
-        @apply border-b-2;
-        @apply border-yellow-400;
+    .imageContainer {
+      @apply relative;
+      @apply flex-none;
+      @apply w-full;
+      @apply cursor-pointer;
+      @apply h-72;
+      @apply lg:w-96;
+      @apply hover:opacity-90;
+
+      .img {
+        @apply w-full h-full;
+      }
     }
 
-    .mainContent {
-        @apply w-full;
-        @apply sm:p-6;
-        @apply flex;
-        @apply flex-col;
-        @apply lg:flex-row;
+    .content {
+      @apply flex flex-col mt-4 md:ml-4 md:mt-0;
+      .description {
+        @apply mb-4 text-base;
+      }
 
-        .imageContainer {
-            @apply relative;
-            @apply flex-none;
-            @apply w-full;
-            @apply cursor-pointer;
-            @apply h-72;
-            @apply lg:w-96;
-            @apply hover:opacity-90;
+      .membersTitle {
+        @apply my-4 font-bold uppercase text-gray-600;
+      }
+      .membersContainer {
+        @apply grid gap-2 grid-cols-4 md:grid-cols-6 2xl:grid-cols-8;
 
-            .img {
-                @apply w-full h-full;
-            }
+        .memberPicture {
+          @apply relative block h-12 w-12 md:h-16 md:w-16 mr-2 rounded-full hover:shadow-lg transition-all;
+          .picture {
+            @apply rounded-full;
+          }
         }
-
-        .content {
-            @apply flex flex-col mt-4 md:ml-4 md:mt-0;
-            .description {
-                @apply mb-4 text-base;
-            }
-
-            .membersTitle {
-                @apply my-4 font-bold uppercase text-gray-600;
-            }
-            .membersContainer {
-                @apply grid gap-2 grid-cols-4 md:grid-cols-6 2xl:grid-cols-8;
-
-                .memberPicture {
-                    @apply relative block h-12 w-12 md:h-16 md:w-16 mr-2 rounded-full hover:shadow-lg transition-all;
-                    .picture {
-                        @apply rounded-full;
-                    }
-                }
-            }
-        }
-        .action {
-            @apply inline-flex;
-            @apply justify-center;
-            @apply items-center;
-            @apply justify-center;
-            @apply px-4;
-            @apply py-2;
-            @apply mt-4;
-            @apply font-medium;
-            @apply text-red-600;
-            @apply uppercase;
-            @apply duration-700;
-            @apply rounded;
-            @apply cursor-pointer;
-            @apply hover:bg-red-600;
-            @apply hover:text-white;
-            @apply lg:absolute;
-            @apply lg:right-0;
-            @apply lg:top-0;
-            @apply lg:mt-0;
-            @apply lg:py-1;
-        }
+      }
     }
+    .action {
+      @apply inline-flex;
+      @apply justify-center;
+      @apply items-center;
+      @apply justify-center;
+      @apply px-4;
+      @apply py-2;
+      @apply mt-4;
+      @apply font-medium;
+      @apply text-red-600;
+      @apply uppercase;
+      @apply duration-700;
+      @apply rounded;
+      @apply cursor-pointer;
+      @apply hover:bg-red-600;
+      @apply hover:text-white;
+      @apply lg:absolute;
+      @apply lg:right-0;
+      @apply lg:top-0;
+      @apply lg:mt-0;
+      @apply lg:py-1;
+    }
+  }
 }

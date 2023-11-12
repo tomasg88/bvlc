@@ -5,7 +5,7 @@ import { urlForImage } from 'lib/sanity';
 import ArticleContent from 'components/ArticleContent/ArticleContent';
 import CardNewsHorizontal from 'components/CardNewsHorizontal/CardNewsHorizontal';
 import { FC } from 'react';
-import { SlugType } from 'interfaces/News';
+import { SlugType } from 'types/News';
 import { GetStaticPathsResult, GetStaticPropsResult } from 'next';
 
 const Article: FC<SlugType> = ({ article, moreArticles }): JSX.Element => {
@@ -27,9 +27,7 @@ const Article: FC<SlugType> = ({ article, moreArticles }): JSX.Element => {
           </article>
         )}
         <div className="flex flex-col w-full max-w-3xl px-4 py-6 mx-auto bg-white">
-          <h3 className="pt-6 mb-3 font-sans text-3xl text-red-500 border-b border-red-600">
-            Más noticias
-          </h3>
+          <h3 className="pt-6 mb-3 text-3xl text-red-500 border-b border-red-600">Más noticias</h3>
           <div className="">
             {moreArticles &&
               moreArticles.length > 0 &&

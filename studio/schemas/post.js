@@ -1,7 +1,7 @@
-import sanityClient from "part:@sanity/base/client";
+import { useClient } from "sanity";
 
 const hightlightedNewsQuery = `*[_type == "post" && isHighlighted && _id != $id]`;
-const client = sanityClient.withConfig({ apiVersion: 1 });
+
 const trimDraftFromString = (str) => str.replace("drafts.", "");
 
 // Returns the first news encountered and marked as "highlighted"
@@ -15,6 +15,7 @@ const checkOtherPosts = (document, list) =>
 const printErrorMsg = () => "Ya hay una noticia destacada. Revisala: ";
 
 const checkForOtherHighlightedNews = (document) => {
+  const client = useClient({ apiVersion: "2021-10-21"});
   return client
     .fetch(hightlightedNewsQuery, {
       id: document._id,

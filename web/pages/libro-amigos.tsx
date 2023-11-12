@@ -9,7 +9,7 @@ import { BG_CONSTANTS } from 'utils/constants';
 import Button from 'components/Button/Button';
 import * as ga from 'lib/ga';
 import { GetStaticProps } from 'next';
-import { Page } from 'interfaces/News';
+import { Page } from 'types/News';
 
 const BOOK_PUBLIC_URL =
   'https://drive.google.com/file/d/1-Ej0AXd14-xLfvooEfzWHG1bGdZYbOjO/view?usp=sharing';
