@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { GetStaticProps } from 'next';
-import { ComisionType } from '../types/News';
+import { ComisionType } from 'types/News';
 import { getClient } from 'lib/sanity.server';
 import { leadershipQuery } from 'lib/queries';
 
