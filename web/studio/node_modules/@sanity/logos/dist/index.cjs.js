@@ -1,0 +1,6 @@
+import cjs from './index.cjs';
+
+export const GroqLogo = cjs.GroqLogo;
+export const GroqMonogram = cjs.GroqMonogram;
+export const SanityLogo = cjs.SanityLogo;
+export const SanityMonogram = cjs.SanityMonogram;
