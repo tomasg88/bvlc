@@ -3,6 +3,10 @@
 .env
 .env.local
 
+node_modules
+/node_modules
+
+
 // Ignorar el archivo package-lock.json
 
 package-lock.json
