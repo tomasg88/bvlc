@@ -19,7 +19,7 @@ const checkForOtherHighlightedNews = (document) => {
     })
     .then((list) => {
       if (list.length) {
-        let result = checkOtherPosts(document, list);
+        const result = checkOtherPosts(document, list);
         if (result) return printErrorMsg() + result.title;
         else return true;
       } else {
