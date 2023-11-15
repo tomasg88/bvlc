@@ -1,21 +1,18 @@
-import { useClient } from "sanity";
+import { useClient } from 'sanity';
 
 const hightlightedNewsQuery = `*[_type == "post" && isHighlighted && _id != $id]`;
 
-const trimDraftFromString = (str) => str.replace("drafts.", "");
+const trimDraftFromString = (str) => str.replace('drafts.', '');
 
 // Returns the first news encountered and marked as "highlighted"
 // Returns undefined if no other news encountered as marked
 const checkOtherPosts = (document, list) =>
-  list.find(
-    (post) =>
-      trimDraftFromString(document._id) !== trimDraftFromString(post._id)
-  );
+  list.find((post) => trimDraftFromString(document._id) !== trimDraftFromString(post._id));
 
-const printErrorMsg = () => "Ya hay una noticia destacada. Revisala: ";
+const printErrorMsg = () => 'Ya hay una noticia destacada. Revisala: ';
 
 const checkForOtherHighlightedNews = (document) => {
-  const client = useClient({ apiVersion: "2021-10-21"});
+  const client = useClient({ apiVersion: '2021-10-21' });
   return client
     .fetch(hightlightedNewsQuery, {
       id: document._id,
@@ -33,71 +30,71 @@ const checkForOtherHighlightedNews = (document) => {
 };
 
 export default {
-  name: "post",
-  title: "Noticia",
-  type: "document",
+  name: 'post',
+  title: 'Noticia',
+  type: 'document',
   fields: [
     {
-      name: "mainImage",
-      title: "Imagen destacada",
-      type: "image",
+      name: 'mainImage',
+      title: 'Imagen destacada',
+      type: 'image',
       validation: (Rule) => Rule.required(),
       options: {
         hotspot: true,
       },
     },
     {
-      name: "title",
-      title: "Titulo de la nota",
-      type: "string",
+      name: 'title',
+      title: 'Titulo de la nota',
+      type: 'string',
       validation: (Rule) => Rule.required(),
     },
     {
-      name: "excerpt",
-      title: "Descripción breve",
-      type: "text",
+      name: 'excerpt',
+      title: 'Descripción breve',
+      type: 'text',
     },
     {
-      name: "body",
-      title: "Articulo",
-      type: "blockContent",
+      name: 'body',
+      title: 'Articulo',
+      type: 'blockContent',
       validation: (Rule) => Rule.required(),
     },
     {
-      name: "publishedAt",
-      title: "Dia de la publicación",
-      type: "datetime",
+      name: 'publishedAt',
+      title: 'Dia de la publicación',
+      type: 'datetime',
       validation: (Rule) => Rule.required(),
     },
     {
-      name: "slug",
-      title: "URL",
-      type: "slug",
-      description: "Click en el botón GENERATE para generar la ruta (URL)",
+      name: 'slug',
+      title: 'URL',
+      type: 'slug',
+      description: 'Click en el botón GENERATE para generar la ruta (URL)',
       validation: (Rule) => Rule.required(),
       options: {
-        source: "title",
+        source: 'title',
         maxLength: 96,
       },
     },
     {
-      name: "author",
-      title: "Autor",
-      type: "reference",
-      to: { type: "author" },
+      name: 'author',
+      title: 'Autor',
+      type: 'reference',
+      to: { type: 'author' },
       validation: (Rule) => Rule.required(),
     },
     {
-      name: "categories",
-      title: "Categorias",
-      type: "array",
-      of: [{ type: "reference", to: { type: "category" } }],
+      name: 'categories',
+      title: 'Categorias',
+      type: 'array',
+      of: [{ type: 'reference', to: { type: 'category' } }],
       validation: (Rule) => Rule.required(),
     },
     {
-      name: "isHighlighted",
-      title: "Noticia Destacada?",
-      type: "boolean",
+      name: 'isHighlighted',
+      title: 'Noticia Destacada?',
+      type: 'boolean',
       initialValue: false,
       validation: (Rule) =>
         Rule.custom((field, { document }) => {
@@ -109,9 +106,9 @@ export default {
 
   preview: {
     select: {
-      title: "title",
-      author: "author.name",
-      media: "mainImage",
+      title: 'title',
+      author: 'author.name',
+      media: 'mainImage',
     },
     prepare(selection) {
       const { author } = selection;
