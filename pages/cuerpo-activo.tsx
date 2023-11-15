@@ -5,7 +5,7 @@ import { GetStaticProps } from 'next';
 import { activeForceQuery } from 'lib/queries';
 import { BG_CONSTANTS } from 'utils/constants';
 import groupAndOrder from 'utils/list';
-import { ActiveForceType } from '../types/News';
+import { ActiveForceType } from 'types/News';
 
 import Fade from 'react-reveal/Fade';
 import Layout from 'components/Layout/Layout';
