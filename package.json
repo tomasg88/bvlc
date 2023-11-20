@@ -3,11 +3,11 @@
   "version": "1.4.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
     "build": "next build",
+    "dev": "next dev",
+    "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "lint:init": "eslint --init",
-    "lint": "eslint .",
     "postbuild": "next-sitemap --config next-sitemap.config.js",
     "prepare": "husky install",
     "start": "next start",
@@ -61,6 +61,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-promise": "^5.1.0",
     "eslint-plugin-react": "^7.26.1",
+    "husky": "^8.0.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.3.1",
     "postcss": "^8.2.7",
@@ -68,7 +69,6 @@
     "prop-types": "^15.7.2",
     "react-test-renderer": "^17.0.2",
     "tailwindcss": "^2.1.2",
-    "typescript": "^4.4.4",
-    "husky": "^8.0.0"
+    "typescript": "^4.4.4"
   }
 }
