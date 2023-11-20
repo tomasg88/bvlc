@@ -1,4 +1,4 @@
-# Welcome
+# Bomberos Voluntarios de Luján de Cuyo
 
 This repository contains the codebase for [Bomberos Voluntarios de Luján de Cuyo](https://bomberoslujandecuyo.org.ar/), a firefighters department from Luján de Cuyo, Mendoza, Argentina.
 
