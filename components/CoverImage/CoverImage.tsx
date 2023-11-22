@@ -1,4 +1,4 @@
-import { urlForImage } from 'lib/sanity';
+import { urlForImage } from 'lib/sanity.image';
 import Image from 'next/image';
 import { useNextSanityImage } from 'next-sanity-image';
 import { sanityConfig } from 'lib/config';

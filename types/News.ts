@@ -12,7 +12,7 @@ export interface IButton {
 export interface NewsBody {
   body: SanityDocumentStub;
   mainImage?: SanityImageSource;
-  publishedAt?: string;
+  publishedAt: string;
   title?: string;
 }
 

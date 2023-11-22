@@ -25,11 +25,7 @@ const ArticleContent: FC<NewsBody> = ({ title, mainImage, publishedAt, body }): 
       youtube: ({ node }) => {
         const { url } = node;
         const id = getYouTubeID(url);
-        return (
-          <div className={styles.videoResponsive}>
-            <YouTube videoId={id} />
-          </div>
-        );
+        return <div className={styles.videoResponsive}>{/* <YouTube videoId={id} /> */}</div>;
       },
     },
   };
@@ -72,17 +68,6 @@ const ArticleContent: FC<NewsBody> = ({ title, mainImage, publishedAt, body }): 
       </div>
     </>
   );
-};
-
-ArticleContent.defaultProps = {
-  title: '',
-  publishedAt: '',
-};
-
-ArticleContent.propTypes = {
-  title: PropTypes.string,
-  publishedAt: PropTypes.string,
-  mainImage: sanityImagePropType,
 };
 
 export default ArticleContent;

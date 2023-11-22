@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import Layout from 'components/Layout/Layout';
-import { getClient } from 'lib/sanity.server';
+import { sanityClient } from 'lib/sanity.client';
 import ArticleContent from 'components/ArticleContent/ArticleContent';
 import { SRLWrapper } from 'simple-react-lightbox';
 import { pagesQuery } from 'lib/queries';
@@ -46,7 +46,7 @@ export default LibroAmigos;
 
 export const getStaticProps: GetStaticProps = async () => {
   const slug = 'libro-amigos';
-  const pages = await getClient().fetch(pagesQuery, { slug });
+  const pages = await sanityClient.fetch(pagesQuery, { slug });
   return {
     props: {
       pages,

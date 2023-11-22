@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { getClient } from 'lib/sanity.server';
+import { sanityClient } from 'lib/sanity.client';
 import { GetStaticProps } from 'next';
 
 import { activeForceQuery } from 'lib/queries';
@@ -56,7 +56,7 @@ const CuerpoActivo: FC<ActiveForceType> = ({ list }): JSX.Element => {
 export default CuerpoActivo;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const list = await getClient(false).fetch(activeForceQuery);
+  const list = await sanityClient.fetch(activeForceQuery);
 
   return {
     props: {

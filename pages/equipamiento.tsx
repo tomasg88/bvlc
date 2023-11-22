@@ -3,7 +3,7 @@ import CardEquipment from 'components/CardEquipment/CardEquipment';
 import Gallery from 'components/Gallery/Gallery';
 import Layout from 'components/Layout/Layout';
 import { equipmentQuery } from 'lib/queries';
-import { getClient } from 'lib/sanity.server';
+import { sanityClient } from 'lib/sanity.client';
 import HeroInstitucional from 'components/HeroInstitucional/HeroInstitucional';
 import { BG_CONSTANTS } from 'utils/constants';
 import { GetStaticProps } from 'next';
@@ -38,7 +38,7 @@ const Equipamiento: FC<EquipmentType> = ({ equipment }): JSX.Element => {
 export default Equipamiento;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const equipment = await getClient().fetch(equipmentQuery);
+  const equipment = await sanityClient.fetch(equipmentQuery);
   return {
     props: {
       equipment,

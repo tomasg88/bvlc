@@ -1,7 +1,7 @@
 import Layout from 'components/Layout/Layout';
-import { getClient } from 'lib/sanity.server';
+import { sanityClient } from 'lib/sanity.client';
 import { postQuery, postSlugsQuery } from 'lib/queries';
-import { urlForImage } from 'lib/sanity';
+import { urlForImage } from 'lib/sanity.image';
 import ArticleContent from 'components/ArticleContent/ArticleContent';
 import CardNewsHorizontal from 'components/CardNewsHorizontal/CardNewsHorizontal';
 import { FC } from 'react';
@@ -48,7 +48,7 @@ export async function getStaticProps({
   params: { slug: string };
   preview: boolean;
 }): Promise<GetStaticPropsResult<SlugType>> {
-  const { post, morePosts } = await getClient(preview).fetch(postQuery, {
+  const { post, morePosts } = await sanityClient.fetch(postQuery, {
     slug: params.slug,
   });
   return {
@@ -61,7 +61,7 @@ export async function getStaticProps({
 
 // Returns ALL dynamic pages based on content
 export async function getStaticPaths(): Promise<GetStaticPathsResult> {
-  const paths = await getClient().fetch(postSlugsQuery);
+  const paths = await sanityClient.fetch(postSlugsQuery);
   return {
     paths: paths.map((slug) => ({ params: { slug } })) || [],
     fallback: false,

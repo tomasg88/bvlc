@@ -1,6 +1,6 @@
 import React, { FC, useState } from 'react';
 import Layout from 'components/Layout/Layout';
-import { getClient } from 'lib/sanity.server';
+import { sanityClient } from 'lib/sanity.client';
 import { albumsQuery } from 'lib/queries';
 import Gallery from 'components/Gallery/Gallery';
 import AlbumCover from 'components/AlbumCover/AlbumCover';
@@ -38,7 +38,7 @@ const Galeria: FC<GaleriaType> = ({ albums }): JSX.Element => {
 export default Galeria;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const albums: Album = await getClient().fetch(albumsQuery);
+  const albums: Album = await sanityClient.fetch(albumsQuery);
 
   return {
     props: { albums },

@@ -3,7 +3,7 @@ import CardSpecialty from 'components/CardSpecialty/CardSpecialty';
 import Gallery from 'components/Gallery/Gallery';
 import Layout from 'components/Layout/Layout';
 import { specialtyQuery } from 'lib/queries';
-import { getClient } from 'lib/sanity.server';
+import { sanityClient } from 'lib/sanity.client';
 import HeroInstitucional from 'components/HeroInstitucional/HeroInstitucional';
 import { BG_CONSTANTS } from 'utils/constants';
 import { GetStaticProps } from 'next';
@@ -38,7 +38,7 @@ const Especialidades: FC<SpecialtyType> = ({ specialties }): JSX.Element => {
 export default Especialidades;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const specialties: SpecialtyType = await getClient().fetch(specialtyQuery);
+  const specialties: SpecialtyType = await sanityClient.fetch(specialtyQuery);
   return {
     props: {
       specialties,

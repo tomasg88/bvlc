@@ -3,7 +3,7 @@ import Layout from 'components/Layout/Layout';
 import HeroHomeCarousel from 'components/HeroHomeCarousel/HeroHomeCarousel';
 import CardNews from 'components/CardNews/CardNews';
 import Button from 'components/Button/Button';
-import { getClient } from 'lib/sanity.server';
+import { sanityClient } from 'lib/sanity.client';
 import { indexQuery } from 'lib/queries';
 import Fade from 'react-reveal/Fade';
 import CardHighlighted from 'components/CardHighlighted/CardHighlighted';
@@ -38,7 +38,7 @@ const Home: FC<HomeType> = ({ recentNews, highlighted, heroImages }) => (
 );
 
 export const getStaticProps: GetStaticProps = async () => {
-  const { recentNews, highlighted, heroImages } = await getClient().fetch(indexQuery);
+  const { recentNews, highlighted, heroImages } = await sanityClient.fetch(indexQuery);
 
   return {
     props: {
