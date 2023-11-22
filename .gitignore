@@ -36,17 +36,3 @@ yarn-error.log*
 
 /public/robots.txt
 /public/sitemap.xml
-
-
-// variables de entorno
-
-.env
-.env.local
-
-node_modules
-/node_modules
-
-
-// Ignorar el archivo package-lock.json
-
-package-lock.json
