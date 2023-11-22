@@ -1,13 +1,13 @@
 import Image from 'next/image';
-import { FunctionComponent, ReactElement } from 'react';
+import { FC, ReactElement } from 'react';
 import styles from './BackgroundImage.module.scss';
 
-interface IProps {
+interface BackgroundImageProps {
   title: string;
   image: string;
 }
 
-const BackgroundImage: FunctionComponent<IProps> = ({ title = '', image }): ReactElement => (
+const BackgroundImage: FC<BackgroundImageProps> = ({ title = '', image }): ReactElement => (
   <div className={styles.root}>
     <Image alt={title} className={styles.image} src={image} title={title} fill sizes="100vw" />
   </div>
