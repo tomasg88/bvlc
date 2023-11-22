@@ -4,11 +4,9 @@ import { parseISO, format } from 'date-fns';
 import { es } from 'date-fns/locale';
 import styles from 'styles/Article.module.css';
 import { SRLWrapper } from 'simple-react-lightbox';
-import PropTypes from 'prop-types';
 import getYouTubeID from 'get-youtube-id';
 import YouTube from 'react-youtube';
 import { FC } from 'react';
-import { sanityImagePropType } from 'utils/sanityPropType';
 import { NewsBody } from 'types/News';
 
 const ArticleContent: FC<NewsBody> = ({ title, mainImage, publishedAt, body }): JSX.Element => {
@@ -25,7 +23,11 @@ const ArticleContent: FC<NewsBody> = ({ title, mainImage, publishedAt, body }): 
       youtube: ({ node }) => {
         const { url } = node;
         const id = getYouTubeID(url);
-        return <div className={styles.videoResponsive}>{/* <YouTube videoId={id} /> */}</div>;
+        return (
+          <div className={styles.videoResponsive}>
+            <YouTube videoId={id} />
+          </div>
+        );
       },
     },
   };
