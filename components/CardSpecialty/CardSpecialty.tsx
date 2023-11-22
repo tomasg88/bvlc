@@ -3,10 +3,8 @@ import Image from 'next/image';
 import { MdPhotoCamera } from 'react-icons/md';
 import BlockContent from '@sanity/block-content-to-react';
 import styles from './CardSpecialty.module.scss';
-import PropTypes from 'prop-types';
 import { useNextSanityImage } from 'next-sanity-image';
 import { sanityConfig } from 'lib/config';
-import { sanityImagePropType } from 'utils/sanityPropType';
 import SanityImage from 'components/SanityImage/SanityImage';
 import Zoom from 'react-reveal/Zoom';
 import { Specialty } from 'types/News';
@@ -63,12 +61,6 @@ const CardSpecialty: FC<Specialty> = ({ cover, title, body, onClick, members }) 
 
 CardSpecialty.defaultProps = {
   members: [],
-};
-
-CardSpecialty.propTypes = {
-  title: PropTypes.string.isRequired,
-  onClick: PropTypes.func.isRequired,
-  cover: sanityImagePropType,
 };
 
 export default CardSpecialty;

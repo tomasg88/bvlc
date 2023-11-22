@@ -1,12 +1,11 @@
-// sanity.cli.js
 /* eslint-disable no-process-env */
-import { loadEnvConfig } from '@next/env';
-import { defineCliConfig } from 'sanity/cli';
+var loadEnvConfig = require('@next/env').loadEnvConfig;
+var defineCliConfig = require('sanity/cli').defineCliConfig;
 
-const dev = process.env.NODE_ENV !== 'production';
-loadEnvConfig(__dirname, dev, { info: () => null, error: console.error });
+var dev = process.env.NODE_ENV !== 'production';
+loadEnvConfig(__dirname, dev, { info: function () {}, error: console.error });
 
-const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
-const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET;
+var projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
+var dataset = process.env.NEXT_PUBLIC_SANITY_DATASET;
 
-export default defineCliConfig({ api: { projectId, dataset } });
+module.exports = defineCliConfig({ api: { projectId: projectId, dataset: dataset } });

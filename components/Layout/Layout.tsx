@@ -9,7 +9,6 @@ import {
   DEFAULT_PAGE_URL,
   DEFAULT_PAGE_IMAGE,
 } from 'utils/constants';
-import PropTypes from 'prop-types';
 import { FC } from 'react';
 
 interface LayoutProps {
@@ -72,12 +71,6 @@ Layout.defaultProps = {
   title: '',
   description: '',
   image: '',
-};
-
-Layout.propTypes = {
-  title: PropTypes.string,
-  description: PropTypes.string,
-  image: PropTypes.string,
 };
 
 export default Layout;

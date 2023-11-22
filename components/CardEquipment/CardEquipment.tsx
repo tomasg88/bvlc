@@ -3,10 +3,8 @@ import Image from 'next/image';
 import { MdPhotoCamera } from 'react-icons/md';
 import BlockContent from '@sanity/block-content-to-react';
 import styles from './CardEquipment.module.scss';
-import PropTypes from 'prop-types';
 import { useNextSanityImage } from 'next-sanity-image';
 import { sanityConfig } from 'lib/config';
-import { sanityImagePropType } from 'utils/sanityPropType';
 import { Equipment } from 'types/News';
 
 const CardEquipment: FC<Equipment> = ({ body, cover, onClick, title }): JSX.Element => {
@@ -43,12 +41,6 @@ const CardEquipment: FC<Equipment> = ({ body, cover, onClick, title }): JSX.Elem
       </div>
     </div>
   );
-};
-
-CardEquipment.propTypes = {
-  title: PropTypes.string.isRequired,
-  onClick: PropTypes.func.isRequired,
-  cover: sanityImagePropType.isRequired,
 };
 
 export default CardEquipment;

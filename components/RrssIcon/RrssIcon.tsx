@@ -5,7 +5,6 @@ import {
   AiOutlineYoutube,
   AiOutlineTwitter,
 } from 'react-icons/ai';
-import PropTypes from 'prop-types';
 
 interface IProps {
   className: string;
@@ -44,12 +43,6 @@ const RrssIcon: FunctionComponent<IProps> = ({ className, rrss, url }): ReactEle
 
 RrssIcon.defaultProps = {
   className: '',
-};
-
-RrssIcon.propTypes = {
-  className: PropTypes.string,
-  rrss: PropTypes.string.isRequired,
-  url: PropTypes.string.isRequired,
 };
 
 export default RrssIcon;

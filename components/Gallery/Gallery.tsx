@@ -3,11 +3,9 @@ import { MdClose } from 'react-icons/md';
 import { AiOutlineArrowRight, AiOutlineArrowLeft } from 'react-icons/ai';
 import Fade from 'react-reveal/Fade';
 import styles from './Gallery.module.scss';
-import PropTypes from 'prop-types';
 import SanityImage from 'components/SanityImage/SanityImage';
 import { SanityAsset } from '@sanity/image-url/lib/types/types';
 import classNames from 'classnames';
-
 interface IProp {
   onClose: () => void;
   list: SanityAsset[];
@@ -85,10 +83,6 @@ const Gallery: FC<IProp> = ({ onClose, list }): JSX.Element => {
       </div>
     </Fade>
   );
-};
-
-Gallery.propTypes = {
-  onClose: PropTypes.func.isRequired,
 };
 
 export default Gallery;
