@@ -1,6 +1,5 @@
-import { SanityDocumentStub } from '@sanity/client';
-import { SanityImageSource, SanityAsset } from '@sanity/image-url/lib/types/types';
 import { ImageProps } from 'next/image';
+import { Image, PortableTextBlock } from 'sanity';
 
 export interface IButton {
   text: string;
@@ -10,8 +9,8 @@ export interface IButton {
 }
 
 export interface NewsBody {
-  body: SanityDocumentStub;
-  mainImage?: SanityImageSource;
+  body: PortableTextBlock;
+  mainImage?: Image;
   publishedAt: string;
   title?: string;
 }
@@ -26,8 +25,8 @@ export interface Album {
   _id: string;
   title: string;
   description?: string;
-  imageList?: SanityAsset[];
-  cover: SanityImageSource;
+  imageList?: Image[];
+  cover: Image;
   onClick: () => void;
 }
 
@@ -40,33 +39,33 @@ export interface Contact {
 export interface IGallery {
   list: {
     _key: string;
-    image: SanityImageSource;
+    image: Image;
   }[];
 }
 
 export interface ComisionPerson {
   name: string;
   description: string;
-  image: SanityImageSource;
+  image: Image;
 }
 
 export interface ActiveForcePerson {
   _id: string;
   title: string;
   description: string;
-  image: SanityImageSource;
+  image: Image;
 }
 
 export interface Equipment {
-  body: SanityDocumentStub;
-  cover: SanityImageSource;
+  body: PortableTextBlock;
+  cover: Image;
   onClick: () => void;
   title: string;
 }
 
 export interface Specialty {
-  body: SanityDocumentStub;
-  cover: SanityImageSource;
+  body: PortableTextBlock;
+  cover: Image;
   members: ActiveForcePerson[];
   onClick: () => void;
   title: string;
@@ -116,9 +115,9 @@ export interface ContactoType {
 export interface EquipmentType {
   equipment: {
     _id: string;
-    body: SanityDocumentStub;
-    cover: SanityImageSource;
-    imagesGallery: SanityImageSource[];
+    body: PortableTextBlock;
+    cover: Image;
+    imagesGallery: Image[];
     onClick: () => void;
     title: string;
   }[];
@@ -127,9 +126,9 @@ export interface EquipmentType {
 export interface SpecialtyType {
   specialties: {
     _id: string;
-    body: SanityDocumentStub;
-    cover: SanityImageSource;
-    imagesGallery: SanityAsset[];
+    body: PortableTextBlock;
+    cover: Image;
+    imagesGallery: Image[];
     members: ActiveForcePerson[];
     onClick: () => void;
     title: string;
