@@ -7812,7 +7812,7 @@ sanity-plugin-vercel-deploy@^1.1.0:
     prop-types "^15.7.2"
     react-polling "^1.0.9"
 
-sanity@^3.19.1:
+sanity@^3.20.1:
   version "3.20.1"
   resolved "https://registry.yarnpkg.com/sanity/-/sanity-3.20.1.tgz#1a8057988f43119af3d5528144d9d34669933a34"
   integrity sha512-/+JfUUKjVp9+qnL+UtwbzIAhzZT1x30QhUuxAxXNugejPrBVoQaGfEuW0AmIN1zK8uH9WcHNWRD1f9HlD7Wi1w==
