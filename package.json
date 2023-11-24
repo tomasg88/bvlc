@@ -23,9 +23,7 @@
   "dependencies": {
     "@headlessui/react": "^1.0.0",
     "@sanity/block-content-to-react": "^2.0.7",
-    "@sanity/client": "^2.23.2",
-    "@sanity/components": "^2.14.0",
-    "@sanity/dashboard": "^3.1.5",
+    "@sanity/types": "^3.20.1",
     "@sanity/vision": "^3.19.1",
     "@tailwindcss/line-clamp": "^0.2.0",
     "@tailwindcss/typography": "^0.4.0",
