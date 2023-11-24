@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "sanity start",
+    "start": "next start",
     "lint:fix": "eslint . --fix",
     "lint:init": "eslint --init",
     "lint": "eslint .",
