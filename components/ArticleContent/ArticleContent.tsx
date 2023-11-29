@@ -23,6 +23,7 @@ const ArticleContent: FC<NewsBody> = ({ title, mainImage, publishedAt, body }): 
       youtube: ({ node }) => {
         const { url } = node;
         const id = getYouTubeID(url);
+        if (!id) return null;
         return (
           <div className={styles.videoResponsive}>
             <YouTube videoId={id} />
