@@ -10,7 +10,7 @@ export interface IButton {
 
 export interface NewsBody {
   body: PortableTextBlock;
-  mainImage?: Image;
+  mainImage: Image;
   publishedAt: string;
   title?: string;
 }
