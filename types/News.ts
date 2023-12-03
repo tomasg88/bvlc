@@ -47,7 +47,7 @@ export interface IGallery {
 export interface ComisionPerson {
   name: string;
   description: string;
-  image: Image;
+  image: SanityAsset;
   position: string;
 }
 
@@ -55,20 +55,20 @@ export interface ActiveForcePerson {
   _id: string;
   title: string;
   description: string;
-  image: Image;
+  image: SanityAsset;
   rank: string;
 }
 
 export interface Equipment {
   body: PortableTextBlock;
-  cover: Image;
+  cover: SanityAsset;
   onClick: () => void;
   title: string;
 }
 
 export interface Specialty {
   body: PortableTextBlock;
-  cover: Image;
+  cover: SanityAsset;
   members: ActiveForcePerson[];
   onClick: () => void;
   title: string;
@@ -130,8 +130,8 @@ export interface SpecialtyType {
   specialties: {
     _id: string;
     body: PortableTextBlock;
-    cover: Image;
-    imagesGallery: Image[];
+    cover: SanityAsset;
+    imagesGallery: SanityAsset[];
     members: ActiveForcePerson[];
     onClick: () => void;
     title: string;
