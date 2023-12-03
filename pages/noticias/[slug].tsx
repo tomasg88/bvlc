@@ -7,14 +7,16 @@ import CardNewsHorizontal from 'components/CardNewsHorizontal/CardNewsHorizontal
 import { FC } from 'react';
 import { SlugType } from 'types/News';
 import { GetStaticPathsResult, GetStaticPropsResult } from 'next';
+import { useNextSanityImage } from 'next-sanity-image';
+import { sanityConfig } from 'lib/config';
 
 const Article: FC<SlugType> = ({ article, moreArticles }): JSX.Element => {
+  const imageProps = useNextSanityImage(sanityConfig, article.mainImage, {
+    imageBuilder: () => urlForImage(article.mainImage).width(1200).height(627),
+  });
+
   return (
-    <Layout
-      title={article.title}
-      image={urlForImage(article.mainImage).width(1200).height(627).fit('crop').url()}
-      description={article.excerpt}
-    >
+    <Layout title={article.title} image={imageProps.src} description={article.excerpt}>
       <div className="flex flex-col mx-auto bg-white">
         {article && (
           <article className="text-left">
@@ -43,10 +45,9 @@ export default Article;
 
 export async function getStaticProps({
   params,
-  preview = false,
 }: {
   params: { slug: string };
-  preview: boolean;
+  preview?: boolean;
 }): Promise<GetStaticPropsResult<SlugType>> {
   const { post, morePosts } = await sanityClient.fetch(postQuery, {
     slug: params.slug,
