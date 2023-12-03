@@ -35,7 +35,7 @@ export default Institucional;
 export const getStaticProps: GetStaticProps = async () => {
   const slug = 'quienes-somos';
   const pages = await sanityClient.fetch(pagesQuery, { slug });
-  console.log('pages:', pages);
+
   return {
     props: {
       pages,
