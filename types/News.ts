@@ -1,5 +1,6 @@
 import { ImageProps } from 'next/image';
 import { Image, PortableTextBlock } from 'sanity';
+import { SanityAsset } from '@sanity/image-url/lib/types/types';
 
 export interface IButton {
   text: string;
@@ -25,8 +26,8 @@ export interface Album {
   _id: string;
   title: string;
   description?: string;
-  imageList?: Image[];
-  cover: Image;
+  imageList: SanityAsset[];
+  cover: SanityAsset;
   onClick: () => void;
 }
 
@@ -116,8 +117,8 @@ export interface EquipmentType {
   equipment: {
     _id: string;
     body: PortableTextBlock;
-    cover: Image;
-    imagesGallery: Image[];
+    cover: SanityAsset;
+    imagesGallery: SanityAsset[];
     onClick: () => void;
     title: string;
   }[];
