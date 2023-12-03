@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useCallback } from 'react';
 import Layout from 'components/Layout/Layout';
 import { sanityClient } from 'lib/sanity.client';
 import ArticleContent from 'components/ArticleContent/ArticleContent';
@@ -15,12 +15,14 @@ const BOOK_PUBLIC_URL =
   'https://drive.google.com/file/d/1-Ej0AXd14-xLfvooEfzWHG1bGdZYbOjO/view?usp=sharing';
 
 const LibroAmigos: FC<Page> = ({ pages }): JSX.Element => {
-  function handleClick(): void {
+  const { body, publishedAt, title, mainImage } = pages;
+
+  const handleClick = useCallback(() => {
     ga.pageEvent('download_book', {
       event_category: 'engagement',
       event_label: 'Libro descargado',
     });
-  }
+  }, []);
 
   return (
     <Layout title={pages.title}>
@@ -28,7 +30,12 @@ const LibroAmigos: FC<Page> = ({ pages }): JSX.Element => {
         <HeroInstitucional image={BG_CONSTANTS.station} title={pages.title} />
         <div id="body" className="bg-white">
           <SRLWrapper>
-            <ArticleContent body={pages.body} />
+            <ArticleContent
+              publishedAt={publishedAt}
+              mainImage={mainImage}
+              title={title}
+              body={body}
+            />
           </SRLWrapper>
         </div>
         <Button
