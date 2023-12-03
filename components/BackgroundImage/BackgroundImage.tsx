@@ -3,7 +3,7 @@ import { FC, ReactElement } from 'react';
 import styles from './BackgroundImage.module.scss';
 
 interface BackgroundImageProps {
-  title: string;
+  title?: string;
   image: string;
 }
 
