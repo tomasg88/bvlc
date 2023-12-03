@@ -11,7 +11,7 @@ export interface IButton {
 
 export interface NewsBody {
   body: PortableTextBlock;
-  mainImage: Image;
+  mainImage: SanityAsset;
   publishedAt: string;
   title: string;
 }
@@ -48,6 +48,7 @@ export interface ComisionPerson {
   name: string;
   description: string;
   image: Image;
+  position: string;
 }
 
 export interface ActiveForcePerson {
@@ -55,6 +56,7 @@ export interface ActiveForcePerson {
   title: string;
   description: string;
   image: Image;
+  rank: string;
 }
 
 export interface Equipment {
