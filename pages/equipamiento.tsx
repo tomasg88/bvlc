@@ -1,16 +1,17 @@
 import React, { FC, useState } from 'react';
+import { GetStaticProps } from 'next';
+import { SanityAsset } from '@sanity/image-url/lib/types/types';
 import CardEquipment from 'components/CardEquipment/CardEquipment';
 import Gallery from 'components/Gallery/Gallery';
 import Layout from 'components/Layout/Layout';
+import HeroInstitucional from 'components/HeroInstitucional/HeroInstitucional';
 import { equipmentQuery } from 'lib/queries';
 import { sanityClient } from 'lib/sanity.client';
-import HeroInstitucional from 'components/HeroInstitucional/HeroInstitucional';
 import { BG_CONSTANTS } from 'utils/constants';
-import { GetStaticProps } from 'next';
 import { EquipmentType } from 'types/News';
 
 const Equipamiento: FC<EquipmentType> = ({ equipment }): JSX.Element => {
-  const [selected, setSelected] = useState(null);
+  const [selected, setSelected] = useState<SanityAsset[] | []>([]);
 
   return (
     <Layout title="Equipamiento">
@@ -29,7 +30,7 @@ const Equipamiento: FC<EquipmentType> = ({ equipment }): JSX.Element => {
             ))}
           </div>
         </div>
-        {selected && <Gallery list={selected} onClose={() => setSelected(null)} />}
+        {selected.length > 0 && <Gallery list={selected} onClose={() => setSelected([])} />}
       </div>
     </Layout>
   );

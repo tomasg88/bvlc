@@ -11,7 +11,7 @@ import { SpecialtyType } from 'types/News';
 import { SanityAsset } from '@sanity/image-url/lib/types/types';
 
 const Especialidades: FC<SpecialtyType> = ({ specialties }): JSX.Element => {
-  const [selected, setSelected] = useState<SanityAsset[]>(null);
+  const [selected, setSelected] = useState<SanityAsset[]>([]);
 
   return (
     <Layout title="Especialidades">
@@ -29,7 +29,7 @@ const Especialidades: FC<SpecialtyType> = ({ specialties }): JSX.Element => {
             />
           ))}
         </div>
-        {selected && <Gallery list={selected} onClose={() => setSelected(null)} />}
+        {selected.length > 0 && <Gallery list={selected} onClose={() => setSelected([])} />}
       </div>
     </Layout>
   );

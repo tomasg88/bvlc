@@ -15,7 +15,7 @@ import { AcademiaType } from 'types/News';
 import { SanityAsset } from '@sanity/image-url/lib/types/types';
 
 const Academia: FC<AcademiaType> = ({ news, albums }): JSX.Element => {
-  const [selectedAlbum, setSelectedAlbum] = useState<SanityAsset[]>([]);
+  const [selectedAlbum, setSelectedAlbum] = useState<SanityAsset[] | []>([]);
   return (
     <Layout title="Academia">
       {/* <div> que se oculta a partir de md: */}
