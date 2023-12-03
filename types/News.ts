@@ -12,7 +12,7 @@ export interface NewsBody {
   body: PortableTextBlock;
   mainImage: Image;
   publishedAt: string;
-  title?: string;
+  title: string;
 }
 
 export interface News extends NewsBody {
