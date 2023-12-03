@@ -43,6 +43,7 @@
     "react-headroom": "^3.1.0",
     "react-icons": "^4.2.0",
     "react-reveal": "^1.2.2",
+    "react-use": "^17.4.2",
     "react-youtube": "^7.13.1",
     "sanity": "^3.20.1",
     "sanity-plugin-media": "^2.2.4",
