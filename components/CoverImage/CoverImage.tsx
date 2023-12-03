@@ -20,8 +20,6 @@ const CoverImage: FC<CoverImageProps> = ({ title, image }): JSX.Element => {
     <div className={styles.root}>
       {image ? (
         <Image
-          width={2000}
-          height={1300}
           alt={`Cover Image for ${title}`}
           className={styles.image}
           {...imageProps}
