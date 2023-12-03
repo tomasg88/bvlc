@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "types": ["next-sanity", "node"],
+    "types": ["next-sanity", "node", "@types/gtag.js"],
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
