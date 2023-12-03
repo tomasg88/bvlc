@@ -1,4 +1,3 @@
-import { urlForImage } from 'lib/sanity.image';
 import React, { FC } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
