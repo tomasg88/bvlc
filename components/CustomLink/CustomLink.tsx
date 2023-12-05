@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import PropTypes from 'prop-types';
 import { FunctionComponent, ReactElement } from 'react';
 
 interface IProps {
@@ -16,12 +15,6 @@ const CustomLink: FunctionComponent<IProps> = ({ href, title, target }): ReactEl
 
 CustomLink.defaultProps = {
   target: '',
-};
-
-CustomLink.propTypes = {
-  href: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  target: PropTypes.string,
 };
 
 export default CustomLink;

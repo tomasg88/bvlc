@@ -13,11 +13,8 @@ export default {
       title: 'URL',
     },
   ],
-  preview: {
-    select: {
-      url: 'url',
-    },
-    component: ({ value }) => {
+  components: {
+    preview: ({ value }) => {
       const id = getYouTubeID(value.url);
       return <YouTube videoId={id} />;
     },

@@ -1,5 +1,3 @@
-import PropTypes from 'prop-types';
-import { sanityImagePropType } from 'utils/sanityPropType';
 import styles from './MemberCard.module.scss';
 import { sanityConfig } from 'lib/config';
 import { useNextSanityImage } from 'next-sanity-image';
@@ -44,12 +42,6 @@ const MemberCard: FC<MemberCardProps> = ({ name, description, image }): JSX.Elem
       </div>
     </figure>
   );
-};
-
-MemberCard.propTypes = {
-  name: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  image: sanityImagePropType,
 };
 
 export default MemberCard;

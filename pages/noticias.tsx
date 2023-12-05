@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import Layout from 'components/Layout/Layout';
-import { getClient } from 'lib/sanity.server';
+import { sanityClient } from 'lib/sanity.client';
 import { allPostQuery } from 'lib/queries';
 import HeroNews from 'components/HeroNews/HeroNews';
 import CardNewsHorizontal from 'components/CardNewsHorizontal/CardNewsHorizontal';
@@ -30,7 +30,7 @@ const Noticias: FC<NewsType> = ({ list }): JSX.Element => {
 export default Noticias;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const list: News[] = await getClient(false).fetch(allPostQuery);
+  const list: News[] = await sanityClient.fetch(allPostQuery);
   return {
     props: { list },
   };

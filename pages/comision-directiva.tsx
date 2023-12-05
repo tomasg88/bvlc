@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { GetStaticProps } from 'next';
 import { ComisionType } from 'types/News';
-import { getClient } from 'lib/sanity.server';
+import { sanityClient } from 'lib/sanity.client';
 import { leadershipQuery } from 'lib/queries';
 
 import Layout from 'components/Layout/Layout';
@@ -50,7 +50,7 @@ const ComisionDirectiva: FC<ComisionType> = ({ list }): JSX.Element => {
 export default ComisionDirectiva;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const list: ComisionType[] = await getClient(false).fetch(leadershipQuery);
+  const list: ComisionType[] = await sanityClient.fetch(leadershipQuery);
   return {
     props: {
       list,

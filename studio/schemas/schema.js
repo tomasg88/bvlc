@@ -14,7 +14,7 @@ import youtube from './youtube';
 import specialty from './specialty';
 
 // Then we give our schema to the builder and provide the result to Sanity
-export default [
+export const schemas = [
   general,
   post,
   page,

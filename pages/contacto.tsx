@@ -1,7 +1,7 @@
 import styles from 'styles/Home.module.css';
 import Layout from 'components/Layout/Layout';
 import BackgroundImage from 'components/BackgroundImage/BackgroundImage';
-import { getClient } from 'lib/sanity.server';
+import { sanityClient } from 'lib/sanity.client';
 import { contactDataQuery } from 'lib/queries';
 import { RrssContext } from 'components/context';
 import { FC, useContext } from 'react';
@@ -58,7 +58,7 @@ const Contact: FC<ContactoType> = ({ phones, mails }) => {
 export default Contact;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const { phones, mails } = await getClient(false).fetch(contactDataQuery);
+  const { phones, mails } = await sanityClient.fetch(contactDataQuery);
   return {
     props: {
       phones,
