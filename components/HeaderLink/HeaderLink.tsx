@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { FunctionComponent, ReactElement, useMemo } from 'react';
-import PropTypes from 'prop-types';
 
 interface IProps {
   url: string;
@@ -17,11 +16,6 @@ const HeaderLink: FunctionComponent<IProps> = ({ url, title }): ReactElement => 
       {title}
     </Link>
   );
-};
-
-HeaderLink.propTypes = {
-  url: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
 };
 
 export default HeaderLink;

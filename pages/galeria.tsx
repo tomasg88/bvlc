@@ -1,6 +1,7 @@
 import React, { FC, useState } from 'react';
+import { SanityAsset } from '@sanity/image-url/lib/types/types';
 import Layout from 'components/Layout/Layout';
-import { getClient } from 'lib/sanity.server';
+import { sanityClient } from 'lib/sanity.client';
 import { albumsQuery } from 'lib/queries';
 import Gallery from 'components/Gallery/Gallery';
 import AlbumCover from 'components/AlbumCover/AlbumCover';
@@ -8,13 +9,14 @@ import HeroPage from 'components/HeroPage/HeroPage';
 import Fade from 'react-reveal/Fade';
 import { GetStaticProps } from 'next';
 import { Album, GaleriaType } from 'types/News';
+import { BG_CONSTANTS } from 'utils/constants';
 
 const Galeria: FC<GaleriaType> = ({ albums }): JSX.Element => {
-  const [selectedAlbum, setSelectedAlbum] = useState([]);
+  const [selectedAlbum, setSelectedAlbum] = useState<SanityAsset[]>([]);
   return (
     <Layout title="Galería">
       <div className="min-h-screen bg-white">
-        <HeroPage title="Galería fotográfica" />
+        <HeroPage image={BG_CONSTANTS.team} title="Galería fotográfica" />
         <Fade>
           <h2 className="py-3 my-6 text-lg font-semibold tracking-wider text-center text-gray-800">
             Hacer click en un album para ver todas sus fotos
@@ -38,7 +40,7 @@ const Galeria: FC<GaleriaType> = ({ albums }): JSX.Element => {
 export default Galeria;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const albums: Album = await getClient().fetch(albumsQuery);
+  const albums: Album = await sanityClient.fetch(albumsQuery);
 
   return {
     props: { albums },

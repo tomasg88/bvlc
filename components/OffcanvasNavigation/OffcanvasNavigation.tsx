@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import { ROUTES } from 'utils/constants';
 import styles from './OffcanvasNavigation.module.scss';
-import PropTypes from 'prop-types';
 import { FunctionComponent, ReactElement } from 'react';
 
 interface IProps {
@@ -26,9 +25,5 @@ const OffcanvasNavigation: FunctionComponent<IProps> = ({ closeMenu }): ReactEle
     })}
   </nav>
 );
-
-OffcanvasNavigation.propTypes = {
-  closeMenu: PropTypes.func.isRequired,
-};
 
 export default OffcanvasNavigation;

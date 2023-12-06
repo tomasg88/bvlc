@@ -1,7 +1,11 @@
 {
-  "name": "web",
+  "name": "bomberosvollujandecuyo",
   "version": "1.4.0",
+  "description": "",
+  "main": "package.json",
+  "author": "Bomberos Lujan Cuyo <bvlc.bot@protonmail.com>",
   "private": true,
+  "license": "UNLICENSED",
   "scripts": {
     "build": "next build",
     "dev": "next dev",
@@ -14,20 +18,23 @@
     "test": "jest",
     "typecheck": "tsc --noEmit --project \"./tsconfig.json\""
   },
+  "keywords": [
+    "sanity"
+  ],
   "dependencies": {
     "@headlessui/react": "^1.0.0",
     "@sanity/block-content-to-react": "^2.0.7",
-    "@sanity/client": "^2.2.6",
+    "@sanity/types": "^3.20.1",
+    "@sanity/vision": "^3.19.1",
     "@tailwindcss/line-clamp": "^0.2.0",
     "@tailwindcss/typography": "^0.4.0",
-    "@types/react-dom": "^17.0.9",
     "classnames": "^2.3.1",
     "date-fns": "^2.19.0",
     "framer": "^1.2.29",
     "get-youtube-id": "^1.0.1",
     "lodash": "^4.17.21",
     "next": "^14.0.0",
-    "next-sanity": "^0.1.10",
+    "next-sanity": "^6.0.5",
     "next-sanity-image": "^1.0.1",
     "next-sitemap": "^1.6.192",
     "react": "^18.2.0",
@@ -37,16 +44,23 @@
     "react-headroom": "^3.1.0",
     "react-icons": "^4.2.0",
     "react-reveal": "^1.2.2",
+    "react-use": "^17.4.2",
     "react-youtube": "^7.13.1",
+    "sanity": "^3.20.1",
+    "sanity-plugin-media": "^2.2.4",
+    "sanity-plugin-media-library": "^1.0.7",
+    "sanity-plugin-vercel-deploy": "^1.1.0",
     "sass": "^1.38.0",
-    "simple-react-lightbox": "^3.6.4"
+    "simple-react-lightbox": "^3.6.4",
+    "styled-components": "^5.3.1"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.1.2",
     "@types/gtag.js": "0.0.7",
     "@types/node": "^16.11.2",
-    "@types/react": "18.0.1",
+    "@types/react": "^18.2.38",
+    "@types/react-dom": "^18.2.17",
     "@typescript-eslint/eslint-plugin": "^4.33.0",
     "@typescript-eslint/parser": "^4.33.0",
     "autoprefixer": "^10.2.4",
@@ -66,7 +80,6 @@
     "jest": "^27.3.1",
     "postcss": "^8.2.7",
     "prettier": "^2.4.1",
-    "prop-types": "^15.7.2",
     "react-test-renderer": "^17.0.2",
     "tailwindcss": "^2.1.2",
     "typescript": "^4.4.4"
