@@ -7,14 +7,10 @@ interface IProps {
   target?: string;
 }
 
-const CustomLink: FunctionComponent<IProps> = ({ href, title, target }): ReactElement => (
+const CustomLink: FunctionComponent<IProps> = ({ href, title, target = '' }): ReactElement => (
   <Link href={href} target={target}>
     {title}
   </Link>
 );
-
-CustomLink.defaultProps = {
-  target: '',
-};
 
 export default CustomLink;

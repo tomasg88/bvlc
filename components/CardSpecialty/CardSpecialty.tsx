@@ -9,7 +9,7 @@ import SanityImage from 'components/SanityImage/SanityImage';
 import Zoom from 'react-reveal/Zoom';
 import { Specialty } from 'types/News';
 
-const CardSpecialty: FC<Specialty> = ({ cover, title, body, onClick, members }) => {
+const CardSpecialty: FC<Specialty> = ({ cover, title, body, onClick, members = [] }) => {
   const { src, loader } = useNextSanityImage(sanityConfig, cover);
 
   return (
@@ -57,10 +57,6 @@ const CardSpecialty: FC<Specialty> = ({ cover, title, body, onClick, members }) 
       </div>
     </Zoom>
   );
-};
-
-CardSpecialty.defaultProps = {
-  members: [],
 };
 
 export default CardSpecialty;

@@ -18,7 +18,7 @@ interface LayoutProps {
   children: JSX.Element | JSX.Element[];
 }
 
-const Layout: FC<LayoutProps> = ({ title, description, image, children }) => {
+const Layout: FC<LayoutProps> = ({ title = '', description = '', image = '', children }) => {
   const auxTitle = title && title !== '' ? `${title} | ${DEFAULT_PAGE_TITLE}` : DEFAULT_PAGE_TITLE;
   const auxDesc = description && description !== '' ? description : DEFAULT_PAGE_DESCRIPTION;
   const auxImage = image || DEFAULT_PAGE_URL + DEFAULT_PAGE_IMAGE;
@@ -65,12 +65,6 @@ const Layout: FC<LayoutProps> = ({ title, description, image, children }) => {
       <Footer />
     </>
   );
-};
-
-Layout.defaultProps = {
-  title: '',
-  description: '',
-  image: '',
 };
 
 export default Layout;

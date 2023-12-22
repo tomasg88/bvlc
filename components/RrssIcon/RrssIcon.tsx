@@ -12,7 +12,7 @@ interface IProps {
   url: string;
 }
 
-const RrssIcon: FunctionComponent<IProps> = ({ className, rrss, url }): ReactElement => {
+const RrssIcon: FunctionComponent<IProps> = ({ className = '', rrss, url }): ReactElement => {
   const getIconComponent = useMemo(() => {
     switch (rrss) {
       case 'Facebook':
@@ -39,10 +39,6 @@ const RrssIcon: FunctionComponent<IProps> = ({ className, rrss, url }): ReactEle
       <span className="sr-only">{rrss}</span>
     </a>
   );
-};
-
-RrssIcon.defaultProps = {
-  className: '',
 };
 
 export default RrssIcon;
