@@ -1,8 +1,7 @@
 {
   "name": "bomberosvollujandecuyo",
   "version": "1.4.0",
-  "description": "",
-  "main": "package.json",
+  "description": "Website for Bomberos Voluntarios de Luján de Cuyo",
   "author": "Bomberos Lujan Cuyo <bvlc.bot@protonmail.com>",
   "private": true,
   "license": "UNLICENSED",
