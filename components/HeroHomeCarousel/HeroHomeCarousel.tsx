@@ -21,7 +21,7 @@ interface CarouselProps {
 
 const HeroHomeCarousel: FunctionComponent<HeroHomeCarouselProps> = ({
   arrows,
-  images,
+  images = [],
 }): ReactElement => {
   const Carousel = makeCarousel((props) => (
     <CarouselUI arrows={arrows} {...props} />
@@ -67,10 +67,6 @@ const HeroHomeCarousel: FunctionComponent<HeroHomeCarouselProps> = ({
       </div>
     </div>
   );
-};
-
-HeroHomeCarousel.defaultProps = {
-  images: [],
 };
 
 export default HeroHomeCarousel;

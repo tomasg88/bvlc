@@ -4,7 +4,7 @@ import styles from './MenuDropdown.module.scss';
 import { FunctionComponent, ReactElement } from 'react';
 import classNames from 'classnames';
 
-interface IProps {
+interface MenuDropdownProps {
   title: string;
 }
 
@@ -35,7 +35,7 @@ const ROUTES = [
   },
 ];
 
-const MenuDropdown: FunctionComponent<IProps> = ({ title }): ReactElement => {
+const MenuDropdown: FunctionComponent<MenuDropdownProps> = ({ title }): ReactElement => {
   return (
     <div className={styles.root}>
       <Menu>

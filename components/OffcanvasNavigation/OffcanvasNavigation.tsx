@@ -3,11 +3,13 @@ import { ROUTES } from 'utils/constants';
 import styles from './OffcanvasNavigation.module.scss';
 import { FunctionComponent, ReactElement } from 'react';
 
-interface IProps {
+interface OffcanvasNavigationProps {
   closeMenu: () => void;
 }
 
-const OffcanvasNavigation: FunctionComponent<IProps> = ({ closeMenu }): ReactElement => (
+const OffcanvasNavigation: FunctionComponent<OffcanvasNavigationProps> = ({
+  closeMenu,
+}): ReactElement => (
   <nav className={styles.root}>
     {ROUTES.map((route) => {
       return (

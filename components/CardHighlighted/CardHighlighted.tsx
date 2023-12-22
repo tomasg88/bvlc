@@ -2,17 +2,15 @@ import React, { FC } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useNextSanityImage } from 'next-sanity-image';
-import { useWindowSize } from 'react-use';
 import Fade from 'react-reveal/Fade';
 
 import { sanityConfig } from 'lib/config';
 import styles from './CardHighlighted.module.scss';
 import { News } from 'types/News';
 
+// TODO - restore usage of imageBuilder to highlight this news with
+// the hook useNextSanityImage
 const CardHighlighted: FC<News> = ({ title, slug, mainImage }): JSX.Element => {
-  const { width } = useWindowSize();
-  const imageHeight = width <= 500 ? 1000 : 300;
-  console.log({ width, imageHeight });
   const imgProps = useNextSanityImage(sanityConfig, mainImage);
 
   return (
