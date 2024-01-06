@@ -95,12 +95,10 @@ export default {
       rrss: 'rrss',
     },
     prepare(selection) {
-      let { title, type, rrss } = selection,
-        subtitle = type;
+      let { title, type, rrss } = selection;
+      const subtitle = type;
       if (type === 'Red Social') {
         title = rrss;
-      } else {
-        title = title;
       }
       return { title, subtitle };
     },
