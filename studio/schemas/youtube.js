@@ -15,6 +15,7 @@ export default {
   ],
   components: {
     preview: ({ value }) => {
+      if (!value) return 'Seleccione un video';
       const id = getYouTubeID(value.url);
       return <YouTube videoId={id} />;
     },
