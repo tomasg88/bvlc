@@ -4,7 +4,7 @@ import { MdPhotoCamera } from 'react-icons/md';
 import BlockContent from '@sanity/block-content-to-react';
 import styles from './CardSpecialty.module.scss';
 import { useNextSanityImage } from 'next-sanity-image';
-import { sanityConfig } from 'lib/config';
+import { sanityConfig } from 'lib/sanity.config';
 import SanityImage from 'components/SanityImage/SanityImage';
 import Zoom from 'react-reveal/Zoom';
 import { Specialty } from 'types/News';

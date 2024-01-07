@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { useNextSanityImage } from 'next-sanity-image';
 import Fade from 'react-reveal/Fade';
 
-import { sanityConfig } from 'lib/config';
+import { sanityConfig } from 'lib/sanity.config';
 import styles from './CardHighlighted.module.scss';
 import { News } from 'types/News';
 

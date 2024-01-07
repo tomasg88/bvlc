@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import Image from 'next/image';
 import { MdPhotoCamera } from 'react-icons/md';
 import styles from './AlbumCover.module.scss';
-import { sanityConfig } from 'lib/config';
+import { sanityConfig } from 'lib/sanity.config';
 import { useNextSanityImage } from 'next-sanity-image';
 import { Album } from 'types/News';
 
