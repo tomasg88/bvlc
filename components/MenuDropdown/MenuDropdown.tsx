@@ -1,11 +1,10 @@
 import { Menu, Transition } from '@headlessui/react';
 import Link from 'next/link';
 import styles from './MenuDropdown.module.scss';
-import PropTypes from 'prop-types';
 import { FunctionComponent, ReactElement } from 'react';
 import classNames from 'classnames';
 
-interface IProps {
+interface MenuDropdownProps {
   title: string;
 }
 
@@ -36,7 +35,7 @@ const ROUTES = [
   },
 ];
 
-const MenuDropdown: FunctionComponent<IProps> = ({ title }): ReactElement => {
+const MenuDropdown: FunctionComponent<MenuDropdownProps> = ({ title }): ReactElement => {
   return (
     <div className={styles.root}>
       <Menu>
@@ -93,10 +92,6 @@ const MenuDropdown: FunctionComponent<IProps> = ({ title }): ReactElement => {
       </Menu>
     </div>
   );
-};
-
-MenuDropdown.propTypes = {
-  title: PropTypes.string.isRequired,
 };
 
 export default MenuDropdown;

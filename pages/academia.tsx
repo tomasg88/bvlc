@@ -1,5 +1,5 @@
-import { getClient } from 'lib/sanity.server';
-import { academyQuery } from 'lib/queries';
+import { sanityClient } from 'lib/sanity.client';
+import { academyQuery } from 'lib/sanity.queries';
 import Layout from 'components/Layout/Layout';
 import { ACADEMY_MEMBERS, BG_CONSTANTS } from 'utils/constants';
 import AlbumCover from 'components/AlbumCover/AlbumCover';
@@ -15,7 +15,7 @@ import { AcademiaType } from 'types/News';
 import { SanityAsset } from '@sanity/image-url/lib/types/types';
 
 const Academia: FC<AcademiaType> = ({ news, albums }): JSX.Element => {
-  const [selectedAlbum, setSelectedAlbum] = useState<SanityAsset[]>([]);
+  const [selectedAlbum, setSelectedAlbum] = useState<SanityAsset[] | []>([]);
   return (
     <Layout title="Academia">
       {/* <div> que se oculta a partir de md: */}
@@ -69,7 +69,7 @@ const Academia: FC<AcademiaType> = ({ news, albums }): JSX.Element => {
 export default Academia;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const { news, albums } = await getClient().fetch(academyQuery);
+  const { news, albums } = await sanityClient.fetch(academyQuery);
   return {
     props: { news, albums },
   };

@@ -1,20 +1,22 @@
 import Layout from 'components/Layout/Layout';
-import { getClient } from 'lib/sanity.server';
-import { postQuery, postSlugsQuery } from 'lib/queries';
-import { urlForImage } from 'lib/sanity';
+import { sanityClient } from 'lib/sanity.client';
+import { postQuery, postSlugsQuery } from 'lib/sanity.queries';
+import { urlForImage } from 'lib/sanity.image';
 import ArticleContent from 'components/ArticleContent/ArticleContent';
 import CardNewsHorizontal from 'components/CardNewsHorizontal/CardNewsHorizontal';
 import { FC } from 'react';
 import { SlugType } from 'types/News';
 import { GetStaticPathsResult, GetStaticPropsResult } from 'next';
+import { useNextSanityImage } from 'next-sanity-image';
+import { sanityConfig } from 'lib/sanity.config';
 
 const Article: FC<SlugType> = ({ article, moreArticles }): JSX.Element => {
+  const imageProps = useNextSanityImage(sanityConfig, article.mainImage, {
+    imageBuilder: () => urlForImage(article.mainImage).width(1200).height(627),
+  });
+
   return (
-    <Layout
-      title={article.title}
-      image={urlForImage(article.mainImage).width(1200).height(627).fit('crop').url()}
-      description={article.excerpt}
-    >
+    <Layout title={article.title} image={imageProps.src} description={article.excerpt}>
       <div className="flex flex-col mx-auto bg-white">
         {article && (
           <article className="text-left">
@@ -43,12 +45,11 @@ export default Article;
 
 export async function getStaticProps({
   params,
-  preview = false,
 }: {
   params: { slug: string };
-  preview: boolean;
+  preview?: boolean;
 }): Promise<GetStaticPropsResult<SlugType>> {
-  const { post, morePosts } = await getClient(preview).fetch(postQuery, {
+  const { post, morePosts } = await sanityClient.fetch(postQuery, {
     slug: params.slug,
   });
   return {
@@ -61,7 +62,7 @@ export async function getStaticProps({
 
 // Returns ALL dynamic pages based on content
 export async function getStaticPaths(): Promise<GetStaticPathsResult> {
-  const paths = await getClient().fetch(postSlugsQuery);
+  const paths = await sanityClient.fetch(postSlugsQuery);
   return {
     paths: paths.map((slug) => ({ params: { slug } })) || [],
     fallback: false,

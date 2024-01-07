@@ -1,26 +1,14 @@
-import PropTypes from 'prop-types';
 import { FC } from 'react';
 import Link from 'next/link';
 import styles from './Button.module.scss';
 import { IButton } from 'types/News';
 
-const Button: FC<IButton> = ({ text, href, target, onClick }): JSX.Element => (
+const Button: FC<IButton> = ({ text, href, target = '_self', onClick }): JSX.Element => (
   <div className={styles.root}>
     <Link href={href} target={target} className={styles.text} onClick={onClick}>
       {text}
     </Link>
   </div>
 );
-
-Button.defaultProps = {
-  target: '_self',
-};
-
-Button.propTypes = {
-  text: PropTypes.string.isRequired,
-  href: PropTypes.string.isRequired,
-  target: PropTypes.oneOf(['_blank', '_self', '_parent', '_top']),
-  onClick: PropTypes.func,
-};
 
 export default Button;

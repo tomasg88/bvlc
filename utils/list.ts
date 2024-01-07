@@ -1,5 +1,5 @@
 import { ActiveForcePerson, ComisionPerson } from 'types/News';
-import { find, orderBy, groupBy } from 'lodash';
+import { find, orderBy, groupBy, Dictionary } from 'lodash';
 
 const positions = [
   { title: 'Presidente', value: 'presidente' },
@@ -66,25 +66,35 @@ const orderPositions = {
 };
 
 type MembersList = {
-  orderedList: ActiveForcePerson[] | ComisionPerson[];
   getTranslation: (K: string) => string;
+  orderedList: Dictionary<ActiveForcePerson[] | ComisionPerson[]>;
+};
+
+const groupAndOrderPosition = (list: ComisionPerson[]) => {
+  const getTranslatedPositions = (value) => find(positions, { value })?.title;
+  const orderByPosition = orderBy(list, (l) => orderPositions[l.position]);
+  return {
+    orderedList: groupBy(orderByPosition, 'position'),
+    getTranslation: getTranslatedPositions,
+  };
+};
+
+const groupAndOrderRanks = (list: ActiveForcePerson[]) => {
+  const getTranslatedRanks = (value) => find(ranks, { value })?.title;
+  const orderByRank = orderBy(list, (l) => orderRanks[l.rank]);
+
+  return { orderedList: groupBy(orderByRank, 'rank'), getTranslation: getTranslatedRanks };
 };
 
 export default function groupAndOrder(
   listName: 'position' | 'rank',
   list: ActiveForcePerson[] | ComisionPerson[]
 ): MembersList {
-  // Funcion para traducir valores
-  const getTranslatedPositions = (value) => find(positions, { value })?.title;
-  const getTranslatedRanks = (value) => find(ranks, { value })?.title;
-
-  // Funcion para ordernar listas
-  const orderByRank = orderBy(list, (l) => orderRanks[l.rank]);
-  const orderByPosition = orderBy(list, (l) => orderPositions[l.position]);
-
-  const orderedList =
-    listName === 'rank' ? groupBy(orderByRank, 'rank') : groupBy(orderByPosition, 'position');
-  const getTranslation = listName === 'rank' ? getTranslatedRanks : getTranslatedPositions;
-
-  return { orderedList, getTranslation };
+  let result;
+  if (listName === 'position') {
+    result = groupAndOrderPosition(list as ComisionPerson[]);
+  } else {
+    result = groupAndOrderRanks(list as ActiveForcePerson[]);
+  }
+  return result;
 }

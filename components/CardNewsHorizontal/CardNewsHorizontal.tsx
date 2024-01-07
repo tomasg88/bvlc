@@ -2,8 +2,6 @@ import { getDate, getMonth } from 'utils/dates';
 import Link from 'next/link';
 import CoverImage from 'components/CoverImage/CoverImage';
 import styles from './CardNewsHorizontal.module.scss';
-import PropTypes from 'prop-types';
-import { sanityImagePropType } from 'utils/sanityPropType';
 import { FC } from 'react';
 import { News } from 'types/News';
 
@@ -33,13 +31,5 @@ const CardNewsHorizontal: FC<News> = ({
     </div>
   </div>
 );
-
-CardNewsHorizontal.propTypes = {
-  title: PropTypes.string.isRequired,
-  excerpt: PropTypes.string,
-  slug: PropTypes.string.isRequired,
-  publishedAt: PropTypes.string.isRequired,
-  mainImage: sanityImagePropType,
-};
 
 export default CardNewsHorizontal;

@@ -1,6 +1,6 @@
-import { SanityDocumentStub } from '@sanity/client';
-import { SanityImageSource, SanityAsset } from '@sanity/image-url/lib/types/types';
 import { ImageProps } from 'next/image';
+import { Image, PortableTextBlock } from 'sanity';
+import { SanityAsset } from '@sanity/image-url/lib/types/types';
 
 export interface IButton {
   text: string;
@@ -10,10 +10,10 @@ export interface IButton {
 }
 
 export interface NewsBody {
-  body: SanityDocumentStub;
-  mainImage?: SanityImageSource;
-  publishedAt?: string;
-  title?: string;
+  body: PortableTextBlock;
+  mainImage: SanityAsset;
+  publishedAt: string;
+  title: string;
 }
 
 export interface News extends NewsBody {
@@ -26,8 +26,8 @@ export interface Album {
   _id: string;
   title: string;
   description?: string;
-  imageList?: SanityAsset[];
-  cover: SanityImageSource;
+  imageList: SanityAsset[];
+  cover: SanityAsset;
   onClick: () => void;
 }
 
@@ -40,33 +40,35 @@ export interface Contact {
 export interface IGallery {
   list: {
     _key: string;
-    image: SanityImageSource;
+    image: Image;
   }[];
 }
 
 export interface ComisionPerson {
   name: string;
   description: string;
-  image: SanityImageSource;
+  image: SanityAsset;
+  position: string;
 }
 
 export interface ActiveForcePerson {
   _id: string;
   title: string;
   description: string;
-  image: SanityImageSource;
+  image: SanityAsset;
+  rank: string;
 }
 
 export interface Equipment {
-  body: SanityDocumentStub;
-  cover: SanityImageSource;
+  body: PortableTextBlock;
+  cover: SanityAsset;
   onClick: () => void;
   title: string;
 }
 
 export interface Specialty {
-  body: SanityDocumentStub;
-  cover: SanityImageSource;
+  body: PortableTextBlock;
+  cover: SanityAsset;
   members: ActiveForcePerson[];
   onClick: () => void;
   title: string;
@@ -116,9 +118,9 @@ export interface ContactoType {
 export interface EquipmentType {
   equipment: {
     _id: string;
-    body: SanityDocumentStub;
-    cover: SanityImageSource;
-    imagesGallery: SanityImageSource[];
+    body: PortableTextBlock;
+    cover: SanityAsset;
+    imagesGallery: SanityAsset[];
     onClick: () => void;
     title: string;
   }[];
@@ -127,8 +129,8 @@ export interface EquipmentType {
 export interface SpecialtyType {
   specialties: {
     _id: string;
-    body: SanityDocumentStub;
-    cover: SanityImageSource;
+    body: PortableTextBlock;
+    cover: SanityAsset;
     imagesGallery: SanityAsset[];
     members: ActiveForcePerson[];
     onClick: () => void;

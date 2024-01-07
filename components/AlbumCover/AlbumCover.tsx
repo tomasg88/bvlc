@@ -2,9 +2,7 @@ import React, { FC } from 'react';
 import Image from 'next/image';
 import { MdPhotoCamera } from 'react-icons/md';
 import styles from './AlbumCover.module.scss';
-import PropTypes from 'prop-types';
-import { sanityImagePropType } from 'utils/sanityPropType';
-import { sanityConfig } from 'lib/config';
+import { sanityConfig } from 'lib/sanity.config';
 import { useNextSanityImage } from 'next-sanity-image';
 import { Album } from 'types/News';
 
@@ -36,13 +34,6 @@ const AlbumCover: FC<Album> = ({ cover, title, description, onClick }): JSX.Elem
       </div>
     </div>
   );
-};
-
-AlbumCover.propTypes = {
-  title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  cover: sanityImagePropType.isRequired,
-  onClick: PropTypes.func.isRequired,
 };
 
 export default AlbumCover;

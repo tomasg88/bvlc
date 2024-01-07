@@ -9,17 +9,16 @@ import {
   DEFAULT_PAGE_URL,
   DEFAULT_PAGE_IMAGE,
 } from 'utils/constants';
-import PropTypes from 'prop-types';
 import { FC } from 'react';
 
-interface IProp {
+interface LayoutProps {
   title?: string;
   description?: string;
   image?: string;
   children: JSX.Element | JSX.Element[];
 }
 
-const Layout: FC<IProp> = ({ title, description, image, children }): JSX.Element => {
+const Layout: FC<LayoutProps> = ({ title = '', description = '', image = '', children }) => {
   const auxTitle = title && title !== '' ? `${title} | ${DEFAULT_PAGE_TITLE}` : DEFAULT_PAGE_TITLE;
   const auxDesc = description && description !== '' ? description : DEFAULT_PAGE_DESCRIPTION;
   const auxImage = image || DEFAULT_PAGE_URL + DEFAULT_PAGE_IMAGE;
@@ -66,18 +65,6 @@ const Layout: FC<IProp> = ({ title, description, image, children }): JSX.Element
       <Footer />
     </>
   );
-};
-
-Layout.defaultProps = {
-  title: '',
-  description: '',
-  image: '',
-};
-
-Layout.propTypes = {
-  title: PropTypes.string,
-  description: PropTypes.string,
-  image: PropTypes.string,
 };
 
 export default Layout;

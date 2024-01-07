@@ -3,11 +3,9 @@ import makeCarousel from 'react-reveal/makeCarousel';
 import Fade from 'react-reveal/Fade';
 import Link from 'next/link';
 import { DEFAULT_PAGE_TITLE } from 'utils/constants';
-import PropTypes from 'prop-types';
 import CarouselUI from './CarouselUI/CarouselUI';
 import styles from './HeroHomeCarousel.module.scss';
 import { FunctionComponent, ReactElement, ReactNode } from 'react';
-import { sanityImagePropType } from 'utils/sanityPropType';
 import SanityImage from 'components/SanityImage/SanityImage';
 
 interface HeroHomeCarouselProps {
@@ -23,7 +21,7 @@ interface CarouselProps {
 
 const HeroHomeCarousel: FunctionComponent<HeroHomeCarouselProps> = ({
   arrows,
-  images,
+  images = [],
 }): ReactElement => {
   const Carousel = makeCarousel((props) => (
     <CarouselUI arrows={arrows} {...props} />
@@ -69,15 +67,6 @@ const HeroHomeCarousel: FunctionComponent<HeroHomeCarouselProps> = ({
       </div>
     </div>
   );
-};
-
-HeroHomeCarousel.defaultProps = {
-  images: [],
-};
-
-HeroHomeCarousel.propTypes = {
-  arrows: PropTypes.bool.isRequired,
-  images: PropTypes.arrayOf(sanityImagePropType),
 };
 
 export default HeroHomeCarousel;

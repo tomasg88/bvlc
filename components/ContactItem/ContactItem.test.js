@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import ContactItem from '../components/ContactItem/ContactItem';
+import ContactItem from './ContactItem';
 
 describe('<ContactItem />', () => {
   const testProps = {

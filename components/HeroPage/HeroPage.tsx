@@ -1,16 +1,14 @@
 import BackgroundImage from '../BackgroundImage/BackgroundImage';
-import { BG_CONSTANTS } from 'utils/constants';
 import styles from './HeroPage.module.scss';
 import Fade from 'react-reveal/Fade';
-import PropTypes from 'prop-types';
-import { FunctionComponent, ReactElement } from 'react';
+import { FC, ReactElement } from 'react';
 
-interface IProps {
+interface HeroPageProps {
   title: string;
-  image?: string;
+  image: string;
 }
 
-const HeroPage: FunctionComponent<IProps> = ({ title, image }): ReactElement => (
+const HeroPage: FC<HeroPageProps> = ({ title, image }): ReactElement => (
   <div className={styles.root}>
     <div className={styles.container}>
       <Fade cascade>
@@ -21,15 +19,5 @@ const HeroPage: FunctionComponent<IProps> = ({ title, image }): ReactElement => 
     </div>
   </div>
 );
-
-HeroPage.defaultProps = {
-  title: '',
-  image: BG_CONSTANTS.team,
-};
-
-HeroPage.propTypes = {
-  title: PropTypes.string,
-  image: PropTypes.string,
-};
 
 export default HeroPage;

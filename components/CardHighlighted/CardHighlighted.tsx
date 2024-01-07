@@ -1,23 +1,17 @@
-import { urlForImage } from 'lib/sanity';
 import React, { FC } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useNextSanityImage } from 'next-sanity-image';
-import { sanityConfig } from 'lib/config';
-import styles from './CardHighlighted.module.scss';
 import Fade from 'react-reveal/Fade';
-import { sanityImagePropType } from 'utils/sanityPropType';
-import PropTypes from 'prop-types';
-import useWindowSize from 'hooks/useWindowSizes';
+
+import { sanityConfig } from 'lib/sanity.config';
+import styles from './CardHighlighted.module.scss';
 import { News } from 'types/News';
 
+// TODO - restore usage of imageBuilder to highlight this news with
+// the hook useNextSanityImage
 const CardHighlighted: FC<News> = ({ title, slug, mainImage }): JSX.Element => {
-  const { width, isMobile } = useWindowSize();
-  const imageHeight = isMobile || width <= 500 ? 1000 : 300;
-
-  const imgProps = useNextSanityImage(sanityConfig, mainImage, {
-    imageBuilder: () => urlForImage(mainImage).size(900, imageHeight),
-  });
+  const imgProps = useNextSanityImage(sanityConfig, mainImage);
 
   return (
     <Fade>
@@ -37,12 +31,6 @@ const CardHighlighted: FC<News> = ({ title, slug, mainImage }): JSX.Element => {
       </div>
     </Fade>
   );
-};
-
-CardHighlighted.propTypes = {
-  title: PropTypes.string.isRequired,
-  slug: PropTypes.string.isRequired,
-  mainImage: sanityImagePropType,
 };
 
 export default CardHighlighted;

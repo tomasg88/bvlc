@@ -1,8 +1,8 @@
 import 'styles/globals.css';
 import 'styles/offcanvas.css';
 import 'styles/Header.css';
-import { getClient } from 'lib/sanity.server';
-import { rrssQuery } from 'lib/queries';
+import { sanityClient } from 'lib/sanity.client';
+import { rrssQuery } from 'lib/sanity.queries';
 import { useEffect, useState } from 'react';
 import { RrssContext, IRrss } from 'components/context';
 import * as ga from 'lib/ga';
@@ -41,7 +41,7 @@ function MyApp({ Component, pageProps, rrss }: MyAppProps): JSX.Element {
 }
 
 MyApp.getInitialProps = async ({ Component, ctx }) => {
-  const rrss = await getClient(false).fetch(rrssQuery);
+  const rrss = await sanityClient.fetch(rrssQuery);
   let pageProps = {};
   if (Component.getInitialProps) {
     pageProps = await Component.getInitialProps(ctx);
