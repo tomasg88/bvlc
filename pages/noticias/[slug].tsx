@@ -1,6 +1,6 @@
 import Layout from 'components/Layout/Layout';
 import { sanityClient } from 'lib/sanity.client';
-import { postQuery, postSlugsQuery } from 'lib/queries';
+import { postQuery, postSlugsQuery } from 'lib/sanity.queries';
 import { urlForImage } from 'lib/sanity.image';
 import ArticleContent from 'components/ArticleContent/ArticleContent';
 import CardNewsHorizontal from 'components/CardNewsHorizontal/CardNewsHorizontal';
@@ -8,7 +8,7 @@ import { FC } from 'react';
 import { SlugType } from 'types/News';
 import { GetStaticPathsResult, GetStaticPropsResult } from 'next';
 import { useNextSanityImage } from 'next-sanity-image';
-import { sanityConfig } from 'lib/config';
+import { sanityConfig } from 'lib/sanity.config';
 
 const Article: FC<SlugType> = ({ article, moreArticles }): JSX.Element => {
   const imageProps = useNextSanityImage(sanityConfig, article.mainImage, {

@@ -2,7 +2,7 @@ import React, { FC, useState } from 'react';
 import { SanityAsset } from '@sanity/image-url/lib/types/types';
 import Layout from 'components/Layout/Layout';
 import { sanityClient } from 'lib/sanity.client';
-import { albumsQuery } from 'lib/queries';
+import { albumsQuery } from 'lib/sanity.queries';
 import Gallery from 'components/Gallery/Gallery';
 import AlbumCover from 'components/AlbumCover/AlbumCover';
 import HeroPage from 'components/HeroPage/HeroPage';

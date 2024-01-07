@@ -2,7 +2,7 @@ import React, { FC, useState } from 'react';
 import CardSpecialty from 'components/CardSpecialty/CardSpecialty';
 import Gallery from 'components/Gallery/Gallery';
 import Layout from 'components/Layout/Layout';
-import { specialtyQuery } from 'lib/queries';
+import { specialtyQuery } from 'lib/sanity.queries';
 import { sanityClient } from 'lib/sanity.client';
 import HeroInstitucional from 'components/HeroInstitucional/HeroInstitucional';
 import { BG_CONSTANTS } from 'utils/constants';

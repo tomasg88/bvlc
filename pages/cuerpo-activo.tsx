@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { sanityClient } from 'lib/sanity.client';
 import { GetStaticProps } from 'next';
 
-import { activeForceQuery } from 'lib/queries';
+import { activeForceQuery } from 'lib/sanity.queries';
 import { BG_CONSTANTS } from 'utils/constants';
 import groupAndOrder from 'utils/list';
 import { ActiveForceType } from 'types/News';

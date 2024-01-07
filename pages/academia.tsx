@@ -1,5 +1,5 @@
 import { sanityClient } from 'lib/sanity.client';
-import { academyQuery } from 'lib/queries';
+import { academyQuery } from 'lib/sanity.queries';
 import Layout from 'components/Layout/Layout';
 import { ACADEMY_MEMBERS, BG_CONSTANTS } from 'utils/constants';
 import AlbumCover from 'components/AlbumCover/AlbumCover';

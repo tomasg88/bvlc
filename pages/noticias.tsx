@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import Layout from 'components/Layout/Layout';
 import { sanityClient } from 'lib/sanity.client';
-import { allPostQuery } from 'lib/queries';
+import { allPostQuery } from 'lib/sanity.queries';
 import HeroNews from 'components/HeroNews/HeroNews';
 import CardNewsHorizontal from 'components/CardNewsHorizontal/CardNewsHorizontal';
 import styles from 'styles/PageSidebar.module.css';
