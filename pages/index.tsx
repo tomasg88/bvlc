@@ -4,7 +4,7 @@ import HeroHomeCarousel from 'components/HeroHomeCarousel/HeroHomeCarousel';
 import CardNews from 'components/CardNews/CardNews';
 import Button from 'components/Button/Button';
 import { sanityClient } from 'lib/sanity.client';
-import { indexQuery } from 'lib/queries';
+import { indexQuery } from 'lib/sanity.queries';
 import Fade from 'react-reveal/Fade';
 import CardHighlighted from 'components/CardHighlighted/CardHighlighted';
 import { GetStaticProps } from 'next';

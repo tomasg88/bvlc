@@ -3,7 +3,7 @@ import Layout from 'components/Layout/Layout';
 import { sanityClient } from 'lib/sanity.client';
 import ArticleContent from 'components/ArticleContent/ArticleContent';
 import { SRLWrapper } from 'simple-react-lightbox';
-import { pagesQuery } from 'lib/queries';
+import { pagesQuery } from 'lib/sanity.queries';
 import HeroInstitucional from 'components/HeroInstitucional/HeroInstitucional';
 import { BG_CONSTANTS } from 'utils/constants';
 import Button from 'components/Button/Button';

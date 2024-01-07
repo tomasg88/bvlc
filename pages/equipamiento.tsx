@@ -5,7 +5,7 @@ import CardEquipment from 'components/CardEquipment/CardEquipment';
 import Gallery from 'components/Gallery/Gallery';
 import Layout from 'components/Layout/Layout';
 import HeroInstitucional from 'components/HeroInstitucional/HeroInstitucional';
-import { equipmentQuery } from 'lib/queries';
+import { equipmentQuery } from 'lib/sanity.queries';
 import { sanityClient } from 'lib/sanity.client';
 import { BG_CONSTANTS } from 'utils/constants';
 import { EquipmentType } from 'types/News';

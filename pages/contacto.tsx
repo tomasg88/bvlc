@@ -2,7 +2,7 @@ import styles from 'styles/Home.module.css';
 import Layout from 'components/Layout/Layout';
 import BackgroundImage from 'components/BackgroundImage/BackgroundImage';
 import { sanityClient } from 'lib/sanity.client';
-import { contactDataQuery } from 'lib/queries';
+import { contactDataQuery } from 'lib/sanity.queries';
 import { RrssContext } from 'components/context';
 import { FC, useContext } from 'react';
 import RrssIcon from 'components/RrssIcon/RrssIcon';

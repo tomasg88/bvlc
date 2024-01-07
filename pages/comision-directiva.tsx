@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { GetStaticProps } from 'next';
 import { ComisionType } from 'types/News';
 import { sanityClient } from 'lib/sanity.client';
-import { leadershipQuery } from 'lib/queries';
+import { leadershipQuery } from 'lib/sanity.queries';
 
 import Layout from 'components/Layout/Layout';
 import HeroInstitucional from 'components/HeroInstitucional/HeroInstitucional';

@@ -1,7 +1,7 @@
 import { urlForImage } from 'lib/sanity.image';
 import Image from 'next/image';
 import { useNextSanityImage } from 'next-sanity-image';
-import { sanityConfig } from 'lib/config';
+import { sanityConfig } from 'lib/sanity.config';
 import styles from './CoverImage.module.scss';
 import { SanityImageSource } from '@sanity/image-url/lib/types/types';
 import { FC } from 'react';
