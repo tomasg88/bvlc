@@ -13,7 +13,7 @@ interface CoverImageProps {
 
 const CoverImage: FC<CoverImageProps> = ({ title, image }): JSX.Element => {
   const imageProps = useNextSanityImage(sanityConfig, image, {
-    imageBuilder: () => urlForImage(image).height(1300).width(2000),
+    imageBuilder: () => urlForImage(image).height(260).width(400),
   });
 
   return (

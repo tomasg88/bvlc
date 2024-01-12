@@ -1,4 +1,8 @@
-import CoverImage from '../CoverImage/CoverImage';
+import Image from 'next/image';
+import { useNextSanityImage } from 'next-sanity-image';
+import { sanityConfig } from 'lib/sanity.config';
+import { urlForImage } from 'lib/sanity.image';
+
 import BlockContent from '@sanity/block-content-to-react';
 import { parseISO, format } from 'date-fns';
 import { es } from 'date-fns/locale';
@@ -33,12 +37,23 @@ const ArticleContent: FC<NewsBody> = ({ title, mainImage, publishedAt, body }): 
     },
   };
 
+  const imageProps = useNextSanityImage(sanityConfig, mainImage, {
+    imageBuilder: () => urlForImage(mainImage).height(1300).width(2000),
+  });
+
   return (
     <>
       {title && mainImage && publishedAt && (
         <div className={styles.heroArticle}>
           <div className={styles.heroImageContainer}>
-            <CoverImage title={title} image={mainImage} />
+            <Image
+              alt={`Cover Image for ${title}`}
+              {...imageProps}
+              style={{
+                maxWidth: '100%',
+                height: 'auto',
+              }}
+            />
           </div>
           <div className={styles.heroBox}>
             <h1 className={styles.heroText}>{title}</h1>
