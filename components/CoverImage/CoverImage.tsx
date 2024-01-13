@@ -1,10 +1,10 @@
-import { urlForImage } from 'lib/sanity.image';
+import { FC } from 'react';
 import Image from 'next/image';
+import { urlForImage } from 'lib/sanity.image';
 import { useNextSanityImage } from 'next-sanity-image';
 import { sanityConfig } from 'lib/sanity.config';
 import styles from './CoverImage.module.scss';
 import { SanityImageSource } from '@sanity/image-url/lib/types/types';
-import { FC } from 'react';
 
 interface CoverImageProps {
   title: string;
