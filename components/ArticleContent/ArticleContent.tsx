@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { useNextSanityImage } from 'next-sanity-image';
+import { SanityClientOrProjectDetails, useNextSanityImage } from 'next-sanity-image';
 import { sanityConfig } from 'lib/sanity.config';
 import { urlForImage } from 'lib/sanity.image';
 
@@ -37,7 +37,7 @@ const ArticleContent: FC<NewsBody> = ({ title, mainImage, publishedAt, body }): 
     },
   };
 
-  const imageProps = useNextSanityImage(sanityConfig, mainImage, {
+  const imageProps = useNextSanityImage(sanityConfig as SanityClientOrProjectDetails, mainImage, {
     imageBuilder: () => urlForImage(mainImage).height(1300).width(2000),
   });
 

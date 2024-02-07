@@ -3,14 +3,14 @@ import Image from 'next/image';
 import { MdPhotoCamera } from 'react-icons/md';
 import BlockContent from '@sanity/block-content-to-react';
 import styles from './CardSpecialty.module.scss';
-import { useNextSanityImage } from 'next-sanity-image';
+import { SanityClientOrProjectDetails, useNextSanityImage } from 'next-sanity-image';
 import { sanityConfig } from 'lib/sanity.config';
 import SanityImage from 'components/SanityImage/SanityImage';
 import Zoom from 'react-reveal/Zoom';
 import { Specialty } from 'types/News';
 
 const CardSpecialty: FC<Specialty> = ({ cover, title, body, onClick, members = [] }) => {
-  const { src, loader } = useNextSanityImage(sanityConfig, cover);
+  const { src, loader } = useNextSanityImage(sanityConfig as SanityClientOrProjectDetails, cover);
 
   return (
     <Zoom>

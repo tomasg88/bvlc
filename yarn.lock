@@ -1458,7 +1458,7 @@
   resolved "https://registry.yarnpkg.com/@sanity/icons/-/icons-2.8.0.tgz#030d48c10347bf0c5b131d981574550059f11f29"
   integrity sha512-Q8aKg+KPJPDLDR+beYZhtB3gYdq7zIyZQZ6HjaB/63KuidHzkIFuhVv8JS/rJNwWOn5lTuzmd+L/+U/Pv3klWw==
 
-"@sanity/image-url@^0.140.15", "@sanity/image-url@^0.140.19":
+"@sanity/image-url@^0.140.15":
   version "0.140.22"
   resolved "https://registry.yarnpkg.com/@sanity/image-url/-/image-url-0.140.22.tgz#7a65f56bb751f7b1c5dfacfadd34ee10fc4f0fde"
   integrity sha512-CAmQZnj+KM7FSEYiWlIGDit072syicYuAw0w7R2ctMzHiZ4p9mE/g6dBnYqrqFUrw2J+GpJgPt+RVspKP8vdqA==
@@ -6510,12 +6510,12 @@ natural-compare@^1.4.0:
   resolved "https://registry.yarnpkg.com/natural-compare/-/natural-compare-1.4.0.tgz#4abebfeed7541f2c27acfb29bdbbd15c8d5ba4f7"
   integrity sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==
 
-next-sanity-image@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/next-sanity-image/-/next-sanity-image-1.0.1.tgz#401cd42d7de36eaddfe5bd03391da4b9aef79611"
-  integrity sha512-lGaatEBBtR3eSWeGODByboEPKq4zWvo49XgZ3MZg5nlOYj8PH0Y486HONAnEM454l+HUGEN85J3XZUs3wYs9lQ==
+next-sanity-image@^6.1.1:
+  version "6.1.1"
+  resolved "https://registry.yarnpkg.com/next-sanity-image/-/next-sanity-image-6.1.1.tgz#d4b7dedae4f89df88bf4012cd15113e78dfc2576"
+  integrity sha512-mLRiatJW3TZoD3VlUCci4lOxW9lKOl0bxDsYtk/JRqKZo25QJqPXNV7aoD+lmjEFf6RO2eW7uJ57QeI20mPhOA==
   dependencies:
-    "@sanity/image-url" "^0.140.19"
+    "@sanity/image-url" "^1.0.2"
 
 next-sanity@^6.0.5:
   version "6.1.4"

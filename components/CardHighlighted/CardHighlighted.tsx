@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useNextSanityImage } from 'next-sanity-image';
+import { SanityClientOrProjectDetails, useNextSanityImage } from 'next-sanity-image';
 import Fade from 'react-reveal/Fade';
 
 import { sanityConfig } from 'lib/sanity.config';
@@ -11,7 +11,7 @@ import { News } from 'types/News';
 // TODO - restore usage of imageBuilder to highlight this news with
 // the hook useNextSanityImage
 const CardHighlighted: FC<News> = ({ title, slug, mainImage }): JSX.Element => {
-  const imgProps = useNextSanityImage(sanityConfig, mainImage);
+  const imgProps = useNextSanityImage(sanityConfig as SanityClientOrProjectDetails, mainImage);
 
   return (
     <Fade>
@@ -22,7 +22,7 @@ const CardHighlighted: FC<News> = ({ title, slug, mainImage }): JSX.Element => {
             alt={title}
             className={styles.image}
             style={{
-              maxWidth: '100%',
+              width: '100%',
               height: 'auto',
             }}
           />

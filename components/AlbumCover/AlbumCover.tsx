@@ -3,11 +3,11 @@ import Image from 'next/image';
 import { MdPhotoCamera } from 'react-icons/md';
 import styles from './AlbumCover.module.scss';
 import { sanityConfig } from 'lib/sanity.config';
-import { useNextSanityImage } from 'next-sanity-image';
+import { SanityClientOrProjectDetails, useNextSanityImage } from 'next-sanity-image';
 import { Album } from 'types/News';
 
 const AlbumCover: FC<Album> = ({ cover, title, description, onClick }): JSX.Element => {
-  const { src, loader } = useNextSanityImage(sanityConfig, cover);
+  const { src, loader } = useNextSanityImage(sanityConfig as SanityClientOrProjectDetails, cover);
 
   return (
     <div className={styles.root}>
