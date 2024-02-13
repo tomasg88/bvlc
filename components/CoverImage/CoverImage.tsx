@@ -1,10 +1,10 @@
-import { urlForImage } from 'lib/sanity.image';
+import { FC } from 'react';
 import Image from 'next/image';
-import { useNextSanityImage } from 'next-sanity-image';
+import { urlForImage } from 'lib/sanity.image';
+import { SanityClientOrProjectDetails, useNextSanityImage } from 'next-sanity-image';
 import { sanityConfig } from 'lib/sanity.config';
 import styles from './CoverImage.module.scss';
 import { SanityImageSource } from '@sanity/image-url/lib/types/types';
-import { FC } from 'react';
 
 interface CoverImageProps {
   title: string;
@@ -12,8 +12,8 @@ interface CoverImageProps {
 }
 
 const CoverImage: FC<CoverImageProps> = ({ title, image }): JSX.Element => {
-  const imageProps = useNextSanityImage(sanityConfig, image, {
-    imageBuilder: () => urlForImage(image).height(1300).width(2000),
+  const imageProps = useNextSanityImage(sanityConfig as SanityClientOrProjectDetails, image, {
+    imageBuilder: () => urlForImage(image).height(260).width(400),
   });
 
   return (

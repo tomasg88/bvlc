@@ -28,7 +28,7 @@
 }
 
 .heroArticle {
-  @apply relative items-center justify-center w-full overflow-hidden bg-gray-100 md:flex md:bg-gray-800 md:text-center md:text-white;
+  @apply w-full h-full object-cover relative items-center justify-center overflow-hidden bg-gray-100 md:flex md:bg-gray-800 md:text-center md:text-white;
 }
 
 @screen md {
@@ -53,7 +53,7 @@
 }
 
 .heroImageContainer {
-  @apply relative inset-0 z-0 md:absolute md:opacity-40;
+  @apply w-full h-full object-cover relative inset-0 z-0 md:absolute md:opacity-40;
 }
 
 .heroBox {

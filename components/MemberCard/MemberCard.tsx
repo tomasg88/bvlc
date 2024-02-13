@@ -1,6 +1,6 @@
 import styles from './MemberCard.module.scss';
 import { sanityConfig } from 'lib/sanity.config';
-import { useNextSanityImage } from 'next-sanity-image';
+import { SanityClientOrProjectDetails, useNextSanityImage } from 'next-sanity-image';
 import Image from 'next/image';
 import { FC } from 'react';
 import { SanityImageSource } from '@sanity/image-url/lib/types/types';
@@ -13,18 +13,16 @@ type MemberCardProps = {
 
 const MemberCard: FC<MemberCardProps> = ({ name, description, image }): JSX.Element => {
   const NO_PROFILE_IMAGE = '/no-profile-image.png';
-  let imageProps = { src: '' };
-  try {
-    imageProps = useNextSanityImage(sanityConfig, image);
-  } catch (error) {
-    imageProps.src = NO_PROFILE_IMAGE;
-  }
+
+  const imageProps = useNextSanityImage(sanityConfig as SanityClientOrProjectDetails, image);
+
+  const src = imageProps?.src || NO_PROFILE_IMAGE;
 
   return (
     <figure id="hero" className={styles.root}>
       <div className={styles.imageContainer}>
         <Image
-          src={imageProps.src}
+          src={src}
           fill
           alt={name}
           className={styles.image}

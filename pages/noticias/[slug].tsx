@@ -7,13 +7,17 @@ import CardNewsHorizontal from 'components/CardNewsHorizontal/CardNewsHorizontal
 import { FC } from 'react';
 import { SlugType } from 'types/News';
 import { GetStaticPathsResult, GetStaticPropsResult } from 'next';
-import { useNextSanityImage } from 'next-sanity-image';
+import { useNextSanityImage, SanityClientOrProjectDetails } from 'next-sanity-image';
 import { sanityConfig } from 'lib/sanity.config';
 
 const Article: FC<SlugType> = ({ article, moreArticles }): JSX.Element => {
-  const imageProps = useNextSanityImage(sanityConfig, article.mainImage, {
-    imageBuilder: () => urlForImage(article.mainImage).width(1200).height(627),
-  });
+  const imageProps = useNextSanityImage(
+    sanityConfig as SanityClientOrProjectDetails,
+    article.mainImage,
+    {
+      imageBuilder: () => urlForImage(article.mainImage).width(2000).height(1300),
+    }
+  );
 
   return (
     <Layout title={article.title} image={imageProps.src} description={article.excerpt}>
