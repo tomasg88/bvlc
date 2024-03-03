@@ -2603,13 +2603,6 @@ axe-core@=4.7.0:
   resolved "https://registry.yarnpkg.com/axe-core/-/axe-core-4.7.0.tgz#34ba5a48a8b564f67e103f0aa5768d76e15bbbbf"
   integrity sha512-M0JtH+hlOL5pLQwHOLNYZaXuhqmvS8oExsqB1SBYgA4Dk7u/xx+YdGHXaK5pyUfed5mYXdlYiphWq3G8cRi5JQ==
 
-axios@^0.21.1:
-  version "0.21.4"
-  resolved "https://registry.yarnpkg.com/axios/-/axios-0.21.4.tgz#c67b90dc0568e5c1cf2b0b858c43ba28e2eda575"
-  integrity sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==
-  dependencies:
-    follow-redirects "^1.14.0"
-
 axobject-query@^3.2.1:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/axobject-query/-/axobject-query-3.2.1.tgz#39c378a6e3b06ca679f29138151e45b2b32da62a"
@@ -4405,7 +4398,7 @@ focus-lock@^1.0.0:
   dependencies:
     tslib "^2.0.3"
 
-follow-redirects@^1.14.0, follow-redirects@^1.15.4:
+follow-redirects@^1.15.4:
   version "1.15.5"
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.15.5.tgz#54d4d6d062c0fa7d9d17feb008461550e3ba8020"
   integrity sha512-vSFWUON1B+yAw1VN4xMfxgn5fTUiaOzAJCKBwIIgT/+7CuGy9+r+5gITvP62j3RmaD5Ph65UaERdOSRGUzZtgw==
@@ -6500,7 +6493,7 @@ nano-pubsub@^2.0.1:
   resolved "https://registry.yarnpkg.com/nano-pubsub/-/nano-pubsub-2.0.1.tgz#59f3b7b6ed06868d879a10bdc9d082d9a27ee3ae"
   integrity sha512-RWgGP2TdeKZLx+guR5a7/BzYs85sj6yrXXyj0o/znbgzPlz/Ez9wQuKDpwUZ8q+u2RxXpqZ1iTkPXCIU+GHhpA==
 
-nanoid@^3.1.12, nanoid@^3.1.20, nanoid@^3.1.30, nanoid@^3.3.3, nanoid@^3.3.6, nanoid@^3.3.7:
+nanoid@^3.1.12, nanoid@^3.1.30, nanoid@^3.3.3, nanoid@^3.3.6, nanoid@^3.3.7:
   version "3.3.7"
   resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-3.3.7.tgz#d0c301a691bc8d54efa0a2226ccf3fe2fd656bd8"
   integrity sha512-eSRppjcPIatRIMC1U6UngP8XFcz8MQWGQdt1MTBQ7NaAmvXDfvNxbvWV3x2y6CdEUciCSsDHDQZbhYaB8QEo2g==
@@ -7371,11 +7364,6 @@ react-lifecycles-compat@^3.0.4:
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
 
-react-polling@^1.0.9:
-  version "1.0.9"
-  resolved "https://registry.yarnpkg.com/react-polling/-/react-polling-1.0.9.tgz#f1101a1d88bd90a647ace969b6731ab19326029b"
-  integrity sha512-fXRQMbpfp5B8tOjq/JzqsP0V8DcgDbb/piwlnTMHJUgepgyyVPNGqtT0TmaJTIsyS+ujkNWOyjGtjewMoNmdYg==
-
 react-redux@^7.2.2:
   version "7.2.9"
   resolved "https://registry.yarnpkg.com/react-redux/-/react-redux-7.2.9.tgz#09488fbb9416a4efe3735b7235055442b042481d"
@@ -7916,17 +7904,6 @@ sanity-plugin-media@^2.2.4:
     redux-observable "^2.0.0"
     rxjs "^7.0.0"
     zod "^3.21.4"
-
-sanity-plugin-vercel-deploy@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/sanity-plugin-vercel-deploy/-/sanity-plugin-vercel-deploy-1.1.0.tgz#a8ecb5ffb1985c98ba973da41ec1c00aaf129090"
-  integrity sha512-5HYTYahVbqFbohLEltkVwY1KkGYzvZepqSB1cyj0sjAmyEDlWQiIrH7sDB/A6t/6wU0jmQ6Tpz2RsgC0vewGog==
-  dependencies:
-    "@babel/runtime" "^7.12.5"
-    axios "^0.21.1"
-    nanoid "^3.1.20"
-    prop-types "^15.7.2"
-    react-polling "^1.0.9"
 
 sanity@^3.20.1:
   version "3.24.1"
