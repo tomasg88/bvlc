@@ -1,6 +1,9 @@
 import { ActiveForcePerson, ComisionPerson } from 'types/News';
 import { find, orderBy, groupBy, Dictionary } from 'lodash';
 
+/**
+ * Used for Comisión Directiva - documentType: ~/studio/schemas/leadership.js
+ */
 const positions = [
   { title: 'Presidente', value: 'presidente' },
   { title: 'Vice Presidente', value: 'vice-presidente' },
@@ -14,6 +17,9 @@ const positions = [
   { title: 'Rev. de Ctas. Suplente', value: 'cuentas-suplente' },
 ];
 
+/**
+ * Used for Cuerpo Activo - documentType: ~/studio/schemas/activeForce.js
+ */
 const ranks = [
   { title: 'Comandante General', value: 'comandante-general' },
   { title: 'Comandante Mayor', value: 'comandante-mayor' },
@@ -33,6 +39,9 @@ const ranks = [
   { title: 'Aspirante', value: 'aspirante' },
 ];
 
+/**
+ * Used for Cuerpo Activo jerarchies
+ */
 const orderRanks = {
   'comandante-general': 1,
   'comandante-mayor': 2,
@@ -52,6 +61,9 @@ const orderRanks = {
   aspirante: 16,
 };
 
+/**
+ * Used for Comisión Directiva positions
+ */
 const orderPositions = {
   presidente: 1,
   'vice-presidente': 2,
