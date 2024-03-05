@@ -38,7 +38,7 @@ const Noticias: FC<NewsType> = ({ list }): JSX.Element => {
       <div className="pb-24 bg-gray-100">
         <HeroNews />
         <div className={styles.page}>
-          <div className="max-w-5xl grid-cols-1 gap-6 px-6 pt-12 pb-24 mx-auto md:px-0">
+          <div className="max-w-5xl grid-cols-1 gap-6 px-6 pt-12 pb-10 mx-auto md:px-0 border-b-2 border-yellow-400">
             <div id="content" className="w-full">
               <div className="grid max-w-4xl grid-cols-1 gap-3 mx-auto ">
                 {currentItems && currentItems.map((n) => <CardNewsHorizontal {...n} key={n._id} />)}

@@ -9,8 +9,8 @@ const buttonVariants = cva(
   {
     variants: {
       variants: {
-        command: 'bg-red-600 text-white hover:bg-red-700 cursor-pointer',
-        pageNumber: 'bg-gray-300 text-black hover:bg-gray-400 cursor-pointer',
+        command: 'bg-red-600 text-white hover:bg-red-700 cursor-pointer select-none',
+        pageNumber: 'bg-gray-300 text-black hover:bg-gray-400 cursor-pointer select-none',
       },
       size: {
         default: 'h-10 px-4 py-2',
