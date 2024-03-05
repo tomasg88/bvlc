@@ -1,12 +1,15 @@
+import styles from 'styles/PageSidebar.module.css';
+
 import React, { FC, useState } from 'react';
-import Layout from 'components/Layout/Layout';
 import { sanityClient } from 'lib/sanity.client';
-import { News, NewsType } from 'types/News';
 import { allPostQuery } from 'lib/sanity.queries';
+import { GetStaticProps } from 'next';
+
+import Layout from 'components/Layout/Layout';
+import { News, NewsType } from 'types/News';
 import HeroNews from 'components/HeroNews/HeroNews';
 import CardNewsHorizontal from 'components/CardNewsHorizontal/CardNewsHorizontal';
-import styles from 'styles/PageSidebar.module.css';
-import { GetStaticProps } from 'next';
+
 import {
   Pagination,
   PaginationContent,
