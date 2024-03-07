@@ -7,17 +7,17 @@ import { GetStaticProps } from 'next';
 
 import Layout from 'components/Layout/Layout';
 import { News, NewsType } from 'types/News';
+
 import HeroNews from 'components/HeroNews/HeroNews';
 import CardNewsHorizontal from 'components/CardNewsHorizontal/CardNewsHorizontal';
+import Pagination from 'components/Pagination/Pagination';
+import PaginationContent from 'components/Pagination/PaginationContent';
+import PaginationItem from 'components/Pagination/PaginationItem';
+import PaginationLink from 'components/Pagination/PaginationLink';
+import PaginationNext from 'components/Pagination/PaginationNext';
+import PaginationPrevious from 'components/Pagination/PaginationPrevious';
 
-import {
-  Pagination,
-  PaginationContent,
-  PaginationItem,
-  PaginationLink,
-  PaginationNext,
-  PaginationPrevious,
-} from 'components/Pagination/Pagination';
+
 
 const itemsPerPage = 5;
 
