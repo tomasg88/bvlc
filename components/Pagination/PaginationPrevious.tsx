@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ChevronLeft } from 'lucide-react';
+import { SlArrowLeft } from 'react-icons/sl';
 import PaginationLink from './PaginationLink';
 
 import { buttonVariants } from './ButtonPagination';
@@ -21,7 +21,7 @@ const PaginationPrevious = ({
     )}
     {...props}
   >
-    <ChevronLeft className="h-4 w-4" />
+    <SlArrowLeft className="h-3 w-4" />
     <span>Anterior</span>
   </PaginationLink>
 );

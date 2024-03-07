@@ -34,7 +34,6 @@
     "framer": "^1.2.29",
     "get-youtube-id": "^1.0.1",
     "lodash": "^4.17.21",
-    "lucide-react": "^0.344.0",
     "next": "^14.0.0",
     "next-sanity": "^6.0.5",
     "next-sanity-image": "^6.1.1",

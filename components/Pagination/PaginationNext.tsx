@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ChevronRight } from 'lucide-react';
+import { SlArrowRight } from 'react-icons/sl';
 import PaginationLink from './PaginationLink';
 
 import { cn } from '../../utils/utils';
@@ -19,7 +19,7 @@ const PaginationNext = ({ className, ...props }: React.ComponentProps<typeof Pag
     {...props}
   >
     <span>Siguiente</span>
-    <ChevronRight className="h-4 w-4" />
+    <SlArrowRight className="h-3 w-4" />
   </PaginationLink>
 );
 PaginationNext.displayName = 'PaginationNext';
