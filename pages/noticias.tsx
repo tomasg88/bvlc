@@ -17,8 +17,6 @@ import PaginationLink from 'components/Pagination/PaginationLink';
 import PaginationNext from 'components/Pagination/PaginationNext';
 import PaginationPrevious from 'components/Pagination/PaginationPrevious';
 
-
-
 const itemsPerPage = 5;
 
 const Noticias: FC<NewsType> = ({ list }): JSX.Element => {
