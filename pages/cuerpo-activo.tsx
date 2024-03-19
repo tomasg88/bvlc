@@ -14,9 +14,7 @@ import HeroInstitucional from 'components/HeroInstitucional/HeroInstitucional';
 
 const CuerpoActivo: FC<ActiveForceType> = ({ list }): JSX.Element => {
   const { orderedList, getTranslation } = groupAndOrder('rank', list);
-  const addSubtitle = (value: string | 'comandante-general' | 'comandante') =>
-    (value === 'comandante-general' && ' - Jefe del Cuerpo') ||
-    (value === 'comandante' && ' - 2do. Jefe del Cuerpo');
+
   return (
     <Layout title="Cuerpo Activo">
       <div className="min-h-screen">
@@ -27,10 +25,7 @@ const CuerpoActivo: FC<ActiveForceType> = ({ list }): JSX.Element => {
               <div key={key}>
                 <div className="flex flex-col items-center max-w-6xl pt-6 pb-6 mx-auto border-b-2 border-yellow-400 md:flex-row">
                   <Fade cascade>
-                    <h2 className="text-4xl font-light text-gray-900 ">
-                      {getTranslation(key)}
-                      <span className="text-3xl text-gray-500">{addSubtitle(key) || ''}</span>
-                    </h2>
+                    <h2 className="text-4xl font-light text-gray-900 ">{getTranslation(key)}</h2>
                   </Fade>
                 </div>
                 <div className="grid max-w-6xl gap-3 p-8 pb-12 mx-auto mt-6 md:grid-cols-3 sm:grid-cols-2">
