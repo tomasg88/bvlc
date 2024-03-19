@@ -2,6 +2,9 @@ import { ActiveForcePerson, ComisionPerson } from 'types/News';
 import { find, orderBy, groupBy, Dictionary } from 'lodash';
 import { RANKS, POSITIONS } from './constants';
 
+/**
+ * Used for Cuerpo Activo jerarchies
+ */
 const orderRanks = {
   'jefe-del-cuerpo': 1,
   'segundo-jefe-del-cuerpo': 2,
@@ -23,6 +26,9 @@ const orderRanks = {
   aspirante: 18,
 };
 
+/**
+ * Used for Comisión Directiva positions
+ */
 const orderPositions = {
   presidente: 1,
   'vice-presidente': 2,
