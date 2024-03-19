@@ -1,3 +1,5 @@
+import { POSITIONS } from 'utils/constants';
+
 export default {
   name: 'leadership',
   type: 'document',
@@ -18,18 +20,7 @@ export default {
       type: 'string',
       validation: (Rule) => Rule.required(),
       options: {
-        list: [
-          { title: 'Presidente', value: 'presidente' },
-          { title: 'Vice Presidente', value: 'vice-presidente' },
-          { title: 'Secretario', value: 'secretario' },
-          { title: 'Pro secretario', value: 'pro-secretario' },
-          { title: 'Tesorero', value: 'tesorero' },
-          { title: 'Pro tesorero', value: 'pro-tesorero' },
-          { title: 'Vocal Titular', value: 'vocal-titular' },
-          { title: 'Vocal Suplente', value: 'vocal-suplente' },
-          { title: 'Rev. de Ctas. Titular', value: 'cuentas-titular' },
-          { title: 'Rev. de Ctas. Suplente', value: 'cuentas-suplente' },
-        ],
+        list: POSITIONS,
       },
     },
     {

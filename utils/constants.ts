@@ -107,3 +107,42 @@ export const ACADEMY_MEMBERS = [
     name: 'Franco Pifaretti',
   },
 ];
+
+// This list feeds both Sanity and Website
+export const RANKS = [
+  { title: 'Jefe del Cuerpo', value: 'jefe-del-cuerpo' },
+  { title: '2do. Jefe del Cuerpo', value: 'segundo-jefe-del-cuerpo' },
+  { title: 'Comandante General', value: 'comandante-general' },
+  { title: 'Comandante Mayor', value: 'comandante-mayor' },
+  { title: 'Comandante', value: 'comandante' },
+  { title: 'Subcomandante', value: 'subcomandante' },
+  { title: 'Oficial Principal', value: 'oficial-principal' },
+  { title: 'Oficial Inspector', value: 'oficial-inspector' },
+  { title: 'Oficial Ayudante', value: 'oficial-ayudante' },
+  { title: 'Suboficial Mayor', value: 'suboficial-mayor' },
+  { title: 'Suboficial Principal', value: 'suboficial-principal' },
+  { title: 'Suboficial Primero', value: 'suboficial-primero' },
+  { title: 'Sargento Primero', value: 'sargento-primero' },
+  { title: 'Sargento', value: 'sargento' },
+  { title: 'Cabo Primero', value: 'cabo-primero' },
+  { title: 'Cabo', value: 'cabo' },
+  { title: 'Bombero', value: 'bombero' },
+  { title: 'Aspirante', value: 'aspirante' },
+];
+
+// This list feeds both Sanity and Website
+export const POSITIONS = [
+  { title: 'Presidente', value: 'presidente' },
+  { title: 'Vice Presidente', value: 'vice-presidente' },
+  { title: 'Secretario', value: 'secretario' },
+  { title: 'Pro secretario', value: 'pro-secretario' },
+  { title: 'Tesorero', value: 'tesorero' },
+  { title: 'Pro tesorero', value: 'pro-tesorero' },
+  { title: 'Vocal Titular', value: 'vocal-titular' },
+  { title: 'Vocal Suplente', value: 'vocal-suplente' },
+  { title: 'Rev. de Ctas. Titular', value: 'cuentas-titular' },
+  { title: 'Rev. de Ctas. Suplente', value: 'cuentas-suplente' },
+];
+
+// Used when there is no profile image of a member
+export const NO_PROFILE_IMAGE = '/no-profile-image.png';

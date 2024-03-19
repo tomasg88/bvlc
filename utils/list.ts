@@ -1,64 +1,29 @@
 import { ActiveForcePerson, ComisionPerson } from 'types/News';
 import { find, orderBy, groupBy, Dictionary } from 'lodash';
-
-/**
- * Used for Comisión Directiva - documentType: ~/studio/schemas/leadership.js
- */
-const positions = [
-  { title: 'Presidente', value: 'presidente' },
-  { title: 'Vice Presidente', value: 'vice-presidente' },
-  { title: 'Secretario', value: 'secretario' },
-  { title: 'Pro secretario', value: 'pro-secretario' },
-  { title: 'Tesorero', value: 'tesorero' },
-  { title: 'Pro tesorero', value: 'pro-tesorero' },
-  { title: 'Vocal Titular', value: 'vocal-titular' },
-  { title: 'Vocal Suplente', value: 'vocal-suplente' },
-  { title: 'Rev. de Ctas. Titular', value: 'cuentas-titular' },
-  { title: 'Rev. de Ctas. Suplente', value: 'cuentas-suplente' },
-];
-
-/**
- * Used for Cuerpo Activo - documentType: ~/studio/schemas/activeForce.js
- */
-const ranks = [
-  { title: 'Comandante General', value: 'comandante-general' },
-  { title: 'Comandante Mayor', value: 'comandante-mayor' },
-  { title: 'Comandante', value: 'comandante' },
-  { title: 'Subcomandante', value: 'subcomandante' },
-  { title: 'Oficial Principal', value: 'oficial-principal' },
-  { title: 'Oficial Inspector', value: 'oficial-inspector' },
-  { title: 'Oficial Ayudante', value: 'oficial-ayudante' },
-  { title: 'Suboficial Mayor', value: 'suboficial-mayor' },
-  { title: 'Suboficial Principal', value: 'suboficial-principal' },
-  { title: 'Suboficial Primero', value: 'suboficial-primero' },
-  { title: 'Sargento Primero', value: 'sargento-primero' },
-  { title: 'Sargento', value: 'sargento' },
-  { title: 'Cabo Primero', value: 'cabo-primero' },
-  { title: 'Cabo', value: 'cabo' },
-  { title: 'Bombero', value: 'bombero' },
-  { title: 'Aspirante', value: 'aspirante' },
-];
+import { RANKS, POSITIONS } from './constants';
 
 /**
  * Used for Cuerpo Activo jerarchies
  */
 const orderRanks = {
-  'comandante-general': 1,
-  'comandante-mayor': 2,
-  comandante: 3,
-  subcomandante: 4,
-  'oficial-principal': 5,
-  'oficial-inspector': 6,
-  'oficial-ayudante': 7,
-  'suboficial-mayor': 8,
-  'suboficial-principal': 9,
-  'suboficial-primero': 10,
-  'sargento-primero': 11,
-  sargento: 12,
-  'cabo-primero': 13,
-  cabo: 14,
-  bombero: 15,
-  aspirante: 16,
+  'jefe-del-cuerpo': 1,
+  'segundo-jefe-del-cuerpo': 2,
+  'comandante-general': 3,
+  'comandante-mayor': 4,
+  comandante: 5,
+  subcomandante: 6,
+  'oficial-principal': 7,
+  'oficial-inspector': 8,
+  'oficial-ayudante': 9,
+  'suboficial-mayor': 10,
+  'suboficial-principal': 11,
+  'suboficial-primero': 12,
+  'sargento-primero': 13,
+  sargento: 14,
+  'cabo-primero': 15,
+  cabo: 16,
+  bombero: 17,
+  aspirante: 18,
 };
 
 /**
@@ -83,7 +48,7 @@ type MembersList = {
 };
 
 const groupAndOrderPosition = (list: ComisionPerson[]) => {
-  const getTranslatedPositions = (value) => find(positions, { value })?.title;
+  const getTranslatedPositions = (value) => find(POSITIONS, { value })?.title;
   const orderByPosition = orderBy(list, (l) => orderPositions[l.position]);
   return {
     orderedList: groupBy(orderByPosition, 'position'),
@@ -92,7 +57,7 @@ const groupAndOrderPosition = (list: ComisionPerson[]) => {
 };
 
 const groupAndOrderRanks = (list: ActiveForcePerson[]) => {
-  const getTranslatedRanks = (value) => find(ranks, { value })?.title;
+  const getTranslatedRanks = (value) => find(RANKS, { value })?.title;
   const orderByRank = orderBy(list, (l) => orderRanks[l.rank]);
 
   return { orderedList: groupBy(orderByRank, 'rank'), getTranslation: getTranslatedRanks };
