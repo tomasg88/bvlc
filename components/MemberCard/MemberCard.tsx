@@ -4,6 +4,7 @@ import { SanityClientOrProjectDetails, useNextSanityImage } from 'next-sanity-im
 import Image from 'next/image';
 import { FC } from 'react';
 import { SanityImageSource } from '@sanity/image-url/lib/types/types';
+import { NO_PROFILE_IMAGE } from 'utils/constants';
 
 type MemberCardProps = {
   name: string;
@@ -12,8 +13,6 @@ type MemberCardProps = {
 };
 
 const MemberCard: FC<MemberCardProps> = ({ name, description, image }): JSX.Element => {
-  const NO_PROFILE_IMAGE = '/no-profile-image.png';
-
   const imageProps = useNextSanityImage(sanityConfig as SanityClientOrProjectDetails, image);
 
   const src = imageProps?.src || NO_PROFILE_IMAGE;
@@ -22,10 +21,11 @@ const MemberCard: FC<MemberCardProps> = ({ name, description, image }): JSX.Elem
     <figure id="hero" className={styles.root}>
       <div className={styles.imageContainer}>
         <Image
-          src={src}
-          fill
           alt={name}
           className={styles.image}
+          height={100}
+          width={100}
+          src={src}
           style={{
             objectFit: 'cover',
           }}
