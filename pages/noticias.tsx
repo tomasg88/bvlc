@@ -20,7 +20,7 @@ import PaginationPrevious from 'components/Pagination/PaginationPrevious';
 const itemsPerPage = 5;
 
 const Noticias: FC<NewsType> = ({ list }): JSX.Element => {
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState<number>(1);
 
   const indexOflastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOflastItem - itemsPerPage;
