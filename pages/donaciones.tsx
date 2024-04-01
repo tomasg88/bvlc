@@ -3,17 +3,20 @@ import Layout from 'components/Layout/Layout';
 import { sanityClient } from 'lib/sanity.client';
 import ArticleContent from 'components/ArticleContent/ArticleContent';
 import { SRLWrapper } from 'simple-react-lightbox';
-import { pagesQuery } from 'lib/sanity.queries';
+import { campaignsQuery, pagesQuery } from 'lib/sanity.queries';
 import HeroInstitucional from 'components/HeroInstitucional/HeroInstitucional';
 import { BG_CONSTANTS } from 'utils/constants';
 import { GetStaticProps } from 'next';
-import { Page } from 'types/News';
+import { CampaignsPage } from 'types/News';
 import Image from 'next/image';
 
 const SAMPLE_IMG =
   'https://images.unsplash.com/photo-1504667475460-eb4789043482?q=60&w=450&auto=format&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
 
-const Institucional: FC<Page> = ({ pages }): JSX.Element => {
+const Donaciones: FC<CampaignsPage> = ({
+  pages,
+  campaigns: { showFirst, restOfCampaigns },
+}): JSX.Element => {
   const { body, publishedAt, title, mainImage } = pages;
   return (
     <Layout title={pages.title}>
@@ -83,15 +86,23 @@ const Institucional: FC<Page> = ({ pages }): JSX.Element => {
   );
 };
 
-export default Institucional;
+export default Donaciones;
 
 export const getStaticProps: GetStaticProps = async () => {
   const slug = 'donaciones';
   const pages = await sanityClient.fetch(pagesQuery, { slug });
+  const campaigns = await sanityClient.fetch(campaignsQuery, { slug });
+
+  const showFirst = campaigns.find((campaign) => campaign.showFirst);
+  const restOfCampaigns = campaigns.filter((campaign) => !campaign.showFirst);
 
   return {
     props: {
       pages,
+      campaigns: {
+        showFirst: showFirst[0] || [],
+        restOfCampaigns,
+      },
     },
   };
 };
