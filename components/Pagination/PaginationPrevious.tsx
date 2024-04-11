@@ -3,7 +3,7 @@ import { SlArrowLeft } from 'react-icons/sl';
 import PaginationLink from './PaginationLink';
 
 import { buttonVariants } from './ButtonPagination';
-import { cn } from '../../utils/utils';
+import { cn } from '../../utils/css';
 
 const PaginationPrevious = ({
   className,

@@ -2,7 +2,7 @@ import * as React from 'react';
 import { SlArrowRight } from 'react-icons/sl';
 import PaginationLink from './PaginationLink';
 
-import { cn } from '../../utils/utils';
+import { cn } from '../../utils/css';
 import { buttonVariants } from './ButtonPagination';
 
 const PaginationNext = ({ className, ...props }: React.ComponentProps<typeof PaginationLink>) => (
