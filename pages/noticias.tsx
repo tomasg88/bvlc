@@ -47,6 +47,8 @@ const Noticias: FC<NewsType> = ({ list }): JSX.Element => {
             </div>
           </div>
         </div>
+
+        {/* TODO - Make this pagination reusable */}
         <Pagination>
           <PaginationContent>
             <PaginationItem>

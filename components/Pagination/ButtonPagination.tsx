@@ -4,7 +4,8 @@ import { cva, type VariantProps } from 'class-variance-authority';
 
 import { cn } from '../../utils/css';
 
-const buttonVariants = cva(
+// TODO - move this to CSS modules
+export const buttonVariants = cva(
   'inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors',
   {
     variants: {
@@ -26,7 +27,7 @@ export interface ButtonProps
   asChild?: boolean;
 }
 
-const Button = React.memo(
+export const Button = React.memo(
   React.forwardRef<HTMLButtonElement, ButtonProps>(
     ({ className, size, asChild = false, ...props }, ref) => {
       const Comp = asChild ? Slot : 'button';
@@ -35,5 +36,3 @@ const Button = React.memo(
   )
 );
 Button.displayName = 'Button';
-
-export { buttonVariants, Button };
