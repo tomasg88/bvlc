@@ -19,6 +19,13 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      description: 'Breve descripción para indicar el objetivo de esta campaña',
+      name: 'description',
+      title: 'Descripción',
+      type: 'text',
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
       description: 'Indicar si la campaña está activa o no',
       initialValue: false,
       name: 'isActive',

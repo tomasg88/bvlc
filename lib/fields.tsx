@@ -34,5 +34,5 @@ export const specialtyFields = `
 ` as string;
 
 export const campaignFields = `
-  _id, name, campaignLink, showFirst, isActive
+  _id, description, name, campaignLink, showFirst, isActive
 ` as string;
