@@ -6,7 +6,6 @@
   @apply duration-500;
   @apply transform;
   @apply translate-y-0;
-  @apply hover:shadow-2xl;
   @apply bg-white;
   @apply border-b-4;
   @apply rounded-md;
@@ -30,7 +29,7 @@
   }
 
   &:hover {
-    @apply text-red-500;
+    @apply text-red-500 shadow-2xl;
   }
 }
 
