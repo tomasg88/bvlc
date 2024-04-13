@@ -1,0 +1,39 @@
+.card {
+  @apply relative;
+  @apply flex;
+  @apply w-full;
+  @apply mb-4;
+  @apply duration-500;
+  @apply transform;
+  @apply translate-y-0;
+  @apply hover:shadow-2xl;
+  @apply bg-white;
+  @apply border-b-4;
+  @apply rounded-md;
+  @apply shadow-xl;
+  @apply p-6;
+
+  .content {
+    @apply text-left;
+
+    .name {
+      @apply inline-block mb-2 text-lg font-bold md:text-2xl;
+    }
+
+    .description {
+      @apply text-lg line-clamp-2;
+    }
+  }
+
+  .icon {
+    @apply self-center mx-auto text-2xl;
+  }
+
+  &:hover {
+    @apply text-red-500;
+  }
+}
+
+.inactive {
+  @apply opacity-60;
+}
