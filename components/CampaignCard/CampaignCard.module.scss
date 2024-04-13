@@ -14,19 +14,19 @@
   @apply p-6;
 
   .content {
-    @apply text-left;
+    @apply text-left w-full;
 
     .name {
       @apply inline-block mb-2 text-lg font-bold md:text-2xl;
     }
 
     .description {
-      @apply text-lg line-clamp-2;
+      @apply text-base line-clamp-4;
     }
   }
 
   .icon {
-    @apply self-center mx-auto text-2xl;
+    @apply self-center mx-auto text-2xl px-6;
   }
 
   &:hover {
