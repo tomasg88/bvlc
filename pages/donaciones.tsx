@@ -28,12 +28,6 @@ const Donaciones: FC<CampaignsPage> = ({
               <h2 className="text-4xl py-6 border-b-2 border-yellow-400">
                 Campaña de Socios Protectores
               </h2>
-              <h4 className="text-xl my-6">
-                Contar con el apoyo solidario de cada uno de ustedes nos ayuda a mantener en
-                condiciones las instalaciones del cuartel, las unidades y el equipamiento necesario
-                para nuestra labor, además de promover el sentido de pertenencia a nuestra
-                Institución
-              </h4>
               <div className="lg:w-[800px] w-full mx-auto mt-12">
                 <CampaignCard
                   campaignLink={showFirst.campaignLink}
@@ -48,13 +42,11 @@ const Donaciones: FC<CampaignsPage> = ({
           {/* Sección */}
           <div className="bg-gray-100 w-full py-12 mt-20">
             <div className="grid max-w-6xl gap-6 grid-cols-1 sm:grid-cols-2 mx-auto">
-              <h3 className="mx-6">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                deserunt mollit anim id est laborum
+              <h3 className="mx-6 text-lg">
+                Contar con el apoyo solidario de cada uno de ustedes nos ayuda a mantener en
+                condiciones las instalaciones del cuartel, las unidades y el equipamiento necesario
+                para nuestra labor, además de promover el sentido de pertenencia a nuestra
+                Institución
               </h3>
               <div className="mx-16">
                 <Image alt={'Sample image'} width={450} height={400} src={SAMPLE_IMG} />
@@ -65,12 +57,6 @@ const Donaciones: FC<CampaignsPage> = ({
           <div className="mt-6 p-6 mx-auto max-w-7xl bg-white">
             <div className="text-center text-gray-800">
               <h2 className="text-4xl py-6 border-b-2 border-yellow-400">Otras Campañas</h2>
-              <h4 className="text-xl my-6">
-                Contar con el apoyo solidario de cada uno de ustedes nos ayuda a mantener en
-                condiciones las instalaciones del cuartel, las unidades y el equipamiento necesario
-                para nuestra labor, además de promover el sentido de pertenencia a nuestra
-                Institución
-              </h4>
               <div className="lg:w-[800px] w-full mx-auto mt-12">
                 <ul>
                   {restOfCampaigns.map((campaign) => (
