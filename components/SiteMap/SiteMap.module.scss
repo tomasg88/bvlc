@@ -1,7 +1,7 @@
 .siteMapColumn {
-    @apply flex flex-col mt-6 space-y-1 md:mt-0;
+  @apply flex flex-col mt-6 space-y-1 md:mt-0;
 
-    .columnTitle {
-        @apply block mb-3 text-sm font-bold text-white uppercase;
-    }
+  .columnTitle {
+    @apply block mb-3 text-sm font-bold text-white uppercase;
+  }
 }

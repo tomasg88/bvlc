@@ -1,7 +1,7 @@
 .root {
-    @apply absolute inset-0 z-0 opacity-20;
+  @apply absolute inset-0 z-0 opacity-20;
 
-    .image {
-        @apply object-cover w-full h-screen;
-    }
+  .image {
+    @apply object-cover w-full h-screen;
+  }
 }

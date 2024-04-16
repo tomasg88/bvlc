@@ -16,15 +16,23 @@ import PaginationItem from 'components/Pagination/PaginationItem';
 import PaginationLink from 'components/Pagination/PaginationLink';
 import PaginationNext from 'components/Pagination/PaginationNext';
 import PaginationPrevious from 'components/Pagination/PaginationPrevious';
-
-const itemsPerPage = 5;
+import Input from 'components/Input/Input';
 
 const Noticias: FC<NewsType> = ({ list }): JSX.Element => {
   const [currentPage, setCurrentPage] = useState<number>(1);
+  const [searchTerm, setSearchTerm] = useState<string>('');
 
+  const itemsPerPage = 5;
   const indexOflastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOflastItem - itemsPerPage;
-  const currentItems = list.slice(indexOfFirstItem, indexOflastItem);
+
+  const filteredList = list.filter((item) => {
+    return item.title.toLowerCase().includes(searchTerm.toLowerCase());
+  });
+
+  const isFilteredListEmpty = filteredList.length < 1;
+
+  const currentItems = filteredList.slice(indexOfFirstItem, indexOflastItem);
 
   const totalPages = Math.ceil(list.length / itemsPerPage);
 
@@ -34,6 +42,11 @@ const Noticias: FC<NewsType> = ({ list }): JSX.Element => {
     }
   };
 
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchTerm(event.target.value);
+    setCurrentPage(1);
+  };
+
   return (
     <Layout title="Noticias">
       <div className="pb-24 bg-gray-100">
@@ -41,8 +54,15 @@ const Noticias: FC<NewsType> = ({ list }): JSX.Element => {
         <div className={styles.page}>
           <div className="max-w-5xl grid-cols-1 gap-6 px-6 pt-12 pb-10 mx-auto md:px-0 border-b-2 border-yellow-400">
             <div id="content" className="w-full">
-              <div className="grid max-w-4xl grid-cols-1 gap-3 mx-auto ">
-                {currentItems && currentItems.map((n) => <CardNewsHorizontal {...n} key={n._id} />)}
+              <div className="grid max-w-4xl grid-cols-1 gap-10 mx-auto ">
+                <Input type="text" placeholder="Buscar noticias..." onChange={handleInputChange} />
+                {isFilteredListEmpty ? (
+                  <div className="text-center font-semibold text-md text-gray-500">
+                    Su busqueda no arrojó resultados.
+                  </div>
+                ) : (
+                  currentItems.map((n) => <CardNewsHorizontal {...n} key={n._id} />)
+                )}
               </div>
             </div>
           </div>

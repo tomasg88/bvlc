@@ -129,7 +129,7 @@
 .bm-overlay + div:before {
   right: 54px;
   position: absolute;
-  content: "Men\FA";
+  content: 'Men\FA';
   font-weight: 700;
   font-size: 1.125rem;
   line-height: 1.75rem;
