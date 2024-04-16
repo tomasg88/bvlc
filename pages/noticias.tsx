@@ -58,7 +58,7 @@ const Noticias: FC<NewsType> = ({ list }): JSX.Element => {
                 <Input type="text" placeholder="Buscar noticias..." onChange={handleInputChange} />
                 {isFilteredListEmpty ? (
                   <div className="text-center font-semibold text-md text-gray-500">
-                    Su busqueda no arrojó resultados.
+                    Su búsqueda no arrojó resultados.
                   </div>
                 ) : (
                   currentItems.map((n) => <CardNewsHorizontal {...n} key={n._id} />)
