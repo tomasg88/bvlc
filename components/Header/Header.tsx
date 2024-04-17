@@ -85,6 +85,7 @@ const Header: FunctionComponent = (): ReactElement => {
                 <HeaderLink url="/noticias" title="Noticias" />
                 <HeaderLink url="/academia" title="Academia" />
                 <HeaderLink url="/galeria" title="Galería" />
+                <HeaderLink url="/donaciones" title="Donaciones" />
                 <HeaderLink url="/contacto" title="Contacto" />
               </nav>
             </div>
