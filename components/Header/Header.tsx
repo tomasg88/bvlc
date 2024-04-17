@@ -82,11 +82,15 @@ const Header: FunctionComponent = (): ReactElement => {
               </div>
               <nav className={styles.navItems}>
                 <MenuDropdown title="Institucional" />
-                <HeaderLink url="/noticias" title="Noticias" />
-                <HeaderLink url="/academia" title="Academia" />
-                <HeaderLink url="/galeria" title="Galería" />
-                <HeaderLink url="/donaciones" title="Donaciones" />
-                <HeaderLink url="/contacto" title="Contacto" />
+                <HeaderLink className="text-base xl:text-lg" href="/noticias" title="Noticias" />
+                <HeaderLink className="text-base xl:text-lg" href="/academia" title="Academia" />
+                <HeaderLink className="text-base xl:text-lg" href="/galeria" title="Galería" />
+                <HeaderLink
+                  className="text-base xl:text-lg"
+                  href="/donaciones"
+                  title="Donaciones"
+                />
+                <HeaderLink className="text-base xl:text-lg" href="/contacto" title="Contacto" />
               </nav>
             </div>
           </div>
