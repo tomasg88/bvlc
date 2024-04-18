@@ -1,10 +1,9 @@
 import * as React from 'react';
 
-import { cn } from '../../utils/utils';
+import { cn } from '../../utils/css';
 import { ButtonProps, buttonVariants } from './ButtonPagination';
 
 type PaginationLinkProps = {
-  isActive?: boolean;
   isCurrentPage?: boolean;
 } & Pick<ButtonProps, 'size'> &
   React.ComponentProps<'a'>;

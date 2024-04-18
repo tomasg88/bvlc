@@ -16,6 +16,7 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "incremental": true,
+    "outDir": "./.next",
     "plugins": [
       {
         "name": "next"

@@ -18,20 +18,21 @@ import PaginationNext from 'components/Pagination/PaginationNext';
 import PaginationPrevious from 'components/Pagination/PaginationPrevious';
 import Input from 'components/Input/Input';
 
+const itemsPerPage = 5;
+
 const Noticias: FC<NewsType> = ({ list }): JSX.Element => {
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [searchTerm, setSearchTerm] = useState<string>('');
 
-  const itemsPerPage = 5;
   const indexOflastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOflastItem - itemsPerPage;
-
+  
   const filteredList = list.filter((item) => {
     return item.title.toLowerCase().includes(searchTerm.toLowerCase());
   });
-
+  
   const isFilteredListEmpty = filteredList.length < 1;
-
+  
   const currentItems = filteredList.slice(indexOfFirstItem, indexOflastItem);
 
   const totalPages = Math.ceil(list.length / itemsPerPage);
@@ -67,6 +68,8 @@ const Noticias: FC<NewsType> = ({ list }): JSX.Element => {
             </div>
           </div>
         </div>
+
+        {/* TODO - Make this pagination reusable */}
         <Pagination>
           <PaginationContent>
             <PaginationItem>

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { cn } from '../../utils/utils';
+import { cn } from '../../utils/css';
 
 const PaginationContent = React.forwardRef<HTMLUListElement, React.ComponentProps<'ul'>>(
   ({ className, ...props }, ref) => (
