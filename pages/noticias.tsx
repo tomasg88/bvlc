@@ -26,13 +26,10 @@ const Noticias: FC<NewsType> = ({ list }): JSX.Element => {
 
   const indexOflastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOflastItem - itemsPerPage;
-  
   const filteredList = list.filter((item) => {
     return item.title.toLowerCase().includes(searchTerm.toLowerCase());
   });
-  
   const isFilteredListEmpty = filteredList.length < 1;
-  
   const currentItems = filteredList.slice(indexOfFirstItem, indexOflastItem);
 
   const totalPages = Math.ceil(list.length / itemsPerPage);
