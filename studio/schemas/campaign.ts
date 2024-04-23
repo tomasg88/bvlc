@@ -23,7 +23,6 @@ export default defineType({
       name: 'description',
       title: 'Descripción',
       type: 'text',
-      validation: (Rule) => Rule.required(),
     }),
     defineField({
       description: 'Indicar si la campaña está activa o no',
