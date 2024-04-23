@@ -34,5 +34,5 @@
 }
 
 .inactive {
-  @apply opacity-60;
+  @apply opacity-60 pointer-events-none;
 }
