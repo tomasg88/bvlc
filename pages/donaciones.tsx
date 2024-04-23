@@ -16,9 +16,9 @@ const Donaciones: FC<CampaignsPage> = ({
 
   return (
     <Layout title={pages.title}>
-      <div className="bg-white ">
+      <div className="bg-gray-50 ">
         <HeroInstitucional image={BG_CONSTANTS.station} title={title} />
-        <div id="body" className="bg-white block">
+        <div id="body" className="bg-gray-50 block">
           <div className="mt-6 p-6 mx-auto max-w-7xl">
             <div className="text-center text-gray-800">
               <h2 className="text-4xl py-6 border-b-2 border-yellow-400">
@@ -36,8 +36,8 @@ const Donaciones: FC<CampaignsPage> = ({
           </div>
 
           {/* Sección */}
-          <div className="bg-gradient-to-b to-gray-100 from-white mt-20">&nbsp;</div>
-          <div className="bg-gray-100 text-gray-800 from-white w-full py-12">
+          <div className="bg-gradient-to-b to-gray-200 from-gray-50 mt-20">&nbsp;</div>
+          <div className="bg-gray-200 text-gray-800 from-white w-full py-12">
             <div className="max-w-7xl mx-auto">
               <p className="mx-6 text-2xl text-center leading-loose">
                 Contar con el apoyo solidario de cada uno de ustedes nos ayuda a mantener en
@@ -47,9 +47,9 @@ const Donaciones: FC<CampaignsPage> = ({
               </p>
             </div>
           </div>
-          <div className="bg-gradient-to-b from-gray-100 to-white mb-10">&nbsp;</div>
+          <div className="bg-gradient-to-b from-gray-200 to-gray-50 mb-10">&nbsp;</div>
 
-          <div className="mt-6 p-6 mx-auto max-w-7xl bg-white">
+          <div className="mt-6 p-6 mx-auto max-w-7xl">
             <div className="text-center text-gray-800">
               <h2 className="text-4xl py-6 border-b-2 border-yellow-400">Otras Campañas</h2>
               <div className="lg:w-[800px] w-full mx-auto mt-12">

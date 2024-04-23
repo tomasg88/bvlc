@@ -16,11 +16,11 @@
     @apply text-left w-full;
 
     .name {
-      @apply inline-block mb-2 text-lg font-bold md:text-2xl;
+      @apply inline-block text-lg font-bold md:text-2xl;
     }
 
     .description {
-      @apply text-base line-clamp-4;
+      @apply text-base line-clamp-4 mt-2;
     }
   }
 
