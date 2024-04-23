@@ -1,5 +1,6 @@
 import {
   albumFields,
+  campaignFields,
   equipmentFields,
   generalFields,
   pageFields,
@@ -84,3 +85,10 @@ export const contactDataQuery = `
 
 export const rrssQuery =
   `*[_type == "general" && type == 'Red Social' ] { ${generalFields} }` as string;
+
+/**
+ * campaignsQuery
+ */
+export const campaignsQuery = `
+    *[_type == "campaign"] { ${campaignFields} }
+` as string;

@@ -3,12 +3,12 @@ import HeaderLink from '../HeaderLink/HeaderLink';
 
 const NavInstitucional: FunctionComponent = (): ReactElement => (
   <>
-    <HeaderLink url="/institucional" title="Historia" />
-    <HeaderLink url="/libro-amigos" title="2 Amigos por un Sueño" />
-    <HeaderLink url="/comision-directiva" title="Comisión Directiva" />
-    <HeaderLink url="/cuerpo-activo" title="Cuerpo Activo" />
-    <HeaderLink url="/equipamiento" title="Equipamiento" />
-    <HeaderLink url="/especialidades" title="Especialidades" />
+    <HeaderLink href="/institucional" title="Historia" />
+    <HeaderLink href="/libro-amigos" title="2 Amigos por un Sueño" />
+    <HeaderLink href="/comision-directiva" title="Comisión Directiva" />
+    <HeaderLink href="/cuerpo-activo" title="Cuerpo Activo" />
+    <HeaderLink href="/equipamiento" title="Equipamiento" />
+    <HeaderLink href="/especialidades" title="Especialidades" />
   </>
 );
 

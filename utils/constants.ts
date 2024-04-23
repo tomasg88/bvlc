@@ -75,6 +75,11 @@ export const ROUTES = [
     ariaLabel: 'Ver galeria fotográfica',
   },
   {
+    title: 'Donaciones',
+    slug: '/donaciones',
+    ariaLabel: 'Ver donaciones',
+  },
+  {
     title: 'Contacto',
     slug: '/contacto',
     ariaLabel: 'Ver datos contacto',

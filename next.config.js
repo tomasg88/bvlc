@@ -4,6 +4,9 @@ module.exports = {
       {
         hostname: 'cdn.sanity.io',
       },
+      {
+        hostname: 'images.unsplash.com',
+      },
     ],
   },
 };

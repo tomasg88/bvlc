@@ -59,6 +59,15 @@ export interface ActiveForcePerson {
   rank: string;
 }
 
+export interface Campaign {
+  _id: string;
+  campaignLink: string; // URL
+  description?: string;
+  isActive: boolean;
+  name: string;
+  showFirst: boolean;
+}
+
 export interface Equipment {
   body: PortableTextBlock;
   cover: SanityAsset;
@@ -95,6 +104,13 @@ export interface SlugType {
 
 export interface Page {
   pages: NewsBody;
+}
+
+export interface CampaignsPage extends Page {
+  campaigns: {
+    showFirst: Campaign;
+    restOfCampaigns: Campaign[];
+  };
 }
 
 export interface AcademiaType {
