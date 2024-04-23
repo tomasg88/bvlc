@@ -22,7 +22,7 @@ export const CampaignCard: FC<CampaignCard> = ({ campaignLink, description, isAc
     >
       <div className={styles.content}>
         <h3 className={styles.name}>{name}</h3>
-        <p className={styles.description}>{description}</p>
+        {description && <p className={styles.description}>{description}</p>}
       </div>
       <div className={styles.icon}>
         <FaExternalLinkAlt />

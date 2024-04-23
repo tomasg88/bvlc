@@ -62,7 +62,7 @@ export interface ActiveForcePerson {
 export interface Campaign {
   _id: string;
   campaignLink: string; // URL
-  description: string;
+  description?: string;
   isActive: boolean;
   name: string;
   showFirst: boolean;
