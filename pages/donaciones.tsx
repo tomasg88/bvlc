@@ -6,11 +6,7 @@ import HeroInstitucional from 'components/HeroInstitucional/HeroInstitucional';
 import { BG_CONSTANTS } from 'utils/constants';
 import { GetStaticProps } from 'next';
 import { CampaignsPage } from 'types/News';
-import Image from 'next/image';
 import { CampaignCard } from 'components/CampaignCard/CampaignCard';
-
-const SAMPLE_IMG =
-  'https://images.unsplash.com/photo-1504667475460-eb4789043482?q=60&w=450&auto=format&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
 
 const Donaciones: FC<CampaignsPage> = ({
   pages,
@@ -40,19 +36,18 @@ const Donaciones: FC<CampaignsPage> = ({
           </div>
 
           {/* Sección */}
-          <div className="bg-gray-100 w-full py-12 mt-20">
-            <div className="grid max-w-6xl gap-6 grid-cols-1 sm:grid-cols-2 mx-auto">
-              <h3 className="mx-6 text-lg">
+          <div className="bg-gradient-to-b to-gray-100 from-white mt-20">&nbsp;</div>
+          <div className="bg-gray-100 text-gray-800 from-white w-full py-12">
+            <div className="max-w-7xl mx-auto">
+              <p className="mx-6 text-2xl text-center leading-loose">
                 Contar con el apoyo solidario de cada uno de ustedes nos ayuda a mantener en
                 condiciones las instalaciones del cuartel, las unidades y el equipamiento necesario
                 para nuestra labor, además de promover el sentido de pertenencia a nuestra
                 Institución
-              </h3>
-              <div className="mx-16">
-                <Image alt={'Sample image'} width={450} height={400} src={SAMPLE_IMG} />
-              </div>
+              </p>
             </div>
           </div>
+          <div className="bg-gradient-to-b from-gray-100 to-white mb-10">&nbsp;</div>
 
           <div className="mt-6 p-6 mx-auto max-w-7xl bg-white">
             <div className="text-center text-gray-800">
