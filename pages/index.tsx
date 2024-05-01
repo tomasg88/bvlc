@@ -22,7 +22,7 @@ const Home: FC<HomeType> = ({ recentNews, highlighted, heroImages }) => (
               <h2 className="text-5xl font-light text-center text-gray-900 ">Últimas noticias</h2>
             </Fade>
           </div>
-          {Object.keys(highlighted).length && (
+          {highlighted && Object.keys(highlighted).length && (
             <div className="grid grid-cols-1 mx-auto w-full max-w-6xl h-70 p-8 mt-6 pb-0">
               <CardHighlighted {...highlighted} />
             </div>
