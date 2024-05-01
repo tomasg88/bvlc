@@ -18,12 +18,7 @@ type CardInfrastructure = {
 const CardInfrastructure: FC<CardInfrastructure> = ({ description, imageList, name, onClick }) => {
   const cover = imageList[0];
   const { src, loader } = useNextSanityImage(sanityConfig as SanityClientOrProjectDetails, cover);
-  console.log('{ description, imageList, name, onClick }', {
-    description,
-    imageList,
-    name,
-    onClick,
-  });
+
   return (
     <Zoom>
       <div className={styles.root}>

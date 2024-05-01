@@ -12,7 +12,7 @@ import CardInfrastructure from 'components/CardInfrastructure/CardInfrastructure
 
 const Especialidades: FC<InfrastructureType> = ({ areas }): JSX.Element => {
   const [selected, setSelected] = useState<SanityAsset[]>([]);
-  console.log('{areas}', { areas });
+
   return (
     <Layout title="Infraestructura">
       <div className="min-h-screen bg-gray-100">
