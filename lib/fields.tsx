@@ -36,3 +36,7 @@ export const specialtyFields = `
 export const campaignFields = `
   _id, description, name, campaignLink, showFirst, isActive
 ` as string;
+
+export const infrastructureFields = `
+  _id, description, name, imageList
+` as string;
