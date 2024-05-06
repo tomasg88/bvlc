@@ -17,7 +17,7 @@ const Home: FC<HomeType> = ({ recentNews, highlighted, heroImages }) => (
       <main className="w-full ">
         <HeroHomeCarousel arrows={false} images={heroImages} />
         <div className="bg-gray-100">
-          <div className="flex flex-col items-center justify-center max-w-6xl pb-6 mx-auto border-b-2 border-yellow-400 md:flex-row">
+          <div className="flex flex-col items-center justify-center max-w-6xl mt-12 pb-6 mx-auto border-b-2 border-yellow-400 md:flex-row">
             <Fade cascade>
               <h2 className="text-5xl font-light text-center text-gray-900 ">Últimas noticias</h2>
             </Fade>
