@@ -13,7 +13,7 @@ const Header: FunctionComponent = (): ReactElement => {
   const rrss = useContext(RrssContext);
   return (
     <Headroom disableInlineStyles>
-      <div className="w-full bg-red-700 text-white py-1">
+      <div className="w-full bg-red-800 text-white py-1">
         <p className={'text-center tracking-wider'}>Emergencias: (0261) 498-0999</p>
       </div>
       <div>

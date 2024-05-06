@@ -1,5 +1,5 @@
 .container {
-  @apply z-50 flex flex-col w-full p-3 pb-0 mx-auto max-w-7xl;
+  @apply z-50 flex flex-col w-full px-3 py-2 mx-auto max-w-7xl;
 
   .navItemsWrapper {
     @apply border-2 border-red-700 rounded-2xl pr-6 pt-4 relative;
