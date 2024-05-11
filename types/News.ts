@@ -77,9 +77,8 @@ export interface Equipment {
 
 export interface Specialty {
   body: PortableTextBlock;
-  cover: SanityAsset;
+  imagesGallery: SanityAsset[];
   members: ActiveForcePerson[];
-  onClick: () => void;
   title: string;
 }
 
