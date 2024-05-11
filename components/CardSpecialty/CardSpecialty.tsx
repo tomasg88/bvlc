@@ -1,11 +1,8 @@
 import React, { FC } from 'react';
 import Image from 'next/image';
-import { MdPhotoCamera } from 'react-icons/md';
-import BlockContent from '@sanity/block-content-to-react';
 import styles from './CardSpecialty.module.scss';
 import { SanityClientOrProjectDetails, useNextSanityImage } from 'next-sanity-image';
 import { sanityConfig } from 'lib/sanity.config';
-import SanityImage from 'components/SanityImage/SanityImage';
 import Zoom from 'react-reveal/Zoom';
 import { Specialty } from 'types/News';
 
@@ -15,43 +12,26 @@ const CardSpecialty: FC<Specialty> = ({ cover, title, body, onClick, members = [
   return (
     <Zoom>
       <div className={styles.root}>
-        <h2 className={styles.title}>{title}</h2>
-
-        <div className={styles.mainContent}>
-          <div className={styles.imageContainer}>
-            <Image
-              loader={loader}
-              src={src}
-              className={styles.img}
-              onClick={onClick}
-              alt={title}
-              fill
-              sizes="100vw"
-              style={{
-                objectFit: 'cover',
-              }}
-            />
-          </div>
-          <div className={styles.content}>
-            <BlockContent
-              blocks={body}
-              className={styles.description}
-              projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
-              imageOptions={{ w: 1200, fit: 'fill' }}
-              dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
-            />
-            <h4 className={styles.membersTitle}>Integrantes</h4>
-            <div className={styles.membersContainer}>
-              {members.map((m) => (
-                <div key={m._id} className={styles.memberPicture}>
-                  <SanityImage src={m.image} fill className={styles.picture} />
-                </div>
-              ))}
-            </div>
-          </div>
-          <div onClick={onClick} className={styles.action}>
-            <MdPhotoCamera className="w-6 h-6 " />
-            <span className="ml-3">Ver galería</span>
+        <div className={styles.imageContainer}>
+          <Image
+            loader={loader}
+            src={src}
+            className={styles.img}
+            onClick={onClick}
+            alt={title}
+            fill
+            sizes="100vw"
+            style={{
+              objectFit: 'cover',
+            }}
+          />
+          <div className="absolute bg-black w-full rounded-3xl h-full inset-0 opacity-50 pointer-events-none"></div>
+          <div
+            className={
+              'flex w-full h-full items-center justify-center text-white text-2xl absolute tracking-wider pointer-events-none'
+            }
+          >
+            <p className="w-80 text-center leading-10">{title}</p>
           </div>
         </div>
       </div>
