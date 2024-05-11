@@ -5,8 +5,15 @@ import { SanityClientOrProjectDetails, useNextSanityImage } from 'next-sanity-im
 import { sanityConfig } from 'lib/sanity.config';
 import Zoom from 'react-reveal/Zoom';
 import { Specialty } from 'types/News';
+import { SanityAsset } from '@sanity/image-url/lib/types/types';
 
-const CardSpecialty: FC<Specialty> = ({ cover, title, body, onClick, members = [] }) => {
+type CardSpecialtyProps = {
+  cover: SanityAsset;
+  onClick: () => void;
+  title: Specialty['title'];
+};
+
+const CardSpecialty: FC<CardSpecialtyProps> = ({ cover, title, onClick }) => {
   const { src, loader } = useNextSanityImage(sanityConfig as SanityClientOrProjectDetails, cover);
 
   return (
