@@ -23,8 +23,6 @@ const CardSpecialty: FC<CardSpecialtyProps> = ({ cover, title, onClick }) => {
     cover
   );
 
-  console.log({ height, width });
-
   return (
     <Zoom>
       <div className={styles.root}>
@@ -37,7 +35,7 @@ const CardSpecialty: FC<CardSpecialtyProps> = ({ cover, title, onClick }) => {
             loader={loader}
             onClick={onClick}
             quality={50}
-            sizes="(max-width: 808px) 50vw, 75vw"
+            sizes="75vw"
             src={src}
             style={{
               objectFit: 'cover',
