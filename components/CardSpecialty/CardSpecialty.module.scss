@@ -8,7 +8,7 @@
     @apply hover:opacity-90;
 
     .img {
-      @apply w-full h-full rounded-3xl;
+      @apply w-full h-full rounded-3xl hover:scale-110 transition-all ease-in duration-700;
     }
   }
 
