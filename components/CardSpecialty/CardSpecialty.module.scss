@@ -4,7 +4,7 @@
   @apply hover:shadow-2xl;
 
   .imageContainer {
-    @apply relative flex-none w-full cursor-pointer h-72;
+    @apply relative block flex-none w-full cursor-pointer h-80;
     @apply hover:opacity-90;
 
     .img {

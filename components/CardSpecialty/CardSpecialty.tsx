@@ -13,32 +13,43 @@ type CardSpecialtyProps = {
   title: Specialty['title'];
 };
 
+const Overlay = () => (
+  <div className="absolute bg-black w-full rounded-3xl h-full inset-0 opacity-60 pointer-events-none"></div>
+);
+
 const CardSpecialty: FC<CardSpecialtyProps> = ({ cover, title, onClick }) => {
-  const { src, loader } = useNextSanityImage(sanityConfig as SanityClientOrProjectDetails, cover);
+  const { src, loader, height, width } = useNextSanityImage(
+    sanityConfig as SanityClientOrProjectDetails,
+    cover
+  );
+
+  console.log({ height, width });
 
   return (
     <Zoom>
       <div className={styles.root}>
         <div className={styles.imageContainer}>
           <Image
-            loader={loader}
-            src={src}
-            className={styles.img}
-            onClick={onClick}
             alt={title}
-            fill
-            sizes="100vw"
+            className={styles.img}
+            height={height}
+            width={width}
+            loader={loader}
+            onClick={onClick}
+            quality={50}
+            sizes="(max-width: 808px) 50vw, 75vw"
+            src={src}
             style={{
               objectFit: 'cover',
             }}
           />
-          <div className="absolute bg-black w-full rounded-3xl h-full inset-0 opacity-50 pointer-events-none"></div>
+          <Overlay />
           <div
             className={
-              'flex w-full h-full items-center justify-center text-white text-2xl absolute tracking-wider pointer-events-none'
+              'absolute inset-0 flex w-full h-full items-center justify-center text-white text-2xl tracking-wider pointer-events-none'
             }
           >
-            <p className="w-80 text-center leading-10">{title}</p>
+            <p className="w-80 text-center leading-10 z-50">{title}</p>
           </div>
         </div>
       </div>
