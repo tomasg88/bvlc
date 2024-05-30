@@ -83,13 +83,20 @@ export interface Specialty {
   title: string;
 }
 
+export interface Infrastructure {
+  _id: string;
+  description: PortableTextBlock;
+  name: string;
+  imageList: SanityAsset[];
+}
+
 /**
  *  Below are the pages interfaces
  */
 
 export interface HomeType {
   recentNews: News[];
-  highlighted: News;
+  highlighted?: News;
   heroImages: ImageProps[];
 }
 
@@ -152,6 +159,10 @@ export interface SpecialtyType {
     onClick: () => void;
     title: string;
   }[];
+}
+
+export interface InfrastructureType {
+  areas: Infrastructure[];
 }
 
 export interface GaleriaType {
