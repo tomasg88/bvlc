@@ -1,6 +1,6 @@
 import styles from 'styles/PageSidebar.module.css';
 
-import React, { FC, useState } from 'react';
+import React, { FC, useMemo, useState } from 'react';
 import { sanityClient } from 'lib/sanity.client';
 import { allPostQuery } from 'lib/sanity.queries';
 import { GetStaticProps } from 'next';
@@ -16,22 +16,41 @@ import PaginationItem from 'components/Pagination/PaginationItem';
 import PaginationLink from 'components/Pagination/PaginationLink';
 import PaginationNext from 'components/Pagination/PaginationNext';
 import PaginationPrevious from 'components/Pagination/PaginationPrevious';
+import Input from 'components/Input/Input';
 
-const itemsPerPage = 5;
+const ITEMS_PER_PAGE = 5;
 
 const Noticias: FC<NewsType> = ({ list }): JSX.Element => {
   const [currentPage, setCurrentPage] = useState<number>(1);
+  const [searchTerm, setSearchTerm] = useState<string>('');
 
-  const indexOflastItem = currentPage * itemsPerPage;
-  const indexOfFirstItem = indexOflastItem - itemsPerPage;
-  const currentItems = list.slice(indexOfFirstItem, indexOflastItem);
+  const indexOflastItem = currentPage * ITEMS_PER_PAGE;
+  const indexOfFirstItem = indexOflastItem - ITEMS_PER_PAGE;
 
-  const totalPages = Math.ceil(list.length / itemsPerPage);
+  const filteredList = useMemo(
+    () =>
+      list.filter((item) => {
+        return (
+          item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          item.excerpt.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+      }),
+    [searchTerm]
+  );
+
+  const currentItems = filteredList.slice(indexOfFirstItem, indexOflastItem);
+
+  const totalPages = Math.ceil(filteredList.length / ITEMS_PER_PAGE);
 
   const paginate = (pageNumber: number) => {
     if (pageNumber >= 1 && pageNumber <= totalPages) {
       setCurrentPage(pageNumber);
     }
+  };
+
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchTerm(event.target.value);
+    setCurrentPage(1);
   };
 
   return (
@@ -41,8 +60,15 @@ const Noticias: FC<NewsType> = ({ list }): JSX.Element => {
         <div className={styles.page}>
           <div className="max-w-5xl grid-cols-1 gap-6 px-6 pt-12 pb-10 mx-auto md:px-0 border-b-2 border-yellow-400">
             <div id="content" className="w-full">
-              <div className="grid max-w-4xl grid-cols-1 gap-3 mx-auto ">
-                {currentItems && currentItems.map((n) => <CardNewsHorizontal {...n} key={n._id} />)}
+              <div className="grid max-w-4xl grid-cols-1 gap-10 mx-auto ">
+                <Input type="text" placeholder="Buscar noticias..." onChange={handleInputChange} />
+                {filteredList.length < 1 ? (
+                  <div className="text-center font-semibold text-xl text-gray-500">
+                    Su búsqueda no arrojó resultados.
+                  </div>
+                ) : (
+                  currentItems.map((n) => <CardNewsHorizontal {...n} key={n._id} />)
+                )}
               </div>
             </div>
           </div>

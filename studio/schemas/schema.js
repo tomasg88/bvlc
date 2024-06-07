@@ -13,6 +13,7 @@ import album from './album';
 import youtube from './youtube';
 import specialty from './specialty';
 import campaign from './campaign';
+import infrastructure from './infrastructure';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export const schemas = [
@@ -27,6 +28,7 @@ export const schemas = [
   specialty,
   album,
   campaign,
+  infrastructure,
   blockContent,
   youtube,
 ];
