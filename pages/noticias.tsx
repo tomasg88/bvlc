@@ -1,6 +1,6 @@
 import styles from 'styles/PageSidebar.module.css';
 
-import React, { FC, useState } from 'react';
+import React, { FC, useMemo, useState } from 'react';
 import { sanityClient } from 'lib/sanity.client';
 import { allPostQuery } from 'lib/sanity.queries';
 import { GetStaticProps } from 'next';
@@ -18,21 +18,29 @@ import PaginationNext from 'components/Pagination/PaginationNext';
 import PaginationPrevious from 'components/Pagination/PaginationPrevious';
 import Input from 'components/Input/Input';
 
-const itemsPerPage = 5;
+const ITEMS_PER_PAGE = 5;
 
 const Noticias: FC<NewsType> = ({ list }): JSX.Element => {
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [searchTerm, setSearchTerm] = useState<string>('');
 
-  const indexOflastItem = currentPage * itemsPerPage;
-  const indexOfFirstItem = indexOflastItem - itemsPerPage;
-  const filteredList = list.filter((item) => {
-    return item.title.toLowerCase().includes(searchTerm.toLowerCase());
-  });
+  const indexOflastItem = currentPage * ITEMS_PER_PAGE;
+  const indexOfFirstItem = indexOflastItem - ITEMS_PER_PAGE;
+
+  const filteredList = useMemo(
+    () =>
+      list.filter((item) => {
+        return (
+          item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          item.excerpt.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+      }),
+    [searchTerm]
+  );
   const isFilteredListEmpty = filteredList.length < 1;
   const currentItems = filteredList.slice(indexOfFirstItem, indexOflastItem);
 
-  const totalPages = Math.ceil(list.length / itemsPerPage);
+  const totalPages = Math.ceil(filteredList.length / ITEMS_PER_PAGE);
 
   const paginate = (pageNumber: number) => {
     if (pageNumber >= 1 && pageNumber <= totalPages) {
