@@ -37,7 +37,7 @@ const Noticias: FC<NewsType> = ({ list }): JSX.Element => {
       }),
     [searchTerm]
   );
-  const isFilteredListEmpty = filteredList.length < 1;
+
   const currentItems = filteredList.slice(indexOfFirstItem, indexOflastItem);
 
   const totalPages = Math.ceil(filteredList.length / ITEMS_PER_PAGE);
@@ -62,8 +62,8 @@ const Noticias: FC<NewsType> = ({ list }): JSX.Element => {
             <div id="content" className="w-full">
               <div className="grid max-w-4xl grid-cols-1 gap-10 mx-auto ">
                 <Input type="text" placeholder="Buscar noticias..." onChange={handleInputChange} />
-                {isFilteredListEmpty ? (
-                  <div className="text-center font-semibold text-md text-gray-500">
+                {filteredList.length < 1 ? (
+                  <div className="text-center font-semibold text-xl text-gray-500">
                     Su búsqueda no arrojó resultados.
                   </div>
                 ) : (
