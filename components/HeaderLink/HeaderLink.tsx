@@ -1,18 +1,25 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { FunctionComponent, ReactElement, useMemo } from 'react';
+import { AnchorHTMLAttributes, FunctionComponent, ReactElement, useMemo } from 'react';
 
-interface HeaderLinkProps {
-  url: string;
+interface HeaderLinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   title: string;
 }
 
-const HeaderLink: FunctionComponent<HeaderLinkProps> = ({ url, title }): ReactElement => {
+const HeaderLink: FunctionComponent<HeaderLinkProps> = ({
+  href,
+  title,
+  className,
+}): ReactElement => {
   const router = useRouter();
-  const isActive = useMemo(() => (router.route === url ? 'active' : ''), [url]);
+  const isActive = useMemo(() => (router.route === href ? 'active' : ''), [href]);
+
+  if (!href) {
+    return <p className={`${className} ${isActive}`}>{title}</p>;
+  }
 
   return (
-    <Link href={url} className={isActive}>
+    <Link href={href} className={`${className} ${isActive}`}>
       {title}
     </Link>
   );

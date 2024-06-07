@@ -3,7 +3,7 @@
 
   .menuButtonContainer {
     .menuButton {
-      @apply inline-flex justify-center w-full px-5 py-2 text-sm font-bold text-white uppercase border-b-4 border-transparent outline-none ring-0 lg:text-lg hover:border-white;
+      @apply inline-flex justify-center w-full px-5 py-2 text-base font-bold text-white uppercase border-b-4 border-transparent outline-none ring-0 xl:text-lg hover:border-white;
 
       .arrow {
         @apply w-5 h-5 ml-2 -mr-1 transform lg:translate-y-1 transition-all duration-200;
@@ -22,7 +22,7 @@
       @apply py-3;
 
       .option {
-        @apply flex justify-between w-full px-4 py-3  hover:opacity-90 hover:bg-red-700 border-0 text-base leading-5 text-left;
+        @apply flex justify-between w-full px-4 py-3  hover:opacity-90 hover:bg-red-700 border-0 text-base xl:text-lg leading-5 text-left;
       }
     }
   }

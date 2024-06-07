@@ -1,7 +1,9 @@
 import {
   albumFields,
+  campaignFields,
   equipmentFields,
   generalFields,
+  infrastructureFields,
   pageFields,
   postFields,
   specialtyFields,
@@ -70,6 +72,9 @@ export const equipmentQuery = `*[_type == "equipment" ] { ${equipmentFields} }` 
 
 export const specialtyQuery = `*[_type == "specialty" ] { ${specialtyFields} }` as string;
 
+export const infrastructureQuery =
+  `*[_type == "infrastructure" ] { ${infrastructureFields} }` as string;
+
 export const albumsQuery = `
   *[_type == "album" && title != "IMAGENES_HOME"] | order(_createdAt desc) { ${albumFields} }
 ` as string;
@@ -84,3 +89,10 @@ export const contactDataQuery = `
 
 export const rrssQuery =
   `*[_type == "general" && type == 'Red Social' ] { ${generalFields} }` as string;
+
+/**
+ * campaignsQuery
+ */
+export const campaignsQuery = `
+    *[_type == "campaign"] { ${campaignFields} }
+` as string;

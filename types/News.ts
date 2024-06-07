@@ -59,6 +59,15 @@ export interface ActiveForcePerson {
   rank: string;
 }
 
+export interface Campaign {
+  _id: string;
+  campaignLink: string; // URL
+  description?: string;
+  isActive: boolean;
+  name: string;
+  showFirst: boolean;
+}
+
 export interface Equipment {
   body: PortableTextBlock;
   cover: SanityAsset;
@@ -74,13 +83,20 @@ export interface Specialty {
   title: string;
 }
 
+export interface Infrastructure {
+  _id: string;
+  description: PortableTextBlock;
+  name: string;
+  imageList: SanityAsset[];
+}
+
 /**
  *  Below are the pages interfaces
  */
 
 export interface HomeType {
   recentNews: News[];
-  highlighted: News;
+  highlighted?: News;
   heroImages: ImageProps[];
 }
 
@@ -95,6 +111,13 @@ export interface SlugType {
 
 export interface Page {
   pages: NewsBody;
+}
+
+export interface CampaignsPage extends Page {
+  campaigns: {
+    showFirst: Campaign;
+    restOfCampaigns: Campaign[];
+  };
 }
 
 export interface AcademiaType {
@@ -136,6 +159,10 @@ export interface SpecialtyType {
     onClick: () => void;
     title: string;
   }[];
+}
+
+export interface InfrastructureType {
+  areas: Infrastructure[];
 }
 
 export interface GaleriaType {
