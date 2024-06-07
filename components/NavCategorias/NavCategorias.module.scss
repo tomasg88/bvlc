@@ -1,15 +1,15 @@
 .tabs {
-    @apply relative z-10 flex flex-col;
+  @apply relative z-10 flex flex-col;
 
-    a {
-        @apply py-2 text-gray-900 duration-500 border-b border-gray-200;
+  a {
+    @apply py-2 text-gray-900 duration-500 border-b border-gray-200;
 
-        &:hover {
-            @apply text-red-600 bg-opacity-100;
-        }
-
-        &:global(.active) {
-            @apply text-red-600 bg-opacity-100;
-        }
+    &:hover {
+      @apply text-red-600 bg-opacity-100;
     }
+
+    &:global(.active) {
+      @apply text-red-600 bg-opacity-100;
+    }
+  }
 }

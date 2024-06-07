@@ -1,51 +1,51 @@
 .root {
-    @apply fixed inset-0 block h-screen bg-black;
+  @apply fixed inset-0 block h-screen bg-black;
 
-    .closeButtonContainer {
-        @apply absolute top-0 right-0 z-50 m-5 cursor-pointer hover:opacity-75;
+  .closeButtonContainer {
+    @apply absolute top-0 right-0 z-50 m-5 cursor-pointer hover:opacity-75;
 
-        .closeIcon {
-            color: #ffffff;
-            @apply text-white stroke-current;
-            height: 3rem;
-            width: 3rem;
-        }
+    .closeIcon {
+      color: #ffffff;
+      @apply text-white stroke-current;
+      height: 3rem;
+      width: 3rem;
+    }
+  }
+
+  .contentContainer {
+    @apply relative flex flex-col items-center h-screen;
+
+    .mainImageContainer {
+      @apply flex items-center justify-between w-full h-full mb-5;
+      .image {
+        @apply object-contain w-full h-full mx-auto;
+      }
     }
 
-    .contentContainer {
-        @apply relative flex flex-col items-center h-screen;
+    .arrowContainer {
+      @apply absolute z-50 p-2 duration-200 bg-gray-600 bg-opacity-50 cursor-pointer top-1/2 hover:opacity-60;
+      &.previous {
+        @apply left-0;
+      }
+      &.next {
+        @apply right-0;
+      }
 
-        .mainImageContainer {
-            @apply flex items-center justify-between w-full h-full mb-5;
-            .image {
-                @apply object-contain w-full h-full mx-auto;
-            }
-        }
-
-        .arrowContainer {
-            @apply absolute z-50 p-2 duration-200 bg-gray-600 bg-opacity-50 cursor-pointer top-1/2 hover:opacity-60;
-            &.previous {
-                @apply left-0;
-            }
-            &.next {
-                @apply right-0;
-            }
-
-            .arrow {
-                @apply w-12 h-12 text-gray-300;
-            }
-        }
-
-        .imageListContainer {
-            @apply absolute bottom-0 left-0 right-0 flex items-center justify-center w-full p-2 mt-5 overflow-x-auto bg-black;
-
-            .smallImage {
-                @apply mx-1 cursor-pointer opacity-70 hover:opacity-100;
-
-                &.active {
-                    @apply opacity-100;
-                }
-            }
-        }
+      .arrow {
+        @apply w-12 h-12 text-gray-300;
+      }
     }
+
+    .imageListContainer {
+      @apply absolute bottom-0 left-0 right-0 flex items-center justify-center w-full p-2 mt-5 overflow-x-auto bg-black;
+
+      .smallImage {
+        @apply mx-1 cursor-pointer opacity-70 hover:opacity-100;
+
+        &.active {
+          @apply opacity-100;
+        }
+      }
+    }
+  }
 }
