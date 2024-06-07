@@ -7,10 +7,11 @@ import CarouselUI from './CarouselUI/CarouselUI';
 import styles from './HeroHomeCarousel.module.scss';
 import { FunctionComponent, ReactElement, ReactNode } from 'react';
 import SanityImage from 'components/SanityImage/SanityImage';
+import { ImageProps } from 'next/image';
 
 interface HeroHomeCarouselProps {
   arrows: boolean;
-  images: any[];
+  images: ImageProps[];
 }
 
 interface CarouselProps {
@@ -48,18 +49,19 @@ const HeroHomeCarousel: FunctionComponent<HeroHomeCarouselProps> = ({
 
       <div className={styles.carouselContainer}>
         <Carousel defaultWait={4000} maxTurns={99} /* wait for 1000 milliseconds */>
-          {images.map((img) => (
-            <Fade key={img._key}>
+          {images.map((img, index) => (
+            <Fade key={index + 1}>
               <SanityImage
-                src={img}
-                width={1920}
+                // TODO - agregar accesibilidad real
+                alt={`Imagen principal ${index + 1}`}
+                className={styles.image}
                 height={800}
-                fixed="true"
+                priority
+                src={img}
                 style={{
                   objectFit: 'cover',
                 }}
-                className={styles.image}
-                priority
+                width={1920}
               />
             </Fade>
           ))}
