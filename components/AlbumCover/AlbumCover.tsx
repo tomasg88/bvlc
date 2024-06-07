@@ -5,24 +5,17 @@ import styles from './AlbumCover.module.scss';
 import { sanityConfig } from 'lib/sanity.config';
 import { SanityClientOrProjectDetails, useNextSanityImage } from 'next-sanity-image';
 import { Album } from 'types/News';
+import { urlForImage } from 'lib/sanity.image';
 
 const AlbumCover: FC<Album> = ({ cover, title, description, onClick }): JSX.Element => {
-  const { src, loader } = useNextSanityImage(sanityConfig as SanityClientOrProjectDetails, cover);
+  const { src, loader } = useNextSanityImage(sanityConfig as SanityClientOrProjectDetails, cover, {
+    imageBuilder: () => urlForImage(cover).width(512),
+  });
 
   return (
     <div className={styles.root}>
       <div className={styles.imageContainer}>
-        <Image
-          loader={loader}
-          src={src}
-          className={styles.img}
-          alt={title}
-          fill
-          sizes="100vw"
-          style={{
-            objectFit: 'cover',
-          }}
-        />
+        <Image alt={title} className={styles.img} fill loader={loader} sizes="100vw" src={src} />
       </div>
       <div onClick={onClick} className={styles.infoContainer}>
         <div className={styles.title}>{title}</div>
