@@ -7,6 +7,7 @@ import { SanityClientOrProjectDetails, useNextSanityImage } from 'next-sanity-im
 import { sanityConfig } from 'lib/sanity.config';
 import Zoom from 'react-reveal/Zoom';
 import { Infrastructure } from 'types/News';
+import { urlForImage } from 'lib/sanity.image';
 
 type CardInfrastructure = {
   description: Infrastructure['description'];
@@ -17,7 +18,9 @@ type CardInfrastructure = {
 
 const CardInfrastructure: FC<CardInfrastructure> = ({ description, imageList, name, onClick }) => {
   const cover = imageList[0];
-  const { src, loader } = useNextSanityImage(sanityConfig as SanityClientOrProjectDetails, cover);
+  const { src, loader } = useNextSanityImage(sanityConfig as SanityClientOrProjectDetails, cover, {
+    imageBuilder: () => urlForImage(cover).width(512),
+  });
 
   return (
     <Zoom>
@@ -27,16 +30,13 @@ const CardInfrastructure: FC<CardInfrastructure> = ({ description, imageList, na
         <div className={styles.mainContent}>
           <div className={styles.imageContainer}>
             <Image
-              loader={loader}
-              src={src}
-              className={styles.img}
-              onClick={onClick}
               alt={name}
+              className={styles.img}
               fill
+              loader={loader}
+              onClick={onClick}
               sizes="100vw"
-              style={{
-                objectFit: 'cover',
-              }}
+              src={src}
             />
           </div>
           <div className={styles.content}>
