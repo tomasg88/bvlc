@@ -1,12 +1,12 @@
 .root {
-  @apply relative inline-block text-left;
+  @apply relative inline-block text-left mx-2;
 
   .menuButtonContainer {
     .menuButton {
-      @apply inline-flex justify-center w-full px-5 py-2 text-base font-bold text-white uppercase border-b-4 border-transparent outline-none ring-0 xl:text-lg hover:border-white;
+      @apply inline-flex justify-center w-full text-lg tracking-wider font-light text-white capitalize outline-none ring-0 pb-4 pl-6;
 
       .arrow {
-        @apply w-5 h-5 ml-2 -mr-1 transform lg:translate-y-1 transition-all duration-200;
+        @apply w-5 h-5 transform lg:translate-y-1 transition-all duration-200;
 
         &.open {
           @apply rotate-180;
@@ -16,13 +16,14 @@
   }
 
   .menuContainerRoot {
-    @apply absolute left-0 right-0 w-full origin-top-right bg-red-600 shadow-lg outline-none;
+    @apply absolute w-max origin-top-right shadow-lg outline-none rounded-2xl;
 
     .menuOptions {
-      @apply py-3;
+      @apply px-2 py-3 font-light tracking-wider;
 
       .option {
-        @apply flex justify-between w-full px-4 py-3  hover:opacity-90 hover:bg-red-700 border-0 text-base xl:text-lg leading-5 text-left;
+        @apply flex justify-between rounded-lg w-full px-3 py-2 bg-opacity-30 border-0 text-base leading-5 text-white;
+        @apply hover:bg-red-500 hover:underline;
       }
     }
   }

@@ -4,7 +4,7 @@
   left: 0;
   right: 0;
   z-index: 999;
-  height: 88px ​ !important;
+  height: 88px !important;
 }
 
 /* Para mover luego al lugar correspondiente */
@@ -13,14 +13,17 @@
   left: 0;
   right: 0;
   z-index: 500;
-  @apply bg-red-600 border-b-2 border-red-800;
+  transition: all 700ms ease;
 }
 .headroom--unfixed {
   position: fixed;
   transform: translateY(0);
 }
+
+/* This is applied when header appears NOT in the top of the screen */
 .headroom--scrolled {
-  transition: transform 700ms ease-in-out;
+  transition: all 700ms ease;
+  @apply bg-red-700;
 }
 .headroom--unpinned {
   position: fixed;
@@ -45,22 +48,4 @@
 .headroom--pinned {
   position: fixed;
   transform: translateY(0%);
-}
-
-header nav a {
-  @apply px-2 py-2 text-sm font-bold text-white uppercase border-b-4 border-transparent;
-}
-
-@screen lg {
-  header nav a {
-    @apply px-5 text-lg;
-  }
-}
-
-header nav a:hover {
-  @apply border-gray-100;
-}
-
-header nav a.active {
-  @apply border-gray-100;
 }

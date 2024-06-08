@@ -68,16 +68,14 @@ const MenuDropdown: FunctionComponent<MenuDropdownProps> = ({ title }): ReactEle
               leaveFrom="transform opacity-100 scale-100"
               leaveTo="transform opacity-0 scale-95"
             >
-              <Menu.Items className={`${styles.menuContainerRoot} bg-pattern`}>
+              <Menu.Items className={`${styles.menuContainerRoot} bg-red-700`}>
                 <div className={styles.menuOptions}>
                   {ROUTES.map((option) => (
                     <Menu.Item key={option.href}>
                       {({ active }) => (
                         <Link
                           href={option.href}
-                          className={`${active ? 'bg-red-500 text-gray-100' : 'text-white'} ${
-                            styles.option
-                          }`}
+                          className={`${active ? 'bg-red-300' : ''} ${styles.option}`}
                         >
                           {option.title}
                         </Link>

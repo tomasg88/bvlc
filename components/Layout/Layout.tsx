@@ -57,7 +57,7 @@ const Layout: FC<LayoutProps> = ({ title = '', description = '', image = '', chi
       </Head>
       <Offcanvas />
       <Header />
-      <div className="pt-20 bg-red-600 bg-pattern">
+      <div className="bg-gray-100">
         <SimpleReactLightbox>
           <main className="overflow-x-hidden">{children}</main>
         </SimpleReactLightbox>

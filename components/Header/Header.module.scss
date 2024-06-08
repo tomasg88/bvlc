@@ -1,59 +1,16 @@
 .container {
-  @apply z-50 flex flex-col w-full p-3 pb-0 mx-auto max-w-7xl;
+  @apply z-50 flex flex-col w-full px-3 py-2 mx-auto max-w-7xl;
 
-  .main {
-    @apply flex justify-between;
+  .navItemsWrapper {
+    @apply border-2 border-red-700 rounded-2xl pr-6 pt-4 relative;
 
-    .logoContainer {
-      @apply flex items-center justify-center transform -translate-y-2;
-
-      .logoTitle {
-        @apply w-32 ml-3 text-sm text-gray-100 uppercase md:w-auto sm:block md:text-lg xl:text-2xl;
-      }
+    .navBackground {
+      @apply absolute bg-black w-full rounded-2xl h-full inset-0 opacity-50;
     }
 
-    .rightItems {
-      @apply flex-col items-end justify-center hidden lg:flex;
-
-      .rightUpperItems {
-        @apply flex items-center justify-end w-full p-1 px-2 text-white border-b border-red-400;
-
-        .spaiLink {
-          @apply relative flex items-center mr-2 overflow-hidden uppercase duration-500 bg-red-700 rounded-full hover:bg-red-900;
-        }
-
-        .iramLink {
-          @apply relative flex items-center mr-4 overflow-hidden uppercase duration-500 bg-red-700 rounded-full hover:bg-blue-900;
-        }
-
-        .rightUpperText {
-          @apply px-3 pr-1 text-xs font-bold;
-        }
-
-        .rightUpperImage {
-          @apply flex-none w-8 h-8;
-        }
-
-        .rightUpperInfo {
-          @apply flex items-center justify-between;
-
-          .emergencyContact {
-            @apply flex items-baseline font-bold uppercase;
-
-            .emergencyText {
-              @apply inline-block mr-1 text-xs;
-            }
-          }
-
-          .rrss {
-            @apply xl:inline-block ml-3 text-3xl;
-          }
-        }
-      }
-
-      .navItems {
-        @apply flex items-center justify-end mt-3;
-      }
+    .navItem {
+      @apply relative px-3 py-2 mx-1 text-white font-light capitalize text-lg rounded-lg transition-all tracking-wider hover:bg-red-700;
+      @apply last:mx-0;
     }
   }
 }

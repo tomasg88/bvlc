@@ -4,7 +4,7 @@
   @apply flex-col;
   @apply items-center;
   @apply justify-center;
-  @apply py-40;
+  @apply py-60;
   @apply overflow-hidden;
   @apply text-center;
   @apply text-white;
@@ -32,63 +32,6 @@
     @apply text-4xl;
     @apply font-light;
     @apply md:text-6xl;
-  }
-
-  .buttonsContainer {
-    @apply bottom-0;
-    @apply left-0;
-    @apply right-0;
-    @apply flex;
-    @apply flex-col;
-    @apply w-full;
-    @apply max-w-xs;
-    @apply p-6;
-    @apply pb-0;
-    @apply mx-auto;
-    @apply sm:space-x-4;
-    @apply sm:flex-row;
-    @apply sm:absolute;
-
-    .button {
-      @apply relative;
-      @apply z-10;
-      @apply flex;
-      @apply flex-col;
-      @apply items-center;
-      @apply justify-center;
-      @apply w-full;
-      @apply p-3;
-      @apply mx-auto;
-      @apply mt-6;
-      @apply text-red-800;
-      @apply duration-100;
-      @apply bg-gray-100;
-      @apply shadow-sm;
-      @apply hover:bg-red-600;
-      @apply hover:text-red-100;
-      @apply hover:shadow-lg;
-
-      .icon {
-        @apply mb-2;
-        @apply text-4xl;
-        @apply md:text-4xl;
-      }
-
-      .text {
-        @apply text-lg;
-        @apply font-bold;
-        @apply uppercase;
-
-        .number {
-          @apply flex;
-          @apply flex-col;
-          @apply text-base;
-          @apply text-left;
-          @apply sm:text-center;
-          @apply opacity-90;
-        }
-      }
-    }
   }
 
   .carouselContainer {
