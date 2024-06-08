@@ -1,17 +1,18 @@
+import { defineField, defineType } from 'sanity';
 import { RANKS } from 'utils/constants';
 
-export default {
+export default defineType({
   name: 'activeForce',
   type: 'document',
   title: 'Cuerpo Activo',
   fields: [
-    {
+    defineField({
       name: 'title',
       type: 'string',
       title: 'Nombre y apellido',
       validation: (Rule) => Rule.required(),
-    },
-    {
+    }),
+    defineField({
       name: 'rank',
       title: 'Rango',
       type: 'string',
@@ -19,8 +20,8 @@ export default {
       options: {
         list: RANKS,
       },
-    },
-    {
+    }),
+    defineField({
       name: 'image',
       title: 'Foto',
       type: 'image',
@@ -28,7 +29,7 @@ export default {
       options: {
         hotspot: true,
       },
-    },
+    }),
   ],
   preview: {
     select: {
@@ -36,4 +37,4 @@ export default {
       media: 'image',
     },
   },
-};
+});

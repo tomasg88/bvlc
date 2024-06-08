@@ -1,4 +1,4 @@
-import { useClient } from 'sanity';
+import { defineField, defineType, useClient } from 'sanity';
 
 const hightlightedNewsQuery = `*[_type == "post" && isHighlighted && _id != $id]`;
 
@@ -29,12 +29,12 @@ const checkForOtherHighlightedNews = (document) => {
     .catch((err) => err);
 };
 
-export default {
+export default defineType({
   name: 'post',
   title: 'Noticia',
   type: 'document',
   fields: [
-    {
+    defineField({
       name: 'mainImage',
       title: 'Imagen destacada',
       type: 'image',
@@ -42,31 +42,31 @@ export default {
       options: {
         hotspot: true,
       },
-    },
-    {
+    }),
+    defineField({
       name: 'title',
       title: 'Titulo de la nota',
       type: 'string',
       validation: (Rule) => Rule.required(),
-    },
-    {
+    }),
+    defineField({
       name: 'excerpt',
       title: 'Descripción breve',
       type: 'text',
-    },
-    {
+    }),
+    defineField({
       name: 'body',
       title: 'Articulo',
       type: 'blockContent',
       validation: (Rule) => Rule.required(),
-    },
-    {
+    }),
+    defineField({
       name: 'publishedAt',
       title: 'Dia de la publicación',
       type: 'datetime',
       validation: (Rule) => Rule.required(),
-    },
-    {
+    }),
+    defineField({
       name: 'slug',
       title: 'URL',
       type: 'slug',
@@ -76,32 +76,32 @@ export default {
         source: 'title',
         maxLength: 96,
       },
-    },
-    {
+    }),
+    defineField({
       name: 'author',
       title: 'Autor',
       type: 'reference',
       to: { type: 'author' },
       validation: (Rule) => Rule.required(),
-    },
-    {
+    }),
+    defineField({
       name: 'categories',
       title: 'Categorias',
       type: 'array',
       of: [{ type: 'reference', to: { type: 'category' } }],
       validation: (Rule) => Rule.required(),
-    },
-    {
+    }),
+    defineField({
       name: 'isHighlighted',
       title: 'Noticia Destacada?',
       type: 'boolean',
       initialValue: false,
       validation: (Rule) =>
         Rule.custom((field, { document }) => {
-          if (!document.isHighlighted) return true;
+          if (!document?.isHighlighted) return true;
           else return checkForOtherHighlightedNews(document);
         }),
-    },
+    }),
   ],
 
   preview: {
@@ -117,4 +117,4 @@ export default {
       });
     },
   },
-};
+});
