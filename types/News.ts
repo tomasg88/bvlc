@@ -2,13 +2,6 @@ import { ImageProps } from 'next/image';
 import { Image, PortableTextBlock } from 'sanity';
 import { SanityAsset } from '@sanity/image-url/lib/types/types';
 
-export interface IButton {
-  text: string;
-  href: string;
-  target?: '_blank' | '_self' | '_parent' | '_top';
-  onClick?: () => void;
-}
-
 export interface NewsBody {
   body: PortableTextBlock;
   mainImage: SanityAsset;
