@@ -9,7 +9,7 @@ import { es } from 'date-fns/locale';
 import styles from 'styles/Article.module.css';
 import { SRLWrapper } from 'simple-react-lightbox';
 import getYouTubeID from 'get-youtube-id';
-import YouTube from 'react-youtube';
+import ReactPlayer from 'react-player';
 import { FC } from 'react';
 import { NewsBody } from 'types/News';
 
@@ -30,7 +30,7 @@ const ArticleContent: FC<NewsBody> = ({ title, mainImage, publishedAt, body }): 
         if (!id) return null;
         return (
           <div className={styles.videoResponsive}>
-            <YouTube videoId={id} />
+            <ReactPlayer url={url} />
           </div>
         );
       },
