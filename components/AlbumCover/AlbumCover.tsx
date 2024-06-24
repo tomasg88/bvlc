@@ -7,7 +7,11 @@ import { SanityClientOrProjectDetails, useNextSanityImage } from 'next-sanity-im
 import { Album } from 'types/News';
 import { urlForImage } from 'lib/sanity.image';
 
-const AlbumCover: FC<Album> = ({ cover, title, description, onClick }): JSX.Element => {
+type AlbumProps = Album & {
+  onClick: () => void;
+};
+
+const AlbumCover: FC<AlbumProps> = ({ cover, title, description, onClick }): JSX.Element => {
   const { src, loader } = useNextSanityImage(sanityConfig as SanityClientOrProjectDetails, cover, {
     imageBuilder: () => urlForImage(cover).width(512),
   });

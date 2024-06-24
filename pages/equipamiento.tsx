@@ -8,9 +8,13 @@ import HeroInstitucional from 'components/HeroInstitucional/HeroInstitucional';
 import { equipmentQuery } from 'lib/sanity.queries';
 import { sanityClient } from 'lib/sanity.client';
 import { BG_CONSTANTS } from 'utils/constants';
-import { EquipmentType } from 'types/News';
+import { Equipment } from 'types/News';
 
-const Equipamiento: FC<EquipmentType> = ({ equipment }): JSX.Element => {
+export interface EquipmentProps {
+  equipment: Equipment[];
+}
+
+const Equipamiento: FC<EquipmentProps> = ({ equipment }): JSX.Element => {
   const [selected, setSelected] = useState<SanityAsset[] | []>([]);
 
   return (
@@ -39,7 +43,7 @@ const Equipamiento: FC<EquipmentType> = ({ equipment }): JSX.Element => {
 export default Equipamiento;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const equipment = await sanityClient.fetch(equipmentQuery);
+  const equipment: Equipment[] = await sanityClient.fetch(equipmentQuery);
   return {
     props: {
       equipment,

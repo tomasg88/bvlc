@@ -5,14 +5,18 @@ import { GetStaticProps } from 'next';
 import { activeForceQuery } from 'lib/sanity.queries';
 import { BG_CONSTANTS } from 'utils/constants';
 import groupAndOrder from 'utils/list';
-import { ActiveForceType } from 'types/News';
+import { ActiveForce } from 'types/News';
 
 import Fade from 'react-reveal/Fade';
 import Layout from 'components/Layout/Layout';
 import MemberCard from 'components/MemberCard/MemberCard';
 import HeroInstitucional from 'components/HeroInstitucional/HeroInstitucional';
 
-const CuerpoActivo: FC<ActiveForceType> = ({ list }): JSX.Element => {
+export interface ActiveForcePageProps {
+  list: ActiveForce[];
+}
+
+const CuerpoActivo: FC<ActiveForcePageProps> = ({ list }): JSX.Element => {
   const { orderedList, getTranslation } = groupAndOrder('rank', list);
 
   return (
@@ -51,7 +55,7 @@ const CuerpoActivo: FC<ActiveForceType> = ({ list }): JSX.Element => {
 export default CuerpoActivo;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const list = await sanityClient.fetch(activeForceQuery);
+  const list: ActiveForce[] = await sanityClient.fetch(activeForceQuery);
 
   return {
     props: {

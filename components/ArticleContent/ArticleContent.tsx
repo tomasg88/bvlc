@@ -11,9 +11,21 @@ import { SRLWrapper } from 'simple-react-lightbox';
 import getYouTubeID from 'get-youtube-id';
 import ReactPlayer from 'react-youtube';
 import { FC } from 'react';
-import { NewsBody } from 'types/News';
+import { News } from 'types/News';
 
-const ArticleContent: FC<NewsBody> = ({ title, mainImage, publishedAt, body }): JSX.Element => {
+export type ArticleContentProps = {
+  body: News['body'];
+  mainImage: News['mainImage'];
+  publishedAt: News['publishedAt'];
+  title: News['title'];
+};
+
+const ArticleContent: FC<ArticleContentProps> = ({
+  title,
+  mainImage,
+  publishedAt,
+  body,
+}): JSX.Element => {
   const date = parseISO(publishedAt);
 
   const options = {

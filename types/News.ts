@@ -1,81 +1,105 @@
-import { ImageProps } from 'next/image';
-import { Image, PortableTextBlock } from 'sanity';
+import { PortableTextBlock } from 'sanity';
 import { SanityAsset } from '@sanity/image-url/lib/types/types';
 
-export interface NewsBody {
+export interface Page {
   body: PortableTextBlock;
+  slug: string;
+  title: string;
+}
+
+/**
+ * Represents document schema/document/post.ts
+ */
+export interface News {
+  _id: string;
+  body: PortableTextBlock;
+  excerpt: string;
+  isHightlighted: string;
   mainImage: SanityAsset;
   publishedAt: string;
+  slug: string;
   title: string;
 }
 
-export interface News extends NewsBody {
-  _id: string;
-  excerpt: string;
-  slug: string;
-}
-
+/**
+ * Represents document schema/document/album.ts
+ */
 export interface Album {
   _id: string;
-  title: string;
-  description?: string;
-  imageList: SanityAsset[];
   cover: SanityAsset;
-  onClick: () => void;
+  description: string;
+  imageList: SanityAsset[];
+  title: string;
 }
 
-export interface Contact {
+/**
+ * Represents document schema/document/general.ts
+ */
+export interface General {
   _id?: string;
+  type: 'Telefono' | 'Email' | 'Red Social';
+  rrss: 'Twitter' | 'Facebook' | 'Instagram' | 'YouTube';
+  rrssUrl: string;
   title: string;
   value: string;
 }
 
-export interface IGallery {
-  list: {
-    _key: string;
-    image: Image;
-  }[];
-}
-
-export interface ComisionPerson {
-  name: string;
-  description: string;
+/**
+ * Represents document schema/document/leadership.ts
+ */
+export interface Leadership {
+  _id: string;
   image: SanityAsset;
   position: string;
+  title: string;
 }
 
-export interface ActiveForcePerson {
+/**
+ * Represents document schema/document/activeForce.ts
+ */
+export interface ActiveForce {
   _id: string;
   title: string;
-  description: string;
   image: SanityAsset;
   rank: string;
 }
 
+/**
+ * Represents document schema/document/campaign.ts
+ */
 export interface Campaign {
   _id: string;
   campaignLink: string; // URL
   description?: string;
-  isActive: boolean;
+  isActive?: boolean;
   name: string;
-  showFirst: boolean;
+  showFirst?: boolean;
 }
 
+/**
+ * Represents document schema/document/equipment
+ */
 export interface Equipment {
+  _id: string;
   body: PortableTextBlock;
-  cover: SanityAsset;
-  onClick: () => void;
+  imagesGallery: SanityAsset[];
   title: string;
 }
 
+/**
+ * Represents document schema/document/specialty.ts
+ */
 export interface Specialty {
+  _id: string;
   body: PortableTextBlock;
-  cover: SanityAsset;
-  members: ActiveForcePerson[];
-  onClick: () => void;
+  imagesGallery: SanityAsset[];
+  members: ActiveForce[];
   title: string;
 }
 
+/**
+ * Represents document schema/document/infrastructure.ts
+ */
 export interface Infrastructure {
   _id: string;
   description: PortableTextBlock;
@@ -87,75 +111,9 @@ export interface Infrastructure {
  *  Below are the pages interfaces
  */
 
-export interface HomeType {
-  recentNews: News[];
-  highlighted?: News;
-  heroImages: ImageProps[];
-}
-
-export interface NewsType {
-  list: News[];
-}
-
 export interface SlugType {
   article: News;
   moreArticles: News[];
-}
-
-export interface Page {
-  pages: NewsBody;
-}
-
-export interface CampaignsPage extends Page {
-  campaigns: {
-    showFirst: Campaign;
-    restOfCampaigns: Campaign[];
-  };
-}
-
-export interface AcademiaType {
-  news: News[];
-  albums: Album[];
-}
-
-export interface ComisionType {
-  list: ComisionPerson[];
-}
-
-export interface ActiveForceType {
-  list: ActiveForcePerson[];
-}
-
-export interface ContactoType {
-  phones: Contact[];
-  mails: Contact[];
-}
-
-export interface EquipmentType {
-  equipment: {
-    _id: string;
-    body: PortableTextBlock;
-    cover: SanityAsset;
-    imagesGallery: SanityAsset[];
-    onClick: () => void;
-    title: string;
-  }[];
-}
-
-export interface SpecialtyType {
-  specialties: {
-    _id: string;
-    body: PortableTextBlock;
-    cover: SanityAsset;
-    imagesGallery: SanityAsset[];
-    members: ActiveForcePerson[];
-    onClick: () => void;
-    title: string;
-  }[];
-}
-
-export interface InfrastructureType {
-  areas: Infrastructure[];
 }
 
 export interface GaleriaType {

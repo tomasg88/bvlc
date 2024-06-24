@@ -6,7 +6,7 @@ import { allPostQuery } from 'lib/sanity.queries';
 import { GetStaticProps } from 'next';
 
 import Layout from 'components/Layout/Layout';
-import { News, NewsType } from 'types/News';
+import { News } from 'types/News';
 
 import HeroNews from 'components/HeroNews/HeroNews';
 import CardNewsHorizontal from 'components/CardNewsHorizontal/CardNewsHorizontal';
@@ -18,9 +18,13 @@ import PaginationNext from 'components/Pagination/PaginationNext';
 import PaginationPrevious from 'components/Pagination/PaginationPrevious';
 import Input from 'components/Input/Input';
 
+export interface NewsProps {
+  list: News[];
+}
+
 const ITEMS_PER_PAGE = 5;
 
-const Noticias: FC<NewsType> = ({ list }): JSX.Element => {
+const Noticias: FC<NewsProps> = ({ list }): JSX.Element => {
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [searchTerm, setSearchTerm] = useState<string>('');
 

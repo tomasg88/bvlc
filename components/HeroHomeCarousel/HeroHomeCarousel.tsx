@@ -7,11 +7,11 @@ import CarouselUI from './CarouselUI/CarouselUI';
 import styles from './HeroHomeCarousel.module.scss';
 import { FunctionComponent, ReactElement, ReactNode } from 'react';
 import SanityImage from 'components/SanityImage/SanityImage';
-import { ImageProps } from 'next/image';
+import { Album } from 'types/News';
 
 interface HeroHomeCarouselProps {
   arrows: boolean;
-  images: ImageProps[];
+  images: Album['imageList'];
 }
 
 interface CarouselProps {

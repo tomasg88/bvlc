@@ -9,9 +9,24 @@ import RrssIcon from 'components/RrssIcon/RrssIcon';
 import ContactItem from 'components/ContactItem/ContactItem';
 import { BG_CONSTANTS, MAPS_URL } from 'utils/constants';
 import { GetStaticProps } from 'next';
-import { ContactoType } from 'types/News';
+import { General } from 'types/News';
 
-const Contact: FC<ContactoType> = ({ phones, mails }) => {
+type Phones = General & {
+  title: General['title'];
+  value: General['value'];
+};
+
+type Mails = General & {
+  title: General['title'];
+  value: General['value'];
+};
+
+export interface ContactPageProps {
+  phones: Phones[];
+  mails: Mails[];
+}
+
+const Contact: FC<ContactPageProps> = ({ phones, mails }) => {
   const rrss = useContext(RrssContext);
   return (
     <Layout title="Contacto">

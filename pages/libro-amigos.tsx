@@ -9,12 +9,16 @@ import { BG_CONSTANTS } from 'utils/constants';
 import Button from 'components/Button/Button';
 import * as ga from 'lib/ga';
 import { GetStaticProps } from 'next';
-import { Page } from 'types/News';
+import { News } from 'types/News';
+
+type LibroAmigosProps = {
+  pages: News;
+};
 
 const BOOK_PUBLIC_URL =
   'https://drive.google.com/file/d/1-Ej0AXd14-xLfvooEfzWHG1bGdZYbOjO/view?usp=sharing';
 
-const LibroAmigos: FC<Page> = ({ pages }): JSX.Element => {
+const LibroAmigos: FC<LibroAmigosProps> = ({ pages }): JSX.Element => {
   const { body, publishedAt, title, mainImage } = pages;
 
   const handleClick = useCallback(() => {

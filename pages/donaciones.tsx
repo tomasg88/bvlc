@@ -5,8 +5,16 @@ import { campaignsQuery, pagesQuery } from 'lib/sanity.queries';
 import HeroInstitucional from 'components/HeroInstitucional/HeroInstitucional';
 import { BG_CONSTANTS } from 'utils/constants';
 import { GetStaticProps } from 'next';
-import { CampaignsPage } from 'types/News';
+import { Campaign, Page } from 'types/News';
 import { CampaignCard } from 'components/CampaignCard/CampaignCard';
+
+export interface CampaignsPage {
+  pages: Page;
+  campaigns: {
+    showFirst: Campaign;
+    restOfCampaigns: Campaign[];
+  };
+}
 
 const Donaciones: FC<CampaignsPage> = ({
   pages,

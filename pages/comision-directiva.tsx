@@ -1,6 +1,5 @@
 import React, { FC } from 'react';
 import { GetStaticProps } from 'next';
-import { ComisionType } from 'types/News';
 import { sanityClient } from 'lib/sanity.client';
 import { leadershipQuery } from 'lib/sanity.queries';
 
@@ -10,8 +9,13 @@ import MemberCard from 'components/MemberCard/MemberCard';
 import { BG_CONSTANTS } from 'utils/constants';
 import Fade from 'react-reveal/Fade';
 import groupAndOrder from 'utils/list';
+import { Leadership } from 'types/News';
 
-const ComisionDirectiva: FC<ComisionType> = ({ list }): JSX.Element => {
+export interface ComisionPageProps {
+  list: Leadership[];
+}
+
+const ComisionDirectiva: FC<ComisionPageProps> = ({ list }): JSX.Element => {
   const { orderedList, getTranslation } = groupAndOrder('position', list);
 
   return (
@@ -50,7 +54,7 @@ const ComisionDirectiva: FC<ComisionType> = ({ list }): JSX.Element => {
 export default ComisionDirectiva;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const list: ComisionType[] = await sanityClient.fetch(leadershipQuery);
+  const list: Leadership[] = await sanityClient.fetch(leadershipQuery);
   return {
     props: {
       list,

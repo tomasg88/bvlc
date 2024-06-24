@@ -6,11 +6,15 @@ import { sanityClient } from 'lib/sanity.client';
 import HeroInstitucional from 'components/HeroInstitucional/HeroInstitucional';
 import { BG_CONSTANTS } from 'utils/constants';
 import { GetStaticProps } from 'next';
-import { InfrastructureType } from 'types/News';
 import { SanityAsset } from '@sanity/image-url/lib/types/types';
 import CardInfrastructure from 'components/CardInfrastructure/CardInfrastructure';
+import { Infrastructure } from 'types/News';
 
-const Especialidades: FC<InfrastructureType> = ({ areas }): JSX.Element => {
+export interface InfrastructureProps {
+  areas: Infrastructure[];
+}
+
+const Especialidades: FC<InfrastructureProps> = ({ areas }): JSX.Element => {
   const [selected, setSelected] = useState<SanityAsset[]>([]);
 
   return (
@@ -37,7 +41,7 @@ const Especialidades: FC<InfrastructureType> = ({ areas }): JSX.Element => {
 export default Especialidades;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const areas: InfrastructureType = await sanityClient.fetch(infrastructureQuery);
+  const areas: InfrastructureProps = await sanityClient.fetch(infrastructureQuery);
   return {
     props: {
       areas,

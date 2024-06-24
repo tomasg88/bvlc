@@ -9,9 +9,15 @@ import Fade from 'react-reveal/Fade';
 import CardHighlighted from 'components/CardHighlighted/CardHighlighted';
 import { GetStaticProps } from 'next';
 import { FC } from 'react';
-import { HomeType } from 'types/News';
+import { Album, News } from 'types/News';
 
-const Home: FC<HomeType> = ({ recentNews, highlighted, heroImages }) => (
+type HomeProps = {
+  recentNews: News[];
+  highlighted?: News;
+  heroImages: Album['imageList'];
+};
+
+const Home: FC<HomeProps> = ({ recentNews, highlighted, heroImages }) => (
   <Layout>
     <div className={styles.container}>
       <main className="w-full ">
