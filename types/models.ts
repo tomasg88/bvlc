@@ -1,5 +1,5 @@
 import { PortableTextBlock } from 'sanity';
-import { SanityAsset } from '@sanity/image-url/lib/types/types';
+import type { ImageAsset } from '@sanity/types';
 
 export interface Page {
   body: PortableTextBlock;
@@ -15,7 +15,7 @@ export interface News {
   body: PortableTextBlock;
   excerpt: string;
   isHightlighted: string;
-  mainImage: SanityAsset;
+  mainImage: ImageAsset;
   publishedAt: string;
   slug: string;
   title: string;
@@ -26,9 +26,9 @@ export interface News {
  */
 export interface Album {
   _id: string;
-  cover: SanityAsset;
+  cover: ImageAsset;
   description: string;
-  imageList: SanityAsset[];
+  imageList: ImageAsset[];
   title: string;
 }
 
@@ -49,7 +49,7 @@ export interface General {
  */
 export interface Leadership {
   _id: string;
-  image: SanityAsset;
+  image: ImageAsset;
   position: string;
   title: string;
 }
@@ -60,7 +60,7 @@ export interface Leadership {
 export interface ActiveForce {
   _id: string;
   title: string;
-  image: SanityAsset;
+  image: ImageAsset;
   rank: string;
 }
 
@@ -82,7 +82,7 @@ export interface Campaign {
 export interface Equipment {
   _id: string;
   body: PortableTextBlock;
-  imagesGallery: SanityAsset[];
+  imagesGallery: ImageAsset[];
   title: string;
 }
 
@@ -92,7 +92,7 @@ export interface Equipment {
 export interface Specialty {
   _id: string;
   body: PortableTextBlock;
-  imagesGallery: SanityAsset[];
+  imagesGallery: ImageAsset[];
   members: ActiveForce[];
   title: string;
 }
@@ -104,7 +104,7 @@ export interface Infrastructure {
   _id: string;
   description: PortableTextBlock;
   name: string;
-  imageList: SanityAsset[];
+  imageList: ImageAsset[];
 }
 
 /**

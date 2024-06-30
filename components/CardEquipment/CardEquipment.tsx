@@ -3,14 +3,14 @@ import Image from 'next/image';
 import { MdPhotoCamera } from 'react-icons/md';
 import BlockContent from '@sanity/block-content-to-react';
 import { SanityClientOrProjectDetails, useNextSanityImage } from 'next-sanity-image';
-import { SanityAsset } from '@sanity/image-url/lib/types/types';
+import { ImageAsset } from '@sanity/types';
 import styles from './CardEquipment.module.scss';
 import { sanityConfig } from 'lib/sanity.config';
 import { Equipment } from 'types/models';
 import { urlForImage } from 'lib/sanity.image';
 
 type CardEquipmentProps = Partial<Equipment> & {
-  cover: SanityAsset;
+  cover: ImageAsset;
   onClick: () => void;
 };
 

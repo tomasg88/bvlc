@@ -7,7 +7,7 @@ import { sanityClient } from 'lib/sanity.client';
 import HeroInstitucional from 'components/HeroInstitucional/HeroInstitucional';
 import { BG_CONSTANTS } from 'utils/constants';
 import { GetStaticProps } from 'next';
-import { SanityAsset } from '@sanity/image-url/lib/types/types';
+import { ImageAsset } from '@sanity/types';
 import { Specialty } from 'types/models';
 
 export interface SpecialtyType {
@@ -15,7 +15,7 @@ export interface SpecialtyType {
 }
 
 const Especialidades: FC<SpecialtyType> = ({ specialties }): JSX.Element => {
-  const [selected, setSelected] = useState<SanityAsset[]>([]);
+  const [selected, setSelected] = useState<ImageAsset[]>([]);
 
   return (
     <Layout title="Especialidades">

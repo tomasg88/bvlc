@@ -1,5 +1,5 @@
 import React, { FC, useState } from 'react';
-import { SanityAsset } from '@sanity/image-url/lib/types/types';
+import { ImageAsset } from '@sanity/types';
 import Layout from 'components/Layout/Layout';
 import { sanityClient } from 'lib/sanity.client';
 import { albumsQuery } from 'lib/sanity.queries';
@@ -12,7 +12,7 @@ import { Album, GaleriaType } from 'types/models';
 import { BG_CONSTANTS } from 'utils/constants';
 
 const Galeria: FC<GaleriaType> = ({ albums }): JSX.Element => {
-  const [selectedAlbum, setSelectedAlbum] = useState<SanityAsset[]>([]);
+  const [selectedAlbum, setSelectedAlbum] = useState<ImageAsset[]>([]);
   return (
     <Layout title="Galería">
       <div className="min-h-screen bg-white">

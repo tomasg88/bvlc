@@ -4,14 +4,14 @@ import { MdPhotoCamera } from 'react-icons/md';
 import BlockContent from '@sanity/block-content-to-react';
 import styles from './CardSpecialty.module.scss';
 import { SanityClientOrProjectDetails, useNextSanityImage } from 'next-sanity-image';
-import { SanityAsset } from '@sanity/image-url/lib/types/types';
+import { ImageAsset } from '@sanity/types';
 import { sanityConfig } from 'lib/sanity.config';
 import SanityImage from 'components/SanityImage/SanityImage';
 import Zoom from 'react-reveal/Zoom';
 import { Specialty } from 'types/models';
 
 type CardSpecialtyProps = Partial<Specialty> & {
-  cover: SanityAsset;
+  cover: ImageAsset;
   onClick: () => void;
 };
 

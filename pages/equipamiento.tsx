@@ -1,6 +1,6 @@
 import React, { FC, useState } from 'react';
 import { GetStaticProps } from 'next';
-import { SanityAsset } from '@sanity/image-url/lib/types/types';
+import { ImageAsset } from '@sanity/types';
 import CardEquipment from 'components/CardEquipment/CardEquipment';
 import Gallery from 'components/Gallery/Gallery';
 import Layout from 'components/Layout/Layout';
@@ -15,7 +15,7 @@ export interface EquipmentProps {
 }
 
 const Equipamiento: FC<EquipmentProps> = ({ equipment }): JSX.Element => {
-  const [selected, setSelected] = useState<SanityAsset[] | []>([]);
+  const [selected, setSelected] = useState<ImageAsset[] | []>([]);
 
   return (
     <Layout title="Equipamiento">
