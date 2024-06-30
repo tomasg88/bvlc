@@ -5,7 +5,7 @@ import {
   AiOutlineYoutube,
   AiOutlineTwitter,
 } from 'react-icons/ai';
-import { General } from 'types/News';
+import { General } from 'types/models';
 
 interface RrssIconProps {
   className: string;

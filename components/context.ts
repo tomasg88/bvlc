@@ -1,5 +1,5 @@
 import React from 'react';
-import { General } from 'types/News';
+import { General } from 'types/models';
 
 export type RRSS = {
   _id: General['_id'];

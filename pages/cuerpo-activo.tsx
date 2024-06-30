@@ -5,7 +5,7 @@ import { GetStaticProps } from 'next';
 import { activeForceQuery } from 'lib/sanity.queries';
 import { BG_CONSTANTS } from 'utils/constants';
 import groupAndOrder from 'utils/list';
-import { ActiveForce } from 'types/News';
+import { ActiveForce } from 'types/models';
 
 import Fade from 'react-reveal/Fade';
 import Layout from 'components/Layout/Layout';

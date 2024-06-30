@@ -8,7 +8,7 @@ import HeroInstitucional from 'components/HeroInstitucional/HeroInstitucional';
 import { equipmentQuery } from 'lib/sanity.queries';
 import { sanityClient } from 'lib/sanity.client';
 import { BG_CONSTANTS } from 'utils/constants';
-import { Equipment } from 'types/News';
+import { Equipment } from 'types/models';
 
 export interface EquipmentProps {
   equipment: Equipment[];

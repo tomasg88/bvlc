@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { General } from 'types/News';
+import { General } from 'types/models';
 import styles from './ContactItem.module.scss';
 
 type ContactItem = {

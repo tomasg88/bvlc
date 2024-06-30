@@ -4,7 +4,7 @@ import { MdPhotoCamera } from 'react-icons/md';
 import styles from './AlbumCover.module.scss';
 import { sanityConfig } from 'lib/sanity.config';
 import { SanityClientOrProjectDetails, useNextSanityImage } from 'next-sanity-image';
-import { Album } from 'types/News';
+import { Album } from 'types/models';
 import { urlForImage } from 'lib/sanity.image';
 
 type AlbumProps = Album & {

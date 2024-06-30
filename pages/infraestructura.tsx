@@ -8,7 +8,7 @@ import { BG_CONSTANTS } from 'utils/constants';
 import { GetStaticProps } from 'next';
 import { SanityAsset } from '@sanity/image-url/lib/types/types';
 import CardInfrastructure from 'components/CardInfrastructure/CardInfrastructure';
-import { Infrastructure } from 'types/News';
+import { Infrastructure } from 'types/models';
 
 export interface InfrastructureProps {
   areas: Infrastructure[];

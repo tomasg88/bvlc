@@ -6,7 +6,7 @@ import { allPostQuery } from 'lib/sanity.queries';
 import { GetStaticProps } from 'next';
 
 import Layout from 'components/Layout/Layout';
-import { News } from 'types/News';
+import { News } from 'types/models';
 
 import HeroNews from 'components/HeroNews/HeroNews';
 import CardNewsHorizontal from 'components/CardNewsHorizontal/CardNewsHorizontal';

@@ -1,4 +1,4 @@
-import { ActiveForce, Leadership } from 'types/News';
+import { ActiveForce, Leadership } from 'types/models';
 import { find, orderBy, groupBy, Dictionary } from 'lodash';
 import { RANKS, POSITIONS } from './constants';
 

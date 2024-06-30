@@ -9,7 +9,7 @@ import { BG_CONSTANTS } from 'utils/constants';
 import Button from 'components/Button/Button';
 import * as ga from 'lib/ga';
 import { GetStaticProps } from 'next';
-import { News } from 'types/News';
+import { News } from 'types/models';
 
 type LibroAmigosProps = {
   pages: News;

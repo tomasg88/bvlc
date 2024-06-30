@@ -9,7 +9,7 @@ import MemberCard from 'components/MemberCard/MemberCard';
 import { BG_CONSTANTS } from 'utils/constants';
 import Fade from 'react-reveal/Fade';
 import groupAndOrder from 'utils/list';
-import { Leadership } from 'types/News';
+import { Leadership } from 'types/models';
 
 export interface ComisionPageProps {
   list: Leadership[];

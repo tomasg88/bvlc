@@ -8,7 +8,7 @@ import AlbumCover from 'components/AlbumCover/AlbumCover';
 import HeroPage from 'components/HeroPage/HeroPage';
 import Fade from 'react-reveal/Fade';
 import { GetStaticProps } from 'next';
-import { Album, GaleriaType } from 'types/News';
+import { Album, GaleriaType } from 'types/models';
 import { BG_CONSTANTS } from 'utils/constants';
 
 const Galeria: FC<GaleriaType> = ({ albums }): JSX.Element => {

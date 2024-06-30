@@ -6,7 +6,7 @@ import Fade from 'react-reveal/Fade';
 
 import { sanityConfig } from 'lib/sanity.config';
 import styles from './CardHighlighted.module.scss';
-import { News } from 'types/News';
+import { News } from 'types/models';
 
 // TODO - restore usage of imageBuilder to highlight this news with
 // the hook useNextSanityImage

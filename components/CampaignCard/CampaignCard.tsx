@@ -4,7 +4,7 @@ import { FaExternalLinkAlt } from 'react-icons/fa';
 
 import { cn } from 'utils/css';
 import styles from './CampaignCard.module.scss';
-import { Campaign } from 'types/News';
+import { Campaign } from 'types/models';
 
 type CampaignCard = {
   campaignLink: Campaign['campaignLink'];

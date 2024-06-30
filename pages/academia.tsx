@@ -11,7 +11,7 @@ import styles from 'styles/PageSidebar.module.css';
 import { MdPhotoCamera } from 'react-icons/md';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { GetStaticProps } from 'next';
-import { Album, News } from 'types/News';
+import { Album, News } from 'types/models';
 import { SanityAsset } from '@sanity/image-url/lib/types/types';
 
 export interface AcademiaType {

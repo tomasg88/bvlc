@@ -9,7 +9,7 @@ import Fade from 'react-reveal/Fade';
 import CardHighlighted from 'components/CardHighlighted/CardHighlighted';
 import { GetStaticProps } from 'next';
 import { FC } from 'react';
-import { Album, News } from 'types/News';
+import { Album, News } from 'types/models';
 
 type HomeProps = {
   recentNews: News[];

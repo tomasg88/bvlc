@@ -6,7 +6,7 @@ import { SanityClientOrProjectDetails, useNextSanityImage } from 'next-sanity-im
 import { SanityAsset } from '@sanity/image-url/lib/types/types';
 import styles from './CardEquipment.module.scss';
 import { sanityConfig } from 'lib/sanity.config';
-import { Equipment } from 'types/News';
+import { Equipment } from 'types/models';
 import { urlForImage } from 'lib/sanity.image';
 
 type CardEquipmentProps = Partial<Equipment> & {

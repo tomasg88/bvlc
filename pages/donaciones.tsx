@@ -5,7 +5,7 @@ import { campaignsQuery, pagesQuery } from 'lib/sanity.queries';
 import HeroInstitucional from 'components/HeroInstitucional/HeroInstitucional';
 import { BG_CONSTANTS } from 'utils/constants';
 import { GetStaticProps } from 'next';
-import { Campaign, Page } from 'types/News';
+import { Campaign, Page } from 'types/models';
 import { CampaignCard } from 'components/CampaignCard/CampaignCard';
 
 export interface CampaignsPage {

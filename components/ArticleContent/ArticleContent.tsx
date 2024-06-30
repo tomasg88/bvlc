@@ -11,7 +11,7 @@ import { SRLWrapper } from 'simple-react-lightbox';
 import getYouTubeID from 'get-youtube-id';
 import ReactPlayer from 'react-youtube';
 import { FC } from 'react';
-import { News } from 'types/News';
+import { News } from 'types/models';
 
 export type ArticleContentProps = {
   body: News['body'];

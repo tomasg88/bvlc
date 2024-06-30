@@ -8,7 +8,7 @@ import HeroInstitucional from 'components/HeroInstitucional/HeroInstitucional';
 import { BG_CONSTANTS } from 'utils/constants';
 import { GetStaticProps } from 'next';
 import { SanityAsset } from '@sanity/image-url/lib/types/types';
-import { Specialty } from 'types/News';
+import { Specialty } from 'types/models';
 
 export interface SpecialtyType {
   specialties: Specialty[];

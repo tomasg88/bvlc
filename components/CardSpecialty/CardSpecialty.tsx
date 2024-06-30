@@ -8,7 +8,7 @@ import { SanityAsset } from '@sanity/image-url/lib/types/types';
 import { sanityConfig } from 'lib/sanity.config';
 import SanityImage from 'components/SanityImage/SanityImage';
 import Zoom from 'react-reveal/Zoom';
-import { Specialty } from 'types/News';
+import { Specialty } from 'types/models';
 
 type CardSpecialtyProps = Partial<Specialty> & {
   cover: SanityAsset;

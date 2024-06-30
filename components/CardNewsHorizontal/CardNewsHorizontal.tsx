@@ -3,7 +3,7 @@ import Link from 'next/link';
 import CoverImage from 'components/CoverImage/CoverImage';
 import styles from './CardNewsHorizontal.module.scss';
 import { FC } from 'react';
-import { News } from 'types/News';
+import { News } from 'types/models';
 
 const CardNewsHorizontal: FC<News> = ({
   title,
