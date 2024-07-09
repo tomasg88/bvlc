@@ -10,11 +10,11 @@ import { ImageAsset } from '@sanity/types';
 import CardInfrastructure from 'components/CardInfrastructure/CardInfrastructure';
 import { Infrastructure } from 'types/models';
 
-export interface InfrastructureProps {
+interface InfrastructureProps {
   areas: Infrastructure[];
 }
 
-const Especialidades: FC<InfrastructureProps> = ({ areas }): JSX.Element => {
+const Infraestructura: FC<InfrastructureProps> = ({ areas }): JSX.Element => {
   const [selected, setSelected] = useState<ImageAsset[]>([]);
 
   return (
@@ -38,10 +38,10 @@ const Especialidades: FC<InfrastructureProps> = ({ areas }): JSX.Element => {
   );
 };
 
-export default Especialidades;
+export default Infraestructura;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const areas: InfrastructureProps = await sanityClient.fetch(infrastructureQuery);
+  const areas: Infrastructure[] = await sanityClient.fetch(infrastructureQuery);
   return {
     props: {
       areas,
