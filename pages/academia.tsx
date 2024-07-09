@@ -11,11 +11,16 @@ import styles from 'styles/PageSidebar.module.css';
 import { MdPhotoCamera } from 'react-icons/md';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { GetStaticProps } from 'next';
-import { AcademiaType } from 'types/News';
-import { SanityAsset } from '@sanity/image-url/lib/types/types';
+import { Album, News } from 'types/models';
+import { ImageAsset } from '@sanity/types';
+
+export interface AcademiaType {
+  news: News[];
+  albums: Album[];
+}
 
 const Academia: FC<AcademiaType> = ({ news, albums }): JSX.Element => {
-  const [selectedAlbum, setSelectedAlbum] = useState<SanityAsset[] | []>([]);
+  const [selectedAlbum, setSelectedAlbum] = useState<ImageAsset[] | []>([]);
   return (
     <Layout title="Academia">
       {/* <div> que se oculta a partir de md: */}

@@ -6,7 +6,7 @@ import styles from './CardInfrastructure.module.scss';
 import { SanityClientOrProjectDetails, useNextSanityImage } from 'next-sanity-image';
 import { sanityConfig } from 'lib/sanity.config';
 import Zoom from 'react-reveal/Zoom';
-import { Infrastructure } from 'types/News';
+import { Infrastructure } from 'types/models';
 import { urlForImage } from 'lib/sanity.image';
 
 type CardInfrastructure = {

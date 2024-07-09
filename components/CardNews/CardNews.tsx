@@ -4,7 +4,7 @@ import CoverImage from '../CoverImage/CoverImage';
 import styles from './CardNews.module.scss';
 import Fade from 'react-reveal/Fade';
 import { FC } from 'react';
-import { News } from 'types/News';
+import { News } from 'types/models';
 
 const CardNews: FC<News> = ({ title, mainImage, excerpt, slug, publishedAt }): JSX.Element => (
   <Fade>

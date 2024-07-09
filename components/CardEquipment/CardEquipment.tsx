@@ -2,13 +2,19 @@ import React, { FC } from 'react';
 import Image from 'next/image';
 import { MdPhotoCamera } from 'react-icons/md';
 import BlockContent from '@sanity/block-content-to-react';
-import styles from './CardEquipment.module.scss';
 import { SanityClientOrProjectDetails, useNextSanityImage } from 'next-sanity-image';
+import { ImageAsset } from '@sanity/types';
+import styles from './CardEquipment.module.scss';
 import { sanityConfig } from 'lib/sanity.config';
-import { Equipment } from 'types/News';
+import { Equipment } from 'types/models';
 import { urlForImage } from 'lib/sanity.image';
 
-const CardEquipment: FC<Equipment> = ({ body, cover, onClick, title }): JSX.Element => {
+type CardEquipmentProps = Partial<Equipment> & {
+  cover: ImageAsset;
+  onClick: () => void;
+};
+
+const CardEquipment: FC<CardEquipmentProps> = ({ body, cover, onClick, title }): JSX.Element => {
   const { src, loader } = useNextSanityImage(sanityConfig as SanityClientOrProjectDetails, cover, {
     imageBuilder: () => urlForImage(cover).width(512),
   });
@@ -17,7 +23,8 @@ const CardEquipment: FC<Equipment> = ({ body, cover, onClick, title }): JSX.Elem
     <div className={styles.card}>
       <div className={styles.imageContainer}>
         <Image
-          alt={title}
+          // TODO - add default alt
+          alt={title || ''}
           className={styles.img}
           fill
           loader={loader}

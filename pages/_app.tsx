@@ -4,14 +4,14 @@ import 'styles/Header.css';
 import { sanityClient } from 'lib/sanity.client';
 import { rrssQuery } from 'lib/sanity.queries';
 import { useEffect, useState } from 'react';
-import { RrssContext, IRrss } from 'components/context';
+import { RrssContext, RRSS } from 'components/context';
 import * as ga from 'lib/ga';
 import { useRouter } from 'next/router';
 import { AppProps } from 'next/app';
 import { Roboto } from 'next/font/google';
 
 interface MyAppProps extends AppProps {
-  rrss: IRrss[];
+  rrss: RRSS[];
 }
 
 const roboto = Roboto({
@@ -20,7 +20,7 @@ const roboto = Roboto({
 });
 
 function MyApp({ Component, pageProps, rrss }: MyAppProps): JSX.Element {
-  const [context] = useState<IRrss[]>(rrss);
+  const [context] = useState<RRSS[]>(rrss);
   const router = useRouter();
 
   useEffect(() => {

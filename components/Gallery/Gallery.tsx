@@ -4,12 +4,12 @@ import { AiOutlineArrowRight, AiOutlineArrowLeft } from 'react-icons/ai';
 import Fade from 'react-reveal/Fade';
 import styles from './Gallery.module.scss';
 import SanityImage from 'components/SanityImage/SanityImage';
-import { SanityAsset } from '@sanity/image-url/lib/types/types';
+import { ImageAsset } from '@sanity/types';
 import classNames from 'classnames';
 import { useStateList } from 'react-use';
 interface GalleryProps {
   onClose: () => void;
-  list: SanityAsset[];
+  list: ImageAsset[];
 }
 
 const Gallery: FC<GalleryProps> = ({ onClose, list }): JSX.Element => {

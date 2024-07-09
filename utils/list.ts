@@ -1,4 +1,4 @@
-import { ActiveForcePerson, ComisionPerson } from 'types/News';
+import { ActiveForce, Leadership } from 'types/models';
 import { find, orderBy, groupBy, Dictionary } from 'lodash';
 import { RANKS, POSITIONS } from './constants';
 
@@ -44,10 +44,10 @@ const orderPositions = {
 
 type MembersList = {
   getTranslation: (K: string) => string;
-  orderedList: Dictionary<ActiveForcePerson[] | ComisionPerson[]>;
+  orderedList: Dictionary<ActiveForce[] | Leadership[]>;
 };
 
-const groupAndOrderPosition = (list: ComisionPerson[]) => {
+const groupAndOrderPosition = (list: Leadership[]) => {
   const getTranslatedPositions = (value) => find(POSITIONS, { value })?.title;
   const orderByPosition = orderBy(list, (l) => orderPositions[l.position]);
   return {
@@ -56,7 +56,7 @@ const groupAndOrderPosition = (list: ComisionPerson[]) => {
   };
 };
 
-const groupAndOrderRanks = (list: ActiveForcePerson[]) => {
+const groupAndOrderRanks = (list: ActiveForce[]) => {
   const getTranslatedRanks = (value) => find(RANKS, { value })?.title;
   const orderByRank = orderBy(list, (l) => orderRanks[l.rank]);
 
@@ -65,13 +65,13 @@ const groupAndOrderRanks = (list: ActiveForcePerson[]) => {
 
 export default function groupAndOrder(
   listName: 'position' | 'rank',
-  list: ActiveForcePerson[] | ComisionPerson[]
+  list: ActiveForce[] | Leadership[]
 ): MembersList {
   let result;
   if (listName === 'position') {
-    result = groupAndOrderPosition(list as ComisionPerson[]);
+    result = groupAndOrderPosition(list as Leadership[]);
   } else {
-    result = groupAndOrderRanks(list as ActiveForcePerson[]);
+    result = groupAndOrderRanks(list as ActiveForce[]);
   }
   return result;
 }

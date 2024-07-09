@@ -1,5 +1,5 @@
 import React, { FC, useState } from 'react';
-import { SanityAsset } from '@sanity/image-url/lib/types/types';
+import { ImageAsset } from '@sanity/types';
 import Layout from 'components/Layout/Layout';
 import { sanityClient } from 'lib/sanity.client';
 import { albumsQuery } from 'lib/sanity.queries';
@@ -8,11 +8,15 @@ import AlbumCover from 'components/AlbumCover/AlbumCover';
 import HeroPage from 'components/HeroPage/HeroPage';
 import Fade from 'react-reveal/Fade';
 import { GetStaticProps } from 'next';
-import { Album, GaleriaType } from 'types/News';
+import { Album } from 'types/models';
 import { BG_CONSTANTS } from 'utils/constants';
 
-const Galeria: FC<GaleriaType> = ({ albums }): JSX.Element => {
-  const [selectedAlbum, setSelectedAlbum] = useState<SanityAsset[]>([]);
+interface GaleriaProps {
+  albums: Album[];
+}
+
+const Galeria: FC<GaleriaProps> = ({ albums }): JSX.Element => {
+  const [selectedAlbum, setSelectedAlbum] = useState<ImageAsset[]>([]);
   return (
     <Layout title="Galería">
       <div className="min-h-screen bg-white">
@@ -40,7 +44,7 @@ const Galeria: FC<GaleriaType> = ({ albums }): JSX.Element => {
 export default Galeria;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const albums: Album = await sanityClient.fetch(albumsQuery);
+  const albums: Album[] = await sanityClient.fetch(albumsQuery);
 
   return {
     props: { albums },

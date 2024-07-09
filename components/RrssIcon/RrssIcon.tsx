@@ -5,11 +5,12 @@ import {
   AiOutlineYoutube,
   AiOutlineTwitter,
 } from 'react-icons/ai';
+import { General } from 'types/models';
 
 interface RrssIconProps {
   className: string;
-  rrss: string;
-  url: string;
+  rrss: General['rrss'];
+  url: General['rrssUrl'];
 }
 
 const RrssIcon: FunctionComponent<RrssIconProps> = ({
@@ -25,7 +26,7 @@ const RrssIcon: FunctionComponent<RrssIconProps> = ({
         return <AiOutlineInstagram />;
       case 'Twitter':
         return <AiOutlineTwitter />;
-      case 'Youtube':
+      case 'YouTube':
         return <AiOutlineYoutube />;
     }
   }, [rrss]);

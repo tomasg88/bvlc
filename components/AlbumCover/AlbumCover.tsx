@@ -4,10 +4,14 @@ import { MdPhotoCamera } from 'react-icons/md';
 import styles from './AlbumCover.module.scss';
 import { sanityConfig } from 'lib/sanity.config';
 import { SanityClientOrProjectDetails, useNextSanityImage } from 'next-sanity-image';
-import { Album } from 'types/News';
+import { Album } from 'types/models';
 import { urlForImage } from 'lib/sanity.image';
 
-const AlbumCover: FC<Album> = ({ cover, title, description, onClick }): JSX.Element => {
+type AlbumProps = Album & {
+  onClick: () => void;
+};
+
+const AlbumCover: FC<AlbumProps> = ({ cover, title, description, onClick }): JSX.Element => {
   const { src, loader } = useNextSanityImage(sanityConfig as SanityClientOrProjectDetails, cover, {
     imageBuilder: () => urlForImage(cover).width(512),
   });

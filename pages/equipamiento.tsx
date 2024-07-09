@@ -1,6 +1,6 @@
 import React, { FC, useState } from 'react';
 import { GetStaticProps } from 'next';
-import { SanityAsset } from '@sanity/image-url/lib/types/types';
+import { ImageAsset } from '@sanity/types';
 import CardEquipment from 'components/CardEquipment/CardEquipment';
 import Gallery from 'components/Gallery/Gallery';
 import Layout from 'components/Layout/Layout';
@@ -8,10 +8,14 @@ import HeroInstitucional from 'components/HeroInstitucional/HeroInstitucional';
 import { equipmentQuery } from 'lib/sanity.queries';
 import { sanityClient } from 'lib/sanity.client';
 import { BG_CONSTANTS } from 'utils/constants';
-import { EquipmentType } from 'types/News';
+import { Equipment } from 'types/models';
 
-const Equipamiento: FC<EquipmentType> = ({ equipment }): JSX.Element => {
-  const [selected, setSelected] = useState<SanityAsset[] | []>([]);
+export interface EquipmentProps {
+  equipment: Equipment[];
+}
+
+const Equipamiento: FC<EquipmentProps> = ({ equipment }): JSX.Element => {
+  const [selected, setSelected] = useState<ImageAsset[] | []>([]);
 
   return (
     <Layout title="Equipamiento">
@@ -39,7 +43,7 @@ const Equipamiento: FC<EquipmentType> = ({ equipment }): JSX.Element => {
 export default Equipamiento;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const equipment = await sanityClient.fetch(equipmentQuery);
+  const equipment: Equipment[] = await sanityClient.fetch(equipmentQuery);
   return {
     props: {
       equipment,

@@ -5,7 +5,7 @@ import { urlForImage } from 'lib/sanity.image';
 import ArticleContent from 'components/ArticleContent/ArticleContent';
 import CardNewsHorizontal from 'components/CardNewsHorizontal/CardNewsHorizontal';
 import { FC } from 'react';
-import { SlugType } from 'types/News';
+import { SlugType } from 'types/models';
 import { GetStaticPathsResult, GetStaticPropsResult } from 'next';
 import { useNextSanityImage, SanityClientOrProjectDetails } from 'next-sanity-image';
 import { sanityConfig } from 'lib/sanity.config';

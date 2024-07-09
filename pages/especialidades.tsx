@@ -7,11 +7,15 @@ import { sanityClient } from 'lib/sanity.client';
 import HeroInstitucional from 'components/HeroInstitucional/HeroInstitucional';
 import { BG_CONSTANTS } from 'utils/constants';
 import { GetStaticProps } from 'next';
-import { SpecialtyType } from 'types/News';
-import { SanityAsset } from '@sanity/image-url/lib/types/types';
+import { ImageAsset } from '@sanity/types';
+import { Specialty } from 'types/models';
 
-const Especialidades: FC<SpecialtyType> = ({ specialties }): JSX.Element => {
-  const [selected, setSelected] = useState<SanityAsset[]>([]);
+interface SpecialtyProps {
+  specialties: Specialty[];
+}
+
+const Especialidades: FC<SpecialtyProps> = ({ specialties }): JSX.Element => {
+  const [selected, setSelected] = useState<ImageAsset[]>([]);
 
   return (
     <Layout title="Especialidades">
@@ -38,7 +42,7 @@ const Especialidades: FC<SpecialtyType> = ({ specialties }): JSX.Element => {
 export default Especialidades;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const specialties: SpecialtyType = await sanityClient.fetch(specialtyQuery);
+  const specialties: Specialty[] = await sanityClient.fetch(specialtyQuery);
   return {
     props: {
       specialties,

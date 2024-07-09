@@ -1,13 +1,16 @@
 import React, { FC } from 'react';
 import Layout from 'components/Layout/Layout';
 import { sanityClient } from 'lib/sanity.client';
-import ArticleContent from 'components/ArticleContent/ArticleContent';
+import ArticleContent, { ArticleContentProps } from 'components/ArticleContent/ArticleContent';
 import { SRLWrapper } from 'simple-react-lightbox';
 import { pagesQuery } from 'lib/sanity.queries';
 import HeroInstitucional from 'components/HeroInstitucional/HeroInstitucional';
 import { BG_CONSTANTS } from 'utils/constants';
 import { GetStaticProps } from 'next';
-import { Page } from 'types/News';
+
+type Page = {
+  pages: ArticleContentProps;
+};
 
 const Institucional: FC<Page> = ({ pages }): JSX.Element => {
   const { body, publishedAt, title, mainImage } = pages;

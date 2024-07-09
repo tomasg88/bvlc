@@ -1,9 +1,10 @@
 import React from 'react';
+import { General } from 'types/models';
 
-export type IRrss = {
-  _id: string;
-  rrss: string;
-  rrssUrl: string;
+export type RRSS = {
+  _id: General['_id'];
+  rrss: General['rrss'];
+  rrssUrl: General['rrssUrl'];
 };
 
-export const RrssContext = React.createContext<IRrss[]>([]);
+export const RrssContext = React.createContext<RRSS[]>([]);
