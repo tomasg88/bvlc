@@ -18,7 +18,7 @@ import PaginationNext from 'components/Pagination/PaginationNext';
 import PaginationPrevious from 'components/Pagination/PaginationPrevious';
 import Input from 'components/Input/Input';
 
-export interface NewsProps {
+interface NewsProps {
   list: News[];
 }
 
