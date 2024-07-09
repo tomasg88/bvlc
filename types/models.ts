@@ -2,7 +2,9 @@ import { PortableTextBlock } from 'sanity';
 import type { ImageAsset } from '@sanity/types';
 
 export interface Page {
+  _id: string;
   body: PortableTextBlock;
+  publishedAt: string;
   slug: string;
   title: string;
 }
