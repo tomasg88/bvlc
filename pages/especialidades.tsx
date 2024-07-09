@@ -10,7 +10,7 @@ import { GetStaticProps } from 'next';
 import { ImageAsset } from '@sanity/types';
 import { Specialty } from 'types/models';
 
-export interface SpecialtyProps {
+interface SpecialtyProps {
   specialties: Specialty[];
 }
 
