@@ -10,11 +10,11 @@ import { GetStaticProps } from 'next';
 import { ImageAsset } from '@sanity/types';
 import { Specialty } from 'types/models';
 
-export interface SpecialtyType {
+export interface SpecialtyProps {
   specialties: Specialty[];
 }
 
-const Especialidades: FC<SpecialtyType> = ({ specialties }): JSX.Element => {
+const Especialidades: FC<SpecialtyProps> = ({ specialties }): JSX.Element => {
   const [selected, setSelected] = useState<ImageAsset[]>([]);
 
   return (
