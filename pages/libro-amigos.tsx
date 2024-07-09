@@ -11,6 +11,7 @@ import * as ga from 'lib/ga';
 import { GetStaticProps } from 'next';
 import { News } from 'types/models';
 
+// TODO - This type should be Page
 type LibroAmigosProps = {
   pages: News;
 };

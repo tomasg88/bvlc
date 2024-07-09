@@ -8,6 +8,7 @@ import HeroInstitucional from 'components/HeroInstitucional/HeroInstitucional';
 import { BG_CONSTANTS } from 'utils/constants';
 import { GetStaticProps } from 'next';
 
+// TODO - This type should be a page
 type Page = {
   pages: ArticleContentProps;
 };
