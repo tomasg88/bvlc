@@ -8,8 +8,12 @@ import AlbumCover from 'components/AlbumCover/AlbumCover';
 import HeroPage from 'components/HeroPage/HeroPage';
 import Fade from 'react-reveal/Fade';
 import { GetStaticProps } from 'next';
-import { Album, GaleriaType } from 'types/models';
+import { Album } from 'types/models';
 import { BG_CONSTANTS } from 'utils/constants';
+
+interface GaleriaType {
+  albums: Album[];
+}
 
 const Galeria: FC<GaleriaType> = ({ albums }): JSX.Element => {
   const [selectedAlbum, setSelectedAlbum] = useState<ImageAsset[]>([]);
@@ -40,7 +44,7 @@ const Galeria: FC<GaleriaType> = ({ albums }): JSX.Element => {
 export default Galeria;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const albums: Album = await sanityClient.fetch(albumsQuery);
+  const albums: Album[] = await sanityClient.fetch(albumsQuery);
 
   return {
     props: { albums },

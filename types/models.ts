@@ -115,7 +115,3 @@ export interface SlugType {
   article: News;
   moreArticles: News[];
 }
-
-export interface GaleriaType {
-  albums: Album[];
-}
