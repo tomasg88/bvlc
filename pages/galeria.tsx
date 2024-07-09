@@ -11,11 +11,11 @@ import { GetStaticProps } from 'next';
 import { Album } from 'types/models';
 import { BG_CONSTANTS } from 'utils/constants';
 
-interface GaleriaType {
+interface GaleriaProps {
   albums: Album[];
 }
 
-const Galeria: FC<GaleriaType> = ({ albums }): JSX.Element => {
+const Galeria: FC<GaleriaProps> = ({ albums }): JSX.Element => {
   const [selectedAlbum, setSelectedAlbum] = useState<ImageAsset[]>([]);
   return (
     <Layout title="Galería">
