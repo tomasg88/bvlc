@@ -9,6 +9,8 @@ import { FC } from 'react';
 import { Album, News } from 'types/models';
 import { LatestNews } from 'components/HomeSections/LatestNews';
 import { HighlightedNewsSection } from 'components/HomeSections/HighlightedNewsSection';
+import { HeadquarterSection } from 'components/HomeSections/HeadquartersSection';
+import { SponsorsSection } from 'components/HomeSections/SponsorsSection';
 
 type HomeProps = {
   recentNews: News[];
@@ -21,7 +23,9 @@ const Home: FC<HomeProps> = ({ recentNews, highlighted, heroImages }) => (
     <div className={styles.container}>
       <main className="w-full ">
         <HeroHomeCarousel arrows={false} images={heroImages} />
-        <div className="bg-gray-100">
+        <div className="bg-gray-100 pt-24">
+          <HeadquarterSection />
+          <SponsorsSection />
           <HighlightedNewsSection highlighted={highlighted} />
           <LatestNews recentNews={recentNews} />
         </div>
