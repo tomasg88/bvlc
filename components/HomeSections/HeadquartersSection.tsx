@@ -6,7 +6,6 @@ const YellowBorder = () => <div className="w-40 border-b-2 border-yellow-400 my-
 
 export const HeadquarterSection = () => (
   <>
-    {/* <div className="bg-gradient-to-b to-gray-400 from-gray-100 mt-20">&nbsp;</div> */}
     <div className="block w-full bg-gray-900 pt-12 pb-24 mx-auto md:flex-row border-t-2 border-red-700 shadow-2xl">
       {/* content */}
       <div className="max-w-6xl mx-auto">
@@ -24,7 +23,7 @@ export const HeadquarterSection = () => (
                   href={href}
                   title={title}
                 />
-                {index < HOME_SECTION_CARDS_CONTENT.length ? <YellowBorder /> : null}
+                {index < HOME_SECTION_CARDS_CONTENT.length - 1 ? <YellowBorder /> : null}
               </React.Fragment>
             )
           )}
