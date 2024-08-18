@@ -1,37 +1,8 @@
 import React from 'react';
-import Link from 'next/link';
-import Fade from 'react-reveal/Fade';
+import { HOME_SECTION_CARDS_CONTENT } from 'utils/constants';
+import { HomeSectionCard } from './HomeSectionCard';
 
-const CTA_CLASSNAME =
-  'z-10 block px-4 py-2 mt-6 text-base font-bold text-center text-white bg-red-700 border-b-4 border-red-700 rounded cursor-pointer hover:bg-red-600 hover:border-red-800';
-
-type CardContent = {
-  ctaText: string;
-  description: string;
-  href: string;
-  title: string;
-};
-
-const CARDS: CardContent[] = [
-  {
-    title: '',
-    href: '',
-    description: '',
-    ctaText: '',
-  },
-];
-
-const SectionCard = ({ ctaText, description, href, title }: CardContent) => (
-  <Fade>
-    <div className="bg-white w-80 lg:grid-cols-3 sm:grid-cols-2 rounded-lg p-6">
-      <p className="text-lg">{title}</p>
-      <p>{description}</p>
-      <Link href={href} className={CTA_CLASSNAME}>
-        {ctaText}
-      </Link>
-    </div>
-  </Fade>
-);
+const YellowBorder = () => <div className="w-40 border-b-2 border-yellow-400 my-8 h-1">&nbsp;</div>;
 
 export const HeadquarterSection = () => (
   <>
@@ -42,25 +13,21 @@ export const HeadquarterSection = () => (
         <h2 className="text-center text-4xl font-light text-white mb-12">
           Conocé más sobre nosotros!
         </h2>
-        <div className="flex justify-between items-center mx-auto">
-          <SectionCard
-            ctaText="Ver más"
-            description="Mirá las salas de nuestro cuartel donde trabajamos día a día"
-            title={'Infraestructura'}
-            href={'/infraestructura'}
-          />
-          <SectionCard
-            ctaText="Ver más"
-            description="El equipamiento con el que contamos para proteger y servir a nuestra comunidad"
-            title={'Equipamiento'}
-            href={'/equipamiento'}
-          />
-          <SectionCard
-            ctaText="Conocelos"
-            description="Contamos con el mejor talento para proteger a nuestra comunidad."
-            title={'Cuerpo Activo'}
-            href={'/cuerpo-activo'}
-          />
+        <div className="flex flex-col justify-between items-center mx-auto">
+          {HOME_SECTION_CARDS_CONTENT.map(
+            ({ background, ctaText, description, href, title }, index) => (
+              <React.Fragment key={index}>
+                <HomeSectionCard
+                  background={background}
+                  ctaText={ctaText}
+                  description={description}
+                  href={href}
+                  title={title}
+                />
+                {index < HOME_SECTION_CARDS_CONTENT.length ? <YellowBorder /> : null}
+              </React.Fragment>
+            )
+          )}
         </div>
       </div>
     </div>
