@@ -23,7 +23,7 @@ const Home: FC<HomeProps> = ({ recentNews, highlighted, heroImages }) => (
     <div className={styles.container}>
       <main className="w-full ">
         <HeroHomeCarousel arrows={false} images={heroImages} />
-        <div className="bg-gray-100 pt-24">
+        <div className="bg-gray-200 pt-24">
           <HeadquarterSection />
           <SponsorsSection />
           <HighlightedNewsSection highlighted={highlighted} />
