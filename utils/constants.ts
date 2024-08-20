@@ -166,7 +166,8 @@ export const HOME_SECTION_CARDS_CONTENT: HomeSectionCardProps[] = [
   {
     background: BG_CONSTANTS.trucks,
     ctaText: 'Ver más',
-    description: 'El equipamiento con el que contamos para proteger y servir a nuestra comunidad',
+    description:
+      'Todas las herramientas a nuestro alcance para proteger y servir a nuestra comunidad',
     href: '/equipamiento',
     title: 'Equipamiento',
   },

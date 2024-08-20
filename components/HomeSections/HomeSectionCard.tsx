@@ -22,7 +22,7 @@ export const HomeSectionCard = ({
   title,
 }: HomeSectionCardProps) => (
   <Fade>
-    <div className="bg-gray-100 w-5/6 h-60 rounded-2xl flex">
+    <div className="bg-gray-100 w-5/6 h-60 rounded-2xl flex mb-16 shadow-2xl">
       <div className={`${styles.imageClip} w-3/5 block relative`}>
         <Image
           alt={`imágen de portada para ${title}`}

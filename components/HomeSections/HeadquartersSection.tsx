@@ -2,14 +2,12 @@ import React from 'react';
 import { HOME_SECTION_CARDS_CONTENT } from 'utils/constants';
 import { HomeSectionCard } from './HomeSectionCard';
 
-const YellowBorder = () => <div className="w-40 border-b-2 border-yellow-400 my-8 h-1">&nbsp;</div>;
-
 export const HeadquarterSection = () => (
   <>
-    <div className="block w-full bg-gray-900 pt-12 pb-24 mx-auto md:flex-row border-t-2 border-red-700 shadow-2xl">
+    <div className="block w-full bg-gray-200 pt-12 pb-24 mx-auto md:flex-row">
       {/* content */}
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-center text-4xl font-light text-white mb-12">
+        <h2 className="text-center text-4xl font-light text-gray-900 pt-24 pb-6 mx-auto mb-20 border-b-2 border-yellow-400">
           Conocé más sobre nosotros!
         </h2>
         <div className="flex flex-col justify-between items-center mx-auto">
@@ -23,7 +21,6 @@ export const HeadquarterSection = () => (
                   href={href}
                   title={title}
                 />
-                {index < HOME_SECTION_CARDS_CONTENT.length - 1 ? <YellowBorder /> : null}
               </React.Fragment>
             )
           )}
