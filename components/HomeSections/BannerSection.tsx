@@ -37,10 +37,10 @@ const ImageSection = ({ background, rtl, title }: ImageSectionProps) => (
       sizes="100vw"
       src={background || DEFAULT_PAGE_IMAGE}
     />
-    <div className="bg-black w-full h-full block bg-cover relative opacity-60">
-      {/* <h2 className="text-gray-100 text-2xl">{title}</h2> */}
-      &nbsp;
-    </div>
+    {/* <div className="bg-black w-full h-full block bg-cover relative opacity-60"> */}
+    {/* <h2 className="text-gray-100 text-2xl">{title}</h2> */}
+    {/* &nbsp;
+    </div> */}
   </div>
 );
 
