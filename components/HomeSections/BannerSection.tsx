@@ -7,16 +7,16 @@ import styles from './BannerSection.module.scss';
 import { FaAngleRight } from 'react-icons/fa';
 
 type ContentSectionProps = {
-  ctaText: string;
-  description: string;
-  href: string;
-  title: string;
+  ctaText: BannerSectionProps['ctaText'];
+  description: BannerSectionProps['description'];
+  href: BannerSectionProps['href'];
+  title: BannerSectionProps['title'];
 };
 
 type ImageSectionProps = {
-  alt: string;
-  background: string;
-  rtl: boolean;
+  background: BannerSectionProps['background'];
+  rtl: BannerSectionProps['rtl'];
+  title: BannerSectionProps['title'];
 };
 
 export type BannerSectionProps = {
@@ -28,10 +28,10 @@ export type BannerSectionProps = {
   title: string;
 };
 
-const ImageSection = ({ alt, background, rtl }: ImageSectionProps) => (
+const ImageSection = ({ background, rtl, title }: ImageSectionProps) => (
   <div className={`${rtl ? styles.rtlImageClip : styles.imageClip} w-3/5 block relative`}>
     <Image
-      alt={alt}
+      alt={`imágen de portada para ${title}`}
       className={`bg-cover`}
       fill
       sizes="100vw"
@@ -66,23 +66,20 @@ export const BannerSection = ({
   href,
   rtl = false,
   title,
-}: BannerSectionProps) => {
-  const imageAlt = `imágen de portada para ${title}`;
-  return (
-    <Fade>
-      <div className="bg-gray-100 w-full h-[500px] flex mb-16 shadow-xl">
-        {rtl ? (
-          <>
-            <ContentSection ctaText={ctaText} description={description} href={href} title={title} />
-            <ImageSection alt={imageAlt} background={background} rtl={rtl} />
-          </>
-        ) : (
-          <>
-            <ImageSection alt={imageAlt} background={background} rtl={rtl} />
-            <ContentSection ctaText={ctaText} description={description} href={href} title={title} />
-          </>
-        )}
-      </div>
-    </Fade>
-  );
-};
+}: BannerSectionProps) => (
+  <Fade>
+    <div className="bg-gray-100 w-full h-[500px] flex mb-16 shadow-xl">
+      {rtl ? (
+        <>
+          <ContentSection ctaText={ctaText} description={description} href={href} title={title} />
+          <ImageSection background={background} rtl={rtl} title={title} />
+        </>
+      ) : (
+        <>
+          <ImageSection background={background} rtl={rtl} title={title} />
+          <ContentSection ctaText={ctaText} description={description} href={href} title={title} />
+        </>
+      )}
+    </div>
+  </Fade>
+);
