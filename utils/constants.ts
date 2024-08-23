@@ -1,4 +1,4 @@
-import { HomeSectionCard, HomeSectionCardProps } from 'components/HomeSections/HomeSectionCard';
+import { BannerSectionProps } from 'components/HomeSections/BannerSection';
 
 export const DEFAULT_PAGE_TITLE = 'Bomberos Voluntarios de Luján de Cuyo';
 export const DEFAULT_PAGE_DESCRIPTION =
@@ -155,7 +155,7 @@ export const POSITIONS = [
 export const NO_PROFILE_IMAGE = '/no-profile-image.png';
 
 //
-export const HOME_SECTION_CARDS_CONTENT: HomeSectionCardProps[] = [
+export const HOME_BANNERS_SECTION_CONTENT: BannerSectionProps[] = [
   {
     background: BG_CONSTANTS.station,
     ctaText: 'Ver más',
