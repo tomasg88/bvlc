@@ -1,11 +1,3 @@
-.imageClip {
-  clip-path: polygon(0% 0%, 95% 0%, 100% 100%, 0% 100%);
-}
-
-.rtlImageClip {
-  clip-path: polygon(5% 0%, 100% 0%, 100% 100%, 0% 100%);
-}
-
 .ctaButton {
   @apply z-10 px-6 py-2 flex items-center text-2xl font-bold text-red-700 border-b-4 border-red-700 rounded cursor-pointer transition justify-between;
   @apply hover:border-red-800 hover:bg-red-800 hover:text-white;

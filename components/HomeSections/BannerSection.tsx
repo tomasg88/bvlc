@@ -28,8 +28,8 @@ export type BannerSectionProps = {
   title: string;
 };
 
-const ImageSection = ({ background, rtl, title }: ImageSectionProps) => (
-  <div className={`${rtl ? styles.rtlImageClip : styles.imageClip} w-3/5 block relative`}>
+const ImageSection = ({ background, title }: ImageSectionProps) => (
+  <div className={`block relative`}>
     <Image
       alt={`imágen de portada para ${title}`}
       className={`bg-cover`}
@@ -45,9 +45,9 @@ const ImageSection = ({ background, rtl, title }: ImageSectionProps) => (
 );
 
 const ContentSection = ({ ctaText, description, href, title }: ContentSectionProps) => (
-  <div className="p-6 w-2/5 box-border flex flex-col justify-between">
+  <div className="p-6 box-border flex flex-col justify-between">
     <div>
-      <h2 className="text-2xl mb-14">{title}</h2>
+      <h2 className="text-3xl mb-14">{title}</h2>
       <p className="font-thin text-4xl leading-normal tracking-normal">{description}</p>
     </div>
     <div className="relative self-end">
@@ -68,7 +68,7 @@ export const BannerSection = ({
   title,
 }: BannerSectionProps) => (
   <Fade>
-    <div className="bg-gray-100 w-full h-[500px] flex mb-16 shadow-xl">
+    <div className="bg-gray-100 w-full h-[500px] grid grid-cols-2">
       {rtl ? (
         <>
           <ContentSection ctaText={ctaText} description={description} href={href} title={title} />
