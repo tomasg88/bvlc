@@ -11,7 +11,7 @@ export const HeadquarterSection = () => {
   )) as FunctionComponent<CarouselProps>;
 
   return (
-    <div className="block w-full pt-12 pb-24 mx-auto md:flex-row bg-gray-900">
+    <div className="block w-full py-24 pb-36 mx-auto md:flex-row bg-gray-900 border-b-2 border-t-2 border-red-700">
       {/* content */}
       <div className="mx-auto">
         <div className="relative flex flex-col h-[500px] justify-between items-center mx-auto">
