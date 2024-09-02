@@ -31,10 +31,6 @@ export const HomeSectionCard = ({
           sizes="100vw"
           src={background || DEFAULT_PAGE_IMAGE}
         />
-        <div className="bg-black w-full h-full block bg-cover relative rounded-l-2xl rounded-r-none opacity-60">
-          {/* <h2 className="text-gray-100 text-2xl">{title}</h2> */}
-          &nbsp;
-        </div>
       </div>
       <div className="p-6 w2/5 box-border flex flex-col justify-between">
         <div>
