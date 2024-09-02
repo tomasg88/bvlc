@@ -45,13 +45,11 @@
     @apply p-6;
     @apply pb-0;
     @apply mx-auto;
-    @apply sm:space-x-4;
-    @apply sm:flex-row;
-    @apply sm:absolute;
+    @apply sm:space-x-4 sm:flex-row sm:absolute;
 
     .button {
       @apply relative;
-      @apply z-10;
+      @apply z-20;
       @apply flex;
       @apply flex-col;
       @apply items-center;
@@ -62,11 +60,9 @@
       @apply mt-6;
       @apply text-red-800;
       @apply duration-100;
-      @apply bg-gray-100;
+      @apply bg-gray-200;
       @apply shadow-sm;
-      @apply hover:bg-red-600;
-      @apply hover:text-red-100;
-      @apply hover:shadow-lg;
+      @apply hover:bg-red-600 hover:text-red-100 hover:shadow-lg;
 
       .icon {
         @apply mb-2;
@@ -82,10 +78,10 @@
         .number {
           @apply flex;
           @apply flex-col;
+          @apply opacity-90;
           @apply text-base;
           @apply text-left;
           @apply sm:text-center;
-          @apply opacity-90;
         }
       }
     }
