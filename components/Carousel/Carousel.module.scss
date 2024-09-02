@@ -1,10 +1,10 @@
 .root {
   @apply relative w-full h-full mb-0;
   .bullets {
-    @apply absolute left-0 right-0 z-50 flex items-center justify-center -bottom-20;
+    @apply absolute left-0 right-0 z-50 flex items-center justify-center -bottom-20 text-gray-200;
   }
   .arrows {
-    @apply absolute z-50 items-center justify-center hidden w-12 h-12 text-5xl text-center text-gray-900 cursor-pointer;
+    @apply absolute z-50 items-center justify-center hidden w-12 h-12 text-5xl text-center text-gray-200 cursor-pointer;
     @apply hover:opacity-90;
     @apply md:flex top-1/2;
     &.arrowLeft {
