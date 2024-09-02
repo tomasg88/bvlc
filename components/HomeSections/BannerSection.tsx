@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { DEFAULT_PAGE_IMAGE } from 'utils/constants';
 import styles from './BannerSection.module.scss';
 import { FaAngleRight } from 'react-icons/fa';
+import classNames from 'classnames';
 
 type ContentSectionProps = {
   ctaText: BannerSectionProps['ctaText'];
@@ -32,7 +33,7 @@ const ImageSection = ({ background, rtl, title }: ImageSectionProps) => (
   <div className={`${rtl ? styles.rtlImageClip : styles.imageClip} w-3/5 block relative`}>
     <Image
       alt={`imágen de portada para ${title}`}
-      className={`bg-cover`}
+      className={classNames('bg-cover', rtl ? 'rounded-r-xl' : 'rounded-l-xl')}
       fill
       sizes="100vw"
       src={background || DEFAULT_PAGE_IMAGE}
@@ -68,7 +69,7 @@ export const BannerSection = ({
   title,
 }: BannerSectionProps) => (
   <Fade>
-    <div className="bg-gray-100 w-full h-[500px] flex mb-16 shadow-xl">
+    <div className="bg-white w-full h-[400px] flex mb-16 shadow-xl rounded-xl">
       {rtl ? (
         <>
           <ContentSection ctaText={ctaText} description={description} href={href} title={title} />

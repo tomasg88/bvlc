@@ -21,7 +21,7 @@ type HomeProps = {
 const Home: FC<HomeProps> = ({ recentNews, highlighted, heroImages }) => (
   <Layout>
     <div className={styles.container}>
-      <main className="w-full ">
+      <main className="w-full">
         <HeroHomeCarousel arrows={false} images={heroImages} />
         <div className="bg-gray-200 pt-24">
           <HeadquarterSection />
