@@ -11,11 +11,11 @@ export const HeadquarterSection = () => {
   )) as FunctionComponent<CarouselProps>;
 
   return (
-    <div className="block w-full pt-12 pb-24 mx-auto md:flex-row border-2">
+    <div className="block w-full pt-12 pb-24 mx-auto md:flex-row">
       {/* content */}
       <div className="mx-auto">
         <div className="relative flex flex-col h-[500px] justify-between items-center mx-auto">
-          <div className="absolute inset-0 z-0 border-2 px-48">
+          <div className="absolute inset-0 z-0 px-48">
             <Carousel arrows={true} defaultWait={7000} maxTurns={99}>
               {HOME_BANNERS_SECTION_CONTENT.map((banner, index) => (
                 <Fade key={index + 1}>
