@@ -1,3 +1,5 @@
+import { HomeSectionCard, HomeSectionCardProps } from 'components/HomeSections/HomeSectionCard';
+
 export const DEFAULT_PAGE_TITLE = 'Bomberos Voluntarios de Luján de Cuyo';
 export const DEFAULT_PAGE_DESCRIPTION =
   'Sitio web oficial de los Bomberos Voluntarios de Luján de Cuyo, Mendoza';
@@ -151,3 +153,29 @@ export const POSITIONS = [
 
 // Used when there is no profile image of a member
 export const NO_PROFILE_IMAGE = '/no-profile-image.png';
+
+//
+export const HOME_SECTION_CARDS_CONTENT: HomeSectionCardProps[] = [
+  {
+    background: BG_CONSTANTS.station,
+    ctaText: 'Ver más',
+    description: 'Mirá las salas de nuestro cuartel donde trabajamos día a día',
+    href: '/infraestructura',
+    title: 'Infraestructura',
+  },
+  {
+    background: BG_CONSTANTS.trucks,
+    ctaText: 'Ver más',
+    description:
+      'Todas las herramientas a nuestro alcance para proteger y servir a nuestra comunidad',
+    href: '/equipamiento',
+    title: 'Equipamiento',
+  },
+  {
+    background: BG_CONSTANTS.team,
+    ctaText: 'Conocelos',
+    description: 'Contamos con el mejor talento para proteger a nuestra comunidad.',
+    href: '/cuerpo-activo',
+    title: 'Cuerpo Activo',
+  },
+];
