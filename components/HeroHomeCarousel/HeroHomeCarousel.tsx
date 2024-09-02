@@ -3,7 +3,7 @@ import makeCarousel from 'react-reveal/makeCarousel';
 import Fade from 'react-reveal/Fade';
 import Link from 'next/link';
 import { DEFAULT_PAGE_TITLE } from 'utils/constants';
-import CarouselUI from './CarouselUI/CarouselUI';
+import { CarouselCore } from '../Carousel/CarouselCore';
 import styles from './HeroHomeCarousel.module.scss';
 import { FunctionComponent, ReactElement, ReactNode } from 'react';
 import SanityImage from 'components/SanityImage/SanityImage';
@@ -21,11 +21,10 @@ interface CarouselProps {
 }
 
 const HeroHomeCarousel: FunctionComponent<HeroHomeCarouselProps> = ({
-  arrows,
   images = [],
 }): ReactElement => {
   const Carousel = makeCarousel((props) => (
-    <CarouselUI arrows={arrows} {...props} />
+    <CarouselCore arrows={false} {...props} />
   )) as FunctionComponent<CarouselProps>;
 
   return (
@@ -36,16 +35,6 @@ const HeroHomeCarousel: FunctionComponent<HeroHomeCarouselProps> = ({
       <Fade delay={400}>
         <h1 className={styles.title}>{DEFAULT_PAGE_TITLE}</h1>
       </Fade>
-
-      <div className={styles.buttonsContainer}>
-        <Link href="/contacto" className={styles.button}>
-          <FiPhone className={styles.icon} />
-          <div className={styles.text}>
-            {'Emergencias'}
-            <span className={styles.number}>{'(0261) 498-0999'}</span>
-          </div>
-        </Link>
-      </div>
 
       <div className={styles.carouselContainer}>
         <Carousel defaultWait={4000} maxTurns={99} /* wait for 1000 milliseconds */>
@@ -66,6 +55,16 @@ const HeroHomeCarousel: FunctionComponent<HeroHomeCarouselProps> = ({
             </Fade>
           ))}
         </Carousel>
+      </div>
+
+      <div className={styles.buttonsContainer}>
+        <Link href="/contacto" className={styles.button}>
+          <FiPhone className={styles.icon} />
+          <div className={styles.text}>
+            {'Emergencias'}
+            <span className={styles.number}>{'(0261) 498-0999'}</span>
+          </div>
+        </Link>
       </div>
     </div>
   );

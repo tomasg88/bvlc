@@ -69,7 +69,7 @@ export const BannerSection = ({
   title,
 }: BannerSectionProps) => (
   <Fade>
-    <div className="bg-white w-full h-[400px] flex mb-16 shadow-xl rounded-xl">
+    <div className="bg-white w-full h-[500px] flex mb-16 shadow-xl rounded-xl">
       {rtl ? (
         <>
           <ContentSection ctaText={ctaText} description={description} href={href} title={title} />

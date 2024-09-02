@@ -24,6 +24,9 @@ const Home: FC<HomeProps> = ({ recentNews, highlighted, heroImages }) => (
       <main className="w-full">
         <HeroHomeCarousel arrows={false} images={heroImages} />
         <div className="bg-gray-200 pt-24">
+          <h1 className="text-center text-[4.5rem] font-thin tracking-wide text-gray-900 py-18 my-24 mx-auto">
+            Conocé más sobre nosotros!
+          </h1>
           <HeadquarterSection />
           <SponsorsSection />
           <HighlightedNewsSection highlighted={highlighted} />
