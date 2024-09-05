@@ -21,7 +21,6 @@ export default defineType({
       name: 'url',
       type: 'string',
       title: 'Link a la página de la empresa',
-      validation: (Rule) => Rule.required(),
     }),
   ],
 });
