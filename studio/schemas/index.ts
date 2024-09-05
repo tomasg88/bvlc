@@ -13,6 +13,7 @@ import leadership from './documents/leadership';
 import page from './documents/page';
 import post from './documents/post';
 import specialty from './documents/specialty';
+import sponsor from './documents/sponsor';
 
 import blockContent from './objects/blockContent';
 import youtube from './objects/youtube';
@@ -31,6 +32,7 @@ export const types: SchemaTypeDefinition[] = [
   album,
   campaign,
   infrastructure,
+  sponsor,
   blockContent,
   youtube,
 ];
