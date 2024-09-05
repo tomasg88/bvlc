@@ -117,3 +117,9 @@ export interface SlugType {
   article: News;
   moreArticles: News[];
 }
+
+export interface Sponsor {
+  name: string;
+  logo: ImageAsset;
+  url?: string;
+}
