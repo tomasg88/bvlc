@@ -1,7 +1,7 @@
 import { defineField, defineType } from 'sanity';
 import { POSITIONS } from 'utils/constants';
 
-export const leadership = defineType({
+export default defineType({
   name: 'leadership',
   type: 'document',
   title: 'Comisión directiva',
