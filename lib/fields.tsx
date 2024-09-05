@@ -40,3 +40,7 @@ export const campaignFields = `
 export const infrastructureFields = `
   _id, description, name, imageList
 ` as string;
+
+export const sponsorFields = `
+  _id, logo, name, url
+` as string;
