@@ -1,5 +1,11 @@
-module.exports = {
+// @ts-check
+
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   images: {
+    dangerouslyAllowSVG: true,
+    contentDispositionType: 'attachment',
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
     remotePatterns: [
       {
         hostname: 'cdn.sanity.io',
@@ -10,3 +16,5 @@ module.exports = {
     ],
   },
 };
+
+module.exports = nextConfig;
