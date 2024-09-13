@@ -39,12 +39,7 @@ export const getStaticProps: GetStaticProps = async () => {
   );
 
   return {
-    props: {
-      heroImages: heroImages,
-      highlighted,
-      recentNews,
-      sponsorsList,
-    },
+    props: { heroImages, highlighted, recentNews, sponsorsList },
   };
 };
 
