@@ -57,6 +57,7 @@
     "tailwind-merge": "^2.2.1"
   },
   "devDependencies": {
+    "@next/eslint-plugin-next": "^14.2.11",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.1.2",
     "@types/gtag.js": "0.0.7",
