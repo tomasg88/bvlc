@@ -46,7 +46,7 @@ export const SponsorsSection = ({ list = [] }: SponsorsSectionProps) => {
         <h2 className="text-center text-lg font-semibold leading-8 text-gray-900">
           Empresas que colaboran con nosotros
         </h2>
-        <div className="mx-auto mt-10 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5">
+        <div className="mx-auto mt-10 grid grid-cols-1 items-center gap-x-8 gap-y-10 max-w-4xl sm:grid-cols-3 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-4">
           {list.map(({ name, logo, url }, index) => (
             <Sponsor key={index} logo={logo} name={name} url={url} />
           ))}
