@@ -7,6 +7,7 @@ import {
   pageFields,
   postFields,
   specialtyFields,
+  sponsorFields,
 } from './fields';
 
 /**
@@ -18,7 +19,8 @@ export const indexQuery = `
 {
     "recentNews": *[_type == "post" && (!isHighlighted || !defined(isHighlighted))] | order(publishedAt desc)[0..5] { ${postFields} },
     "highlighted": *[_type == "post" && isHighlighted][0] { ${postFields} },
-    "heroImages": *[_type == "album" && title == "IMAGENES_HOME"][0] { ${albumFields} }
+    "heroImages": *[_type == "album" && title == "IMAGENES_HOME"][0] { ${albumFields} },
+    "sponsorsList": *[_type == "sponsor"] { ${sponsorFields} }
 }` as string;
 
 /**

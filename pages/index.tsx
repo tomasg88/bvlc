@@ -6,19 +6,20 @@ import { sanityClient } from 'lib/sanity.client';
 import { indexQuery } from 'lib/sanity.queries';
 import { GetStaticProps } from 'next';
 import { FC } from 'react';
-import { Album, News } from 'types/models';
+import { Album, News, Sponsor } from 'types/models';
 import { LatestNews } from 'components/HomeSections/LatestNews';
 import { HighlightedNewsSection } from 'components/HomeSections/HighlightedNewsSection';
 import { HeadquarterSection } from 'components/HomeSections/HeadquartersSection';
 import { SponsorsSection } from 'components/HomeSections/SponsorsSection';
 
 type HomeProps = {
-  recentNews: News[];
   highlighted?: News;
-  heroImages: Album['imageList'];
+  heroImages: Album;
+  recentNews: News[];
+  sponsorsList: Sponsor[];
 };
 
-const Home: FC<HomeProps> = ({ recentNews, highlighted, heroImages }) => (
+const Home: FC<HomeProps> = ({ recentNews, highlighted, heroImages, sponsorsList }) => (
   <Layout>
     <div className={styles.container}>
       <main className="w-full">
@@ -38,14 +39,12 @@ const Home: FC<HomeProps> = ({ recentNews, highlighted, heroImages }) => (
 );
 
 export const getStaticProps: GetStaticProps = async () => {
-  const { recentNews, highlighted, heroImages } = await sanityClient.fetch(indexQuery);
+  const { recentNews, highlighted, heroImages, sponsorsList } = await sanityClient.fetch<HomeProps>(
+    indexQuery
+  );
 
   return {
-    props: {
-      recentNews,
-      heroImages: heroImages.imageList,
-      highlighted,
-    },
+    props: { heroImages, highlighted, recentNews, sponsorsList },
   };
 };
 
